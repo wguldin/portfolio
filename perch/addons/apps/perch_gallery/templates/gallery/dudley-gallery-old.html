@@ -1,0 +1,18 @@
+
+
+<perch:before>
+	<h1 class="gallery-title"><perch:gallery id="albumTitle"/></h1>
+
+	<div id="gallery" class="thumbnail-gallery">
+</perch:before>
+
+	<a class="thumbnail" href="<perch:gallery id="main"/>">
+		<img class="thumbnail-image" src="<perch:gallery id="small"/>" alt="<perch:gallery id="imageAlt"/>" />
+	</a>
+
+<perch:after>
+	</div>
+</perch:after>
+
+<!-- /////////////////// -->
+<perch:before><h1 class="gallery-title"><perch:gallery id="albumTitle"/></h1><ul id="gallery" class="thumbnail-gallery"></perch:before><li class="thumbnail"><a class="thumbnail-image-link" href="<perch:gallery id="main"/>"><span data-picture data-alt="<perch:gallery id="imageAlt"/>"><span class="thumbnail-image" data-src="<perch:gallery id="mobile"/>"></span><span class="thumbnail-image" data-src="<perch:gallery id="small"/>" data-media="(min-width: 50em)"></span><noscript><img src="<perch:gallery id="small"/>" alt="<perch:gallery id="imageAlt"/>"></noscript></span></a></li><perch:after></ul></perch:after>

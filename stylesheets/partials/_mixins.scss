@@ -1,0 +1,71 @@
+// ============================================================
+// Variables
+// ============================================================
+
+$main-color:    #7ac143;
+$darker-color:  #629d34;
+$darkest-color: #4a7727;
+$lighter-color: #cfe9ba;
+$accent-color:  #309045;
+
+$text-shadow: 1px 1px 1px #4fc56a;
+
+$sans-stack:  Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-stack: Georgia, "Times New Roman", Times, serif;
+
+// ============================================================
+// Clearfix Mixin
+// ============================================================
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// ============================================================
+// REM Mixin
+// ============================================================
+
+$root-font-size: 16;
+
+@function parseInt($n) { 
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px : (); 
+  $rem: (); 
+  
+  @each $value in $values { 
+  
+    @if $value == 0 or $value == auto { 
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+    
+    @else { 
+      $unit: unit($value);    
+      $val: parseInt($value); 
+      
+      @if $unit == "px" {  
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / $root-font-size + rem));
+      }
+      
+      @if $unit == "rem" { 
+        $px : append($px,  ($val * $root-font-size + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  
+  @if $px == $rem {     
+    #{$property}: $px;  
+  } @else {
+    #{$property}: $px;  
+    #{$property}: $rem; 
+  }
+}

@@ -1,0 +1,1045 @@
+@import "base";
+
+// ==========================================================================
+// MODULE STYLES START HERE
+// Header Styling
+// ==========================================================================
+
+
+.section-header {
+  display: block;
+
+  background-color: $main-color; 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ac143', endColorstr='#629d34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */  
+  background-image: -webkit-linear-gradient(top left, $main-color 30%, $darker-color); 
+  background-image:    -moz-linear-gradient(top left, $main-color 30%, $darker-color);
+  background-image:      -o-linear-gradient(top left, $main-color 30%, $darker-color);
+  background-image:  linear-gradient(to bottom right, $main-color 30%, $darker-color);
+
+  width: 100%;
+
+  text-shadow: $text-shadow;
+
+
+  @include rem(font-size, 1.3rem);
+  letter-spacing: .1em;
+
+  margin: 0;
+
+  @include rem(padding, .4rem .4rem .4rem 1.2rem);
+  @include rem(margin, 2.3rem 0);
+
+  border-top: 1px solid $accent-color;
+  border-bottom: 1px solid $accent-color;
+}
+
+.business, input.send-button, .subscribe-link, .section-header, .sale-button, .sale-headline, .sale-name, label, .signup-submit, 
+.gallery-title, strong  {
+  font-family: 'novecento-bold', $sans-stack;
+  font-weight: normal;  
+}
+
+.sale-details-date, .sale-location, .contact-info, .sale-date-range, .general-link, .nav-link {
+  font-family: 'novecento-medium', $sans-stack;
+  font-weight: normal;
+}
+
+.sale-date-range, .sale-name, .sale-headline, .sale-location, hr.rule, .sale-note, .sale-description {
+  margin: 0;
+}
+
+strong {
+  @include rem(font-size, 1.1rem);
+  margin-top: 2%;
+}
+
+#logo {
+  position: relative;
+  width: 100%;
+  position: relative;
+  
+  background:$main-color url(../img/dudley-background-mobile.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  img {
+    width: 92%;
+    height: auto;
+    margin: 0 0 0 4%;
+    padding: 6% 0;
+  }
+}
+
+// ==========================================================================
+// Navigation Styles
+// ==========================================================================
+
+.business {
+  @include rem(font-size, .9rem);
+  margin: 0;
+  letter-spacing: .1em;
+  
+  @include rem(padding, .9rem 0 .9rem 1rem);
+}
+
+header {
+  width: 100%;
+  position: relative;
+
+  background-color: $main-color; 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ac143', endColorstr='#629d34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */  
+  background-image: -webkit-linear-gradient(top left, $main-color 30%, $darker-color); 
+  background-image:    -moz-linear-gradient(top left, $main-color 30%, $darker-color);
+  background-image:      -o-linear-gradient(top left, $main-color 30%, $darker-color);
+  background-image:  linear-gradient(to bottom right, $main-color 30%, $darker-color);
+
+  -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,.8);
+  -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,.8);
+  box-shadow: 0px 4px 6px -2px rgba(0,0,0,.8);
+
+  z-index: 1;
+
+  .menu-link {
+    @include rem(margin, -.9rem 0rem -.9rem -.9rem);
+    padding: .9rem;
+    opacity: .6;
+    position: relative;
+
+    > img {
+      background-color: $lighter-color;
+      border: 1px solid $accent-color;
+      border-radius: 3px;
+
+      -webkit-transition: background-color .6s ease;
+      -moz-transition:    background-color .6s ease;
+      -o-transition:      background-color .6s ease;
+      transition:         background-color .6s ease;
+
+      @include rem(padding, .4rem);
+      @include rem(margin, -.4rem);
+    }
+  }
+
+  .menu-link.active {
+    >img {
+      background-color: $darkest-color; 
+    }
+  }  
+}
+
+#statement {
+  width: 92%;
+  
+  font-family: $serif-stack;
+  @include rem(font-size, 1.25rem);
+  font-weight: bold;
+
+  letter-spacing: .03em;
+
+  text-align: center;
+
+  margin: 0 auto;
+  @include rem(padding, 2rem 0 1.5rem);
+
+  text-shadow: 2px 2px 1px rgba(0,0,0,.2);
+
+}
+
+// ==========================================================================
+// Email styles
+// ==========================================================================
+
+.subscribe-link {
+  white-space: normal;
+  display: block;
+
+  &.active {
+    color: #666;
+    background-color: #E6E6E6;
+  }
+}
+
+.subscribe-link, .signup-submit {
+  -webkit-transition: background-color .4s ease-in, color .4s ease-in;
+  -moz-transition:    background-color .4s ease-in, color .4s ease-in;
+  -o-transition:      background-color .4s ease-in, color .4s ease-in;
+  transition:         background-color .4s ease-in, color .4s ease-in;
+}
+
+#signup-form {
+  @include rem(width, 13.8rem);
+  margin: 0 auto;
+  padding: 0;
+
+  clear: both;
+  -webkit-transition: max-height 0.2s ease-out, margin 0.2s ease-out;  
+  -moz-transition:    max-height 0.2s ease-out, margin 0.2s ease-out;
+  -o-transition:      max-height 0.2s ease-out, margin 0.2s ease-out;
+  transition:         max-height 0.2s ease-out, margin 0.2s ease-out;
+
+  &.active {
+    @include rem(max-height, 8rem);
+    @include rem(margin, 1rem auto 0rem);    
+    .signup-submit {
+      background-color: $main-color;
+    }
+  }
+
+  //Styles email dropdown with label
+
+  & > label:first-child {
+    @include rem(font-size, .9rem);
+  }
+
+  .signup-email {
+    @include rem(margin, .2rem 0 1rem);
+  }
+
+  .signup-submit {
+    @include rem(margin, 0 1rem 0 0);
+
+  }
+}
+
+// ==========================================================================
+// Upcoming Sales Styles
+// ==========================================================================
+
+.single-sale {
+  width: 88%;
+  margin: 0 0 0 5%;
+}
+
+.sale-date-range {
+  @include rem(font-size, 1rem);
+}
+
+.sale-details-date  {
+  @include rem(font-size, 1rem);
+
+  width: 100%;
+
+  @include rem(margin, 0 0 1rem 0);
+  padding: 0;
+
+  text-align: left;
+  list-style-type: none;
+  display: inline-block;
+
+  li {
+    display: inline;
+    &:first-child:after {
+      content: ","
+    }
+    &:last-child {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+}
+
+.sale-name {
+  @include rem(font-size, 1.5rem);
+}
+
+.sale-location {
+  @include rem(font-size, 1rem);
+  margin: 0;
+}
+
+h3.sale-headline {
+  @include rem(font-size, 1.8rem);
+}
+
+img.sale-image, .sale-image > img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include rem(padding, 0 0 1rem);
+}
+
+.sale-description {
+  @include rem(padding, 1.5rem 0 0);
+}
+
+.buttons {
+  width: 100%;
+  display: block;
+  text-align: center;
+  @include rem(margin, 1rem auto);
+
+  a:first-child {
+    @include rem(margin-right, 1rem);
+  }
+  a:last-child {
+    margin-right: 0;
+  }
+}
+
+hr.rule {
+  border-top: 2px solid #777;
+  width: 100%;
+  @include rem(margin-bottom, 2rem);
+  @include rem(margin-top, 1.8rem);  
+}
+
+// ==========================================================================
+// Our Process Styles
+// ==========================================================================
+
+.process-list {
+  width: 86%;
+  margin: 0 auto;
+  font-family: $serif-stack;
+}
+
+// ==========================================================================
+// Contact Form Styles
+// ==========================================================================
+
+.contact-form {
+  width: 86%;
+  margin: 0 0 0 5%;
+
+  fieldset {
+    @include rem(margin-top, 1rem);
+    padding: 0;
+  }
+}
+
+.form-description {
+  width: 86%;
+  margin: 0 0 0 5%;
+}
+
+.pure-control-group {
+  @include rem(padding-bottom, 1rem);
+}
+
+/* This child element needed for specificity clash. Not sure why... */
+label.dudley-label {
+  @include rem(font-size, 1.1rem);
+  width: 100%;
+  text-align: left;
+}
+
+input.dudley-input {
+  width: 100%;
+  height: 2.8em;
+}
+
+textarea.dudley-textarea {
+  width: 100%;
+}
+
+input.send-button {
+  @include rem(margin, .3rem 0 2rem);
+  float: right;
+}
+
+// ==========================================================================
+// Footer Styles
+// ==========================================================================
+
+footer {
+  clear: both;
+  @include rem(padding-bottom, .7rem);
+}
+
+.footer-rule {
+  width: 90%;
+  background-color: #333;
+  border: 1px solid #333;
+  @include rem(margin, -1rem 0 1.6rem);
+  margin-left: 5%;
+}
+
+img.social {
+  @include rem(width, 1rem);
+  @include rem(margin-right, .5rem);
+}
+
+.contact-info li {
+  list-style-type: none;
+  padding-bottom: .3em;
+
+  &:last-child {
+    @include rem(padding-top, .3rem);
+  }
+}
+
+.contact-info {
+  @include rem(font-size, 1rem);
+  padding-left: 5%;
+}
+
+// ==========================================================================
+// Photo Page Styles
+// ==========================================================================
+
+  .lazy {
+    display: none;
+  }
+
+  .photo-gallery {
+    @include rem(margin-top, 1.5rem);
+
+    .sale-dates {
+      @include rem(margin-top, 1rem);
+    }
+
+    .sale-details-date {
+      padding: 0;
+    }
+
+    footer {
+      clear: both;
+      float: none;
+      width: 100%;
+      margin: 3% 0 2% 3%;
+
+      .footer-rule {
+        margin: 0 0 2% 0;
+        width: 93.5%;
+      }
+
+      .contact-info {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+
+    img {
+      -webkit-transition: opacity .3s ease-in;
+      -moz-transition:    opacity .3s ease-in;
+      -o-transition:      opacity .3s ease-in;
+      transition:         opacity .3s ease-in;
+    }
+
+    .image-wrapper a {
+      display: block;
+      @include rem(margin, 0 -.6rem -.6rem 0);
+      background: #000;
+    }
+
+    .image-wrapper:hover {
+      img {
+        opacity: .4;
+      }
+    }
+  }
+
+  #gallery {
+    margin: 3% 3% 0 2.2%;
+    clear: both;
+  }
+
+  .image-wrapper {
+    display: inline-block;
+    vertical-align: bottom;
+    opacity: 0;
+    @include rem(padding, .6rem .6rem);
+  }
+
+  // ==========================================================================
+  // Featured Photo Page Styles
+  // ==========================================================================
+
+  .photo-gallery-featured {
+    @include rem(margin-top, 1.5rem);
+
+    .gallery-nav {
+      float: right;
+      margin-right: 5%;
+      @include rem(margin-bottom, .4rem);
+    }
+
+    .gallery-featured {
+      width: 90%;
+      margin: 0 auto;
+      height: auto;
+      
+      > img {
+        height: auto;
+        min-width: 100%;
+      } 
+    }
+
+    footer {
+      @include rem(margin-top, 2.5rem);
+    }
+
+  }
+
+  @media only screen and (min-width: 48em) {
+    .photo-gallery-featured {
+      @include rem(margin-top, 5rem);
+    
+      .gallery-featured {
+        width: 60%;
+        float: left;
+        margin-left: 5%;
+        margin-bottom: 2%;
+
+        > img {
+          @include rem(max-height, 32rem);
+          min-width: 0%;
+          max-width: 100%;
+          height: auto;
+          width: auto;
+        }
+
+      }
+
+      .gallery-nav {
+        @include rem(font-size, 1.3rem);
+        margin-top: -.5%;
+
+        .general-link {
+          @include rem(font-size, 1.3rem);
+        }
+      }
+
+      footer {
+        float: none;
+        width: 100%;
+        clear: both;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 72em) {
+    .gallery-featured {
+    }
+  }
+
+  // =========================================================
+
+
+ 
+  @media only screen and (min-width: 37.5em) {
+    .photo-gallery {
+
+      .sale-dates {
+        width: 41%;
+        @include rem(margin, 1.5rem 0 2rem);
+
+        ul:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .sale-description {
+        width: 54%;
+        @include rem(margin-bottom, 2rem);
+        margin-right: 4%;
+      }
+
+      .sale-details-date {
+        @include rem(font-size, .9rem);
+      }
+    }
+  }
+
+  @media only screen and (min-width: 48em) {
+    .photo-gallery {
+      @include rem(margin-top, 5.5rem);
+    
+      .single-sale {
+        width: 94%;
+        margin: 0 0 0 3.5%;
+      }
+
+      .sale-dates {
+        width: 45%;
+        @include rem(margin-top, 1.2rem);
+      }
+
+      .sale-details-date {
+        width: 27%;
+        margin-right: 4%;
+        padding: 0;
+
+        li {
+          display: block;
+        }
+      }
+
+      .sale-description {
+        width: 50%;
+      }
+
+    }
+
+  }
+
+// ==========================================================================
+// Media Queries
+// ==========================================================================
+
+@media only screen and (min-width: 24.375em) {
+  #statement {
+    width: 92%;
+    @include rem(margin, .5rem auto);
+  }
+}
+
+@media only screen and (min-width: 37.5em) {
+
+  // 37.5EM — Intro Media Queries ==========================================================
+
+  #logo img {
+    width: 60%;
+    height: auto;
+    margin: 0 0 0 20%;
+    padding: 4% 0;
+  }
+
+  #statement {
+    width: 90%;
+    margin-top: 0;
+    @include rem(font-size, 1.35rem);
+  }
+
+  .section-header {
+    @include rem(padding-left, 1.5rem);
+  }
+
+  // 37.5EM — Sale Media Queries ==========================================================
+
+  .sale-headline {
+    font-size: 1.75rem;
+  }
+
+  .sale-dates {
+    float: right;
+    width: 29%;
+    @include rem(margin, 1.5rem 0 3rem 0);
+    padding-left: 3%;
+    border-left: 2px solid #666;
+  }
+
+  .sale-details-date {
+    @include rem(font-size, .8rem);
+  }
+
+  .sale-description {
+    width: 65%;
+    margin: 0 3% 0 0;
+    float: left;
+  }
+
+  .buttons {
+    @include rem(margin, 9.5rem 0 3rem 0);
+    width: 55%;
+    clear: left;
+    text-align: left;
+  }
+
+  // 37.5EM — Contact Form Queries ========================================================
+
+  .form-description {
+    float: right;
+    width: 36%;
+    margin-right: 3%;
+  }
+
+  label.dudley-label {
+    @include rem(margin-bottom, .5rem);
+    @include rem(font-size, 1rem);
+  }
+
+  .pure-control-group {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  input.send-button {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 42.5em) and (max-width: 48em) {
+  .sale-dates {
+    width: 39%;
+  }
+  .sale-description {
+    width: 57%;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  // 48EM - Navigation Media Queries  ============================================================  
+
+  // Restyles the navigation links for horizontal display
+  a.menu-link {
+     display: none;
+  }
+
+  nav[role=navigation] {
+    max-height: none;
+  }
+  
+  nav[role=navigation] ul {
+    margin: 0;
+    border: 0;
+  }
+  
+  nav[role=navigation] li a {
+    border: 0;
+  }
+
+  // This styling (until end of media query) gets the navigation and business name to play nicely.
+  header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .business {
+    @include rem(font-size, .9rem);
+    width: 35%;
+    position: relative;
+  }
+
+  nav[role=navigation] {
+    @include rem(font-size, .8rem);
+    text-align: right;
+    width: auto;
+    position: relative;
+    float: right;    
+    @include rem(padding-right, 1rem);
+    // Key to making the nav items and business name line up.
+    @include rem(margin-top, -2.7rem);
+
+    ul {
+      overflow: hidden;
+      list-style-type: none;
+    }
+
+    li {
+      float:left;
+    }
+
+  }
+
+  // 48EM - Intro and Email Form Media Query ===============================================
+
+  #intro {
+    float: left;
+    width: 22%;
+    position: relative;
+  }
+
+  .intro-wrapper {
+    position:fixed;
+    left: 0;    
+    @include rem(top, 3rem);
+    width: 26%;
+    display: block;
+    
+    background: #fff;
+
+    -webkit-box-shadow: 4px 0px 6px -3px rgba(0,0,0,.8);
+    -moz-box-shadow:    4px 0px 6px -3px rgba(0,0,0,.8);
+    box-shadow:         4px 0px 6px -3px rgba(0,0,0,.8);
+
+    margin-bottom: -100%;
+    padding-bottom: 100%;
+    margin-top: -100%;
+    padding-top: 100%;
+  }
+
+  #logo {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    img {
+      width: 70%;
+      height: auto;
+      margin: 0 15% 0 15%;
+      padding: 4% 0;
+    }
+
+  }
+
+  .inner-intro-wrapper {
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0;
+  }
+
+  #statement {
+    text-align: left;
+    @include rem(font-size, 1.1rem);
+    @include rem(padding-top, 1.2rem);
+    line-height: 1.5;
+  }
+
+  #statement, .subscribe-link {
+    margin: 0 auto;
+    width: 85%;
+    display: block;
+  }
+
+  .subscribe-link {
+    @include rem(padding, .5rem);
+  }
+
+  #signup-form {
+    width: 85%;
+    margin: 0 auto;
+
+    &.active {
+      @include rem(max-height, 8rem);
+      @include rem(margin, 1rem auto 0rem);
+    }
+  }
+
+  // 48EM - Section Header Media Query  ====================================================
+
+  .section-header {
+    background: transparent;
+    background-image: none;
+    border: none;
+    text-shadow: none;
+    width: 100%;
+    padding-left: 5%;
+    @include rem(margin, 0 0 2rem 0);
+
+    &:after {
+      display: inline-block;
+      content: ".";
+      color: rgba(0,0,0,0);
+      @include rem(padding, 0 340rem 0 1rem);
+      @include rem(margin, 0 -340rem 0 1rem);
+
+      background-color: $main-color; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ac143', endColorstr='#629d34',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */  
+      background-image: -webkit-linear-gradient(top left, $main-color 30%, $darker-color); 
+      background-image:    -moz-linear-gradient(top left, $main-color 30%, $darker-color);
+      background-image:      -o-linear-gradient(top left, $main-color 30%, $darker-color);
+      background-image:  linear-gradient(to bottom right, $main-color 30%, $darker-color);
+    }
+  }
+
+  // 48EM - Sale Media Queries  ============================================================
+
+  #sales {
+    width: 73%;
+    @include rem(padding-top, 10rem);
+    @include rem(margin, -5rem 0 0 0);
+    float: right;
+    min-height: 100%;
+  }  
+  .sale-headline {
+    @include rem(font-size, 2rem);
+  }
+
+  .sale-note {
+    width: 95%;
+    @include rem(margin-bottom, 1rem);
+    em {
+      @include rem(font-size, 1rem);
+    }
+  }
+
+  img.sale-image, .sale-image > img {
+    float: left;
+    width: 35%;
+    margin: 1.5% 4% 4% 0;
+  }
+
+  // Conditional styling for text sale description, if a photo is present.
+
+  .sale-image-responsive + .sale-detail-text > .sale-description {
+    width: 61%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .sale-image-responsive + .sale-detail-text .sale-dates {
+    border: none;
+    float: right;
+    width: 100%;
+
+    padding-left: 0;
+    @include rem(margin, .5rem 0 2rem 0);
+
+    > .sale-details-date {
+      @include rem(width, 9rem);
+      @include rem(margin, 0 .5rem);
+      border-right: 2px solid #666;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        border: 0;
+      }
+
+      > li {
+        display: block;
+      }
+    }
+  }
+
+  // 48EM - Process & Contact Media Queries  ===============================================  
+
+  .process-list, .contact-form  {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    border: 0;
+  }
+
+  .process-list {
+    -moz-column-count: 2;
+    @include rem(-moz-column-gap, 2.2rem);
+    -webkit-column-count: 2;
+    @include rem(-webkit-column-gap, 2.2rem);
+    column-count: 2;
+    @include rem(column-gap, 2.2rem);
+  }
+
+  #contact, #process {
+    display: block;
+    width: 73%;
+    float: right;
+    @include rem(padding-top, 4rem);
+  }
+
+  input.dudley-input, textarea.dudley-textarea, .pure-control-group {
+    margin-top: 2%;
+  }
+
+  input.send-button {
+    float: left;
+  }
+
+  // 48EM - Footer Media Queries
+  footer {
+    width: 73%;
+    float: right;
+  }
+
+}
+
+@media only screen and (min-width: 72em) {
+  .nav {
+    @include rem(font-size, .9rem);
+    @include rem(margin-top, -3rem);    
+  }
+
+  .business {
+    @include rem(font-size, 1rem);
+  }
+
+  // 72EM - Sale listing styles homepage =====================================================
+
+  .sale-image-responsive + .sale-detail-text > .buttons {
+    float: right;
+    clear: both;
+    @include rem(margin, -2.5rem 0 0);
+    width: 61%;
+  }
+
+  .sale-image-responsive + .sale-detail-text .sale-dates {
+    border: none;
+    float: right;
+    width: 61%;
+
+    padding-left: 0;
+    @include rem(margin, .5rem 0 2rem 0);
+
+    > .sale-details-date {
+      @include rem(width, 8rem);
+    }
+  }
+
+  // 72EM - Contact Form Styling =============================================================
+
+  .form-name {
+    width: 65%;
+  }
+
+  .form-email {
+    float: left;
+    width: 50%;
+    margin-right: 5%;
+  }
+
+  .form-telephone {
+    width: 45%;
+    float: right;
+  }
+
+  input.dudley-input {
+    margin-top: 0;
+  }
+
+}
+
+@media only screen and (min-width: 72em) and (min-height: 41em) {
+  #statement {
+    @include rem(font-size, 1.2rem);
+    text-align: left;
+    line-height: 1.3;
+  }
+
+  #logo {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    img {
+      width: 88%;
+      height: auto;
+      margin: 6% 0 6% 6%;
+      padding: 2% 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 105em) {
+
+  .sale-image-responsive + .sale-detail-text > .buttons {
+    @include rem(margin-top, -4rem);
+  }
+}
+
+@media only screen and (min-width: 120em) {
+
+  .sale-image-responsive + .sale-detail-text > .buttons {
+    float: right;
+    @include rem(width, 13rem);
+    margin: -24% -2% 0 0;
+  }
+
+  .sale-image-responsive + .sale-detail-text .sale-dates > .sale-details-date {
+    @include rem(width, 7rem);
+  }
+
+  .sale-details-date {
+    @include rem(font-size, .7rem);
+  }
+}
+
+@media only screen and (min-width: 150em) {
+  .sale-image-responsive + .sale-detail-text > .buttons {
+    border: 1px solid #f0f;
+    margin: -24.5% 3% 0 0;    
+  }
+}

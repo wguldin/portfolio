@@ -1,0 +1,69 @@
+<div class="single-sale">
+    <span class="hidden"><perch:content id="sale-id" label="Sale ID, this must match the Album ID" /></span>
+
+    <perch:if exists="sale-date-range">    
+        <p class="sale-date-range"><perch:content id="sale-date-range" type="text" label="Time span of Sale (e.g. September 13 - 15)" required="false" title="true" /></p>
+    </perch:if>
+
+    <perch:if exists="sale-headline">
+        <h2 class="sale-headline"><perch:content id="sale-headline" type="text" label="Sale Headline" required="false" /></h2>
+    </perch:if>
+
+    <perch:if exists="sale-note">
+        <div class="sale-note">
+            <perch:content id="sale-note" type="textarea" size="s" label="Sale Note" textile="false" markdown="true" required="false" editor="markitup" />
+        </div>
+    </perch:if>
+
+    <perch:if exists="sale-image">
+        <span class="sale-image-responsive" data-picture data-alt="<perch:content id="sale-image-alt-text" type="text" label="Alternative image text" />" >
+            
+            <span class="sale-image" data-src="<perch:content id="sale-image" type="image" width="100" height="100" crop="true" quality="40" density="4" sharpen="4" required="false" label="Image from the upcoming sale" />"></span>
+            
+            <span class="sale-image" data-src="<perch:content id="sale-image" type="image" width="100" height="100" crop="true" quality="80" density="8" sharpen="4" required="false" label="Image from the upcoming sale" />" data-media="(-webkit-min-device-pixel-ratio: 2.0)"></span>
+            
+            <noscript><img class="sale-image" src="<perch:content id="sale-image" type="image" width="100" height="100" crop="true" quality="40" density="4" sharpen="4" required="false" label="Image from the upcoming sale" />"  alt="Roy Dudley Estate Sales logo"></noscript>
+        </span>
+    <perch:else />
+        <p class="hidden">No Image Available</p>
+    </perch:if>
+
+    <div class="sale-detail-text">
+
+        <h3 class="sale-name"><perch:content id="sale-name" type="text" label="Sale Name" required="true" /></h3>
+
+        <h6 class="sale-location"><perch:content id="sale-location" type="text" label="Sale Location" required="true" /></h6>
+
+        <div class="sale-description">
+            <perch:content id="sale-description" type="textarea" label="Sale Description" size="m" textile="false" markdown="true" required="true" editor="markitup" />
+        </div>
+
+    <perch:if exists="sale-details-date">
+        <div class="sale-dates">
+            <perch:repeater id="sale-details-date" label="Sale Schedule, enter up to 3 days." max="3">
+                <ul class="sale-details-date" >
+                    <li><perch:content id="sale-day" type="text" label="Day of Sale"/></li>
+                    <li><perch:content id="sale-date" type="date" label="Date of Sale" format="F d" fieldorder="mdy" /></li>
+                    <li><perch:content id="sale-open-time" type="text" label="Hours sale opens" /> — <perch:content id="sale-close-time" type="text" label="Hour sale closes" /></li>
+                </ul>
+            </perch:repeater>
+        </div>
+    </perch:if>    
+
+        <div class="buttons">
+        <!--This anchor field uses multiple perch text tags in order to piece together a link to Google Maps. Perch also has a <map> tag that would embed a map, but this seemed like a better alternative.-->
+            <a href="http://maps.google.com/?t=m&q=<perch:content id="address-line-1" type="text" label="Sale site Address, Line 1" required="true" />,+<perch:content id="address-line-2" type="text" label="Sale site Address, Line 2" required="false" /><perch:if exists="address-line-2">,+</perch:if><perch:content id="address-city" type="text" label="City" required="true" />,+<perch:content id="address-state" type="text" label="State" maxlength="2" default="AR" required="true" />,+<perch:content id="address-zip" type="text" label="Zip Code" required="true" />" class="sale-button map pure-button" target="_blank">Map</a>
+            <perch:if exists="album-id">
+                <a href="photos/index.php?s=<perch:content id="album-id" type="text" label="Album Slug (Can be found on the Gallery Page)." />" class="sale-button photos pure-button">Photos</a>
+            </perch:if>
+        </div>
+    </div>
+
+    <!--Removes horizontal rule below last sale item ?>-->
+
+    <perch:if exists="perch_item_last">
+        <perch:else />
+        <hr class="rule" />
+    </perch:if>
+
+</div>

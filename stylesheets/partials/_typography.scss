@@ -1,0 +1,25 @@
+// ===========================================================
+// Fonts
+// ===========================================================
+
+@font-face {
+    font-family: 'novecento-medium';
+    src: url('../fonts/novecento-medium/Novecentowide-Medium-webfont.eot');
+    src: url('../fonts/novecento-medium/Novecentowide-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecento-medium/Novecentowide-Medium-webfont.woff') format('woff'),
+         url('../fonts/novecento-medium/Novecentowide-Medium-webfont.ttf') format('truetype'),
+         url('../fonts/novecento-medium/Novecentowide-Medium-webfont.svg#NovecentowideUltraLightBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'novecento-bold';
+    src: url('../fonts/novecento-bold/Novecentowide-Bold-webfont.eot');
+    src: url('../fonts/novecento-bold/Novecentowide-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecento-bold/Novecentowide-Bold-webfont.woff') format('woff'),
+         url('../fonts/novecento-bold/Novecentowide-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/novecento-bold/Novecentowide-Bold-webfont.svg#NovecentowideBookBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

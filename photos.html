@@ -1,0 +1,35 @@
+<?php include('perch/runtime.php');?>
+
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Roy Dudley Estate Sales - Photos</title>
+    <meta name="description" content="Photos of upcoming sales, brought to you by Roy Dudley Estate Sales, A full service estate sale company in Little Rock, Arkansas with a fine reputation for honest, friendly service.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    
+    <script src="js/modernizr-html5shiv.min.js"></script>
+
+</head>
+
+<body>
+
+<perch:before><ul></perch:before>
+<li class="boxer">
+	<a href="album.php?s=<perch:gallery id="albumSlug" />">View <perch:gallery id="albumTitle" /></a>
+		<img src="<perch:gallery id="small" />" alt="<perch:gallery id="imageAlt" />" />
+	</a>
+</li>
+<perch:after></ul></perch:after>
+
+</body>
+</html>
