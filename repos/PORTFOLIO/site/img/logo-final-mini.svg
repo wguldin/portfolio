@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/css" href="../css/styles.css" ?>
+<svg class="mini-logo" width="52.8px" height="52.8px" viewBox="0 0 53 67" xmlns="http://www.w3.org/2000/svg">
+  
+<path class="logo-bar" stroke-width="1.2" d="M 24.428,4.841l27.373,0l-0.629,1.172L23.757,6.012L24.428,4.841 z"/>
+<path class="logo-bar" stroke-width="1.2" d="M 1.977,45.622l27.5,0.046L28.858,46.8L1.251,46.792L1.977,45.622 z"/>
+<path class="logo-bar" stroke-width="1.2" d="M 23.816,5.912l1.551,0.004L3.489,45.698l-1.556,0.007L23.816,5.912 z"/>
+<path class="logo-bar" stroke-width="1.2" d="M 22.429,26.752L39.8,26.784l-0.657,1.202l-17.438,0.01L22.429,26.752 z"/>
+<path class="logo-bar" stroke-width="1.2" d="M 23.145,27.963l-1.423,0.005l-3.033,5.232h1.502L23.145,27.963 z"/>
+<path class="logo-bar" stroke-width="1.2" d="M 27.79,45.827l1.621-0.024l9.732-17.816h-1.56L27.79,45.827 z"/>
+<path class="logo-bar" stroke-width="1.2" d="M 51.21,5.945h-1.497l-2.819,5.243h1.502L51.21,5.945 z"/>
+
+</svg>

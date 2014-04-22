@@ -1,0 +1,71 @@
+// ==========================================================================
+// Navigation
+// ==========================================================================
+
+nav {
+  @include rem(font-size, 1rem);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: $blue;
+  border-bottom: 1px solid #fff;
+
+  ul {
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+}
+
+.nav-link {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  @include rem(padding, .5rem 2.5rem);
+  border-bottom: 1px solid #fff;
+
+  @include mq(48em) {
+    width: auto;
+    border-right: 1px solid #fff;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+    @include link-animate(#fff, $blue);
+  }
+}
+
+.nav-header {
+  @include flexbox;
+}
+
+.nav-logo {
+  @include flex-grow(1);
+  @include align-self(center);
+  background-color: $light-blue;
+  padding: 0;
+  @include rem(height, 2.4rem);
+
+  @include mq(48em) {
+    @include rem(width, 5rem);
+    @include rem(height, 2.5rem);
+  }
+
+}
+
+.nav-menu {
+  @include rem(width, 2.2rem);
+  @include flexbox();
+
+  img {
+    width: 60%;
+    margin: 0 auto;
+    @include align-self(center);
+  }
+}

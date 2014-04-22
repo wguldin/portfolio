@@ -1,0 +1,106 @@
+// Imports for project
+
+//third party 
+@import "partials/h5bp";
+
+//base materials
+@import "partials/typography";
+@import "partials/mixins";
+
+// ==========================================================================
+// General Base styles
+// ==========================================================================
+
+// Establishes box model for site.
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+ }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "grey-sans-regular", arial, sans-serif;
+}
+
+html {
+  min-height: 100%;
+  min-width: 100%;
+  font-size: 16px;
+
+  @include mq(22em) {
+    font-size: 18px;
+  }
+
+  @include mq(27em) {
+    font-size: 20px;
+  }
+
+  @include mq(35em) {
+    font-size: 22px;
+  }
+
+  @include mq(48em) {
+    font-size: 16px; 
+  }
+
+  @include mq(60em) {
+    font-size: 18px; 
+  }
+
+  @include mq(90em) {
+    font-size: 20px; 
+  }
+
+  @include mq(120em) {
+    font-size: 22px; 
+  }
+
+  @include mq(150em) {
+    font-size: 24px; 
+  }
+}
+
+main {
+  padding: 0 4%;
+  width: 100%;
+  background: #fff;
+  @include rem(padding-top, 5rem);
+  @include transition(margin-top 150ms ease-in, padding-top 50ms ease-in 25ms);
+
+  &.is-active {
+    @include rem(margin-top, 22rem);
+    @include rem(padding-top, 3rem); 
+  }
+}
+
+strong {
+  font-family: "grey-sans-semibold", arial, sans-serif;
+}
+
+// ==========================================================================
+// Links and such
+// ==========================================================================
+
+a {
+  @include transition(color .5s ease, background-color .5s ease, box-shadow .5s ease);
+
+  &:link {
+  }     
+  &:visited {
+  }
+  &:hover {
+  }  
+  &:active {
+  }
+}
+
+a.intro-link {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  z-index: 999;
+
+  @include link-animate(#fff, $blue);
+}

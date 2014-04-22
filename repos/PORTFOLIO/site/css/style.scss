@@ -1,0 +1,227 @@
+@import "base";
+
+// ============================================================
+// Sidebar/topbar styling
+// ============================================================
+
+body {
+  @include clearfix;
+}
+
+.intro {
+  background-color: #ECF5FF;
+  background-image: -webkit-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:    -moz-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:     -ms-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:      -o-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:         linear-gradient(to bottom, #ECF5FF, #BADAFF);
+
+  width: 100%;
+  font-size: .9em;
+
+  @include mq(48em) {
+    @include rem(width, 18.5rem);
+    position: fixed;
+    @include rem(padding, 1.2rem 1.4rem 0 1.6rem);
+    height: 100%;
+    top: 0;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .headline-runin {
+    font-size: .55em;
+    color: lighten($blue, 22%);
+    font-family: "grey-sans-semibold", $sans-stack;
+    display: block;
+  }
+
+  .chiclet-button {
+    @include rem(font-size, .8rem);
+    padding: .5em 0;
+    @include rem(margin-top, 1.5rem);
+    @include rem(max-width, 18.5rem);
+  }
+}
+
+.main {
+  @include mq(48em) {
+    @include rem(margin-left, 20rem);
+  }
+}
+
+nav {
+  @include rem(margin-left, 20rem);
+}
+
+.nav-menu img {
+  width: 1em;
+}
+
+
+// ============================================================
+// Chiclet Button
+// ============================================================
+
+.chiclet-button {
+  font-family: "grey-sans-semibold", $sans-stack;
+  font-size: .8em;
+  padding: .5em 1.5em;
+  text-decoration: none;
+  text-align: center;
+
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+
+  border-radius: 8px;
+  border: 1px solid lighten($blue, 22%);
+  color: #ffffff;
+
+  cursor: hand;
+  cursor: pointer;
+
+  background-color: lighten($blue, 22%);
+
+  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2));
+
+  @include mq(25em) {
+    @include rem(max-width, 10rem);
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: lighten($blue, 22%);
+    background-color: #ffffff;
+    border-color: lighten($blue, 22%);
+  }
+
+  &.disabled {
+    background-color: transparent;
+    border: 1px solid #afafaf;
+    color: #afafaf;
+    pointer-events: none;
+  }
+}
+
+// ============================================================
+// Contact Form
+// ============================================================
+
+.contact-form {
+  width: 100%;
+}
+
+label, fieldset {
+  display: block;
+  line-height: 1.8;
+  @include rem(margin-top, 1rem);
+}
+
+input {
+  @include rem(font-size, 1rem);
+  width: 100%;
+  @include rem(min-height, 2rem);
+}
+
+input[type="text"], input[type="tel"], input[type="email"], textarea {
+  @include rem(padding, .5rem .6rem);
+  display: inline-block;
+  border: 1px solid #ccc;
+  @include box-shadow(inset 0 1px 3px #ddd);
+  border-radius: 4px;
+}
+
+.contact-options {
+  @include clearfix;
+}
+
+.contact-options label {
+    display: inline-block;
+    width: auto;
+    @include rem(margin, .2rem 1rem 0 0);
+
+}
+
+input[type="radio"], input[type="checkbox"] {
+  @include rem(width, auto);
+  @include rem(height, auto);
+  @include rem(margin-right, .5rem);
+  vertical-align: text-top;
+  display: inline-block;
+}
+
+textarea {
+  width: 100%;
+  @include rem(font-size, 1rem);
+}
+
+.l-contact {
+  @include clearfix;
+}
+
+.contact-message {
+  @include mq(48em) {
+    width: 45%;
+    float: left;
+    margin-left: 5%;
+  }
+}
+
+.contact-details {
+  @include mq(48em) {
+    width: 45%;
+    float: left;
+  }
+}
+
+.skype, .phone {
+  display: none;
+}
+
+// ============================================================
+// SVG Styling
+// ============================================================
+
+.mini-logo {
+  .logo-bar, .logo-block {
+    fill: #fff;
+    stroke: #fff;
+  }
+}
+
+.mini-logo-object {
+  margin: 0 auto;
+  width: auto;
+}
+
+.logo-bar, .logo-block {
+  fill: #ffffff;
+  stroke: #ffffff;
+
+  @include transition(fill .5s ease);
+}
+
+.svg-logo-icon {
+  display: block;
+  width: 100%;
+
+  svg {
+    @include rem (width, 6rem);
+    @include rem(height, 6rem);
+    @include rem(border-radius, 6rem);
+    @include rem(padding, .5rem);
+
+    background-color: lighten($blue, 22%);
+    margin: 0 auto;
+    display: block;
+  }
+}

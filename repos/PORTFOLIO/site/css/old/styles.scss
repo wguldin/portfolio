@@ -1,0 +1,143 @@
+@import "base";
+
+// ============================================================
+// Tagline
+// ============================================================
+
+.tagline-button {
+  display: inline-block;
+  width: auto;
+  @include rem(padding, .3rem .5rem);
+  background-color: $blue;
+  border: 2px solid $light-blue;
+  text-decoration: none;
+}
+
+.site-tagline {
+  @include rem(margin-top, .5rem);
+}
+
+.tagline {
+  @include rem(font-size, .7rem);
+  font-family: "grey-sans-bold", $sans-stack;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @include mq(48em) {
+    @include rem(font-size, .7rem);
+    @include rem(letter-spacing, .05rem);
+  }
+}
+
+.tagline-header {
+  font-family: "grey-sans-light", $sans-stack;
+  @include rem(font-size, 1.3rem);
+  color: rgba(0,0,0,.75);
+  text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+
+  @include mq(30em) {
+    @include rem(font-size, 1.7rem);
+  }
+
+  @include mq(48em) {
+    @include rem(font-size, 2.4rem);
+  }
+}
+
+// ============================================================
+// Project Examples
+// ============================================================
+
+.l-project {
+  width: 100%;
+  @include clearfix;
+  @include mq(48em) {
+    @include rem(margin-top, 3rem); 
+  }
+}
+
+.project {
+  width: 100%;
+  @include rem(margin, 2rem auto);
+  @include clearfix;
+}
+
+.project-details {
+  float: left;
+  width: 20%;
+}
+
+.project-image {
+  float: left;
+  width: 70%;
+  margin-right: 5%;
+}
+
+.header {
+  font-family: "grey-sans-extrabold", $sans-stack;
+  text-transform: uppercase;
+  @include rem(margin, 0 0 .2rem 0);
+}
+
+.sub-header {
+  font-family: "grey-sans-semibold", $sans-stack;
+  color: rgba(0,0,0,.6);
+  @include rem(margin, 0 0 .2rem 0);
+}
+
+// ============================================================
+// Chiclet Button
+// ============================================================
+
+.chiclet-button {
+  font-family: "grey-sans-semibold", $sans-stack;
+  @include rem(font-size, .8rem);
+  @include rem(padding, .3rem .55rem);
+  text-decoration: none;
+  text-align: center;
+
+  margin: 0 auto;
+  display: block;
+  width: 70%;
+
+  border: 1px solid $blue;
+  border-radius: 6px;
+  color: $blue;
+
+  cursor: hand;
+  cursor: pointer;
+
+  @include mq(25em) {
+    @include rem(max-width, 10rem);
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: lighten($blue, 10%);
+    border: 1px solid lighten($blue, 10%);
+  }
+}
+
+// ============================================================
+// Work Experience & Testimonials
+// ============================================================
+
+.l-experience {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      @include rem(margin-top, 1rem);
+    }
+  }
+}
+
+@import "partials/intro";
+@import "partials/svg-styling";
+@import "partials/contact-form";
+@import "partials/work";
+@import "partials/navigation";
