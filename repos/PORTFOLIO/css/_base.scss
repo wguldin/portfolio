@@ -1,19 +1,14 @@
+// ==========================================================================
+// General Base styles
+// ==========================================================================
 // Imports for project
 
 //third party 
-// @import "partials/modal";
-// @import "partials/mailchimp";
-//@import "partials/reset";
 @import "partials/h5bp";
-//@import "partials/pure";
 
 //base materials
 @import "partials/typography";
 @import "partials/mixins";
-
-// ==========================================================================
-// General styles
-// ==========================================================================
 
 // Establishes box model for site.
 *, *:before, *:after {
@@ -22,4 +17,80 @@
   box-sizing: border-box;
  }
 
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "grey-sans-regular", arial, sans-serif;
+  @include clearfix;
+}
+
+p {
+  max-width: 45em;
+}
+
+html {
+  min-height: 100%;
+  min-width: 17.5em;
+  font-size: 16px;
+
+  @include mq(28em) {
+    font-size: 24px;
+  }
+
+  @include mq(48em) {
+    font-size: 16px;
+  }
+
+}
+
+nav {
+  display: none;
+}
+
+h1 {
+  font-family: "grey-sans-bold", $sans-stack;
+}
+
+.subheader {
+  margin: 0;
+  font-family: "grey-sans-semibold", $sans-stack;
+}
+
+.is-hidden {
+  display: none;
+}
+
+strong {
+  font-family: "grey-sans-semibold", arial, sans-serif;
+}
+
+// ==========================================================================
+// Links and such
+// ==========================================================================
+
+a, span.chiclet-button {
+  @include transition(color .5s ease, background-color .5s ease, box-shadow .5s ease);
+
+  &:link {
+  }     
+  &:visited {
+  }
+  &:hover {
+  }  
+  &:active {
+  }
+}
+
+a.intro-link {
+  position: relative;
+  text-decoration: none;
+  color: lighten($blue, 22%);
+  z-index: 999;
+
+  @include link-animate(lighten($blue, 22%), #fff);
+}
 

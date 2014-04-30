@@ -1,11 +1,26 @@
+$blue: #243C79;
+$light-blue: #46A8DF;
+$blue-grey: #B5C5D8;
 $dark-blue: #032143;
-$blue: #2255BA;
-$light-blue: #4DC7FF;
-$lightest-blue: #eff7ff;
+
+$sans-stack: arial, sans-serif;
 
 // ============================================================
-// Clearfix Mixin
+// Utility Mixins
 // ============================================================
+
+$supported: true !default;
+
+@mixin mq($screenWidth, $support: $supported) {
+  @if $support == true {
+    // output the mixin content inside of a media query
+      @media screen and (min-width: $screenWidth) { @content; }
+  }
+  @else {
+    // output ALL the style content inside the mixin, without a media query
+    @content;
+  }
+}
 
 @mixin clearfix {
   &:after {
@@ -15,10 +30,6 @@ $lightest-blue: #eff7ff;
   }
 }
 
-// ============================================================
-// IE Inline-Block
-// ============================================================
-
 @mixin ie-inline-block {
   .lt-ie9 { 
     zoom: 1;
@@ -26,9 +37,58 @@ $lightest-blue: #eff7ff;
   }
 }
 
+@mixin transform($value) {
+  @each $prefix in -webkit-, -moz-, -ms-, '' {
+          #{$prefix}transform: #{$value};
+  }
+}
+
+@mixin transition($value...) {
+  @each $prefix in -webkit-, -moz-, -o-, '' {
+          #{$prefix}transition: #{$value};
+  }
+}
+
+@mixin box-shadow($value) {
+  @each $prefix in -webkit-, -moz-, '' {
+          #{$prefix}box-shadow: #{$value};
+  }
+}
+
 // ============================================================
 // Gradients
 // ============================================================
+
+@mixin linear-gradient($color1, $color2, $direction:top) {
+  background-color: $color1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($color1), to($color2));
+  background-image: -webkit-linear-gradient(to $direction, $color1, $color2);
+  background-image:    -moz-linear-gradient(to $direction, $color1, $color2);
+  background-image:      -o-linear-gradient(to $direction, $color1, $color2);
+  background-image:         linear-gradient(to $direction, $color1, $color2);
+}
+
+
+// ============================================================
+// Link Animation Mixin
+// ============================================================
+
+@mixin link-animate($background-color, $text-color) {
+  @include rem(padding, 1px 2px 1px);
+
+  background-image: linear-gradient(to top, $background-color, $background-color);
+  background-size: 100% .12em;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  @include transition(background-size 175ms ease-out, color 110ms ease-in-out 25ms);
+  
+  &:hover, &.is-selected {
+    color: $text-color;
+    background-size: 100% 100%;
+  }
+}
+
 
 // ============================================================
 // @Font-Face Mixin
@@ -107,6 +167,12 @@ $root-font-size: 16;
 // ============================================================
 // Flexbox Mixins
 // ============================================================
+
+@mixin flex-fallback {
+  .no-flexbox.no-legacy-flexbox.no-tweener-flexbox {
+    @content
+  }
+}
 
 // Flexbox Mixins
 // http://philipwalton.github.io/solved-by-flexbox/
