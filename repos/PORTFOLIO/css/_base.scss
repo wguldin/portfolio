@@ -16,11 +16,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
  }
-
-@-ms-viewport {
-  width: device-width;
-}
-
+ 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +26,7 @@ body {
 
 p {
   max-width: 45em;
+  line-height: 1.6;  
 }
 
 html {
@@ -72,7 +69,7 @@ strong {
 // Links and such
 // ==========================================================================
 
-a, span.chiclet-button {
+a, span.chiclet-button, button.chiclet-button {
   @include transition(color .5s ease, background-color .5s ease, box-shadow .5s ease);
 
   &:link {
