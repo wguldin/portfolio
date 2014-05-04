@@ -1,0 +1,461 @@
+@import "base";
+
+// ============================================================
+// Sidebar/topbar styling
+// ============================================================
+
+.intro {
+
+  background-color: #ECF5FF;
+  background-image: -webkit-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:    -moz-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:     -ms-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:      -o-linear-gradient(top, #ECF5FF, #BADAFF);
+  background-image:         linear-gradient(to bottom, #ECF5FF, #BADAFF);
+
+  @include rem(font-size, .95rem);
+  @include clearfix;
+
+  width: 100%;
+  padding: 1.25em;
+  text-align: left;
+  border-bottom: 1px solid lighten($blue, 22%);
+
+  @include mq(48em) {
+    padding-left: 5%;
+    padding-bottom: 2em;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  aside {
+    clear: both;
+
+    @include mq(48em) {
+      clear: none;
+      float: left;
+      width: -webkit-calc(100% - 192px); 
+      width: -moz-calc(100% - 192px); 
+      width: calc(100% - 192px); 
+    }
+  }
+
+  h1 {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    line-height: 1.4;
+
+    margin: 0;
+    padding: .5em 0 0 .4em;
+
+    display: inline-block;
+    vertical-align: top;
+
+    @include mq(24em) {
+      font-size: 1.4em;
+    }
+
+    @include mq(32em) {
+      font-size: 1.7em;
+    }
+
+    @include mq(38em) {
+      font-size: 2em;
+      padding-left: .75em;
+    }
+
+    @include mq(48em) {
+      font-size: 2.5em;
+      padding: 0;
+      float: left;
+    }
+  }
+
+  .headline-runin {
+    font-size: .55em;
+    color: lighten($blue, 22%);
+    font-family: "grey-sans-semibold", $sans-stack;
+    display: block;
+  }
+
+  .chiclet-button {
+    padding: .5em 0;
+    max-width: 100%;
+    margin-top: 2em;
+
+    @include mq(48em) {
+      max-width: 19em;
+      margin-top: .5em;
+      float: left;
+    }
+  }
+}
+
+#main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-menu img {
+  width: 1em;
+}
+
+
+// ============================================================
+// Chiclet Button
+// ============================================================
+
+.chiclet-button {
+  font-family: "grey-sans-semibold", $sans-stack;
+  padding: .5em 1.5em;
+  text-decoration: none;
+  text-align: center;
+
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+
+  border-radius: 8px;
+  border: 1px solid lighten($blue, 22%);
+  color: #ffffff;
+
+  cursor: hand;
+  cursor: pointer;
+
+  background-color: lighten($blue, 22%);
+
+  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2));
+
+  font-size: .8em;
+
+  @include mq(22em) {
+    font-size: 1em;
+  }
+
+  @include mq(25em) {
+    @include rem(max-width, 10rem);
+    margin-left: 0;
+  }
+
+  @include mq(48em) {
+    font-size: .9em;
+  }
+
+  &:hover {
+    color: lighten($blue, 22%);
+    background-color: #ffffff;
+    border-color: lighten($blue, 22%);
+  }
+
+  &.disabled {
+    background-color: transparent;
+    border: 1px solid #afafaf;
+    color: #afafaf;
+    pointer-events: none;
+  }
+}
+
+// ============================================================
+// Contact Form
+// ============================================================
+
+#contact {
+  @include clearfix;
+  width: 100%;
+  margin: 2em 0;
+  border-top: 2px solid #ccc;
+  padding-top: 2em;
+  @include rem(font-size, 1rem);
+
+  h2 {
+    font-size: 2em;
+  }
+}
+
+label, fieldset {
+  display: block;
+  line-height: 1.8;
+  margin-top: 1.75em;
+}
+
+fieldset {
+  margin-bottom: -.25em;
+}
+
+label {
+  max-width: 28em;
+  &:first-child {
+    margin-top: 1em;
+  }
+}
+
+input {
+  @include rem(font-size, 1rem);
+  width: 100%;
+  @include rem(min-height, 2rem);
+}
+
+input[type="text"], input[type="tel"], input[type="email"], textarea {
+  @include rem(padding, .5rem .6rem);
+  display: inline-block;
+  border: 1px solid #B9B9B9;
+  @include box-shadow(inset 0 1px 3px #ddd);
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  margin-top: .2em;
+}
+
+.contact-options {
+  @include clearfix;
+}
+
+.contact-options label {
+    display: inline-block;
+    width: auto;
+    margin: .5em 2em .5em 0;
+    height: 1em;
+}
+
+input[type="radio"], input[type="checkbox"] { 
+  width: 1.2em;
+  height: 1.2em;
+  @include rem(margin-right, .7rem);
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.input-note {
+  margin-top: .5em;
+  color: #787878;
+  display: block;
+
+  & + p {
+    width: 100%;
+    max-width: 38em;
+  }
+}
+
+textarea {
+  width: 100%;
+  @include rem(font-size, 1rem);
+}
+
+.l-contact {
+  @include clearfix;
+}
+
+.contact-details {
+  @include mq(48em) {
+    width: 45%;
+    float: left;
+  }
+}
+
+button.chiclet-button {
+  margin-top: 1.5em;
+}
+
+input.error, textarea.error {
+  border-color: #ffc54a;
+  background-color: #FFFAEF;
+}
+
+// ============================================================
+// SVG Styling
+// ============================================================
+
+.mini-logo {
+  .logo-bar, .logo-block {
+    fill: #fff;
+    stroke: #fff;
+  }
+}
+
+.mini-logo-object {
+  margin: 0 auto;
+  width: auto;
+}
+
+.logo-bar, .logo-block {
+  fill: #ffffff;
+  stroke: #ffffff;
+
+  @include transition(fill .5s ease);
+}
+
+.svg-logo-holder {
+  display: block;
+  border: .5em solid lighten($blue, 22%);
+  background-color: lighten($blue, 22%);
+  overflow: hidden;
+  float: left;
+  margin: 0 1em 1em 0;
+
+  width: 4em;
+  height: 4em;
+  border-radius:  2em;
+
+  @include mq(24em) {
+    width: 5em;
+    height: 5em;
+    border-radius: 2.5em;
+  }
+
+  @include mq(38em) {
+    width: 7em;
+    height: 7em;
+    border-radius: 3.5em;
+  }
+
+  @include mq(48em) {
+    margin: 0 auto;
+    width: 9em;
+    height: 9em;
+    border-radius: 4.5em;
+    margin-right: 3em;
+    margin-bottom: 10%;
+  }
+}
+
+.svg-logo-icon {
+  
+  svg {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  // Fallback image
+  img {
+    width: 100%;
+  }
+}
+
+// ============================================================
+// Home page image styling
+// ============================================================
+
+.rdes-logo {
+  background-color: #a4d47e;
+}
+
+figure{
+  @include clearfix;
+  width: 100%;
+  margin: 2em 0;
+  border-top: 2px solid #ccc;
+  padding-top: 2em;
+
+  &:first-child {
+    margin-top: 0;
+    border: none;
+  }
+
+  @include mq(48em) {
+    margin: 1.5em 0 2em;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 1.5em;
+
+    @include mq(48em) {
+      float: left;
+      margin: 0.3em 1em 0 0;
+      width: 60%;
+      margin-right: 5%; 
+    }
+  }
+}
+
+figcaption {
+  width: 100%;
+
+  @include mq(48em) {
+    float: left;
+    width: 35%; 
+  }
+
+  .chiclet-button {
+    font-size: .8em;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
+  }
+}
+
+
+// ============================================================
+// Footer Styling
+// ============================================================
+
+footer {
+  background-color: lighten($blue, 22%);
+  border-top: 1px solid #ccc;
+  position: relative;
+  @include rem(font-size, .85rem);
+  width: 100%;
+  height: 8em;
+}
+
+footer ul {
+  padding: 2em 3.5%;
+  margin: 0;
+  display: inline-block;
+  list-style-type: none;
+  color: #ffffff;
+
+  a {
+    color: #ffffff;
+  }
+}
+
+.contact {
+  text-align: right;
+  position: absolute;
+  bottom: 1.5em;
+  right: 5%;
+  padding: 0;
+}
+
+footer nav {
+  padding-top: 0;
+  display: inline-block;
+  vertical-align: middle;
+
+  border-right: 1px solid #ffffff;
+
+  ul {
+    padding: 0;
+    display: block;
+    font-family: 'grey-sans-bold', $sans-stack;
+    text-transform: uppercase;
+  }
+
+  li {
+    border-top: 1px solid #ffffff;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    a {
+      display: inline-block;
+      padding: .65em 4em .55em 1.7em;
+      width: 100%;
+    
+      &:hover {
+        background-color: #badaff;
+        color: lighten($blue, 22%);
+        cursor: pointer;
+        cursor: hand;
+      }
+    }
+  }
+
+  .is-selected {
+    //background-color: #cccccc;
+  } 
+}

@@ -1,0 +1,70 @@
+.contact-form {
+  width: 100%;
+}
+
+label, fieldset {
+  display: block;
+  line-height: 1.8;
+  @include rem(margin-top, 1rem);
+}
+
+input {
+  @include rem(font-size, 1rem);
+  width: 100%;
+  @include rem(min-height, 2rem);
+}
+
+input[type="text"], input[type="tel"], input[type="email"], textarea {
+  @include rem(padding, .5rem .6rem);
+  display: inline-block;
+  border: 1px solid #ccc;
+  @include box-shadow(inset 0 1px 3px #ddd);
+  border-radius: 4px;
+}
+
+.contact-options {
+  @include clearfix;
+}
+
+.contact-options label {
+    display: inline-block;
+    width: auto;
+    @include rem(margin, .2rem 1rem 0 0);
+
+}
+
+input[type="radio"], input[type="checkbox"] {
+  @include rem(width, auto);
+  @include rem(height, auto);
+  @include rem(margin-right, .5rem);
+  vertical-align: text-top;
+  display: inline-block;
+}
+
+textarea {
+  width: 100%;
+  @include rem(font-size, 1rem);
+}
+
+.l-contact {
+  @include clearfix;
+}
+
+.contact-message {
+  @include mq(48em) {
+    width: 45%;
+    float: left;
+    margin-left: 5%;
+  }
+}
+
+.contact-details {
+  @include mq(48em) {
+    width: 45%;
+    float: left;
+  }
+}
+
+.skype, .phone {
+  display: none;
+}
