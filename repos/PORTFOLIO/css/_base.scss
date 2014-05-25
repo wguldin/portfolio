@@ -35,26 +35,17 @@ html {
   font-size: 16px;
 
   @include mq(28em) {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @include mq(48em) {
-    font-size: 16px;
+    font-size: 18px;
   }
 
 }
 
-nav {
-  display: none;
-}
-
-h1 {
-  font-family: "grey-sans-bold", $sans-stack;
-}
-
-.subheader {
-  margin: 0;
-  font-family: "grey-sans-semibold", $sans-stack;
+h1,h2,h3,h4,h5,h6, p, strong, span {
+  color: #383838;
 }
 
 .is-hidden {
@@ -85,9 +76,9 @@ a, span.chiclet-button, button.chiclet-button {
 a.intro-link {
   position: relative;
   text-decoration: none;
-  color: lighten($blue, 22%);
+  color: $blue;
   z-index: 999;
 
-  @include link-animate(lighten($blue, 22%), #fff);
+  @include link-animate($blue, #fff);
 }
 

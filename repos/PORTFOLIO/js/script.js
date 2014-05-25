@@ -37,7 +37,7 @@ $(document).ready(function () {
     });
 
     $(function() {
-      $('.nav-link[href*=#]:not([href=#])').on('click', function() {
+      $('a[href*=#]:not([href=#])').on('click', function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -68,7 +68,7 @@ $(document).ready(function () {
             success: function(data) {
 
                 if (data == 'success') {
-                    $form.parent().html('<h2 class="subheader">Thanks for your message!</h2><p>I\'ll be sure to get back to you during the next day.</p>');
+                    $form.parent().html('<h2 class="main-subheader">Thanks for your message!</h2><p>I\'ll be sure to get back to you during the next day.</p>');
                 } else {
                     $.each( data, function( key, val ) {    
                         $('[name="' + key + '"]').addClass('error').after('<small class="error" data-validation="error">'+ val +'</small>');
@@ -76,6 +76,7 @@ $(document).ready(function () {
                 }
             },
             error: function(data) {
+                $form.parent().html('<h2 class="main-subheader">Houston, we have a problem</h2><p>It looks like there was an issue with our contact form. We\'re sorry about that!</p><p>Go ahead and <a class="intro-link" href="mailto:wguldin@gmail.com">just email me directly</a>, if you don\'t mind.');
                 throw new Error('Error hit in form response');
             },
         });
@@ -92,22 +93,11 @@ if ($('html').hasClass('lt-ie9')) {
 } else {
 
     // Remove fallback if javascript fires.
-    $('.svg-logo-icon').html('');
+    $('.intro-main-svg-icon').html('');
 
     ;( function( window ) {
         
         'use strict';
-
-        /*** helper functions ***/
-
-        // from https://github.com/desandro/classie/blob/master/classie.js
-        function classReg( className ) {
-            return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-        }
-
-        function hasClass( el, c ) {
-            return 'classList' in document.documentElement ? el.classList.contains( c ) : classReg( c ).test( el.className )
-        }
 
         function extend( a, b ) {
             for( var key in b ) { 
@@ -140,18 +130,22 @@ if ($('html').hasClass('lt-ie9')) {
             this.el = el;
             this.options = extend( {}, this.options );
             extend( this.options, options );
-            //this.svg = Snap( this.options.size.w, this.options.size.h );
+            
             this.svg = Snap();
             this.svg.attr( 'viewBox', '0 0 312.666 291.333' );
             this.el.appendChild( this.svg.node );
+           
             // state
             this.toggled = false;
+            
             // click event (if mobile use touchstart)
             this.clickevent = mobilecheck() ? 'touchstart' : 'click';
+            
             // icons configuration
             this.config = config[ this.el.getAttribute( 'data-icon-name' ) ];
             if( !this.config ) return;
             var self = this;
+            
             // load external svg
             Snap.load( this.config.url, function (f) {
                 var g = f.select( 'g' );
@@ -164,8 +158,7 @@ if ($('html').hasClass('lt-ie9')) {
         svgIcon.prototype.options = {
             speed : 800,
             easing : mina.linear,
-            evtoggle : 'mouseover', // click || mouseover
-            //size : { w : 312.666, h : 291.333 },
+            evtoggle : 'mouseover',
             onLoad : function() { return false; },
             onToggle : function() { return false; }
         };
@@ -227,7 +220,7 @@ if ($('html').hasClass('lt-ie9')) {
     })( window );
 
     (function() {
-        new svgIcon( document.querySelector( '.svg-logo-icon' ), svgIconConfig, { easing : mina.easeinout } );
+        new svgIcon( document.querySelector( '.intro-main-svg-icon' ), svgIconConfig, { easing : mina.easeinout } );
     })();
 
 }

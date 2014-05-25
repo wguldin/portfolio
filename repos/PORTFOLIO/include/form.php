@@ -3,19 +3,30 @@
   $error = array(
       'name' => '',
       'contact-method' => '',
-      'message' => ''
+      'message' => '',
+      'time' => ''
   );
-  
+
+  $response = '';
+  $validated = '';
+
+  // $hash = md5(uniqid(rand(), true));
+  // $_SESSION['token'] = $hash;
+
   if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
     $loadtime = $_POST["loadtime"];
-
     $totaltime = time() - $loadtime;
 
     if($totaltime < 7) {
-       echo('Please fill in the form before submitting!');
-       exit;
+      echo 'It looks like you\'re in a hurry to contact us. Either refresh the page and fill out the form more slowly, or <a class="intro-link" href="mailto:wguldin@gmail.com">contact me directly by email</a>';
+      exit;
     }
+
+    // if ( $_SESSION['token'] != $_POST['token']) {
+    //   echo('Please fill in the form before submitting!');
+    //   exit;
+    // }
 
     $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
     $company = filter_var($_POST['company'],FILTER_SANITIZE_STRING);
@@ -41,7 +52,7 @@
     # Check whether the validation was successful
     if ($validated === true) {
 
-      $messagecontents = 'Name : ' . $name . '<br />' . ' Company : ' . $company . '<br />' . ' Email : ' . $email . '<br />' . ' Phone : ' . $phone . '<br />' . ' Message : ' . $message;
+      $messagecontents = 'Name : ' . $name . '<br />' . ' Company : ' . $company . '<br />' . ' Contact Method (Email or Phone) : ' . $contactMethod . '<br />' . ' Message : ' . $message;
       $emailto = 'wguldin@gmail.com';
       $toname = 'Will Guldin';
       $emailfrom = 'wguldin@willguldin.com';
@@ -71,18 +82,21 @@
   }
 
   // If AJAX post
-  if ( !empty($_POST['ajax']) ) {
+  if ( !empty($_POST['ajax']) && $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     
     echo json_encode($response);
 
-  // If non-AJAX post or include
-  } else if ( empty($_POST['ajax']) && $response === 'success') {
+  // If non-AJAX post success
+  } else if ( empty($_POST['ajax']) && $response === 'success' && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    echo '<h2 class="subheader">Thanks for your message!</h2><p>I\'ll be sure to get back to you during the next day.</p>';
+    echo '<h2="main-subheader">Thanks for your message!</h2><p>I\'ll be sure to get back to you during the next day.</p>';
 
+  // regular include of form
   } else { ?>
 
     <form id="contact-form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="contact-form">        
+      <?php echo $error["time"]; ?>       
+
       <label>Your name 
         <input name="name" type="text" />
         <?php echo $error["name"]; ?>
@@ -108,6 +122,7 @@
       </label>
 
       <input type="hidden" name="loadtime" value="<?php echo time(); ?>">
+      <!--<input type="hidden" name="token" value="<? //php echo $hash; ?>" />-->
 
       <button type="submit" name="submit" class="chiclet-button">Send</button>
     </form>

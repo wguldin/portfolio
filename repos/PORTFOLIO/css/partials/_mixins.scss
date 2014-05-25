@@ -1,7 +1,8 @@
-$blue: #243C79;
-$light-blue: #46A8DF;
+$blue: #456ac8;
+$light-blue: #ECF5FF;
 $blue-grey: #B5C5D8;
 $dark-blue: #032143;
+
 
 $sans-stack: arial, sans-serif;
 
@@ -49,7 +50,7 @@ $supported: true !default;
   }
 }
 
-@mixin box-shadow($value) {
+@mixin box-shadow($value...) {
   @each $prefix in -webkit-, -moz-, '' {
           #{$prefix}box-shadow: #{$value};
   }

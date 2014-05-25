@@ -6,56 +6,61 @@
 
 .intro {
 
-  background-color: #ECF5FF;
-  background-image: -webkit-linear-gradient(top, #ECF5FF, #BADAFF);
-  background-image:    -moz-linear-gradient(top, #ECF5FF, #BADAFF);
-  background-image:     -ms-linear-gradient(top, #ECF5FF, #BADAFF);
-  background-image:      -o-linear-gradient(top, #ECF5FF, #BADAFF);
-  background-image:         linear-gradient(to bottom, #ECF5FF, #BADAFF);
+  background: $light-blue;
+  background-image: -webkit-gradient(radial, 16% 28%, 0, 16% 28%, 141, from($light-blue), to(darken($light-blue, 8%)));
+  background-image: -webkit-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%));
+  background-image:    -moz-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%));
+  background-image:     -ms-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%)); 
+  background-image:      -o-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%));
+  background-image:             radial-gradient(circle at 16% 28%, $light-blue, darken($light-blue, 8%));
 
-  @include rem(font-size, .95rem);
+
+  @include rem(font-size, 1rem);
   @include clearfix;
 
   width: 100%;
-  padding: 1.25em;
   text-align: left;
-  border-bottom: 1px solid lighten($blue, 22%);
+  padding: 1.5em 0 3em;
+  border-bottom: 1px solid $blue;
+  @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3));
 
-  @include mq(48em) {
-    padding-left: 5%;
-    padding-bottom: 2em;
-  }
+  .intro-main {
+    width: 90%;
+    margin: 0 auto;
 
-  .nav-menu {
-    display: none;
+    @include mq(52em) {
+      width: 94%;
+      max-width: 68em;
+      padding-left: 6%;
+    }
+    
+    @include clearfix;
   }
 
   aside {
     clear: both;
 
-    @include mq(48em) {
+    @include mq(52em) {
       clear: none;
       float: left;
-      width: -webkit-calc(100% - 192px); 
-      width: -moz-calc(100% - 192px); 
-      width: calc(100% - 192px); 
+      width: 67%;
+      width: -webkit-calc(100% - 16em); 
+      width: -moz-calc(100% - 16em); 
+      width: calc(100% - 16em); 
     }
   }
 
   h1 {
-    font-size: 2.2em;
-    text-transform: uppercase;
+    font-size: 2.3em;
     line-height: 1.4;
 
     margin: 0;
-    padding: .5em 0 0 .4em;
-
+    padding: 0 0 0 .2em;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
 
-    @include mq(24em) {
-      font-size: 1.4em;
-    }
+    font-family: "grey-sans-semibold", $sans-stack;
+    text-shadow: 2px 2px 1px #D6D6D6; 
 
     @include mq(32em) {
       font-size: 1.7em;
@@ -66,42 +71,134 @@
       padding-left: .75em;
     }
 
-    @include mq(48em) {
+    @include mq(52em) {
       font-size: 2.5em;
       padding: 0;
       float: left;
     }
   }
 
-  .headline-runin {
-    font-size: .55em;
-    color: lighten($blue, 22%);
-    font-family: "grey-sans-semibold", $sans-stack;
+  .intro-main-runin {
+    font-size: .45em;
+    color: $blue;
+    font-family: "grey-sans-bold", $sans-stack;
     display: block;
+    text-transform: uppercase;
+    text-shadow: none;
   }
 
   .chiclet-button {
     padding: .5em 0;
     max-width: 100%;
     margin-top: 2em;
+    @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2), inset 0 0 0 2px $light-blue);
 
-    @include mq(48em) {
-      max-width: 19em;
+    @include mq(52em) {
+      max-width: 18em;
       margin-top: .5em;
       float: left;
     }
   }
 }
 
-#main {
-  width: 90%;
+div[role="main"] {
+  width: 94%;
+  max-width: 68em;
+  padding: 0 3%;
   margin: 0 auto;
 }
 
-.nav-menu img {
-  width: 1em;
+nav[role="navigation"] {
+  width: 100%;
+  background-color: $blue;
+  @include box-shadow(0 2px 4px 0 rgba(69, 106, 200, 0.3));
+
+  .nav-logo {
+    height: 2.5em;
+    margin-left: .6em;
+    padding: .1em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    height: 2.5em;
+
+    li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1em;
+      padding: .5em .7em;
+    }
+
+    a.intro-link {
+      color: #fff;
+      @include link-animate(#fff, $blue);
+    }
+  }
 }
 
+// ============================================================
+// SVG Styling
+// ============================================================
+
+.logo-bar, .logo-block {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.intro-main-svg-frame {
+  display: inline-block;
+  vertical-align: middle;
+
+  border: .5em solid $blue;
+  background-color: $blue;
+  overflow: hidden;
+  margin: 0 1em 1em 0;
+
+  width: 4em;
+  height: 4em;
+  border-radius:  2em;
+
+  @include mq(24em) {
+    width: 5em;
+    height: 5em;
+    border-radius: 2.5em;
+  }
+
+  @include mq(38em) {
+    width: 7em;
+    height: 7em;
+    border-radius: 3.5em;
+  }
+
+  @include mq(52em) {
+    margin: 0 auto;
+    width: 11em;
+    height: 11em;
+    border-radius: 5.5em;
+    margin-right: 2.5em;
+    float: left;
+  }
+}
+
+.intro-main-svg-icon {
+  
+  svg {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  // Fallback image
+  img {
+    width: 100%;
+  }
+}
 
 // ============================================================
 // Chiclet Button
@@ -117,16 +214,15 @@
   display: block;
   width: 100%;
 
-  border-radius: 8px;
-  border: 1px solid lighten($blue, 22%);
+  border: 1px solid $blue;
   color: #ffffff;
 
   cursor: hand;
   cursor: pointer;
 
-  background-color: lighten($blue, 22%);
+  background-color: $blue;
 
-  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2));
+  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2), inset 0 0 0 2px #ffffff);
 
   font-size: .8em;
 
@@ -139,14 +235,13 @@
     margin-left: 0;
   }
 
-  @include mq(48em) {
+  @include mq(52em) {
     font-size: .9em;
   }
 
   &:hover {
-    color: lighten($blue, 22%);
-    background-color: #ffffff;
-    border-color: lighten($blue, 22%);
+    color: $blue;
+    background-color: transparent;
   }
 
   &.disabled {
@@ -161,17 +256,8 @@
 // Contact Form
 // ============================================================
 
-#contact {
-  @include clearfix;
-  width: 100%;
-  margin: 2em 0;
-  border-top: 2px solid #ccc;
-  padding-top: 2em;
-  @include rem(font-size, 1rem);
-
-  h2 {
-    font-size: 2em;
-  }
+.contact-form {
+  margin: 1em 0;
 }
 
 label, fieldset {
@@ -184,8 +270,14 @@ fieldset {
   margin-bottom: -.25em;
 }
 
+h3 {
+  font-size: 1.5em;
+  font-family: "grey-sans-semibold", $sans-stack;
+  margin-bottom: 0;
+}
+
 label {
-  max-width: 28em;
+  max-width: 27em;
   &:first-child {
     margin-top: 1em;
   }
@@ -227,13 +319,12 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .input-note {
-  margin-top: .5em;
   color: #787878;
   display: block;
 
   & + p {
     width: 100%;
-    max-width: 38em;
+    max-width: 37em;
   }
 }
 
@@ -247,7 +338,7 @@ textarea {
 }
 
 .contact-details {
-  @include mq(48em) {
+  @include mq(52em) {
     width: 45%;
     float: left;
   }
@@ -263,126 +354,285 @@ input.error, textarea.error {
 }
 
 // ============================================================
-// SVG Styling
+// Home page styling
 // ============================================================
 
-.mini-logo {
-  .logo-bar, .logo-block {
-    fill: #fff;
-    stroke: #fff;
-  }
-}
-
-.mini-logo-object {
-  margin: 0 auto;
-  width: auto;
-}
-
-.logo-bar, .logo-block {
-  fill: #ffffff;
-  stroke: #ffffff;
-
-  @include transition(fill .5s ease);
-}
-
-.svg-logo-holder {
-  display: block;
-  border: .5em solid lighten($blue, 22%);
-  background-color: lighten($blue, 22%);
-  overflow: hidden;
-  float: left;
-  margin: 0 1em 1em 0;
-
-  width: 4em;
-  height: 4em;
-  border-radius:  2em;
-
-  @include mq(24em) {
-    width: 5em;
-    height: 5em;
-    border-radius: 2.5em;
-  }
-
-  @include mq(38em) {
-    width: 7em;
-    height: 7em;
-    border-radius: 3.5em;
-  }
-
-  @include mq(48em) {
-    margin: 0 auto;
-    width: 9em;
-    height: 9em;
-    border-radius: 4.5em;
-    margin-right: 3em;
-    margin-bottom: 10%;
-  }
-}
-
-.svg-logo-icon {
-  
-  svg {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-  }
-
-  // Fallback image
-  img {
-    width: 100%;
-  }
-}
-
-// ============================================================
-// Home page image styling
-// ============================================================
-
-.rdes-logo {
+.main-rdes-logo {
   background-color: #a4d47e;
 }
 
-figure{
-  @include clearfix;
-  width: 100%;
-  margin: 2em 0;
-  border-top: 2px solid #ccc;
-  padding-top: 2em;
+hr {
+  width: 98%;
+  margin: 0 auto;
+}
 
-  &:first-child {
-    margin-top: 0;
-    border: none;
+.section-header {
+  margin: 1em auto .7em;
+  width: 100%;
+  font-size: 2em;
+  font-family: "grey-sans-semibold", arial, sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px 1px #D6D6D6; 
+
+  @include mq(60em) {
+    font-size: 3.2em;
+    margin: .7em auto .5em;
   }
 
-  @include mq(48em) {
-    margin: 1.5em 0 2em;
+}
+
+.section-main-image {
+  margin-bottom: 1.5em;
+}
+
+.section-content {
+  margin: 0 0 2.5em;
+}
+
+.section-text {
+    p:first-child {
+      margin-top: 0;
+    }
+}
+
+.browser {
+  display: inline-block;
+  border: 1px solid lighten(#96a0a2, 10%);
+  background-color: lighten(#96a0a2, 20%);
+  padding-top: 1.5em;
+  border-radius: .3em .2em;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    content: "\2022\2022\2022";
+    color: #859A9E;
+    font-size: 120px;
+    letter-spacing: -10px;
+    line-height: .7rem;
+    font-weight: 300;
   }
 
   img {
     width: 100%;
-    margin-bottom: 1.5em;
+    height: auto;
+  }
+}
 
-    @include mq(48em) {
-      float: left;
-      margin: 0.3em 1em 0 0;
-      width: 60%;
-      margin-right: 5%; 
+.hundred-ages {
+  figure {
+    @include clearfix;
+    width: 100%;
+    max-width: 68em;
+
+    .section-main-image {
+      @include mq(52em) {
+        width: 60%;
+        float: left;
+        margin: 0 2em 0 3%; 
+      }
+    }
+
+    figcaption {
+      width: 100%;
+
+      @include mq(52em) {
+        float: left;
+        width: 30%;
+        max-width: 25em; 
+      }
+
+      p:first-child {
+        margin-top: 0;
+      }
+
+      .chiclet-button {
+        font-size: .8em;
+        max-width: 100%;
+        width: auto;
+        display: inline-block;
+      }
     }
   }
 }
 
-figcaption {
-  width: 100%;
+.jack {  
+  blockquote {
+    font-size: .9em;
+    width: 19%;
+    margin: .1em 3em 0 0;
+    padding: 1em;
+    background-color: #ecf5ff;
 
-  @include mq(48em) {
-    float: left;
-    width: 35%; 
+    .quote-attribution {
+      display: block;
+      margin-top: 1em;
+    }
   }
 
-  .chiclet-button {
-    font-size: .8em;
-    max-width: 100%;
-    width: auto;
+  blockquote, .section-main-image, .section-text {
     display: inline-block;
+    vertical-align: top;
+  }
+
+  .section-text {
+    @include mq(52em) {
+      width: 60%;
+      margin-left: 3%;
+      max-width: 33em;
+      float: left;
+    }
+  }
+
+  .section-main-image {
+    width: 80%;
+    margin: 0 auto 1.5em;
+
+    @include mq(52em) {
+      margin: 0 0 0 2em;
+      width: 28%;
+      float: left;
+    }
+
+    @include mq(60em) {
+      width: 26%;
+    }
+
+    figcaption {
+      margin-top: 1.5em;
+    }
+  }
+
+  .section-secondary-image {
+    margin: 0;
+
+    @include mq(52em) {
+      margin: 1em 0 0 3%;
+      width: 70%;
+    }
+    
+    figcaption {
+      display: inline-block;
+      vertical-align: top;
+      font-size: .8em;
+      color: lighten(#383838, 10%);
+
+      @include mq(52em) {
+        line-height: 1.5;
+        margin-left: 1em;
+        width: 12%;
+        min-width: 10em;
+      }
+    }
+
+    img {
+      width: 95%;
+      margin: .5em 0;
+
+      @include mq(52em) {
+        width: auto;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.rdes {
+  .section-text {
+    @include mq(52em) {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 3%;
+      width: 35%;
+    }
+  }
+
+  .section-content {
+    @include mq(52em) {
+      margin-left: 3%;
+    }
+  }
+
+  .section-main-image {
+    @include mq(52em) {
+      width: 60%;
+      height: auto;
+      max-width: 32em;
+    }
+  }
+}
+
+// ============================================================
+// Device Frames Styling
+// ============================================================
+
+$ipadScreenWidth: 100%;
+$ipadScreenHeight: (4/3)*$ipadScreenWidth;
+
+$ipadTotalWidth: $ipadScreenWidth/.8;
+$ipadTotalHeight: (4/3)*$ipadTotalWidth;
+
+$secondaryColor: #A0A29B;
+$tertiaryColor: #D9DBD2;
+
+.ipad-image {
+  width: $ipadTotalWidth;
+  height: $ipadTotalHeight;
+  padding: (($ipadTotalHeight - $ipadScreenHeight)/2) (($ipadTotalWidth - $ipadScreenWidth)/2);
+
+  border: 2px solid $secondaryColor;
+  border-top-left-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
+  border-top-right-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
+  border-bottom-left-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
+  border-bottom-right-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
+
+  @include box-shadow(2px 2px 8px lighten(#2E2E2E, 20%));
+
+  background-color: #2E2E2E;
+  background-image: -webkit-linear-gradient(top, #2E2E2E, #181818);
+  background-image: -moz-linear-gradient(top, #2E2E2E, #181818);
+  background-image: -ms-linear-gradient(top, #2E2E2E, #181818);
+  background-image: -o-linear-gradient(top, #2E2E2E, #181818);
+  background-image: linear-gradient(to bottom, #2E2E2E, #181818);
+
+  position: relative;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:after, &:before {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  // Camera
+  &:after {
+    height:percentage(($ipadScreenWidth/45%))/100;
+    width: percentage(($ipadScreenWidth/45%)*(4/3))/100;
+    background-color: $tertiaryColor;
+    border: 1px solid $secondaryColor;
+    margin: 0 auto;
+    left: 49.5%;
+    top: $ipadTotalWidth * .035;
+  }
+
+  // Button 
+  &:before {
+    height: percentage(($ipadScreenWidth/25%))/100;
+    width: percentage(($ipadScreenWidth/25%)*(4/3))/100;
+    border-radius: 50%;
+    background-color: $tertiaryColor;
+    border: 2px solid $secondaryColor;
+    left: (($ipadTotalWidth/90%)/3)*100%;
+    bottom: $ipadScreenWidth * .025;
   }
 }
 
@@ -392,8 +642,8 @@ figcaption {
 // ============================================================
 
 footer {
-  background-color: lighten($blue, 22%);
-  border-top: 1px solid #ccc;
+  background-color: $blue;
+  border-top: 1px solid #D6D6D6;
   position: relative;
   @include rem(font-size, .85rem);
   width: 100%;
@@ -412,7 +662,7 @@ footer ul {
   }
 }
 
-.contact {
+.footer-contact {
   text-align: right;
   position: absolute;
   bottom: 1.5em;
@@ -448,14 +698,10 @@ footer nav {
     
       &:hover {
         background-color: #badaff;
-        color: lighten($blue, 22%);
+        color: $blue;
         cursor: pointer;
         cursor: hand;
       }
     }
   }
-
-  .is-selected {
-    //background-color: #cccccc;
-  } 
 }
