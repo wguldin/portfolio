@@ -4,3 +4,6 @@
 *.indd
 *.psd
 *.ai
+img/*
+fonts/*
+!.gitignore

@@ -29,8 +29,8 @@
 <nav role="navigation">
     <a><img class="nav-logo" src="img/mini-logo.svg" alt="Will Guldin Design"/></a>
     <ul>
-        <li><a class="intro-link" href="#recent-work">Work</a></li>
-        <li><a class="intro-link" href="#contact">Contact</a></li>
+        <li><a class="link--highlight" href="#recent-work">Work</a></li>
+        <li><a class="link--highlight" href="#contact">Contact</a></li>
         <!--<li><a class="intro-link" href="#">Blog</a></li>-->
     </ul>
 </nav>
@@ -49,16 +49,16 @@
         <h1><span class="intro-main-runin">Digital Designer</span> Will Guldin</h1>
 
         <aside>
-            <p>Effective design begins with a great idea. I'd love to talk with you about yours. I work at <a href="http://www.midwayusa.com" class="intro-link">MidwayUSA</a> as a web designer, but still take on some projects in my free time. Email me at <a href="mailto:wguldin@gmail.com" class="intro-link">wguldin@gmail.com</a> if I can help you with anything, or call <a href="tel:1-501-920-7064" class="intro-link">501.920.7064.</a></p>
-            <a href="#contact" class="chiclet-button nav-link">Contact me about your project</a>
+            <p>Effective design begins with a great idea. I'd love to talk with you about yours. I work at <a href="http://www.midwayusa.com" class="link--highlight">MidwayUSA</a> as a web designer, but still take on some projects in my free time. Email me at <a href="mailto:wguldin@gmail.com" class="link--highlight">wguldin@gmail.com</a> if I can help you with anything, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
+            <a href="#contact" class="chiclet-button">Contact me about your project</a>
         </aside>
     </div>
 
 </header>
 
-<div role="main" id="recent-work">
+<main role="main" id="recent-work">
 
-    <section class="hundred-ages">
+    <section class="portfolio portfolio--case-study">
         <h2 class="section-header">100 Ages, A Century of Voices</h2>
         <figure class="section-content">
             <div class="browser section-main-image">
@@ -67,14 +67,12 @@
             <figcaption>
                 <p><strong class="section-text-summary">This collection of personal stories underscores the common bonds of life that we all share.</strong></p>
                 <p>As the only designer for this project, I came up with an effective and simple presentation for it, while coding all parts of the website.</p>
-                <span class="chiclet-button disabled">Full case study coming soon</span>            
+                <a href="/one-hundred-ages" class="chiclet-button">Read the case study</a>            
             </figcaption>
         </figure>
     </section>
 
-    <hr />
-
-    <section class="jack">
+    <section class="jack portfolio">
         <h2 class="section-header">JACK. Magazine</h2>
         
         <div class="section-content">
@@ -90,9 +88,8 @@
                 <p>We presented JACK. to Meredith Executives who were impressed. The project, which was done while I was attending the Missouri School of Journalism, later won first place in a national student publication contest.</p>     
             </div>
             <figure class="section-main-image">
-                <div class="ipad-image"><img alt="Hot Damn Hopslam splash page from JACK Magazine, an all-digital Men's cooking magazine" src="img/jack-kratzer.jpg"/></div>
+                <div class="ipad-image"><img alt="Hot Damn Hopslam splash page from JACK Magazine, an all-digital Men's cooking magazine" src="img/jack-kratzer.png"/></div>
             </figure>
-
             <figure class="section-secondary-image">
                 <img src="img/jack-composite.png"/>
                 <figcaption>JACK Magazine used a blend of original illustrations, culinary stock photography and studio shots to create a distinctive editorial voice.</figcaption>
@@ -100,43 +97,45 @@
         </div>
     </section>
     
-    <hr />
-
-    <section class="rdes">
+    <section class="portfolio portfolio--case-study rdes">
         <h2 class="section-header">Roy Dudley Estate Sales</h2>
-        <div class="section-content">
-            <div class="section-main-image browser">
+        <figure class="section-content">
+            <div class="browser section-main-image">
                 <img src="img/rdes.png" alt="Roy Dudley Estate Sales Test Website"/>
             </div>
-            <div class="section-text">
-                <p>
-                    <strong class="section-text-summary">Roy Dudley Estate Sales needed a website that could be easily updated without going offline.</strong>
-                </p>
+            <figcaption>
+                <p><strong class="section-text-summary">Roy Dudley Estate Sales needed a website that could be easily updated without going offline.</strong></p>
                 <p>I put a system in place to meet that goal. Soon, they’ll be able to post estate sales listings and edit existing ones while their customers browse the site. Previously, that process made their homepage inaccessible for several hours a week.</p>
-                <p>Working with them, I also focused the website more on their upcoming sales. By doing away with unused features, they gained a website that's easier to maintain and better suited to their customers’ needs.</p>
-            </div>
-            
-<!--             <blockquote>
-                <span class="quote">There’s no shortage of food magazines these days, but JACK’s tight focus and specific voice give it a fresh feel. ... It’s a little aspirational, but still familiar.</span>
-                <span class="quote-attribute">Judge's comments after JACK. won first place for a start-up magazine project.</span> 
-            </blockquote> -->
-        </div>
+                <p>Working with them, I also focused the website more on their upcoming sales. By doing away with unused features, they gained a website that's easier to maintain and better suited to their customers’ needs.</p>    
+            </figcaption>
+        </figure>
     </section>
-     
-    <hr />
 
-    <section id="contact">
+    <section id="contact" class="contact">
         <h2 class="section-header">What can I do for you?</h2>
-        <p>If you have any questions about my work, or would like to talk about your project, just drop a line here using this form.</p>
-        <p>We'll discuss if my skills and schedule are the right fit for you and go from there.</p>
-        <h3>Contact Me</h3>
-        <small class="input-note">All fields are required, unless marked "optional"</small>
-  
-        <?php
-            include $_SERVER['DOCUMENT_ROOT']."/include/form.php";
-        ?>
+        <div class="section-content">
+            <p>If you have any questions about my work, or would like to talk about your project, just drop a line here using this form.</p>
+            <p>We'll discuss if my skills and schedule are the right fit for you and go from there.</p>
+            <div class="contact-form__container">
+                <h3>Contact Me</h3>
+                <small class="input-note">All fields are required, unless marked "optional"</small>
+          
+                <?php
+                    include $_SERVER['DOCUMENT_ROOT']."/include/form.php";
+                    ini_set('display_errors', 'On');
+                    error_reporting(E_ALL | E_STRICT);
+                ?>
+            </div>
+            <div class="about">
+                <img class="about__mug" src="img/portrait.jpg" alt="Portrait of Will Guldin, Digital Designer"/>
+                <h3>About Me</h3>
+                <p>About stuff here and here and here and here and here and here and here and here and here and here and here.</p>
+                <p>More about me stuff here and here and here and here and here and here and here and here and here and here and here.</p>
+            </div>
+        </div>
+
     </section>
-</div>
+</main>
 
 <footer>
     <!--<nav>

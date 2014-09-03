@@ -97,7 +97,7 @@
     <form id="contact-form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="contact-form">        
       <?php echo $error["time"]; ?>       
 
-      <label>Your name 
+      <label>Full name 
         <input name="name" type="text" />
         <?php echo $error["name"]; ?>
       </label>
@@ -106,7 +106,7 @@
       </label>
 
       <fieldset class="contact-options">
-        <legend>How would you like us to contact you?</legend>
+        <legend>How would you like me to contact you?</legend>
         <label><input type="radio" name="contact" checked="checked" value="email"/>Email</label>
         <label><input type="radio" name="contact" value="phone"/>Phone</label>
       </fieldset>

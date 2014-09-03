@@ -2,9 +2,13 @@ $blue: #456ac8;
 $light-blue: #ECF5FF;
 $blue-grey: #B5C5D8;
 $dark-blue: #032143;
-
+$secondary-blue: #C0DDFF;
 
 $sans-stack: arial, sans-serif;
+$swift-out: cubic-bezier(.55,0,.1,1);
+
+$text: #383838;
+$text-light: tint($text, 30%);
 
 // ============================================================
 // Utility Mixins
@@ -82,7 +86,7 @@ $supported: true !default;
   background-position: bottom;
   background-repeat: no-repeat;
 
-  @include transition(background-size 175ms ease-out, color 110ms ease-in-out 25ms);
+  @include transition(background-size 155ms $swift-out, color 130ms $swift-out 25ms);
   
   &:hover, &.is-selected {
     color: $text-color;
@@ -90,15 +94,14 @@ $supported: true !default;
   }
 }
 
-
 // ============================================================
 // @Font-Face Mixin
 // ============================================================
 
-//Folder containing font and font file must have the same name for this to work.
+// Folder containing font and font file must have the same name for this to work.
 // Based on most bullet-proof font syntax: http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
 
-@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style : normal, $font-stretch : normal) {
   @font-face {
     font-family: '#{$font-family}';
     src: url('../fonts/#{$font-filename}/#{$font-filename}.eot');

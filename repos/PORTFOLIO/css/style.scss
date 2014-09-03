@@ -4,25 +4,28 @@
 // Sidebar/topbar styling
 // ============================================================
 
+header {
+  background: $blue;
+  background-image: -webkit-gradient(radial, 16% 28%, 0, 16% 28%, 141, from(shade($blue, 12%)), to($blue));
+  background-image: -webkit-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue);
+  background-image:    -moz-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue);
+  background-image:     -ms-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue); 
+  background-image:      -o-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue);
+  background-image:       radial-gradient(circle at 16% 28%, shade($blue, 12%), $blue);
+
+  border-bottom: 1px solid $blue;
+  @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3)); 
+  z-index: 2;
+}
+
 .intro {
 
-  background: $light-blue;
-  background-image: -webkit-gradient(radial, 16% 28%, 0, 16% 28%, 141, from($light-blue), to(darken($light-blue, 8%)));
-  background-image: -webkit-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%));
-  background-image:    -moz-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%));
-  background-image:     -ms-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%)); 
-  background-image:      -o-radial-gradient(16% 28%, circle, $light-blue, darken($light-blue, 8%));
-  background-image:             radial-gradient(circle at 16% 28%, $light-blue, darken($light-blue, 8%));
-
-
-  @include rem(font-size, 1rem);
+  @include rem(font-size, 1rem); 
   @include clearfix;
 
   width: 100%;
   text-align: left;
   padding: 1.5em 0 3em;
-  border-bottom: 1px solid $blue;
-  @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3));
 
   .intro-main {
     width: 90%;
@@ -50,6 +53,15 @@
     }
   }
 
+  p {
+    color: #fff;
+
+    a {
+      color: #fff;
+      @include link-animate(#fff, $blue);
+    }
+  }
+
   h1 {
     font-size: 2.3em;
     line-height: 1.4;
@@ -60,7 +72,8 @@
     vertical-align: middle;
 
     font-family: "grey-sans-semibold", $sans-stack;
-    text-shadow: 2px 2px 1px #D6D6D6; 
+    color: #fff;
+    text-shadow: 2px 2px 3px $dark-blue; 
 
     @include mq(32em) {
       font-size: 1.7em;
@@ -80,18 +93,25 @@
 
   .intro-main-runin {
     font-size: .45em;
-    color: $blue;
+    color: #fff;
     font-family: "grey-sans-bold", $sans-stack;
+    text-shadow: 1px 1px 1px $dark-blue; 
     display: block;
     text-transform: uppercase;
-    text-shadow: none;
   }
 
   .chiclet-button {
     padding: .5em 0;
     max-width: 100%;
     margin-top: 2em;
-    @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2), inset 0 0 0 2px $light-blue);
+    color: #fff;
+    background-color: $blue;
+    border-color: #fff;
+
+    &:hover {
+      color: $blue;
+      background-color: #fff;
+    }
 
     @include mq(52em) {
       max-width: 18em;
@@ -101,20 +121,23 @@
   }
 }
 
-div[role="main"] {
+main[role="main"] {
   width: 94%;
   max-width: 68em;
   padding: 0 3%;
   margin: 0 auto;
-}
+  z-index: 1;
+} 
 
 nav[role="navigation"] {
   width: 100%;
-  background-color: $blue;
-  @include box-shadow(0 2px 4px 0 rgba(69, 106, 200, 0.3));
-
-  .nav-logo {
-    height: 2.5em;
+  background-color: #fff;
+  @include box-shadow(0 2px 4px 0 rgba(3, 33, 67, .4));
+  position: relative;
+  z-index: 3;
+  
+  .nav-logo { 
+    height: 4em;
     margin-left: .6em;
     padding: .1em;
   }
@@ -123,8 +146,10 @@ nav[role="navigation"] {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    float: right;
-    height: 2.5em;
+    position: absolute;
+    right: 0;
+    height: 4em;
+    top: 0;
 
     li {
       margin: 0;
@@ -132,12 +157,7 @@ nav[role="navigation"] {
       display: inline-block;
       vertical-align: middle;
       font-size: 1em;
-      padding: .5em .7em;
-    }
-
-    a.intro-link {
-      color: #fff;
-      @include link-animate(#fff, $blue);
+      padding: 1.2em .9em;
     }
   }
 }
@@ -147,16 +167,18 @@ nav[role="navigation"] {
 // ============================================================
 
 .logo-bar, .logo-block {
-  fill: #ffffff;
-  stroke: #ffffff;
+  fill: $blue;
+  stroke: $blue;
+  stroke-width: 2px;
+  stroke-linejoin: bevel;
 }
 
 .intro-main-svg-frame {
   display: inline-block;
   vertical-align: middle;
 
-  border: .5em solid $blue;
-  background-color: $blue;
+  border: .5em solid #fff;
+  background-color: #fff;
   overflow: hidden;
   margin: 0 1em 1em 0;
 
@@ -214,15 +236,16 @@ nav[role="navigation"] {
   display: block;
   width: 100%;
 
-  border: 1px solid $blue;
-  color: #ffffff;
+  border-radius: 6px;
+  border: 2px solid $blue;
+  color: $blue;
 
   cursor: hand;
   cursor: pointer;
 
-  background-color: $blue;
+  background-color: transparent;
 
-  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2), inset 0 0 0 2px #ffffff);
+  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2));
 
   font-size: .8em;
 
@@ -233,20 +256,20 @@ nav[role="navigation"] {
   @include mq(25em) {
     @include rem(max-width, 10rem);
     margin-left: 0;
-  }
+  } 
 
   @include mq(52em) {
     font-size: .9em;
   }
 
   &:hover {
-    color: $blue;
-    background-color: transparent;
+    color: #fff;
+    background-color: $blue;
   }
 
   &.disabled {
     background-color: transparent;
-    border: 1px solid #afafaf;
+    border: 1px solid #afafaf; 
     color: #afafaf;
     pointer-events: none;
   }
@@ -256,8 +279,21 @@ nav[role="navigation"] {
 // Contact Form
 // ============================================================
 
+.contact {
+  @include clearfix;
+}
+
+.contact-form__container {
+  float: left;
+  margin-right: 4em;
+
+  @include mq(52em) {
+    width: 60%;
+  }
+}
+
 .contact-form {
-  margin: 1em 0;
+  margin: 1em 0 2.5em;
 }
 
 label, fieldset {
@@ -273,14 +309,11 @@ fieldset {
 h3 {
   font-size: 1.5em;
   font-family: "grey-sans-semibold", $sans-stack;
-  margin-bottom: 0;
+  @include rem(margin, 1rem 0 0);
 }
 
-label {
-  max-width: 27em;
-  &:first-child {
-    margin-top: 1em;
-  }
+label:first-child {
+  margin-top: 1em;
 }
 
 input {
@@ -308,18 +341,18 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
     width: auto;
     margin: .5em 2em .5em 0;
     height: 1em;
-}
+} 
 
 input[type="radio"], input[type="checkbox"] { 
   width: 1.2em;
   height: 1.2em;
   @include rem(margin-right, .7rem);
-  vertical-align: middle;
-  display: inline-block;
+  vertical-align: middle; 
+  display: inline-block; 
 }
 
 .input-note {
-  color: #787878;
+  color: $text-light;
   display: block;
 
   & + p {
@@ -333,17 +366,6 @@ textarea {
   @include rem(font-size, 1rem);
 }
 
-.l-contact {
-  @include clearfix;
-}
-
-.contact-details {
-  @include mq(52em) {
-    width: 45%;
-    float: left;
-  }
-}
-
 button.chiclet-button {
   margin-top: 1.5em;
 }
@@ -351,6 +373,22 @@ button.chiclet-button {
 input.error, textarea.error {
   border-color: #ffc54a;
   background-color: #FFFAEF;
+} 
+
+.about {
+  width: 100%;
+  @include rem(margin, 1rem 0);
+
+  @include mq(52em) {
+    width: 29%;
+    float: left;
+  }
+}
+
+.about__mug {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 
 // ============================================================
@@ -361,18 +399,13 @@ input.error, textarea.error {
   background-color: #a4d47e;
 }
 
-hr {
-  width: 98%;
-  margin: 0 auto;
-}
-
 .section-header {
   margin: 1em auto .7em;
   width: 100%;
   font-size: 2em;
   font-family: "grey-sans-semibold", arial, sans-serif;
   text-align: center;
-  text-shadow: 2px 2px 1px #D6D6D6; 
+  text-shadow: 2px 2px 3px $dark-blue; 
 
   @include mq(60em) {
     font-size: 3.2em;
@@ -387,6 +420,10 @@ hr {
 
 .section-content {
   margin: 0 0 2.5em;
+
+  @include mq(52em) {
+    margin-left: 3%;
+  }
 }
 
 .section-text {
@@ -398,9 +435,9 @@ hr {
 .browser {
   display: inline-block;
   border: 1px solid lighten(#96a0a2, 10%);
-  background-color: lighten(#96a0a2, 20%);
+  background-color: lighten($blue, 40%);
   padding-top: 1.5em;
-  border-radius: .3em .2em;
+  border-radius: .3em .2em; 
   position: relative;
   overflow: hidden;
 
@@ -409,7 +446,7 @@ hr {
     left: 0px;
     top: 0;
     content: "\2022\2022\2022";
-    color: #859A9E;
+    color: tint($dark-blue, 40);
     font-size: 120px;
     letter-spacing: -10px;
     line-height: .7rem;
@@ -422,7 +459,7 @@ hr {
   }
 }
 
-.hundred-ages {
+.portfolio--case-study {
   figure {
     @include clearfix;
     width: 100%;
@@ -430,9 +467,11 @@ hr {
 
     .section-main-image {
       @include mq(52em) {
-        width: 60%;
         float: left;
-        margin: 0 2em 0 3%; 
+        width: 60%;
+        height: auto;
+        max-width: 32em;
+        margin: 0 2em 0 0;
       }
     }
 
@@ -459,6 +498,10 @@ hr {
   }
 }
 
+.portfolio {
+  border-bottom: 1px solid lighten($blue, 40%);
+}
+
 .jack {  
   blockquote {
     font-size: .9em;
@@ -481,7 +524,6 @@ hr {
   .section-text {
     @include mq(52em) {
       width: 60%;
-      margin-left: 3%;
       max-width: 33em;
       float: left;
     }
@@ -497,7 +539,7 @@ hr {
       float: left;
     }
 
-    @include mq(60em) {
+    @include mq(60em) { 
       width: 26%;
     }
 
@@ -510,19 +552,26 @@ hr {
     margin: 0;
 
     @include mq(52em) {
-      margin: 1em 0 0 3%;
-      width: 70%;
+      margin-top: 1em;
+    }
+
+    img {
+      @include mq(52em) {
+
+        padding-right: 1.2em;
+        border-right: 2px solid $blue;
+      }
     }
     
     figcaption {
       display: inline-block;
       vertical-align: top;
       font-size: .8em;
-      color: lighten(#383838, 10%);
+      color: $text-light;
 
       @include mq(52em) {
         line-height: 1.5;
-        margin-left: 1em;
+        margin-left: 1.2em;
         width: 12%;
         min-width: 10em;
       }
@@ -536,31 +585,6 @@ hr {
         width: auto;
         margin: 0;
       }
-    }
-  }
-}
-
-.rdes {
-  .section-text {
-    @include mq(52em) {
-      display: inline-block;
-      vertical-align: top;
-      margin-left: 3%;
-      width: 35%;
-    }
-  }
-
-  .section-content {
-    @include mq(52em) {
-      margin-left: 3%;
-    }
-  }
-
-  .section-main-image {
-    @include mq(52em) {
-      width: 60%;
-      height: auto;
-      max-width: 32em;
     }
   }
 }
@@ -636,6 +660,193 @@ $tertiaryColor: #D9DBD2;
   }
 }
 
+// ============================================================
+// Case Study Styling
+// ============================================================
+
+.case-study__header {
+  position: relative; 
+  @include clearfix;
+}
+
+.case-study__mosaic {
+  width:100%;
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include clearfix;
+}
+
+.case-study__tile {
+  background-color: transparent;
+  width: 20%;
+  border-top-width: 0;
+  border-right-width: 0;
+  position: relative;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+
+  &:nth-child(n+16) {
+    display: none;
+  }
+
+  @include mq(36em) {
+    width: 10%;
+    
+    &:nth-child(n+16) {
+      @include flexbox;
+    }
+    &:nth-child(n+51) {
+      display: none;
+    }
+  }
+
+  @include mq(56em) {
+    width: 5%;
+
+    &:nth-child(n+51) {
+      @include flexbox;
+    }
+  
+    &:nth-child(n+81) {
+      border-bottom: 0;
+    }
+  }
+}
+
+.case-study__number {
+  color: #fff;
+  display: none;
+
+  @include mq(56em) {
+    font-size: 0.85em;
+  }
+
+  @include mq(62em) {
+    font-size: 1em;
+  }
+}
+
+.case-study__tile--image {
+  display: none !important;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include transition(opacity 250ms ease-in);
+}
+
+.case-study__title {
+  font-size: 2.2em;
+  margin-top: 0;
+  text-shadow: 2px 2px 3px $dark-blue; 
+
+  span {
+    color: #fff;
+  }
+}
+
+.case-study__subhead {
+  color: #fff;
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-family: "grey-sans-semibold", arial, sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 3px $dark-blue; 
+  font-size: 1.3em;
+  padding: 0 1em;
+}
+
+.case-study__h-group {
+  top: 1.5em;
+  position: absolute;
+  width: 100%;
+  font-size: .7em;
+
+  @include mq(22em) {
+    font-size: .8em;
+    padding: 0 .5em;
+    top: 2.5em;
+  }
+ 
+  @include mq(32em) {
+    top: 3.2em;
+  }
+  
+  @include mq(36em) {
+    font-size: .95em;
+  }
+
+  @include mq(39em) {
+    font-size: 1em;
+  }
+
+  @include mq(42em) {
+    font-size: 1.1em;
+  }
+
+  @include mq(48em) {
+    font-size: 1.2em;
+    top: 4em;
+  }
+  
+  @include mq(56em) {
+    font-size: 1em;
+    top: 3em;
+  }
+ 
+  @include mq(60em) {
+    font-size: 1.2em;
+    top: 2.7em;
+  }
+
+  @include mq(65em) {
+    top: 25%;
+  }
+}
+
+ 
+#headline-number {
+  width: 2.1em;
+  display: inline-block;
+  text-align: right;
+  margin-right: .1em;
+  @include transition(opacity 500ms ease-in);
+  opacity: 0;
+}
+
+.is-active {
+  opacity: 1 !important;
+}
+
+// ============================================================
+// Article Image
+// ============================================================
+
+.article__image { 
+  width: 400px;
+  margin-top: 1em;
+} 
+
+.article__quote {
+  font-size: 1.2em;
+  line-height: 1.6;
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em 0;
+  border: solid tint($blue, 50);
+  border-width: 2px 0;
+ 
+  @include mq(28em) {
+    float: right; 
+    width: 8em; 
+    border: solid tint($blue, 50);
+    border-width: 0 0 0 2px; 
+    padding: 0 0 0 1em; 
+    margin: 0 1em 1em 2em;  
+  }
+}
 
 // ============================================================
 // Footer Styling
@@ -643,11 +854,12 @@ $tertiaryColor: #D9DBD2;
 
 footer {
   background-color: $blue;
-  border-top: 1px solid #D6D6D6;
   position: relative;
   @include rem(font-size, .85rem);
   width: 100%;
   height: 8em;
+  @include box-shadow(inset 0 7px 7px -5px rgba(3, 33, 67, 0.4));
+
 }
 
 footer ul {
@@ -675,33 +887,33 @@ footer nav {
   display: inline-block;
   vertical-align: middle;
 
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #fff;
 
   ul {
     padding: 0;
     display: block;
     font-family: 'grey-sans-bold', $sans-stack;
     text-transform: uppercase;
-  }
+  } 
 
-  li {
-    border-top: 1px solid #ffffff;
+  li {  
+    border-top: 1px solid #fff; 
 
-    &:first-child {
-      border-top: none;
-    }
+    &:first-child { 
+      border-top: none; 
+    }  
 
     a {
-      display: inline-block;
+      display: inline-block; 
       padding: .65em 4em .55em 1.7em;
       width: 100%;
     
-      &:hover {
+      &:hover { 
         background-color: #badaff;
         color: $blue;
         cursor: pointer;
-        cursor: hand;
-      }
+        cursor: hand; 
+      }  
     }
   }
 }

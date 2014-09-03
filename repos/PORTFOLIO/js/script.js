@@ -1,227 +1,387 @@
-// ============================================================
-// Site JS 
-// ============================================================
+(function($){
 
 $('html').removeClass('no-js').addClass('js');
 
-function formDropdown (value) {
-    var input = $('#contact-method input');
-    var inputText = $('#contact-method span');
 
-    switch (value) {
-        
-        case 'email' :
-            inputText.fadeOut(150, function () {
-                inputText.text("Email Address").fadeIn(300);
-                input.prop("type", "email");
-            });
-            break;
-        
-        case 'phone' :
-            inputText.fadeOut(150, function () {
-                inputText.text("Phone Number").fadeIn(300);
-                input.prop("type", "tel");
-            });
-            break;
-        
-        case 'default' :
-            break;  
+if('querySelector' in document
+    && 'localStorage' in window
+    && 'addEventListener' in window) {
+    
+    // ============================================================
+    // Site JS 
+    // ============================================================
 
+    function formDropdown (value) {
+        var input = $('#contact-method input');
+        var inputText = $('#contact-method span');
+
+        switch (value) {
+            
+            case 'email' :
+                inputText.fadeOut(150, function () {
+                    inputText.text("Email Address").fadeIn(300);
+                    input.prop("type", "email");
+                });
+                break;
+            
+            case 'phone' :
+                inputText.fadeOut(150, function () {
+                    inputText.text("Phone Number").fadeIn(300);
+                    input.prop("type", "tel");
+                });
+                break;
+            
+            case 'default' :
+                break;  
+
+        }
     }
-}
 
-
-$(document).ready(function () {
     $('input[type="radio"][name="contact"]').on('click', function () { 
         formDropdown($(this).val());
     });
 
-    $(function() {
-      $('a[href*=#]:not([href=#])').on('click', function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
+    function scrollToLink() {
+        $('a[href*=#]:not([href=#])').on('click', function(e) {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              
+              if (target.length) {
+
+                e.preventDefault();
+              
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 500);
+
+              }    
+            }
       });
-    });
+    }
 
-    var $form = $('#contact-form');
+    scrollToLink();
 
-    $('body').on('submit', $form, function (e) {
-        e.preventDefault();
+    function asyncSubmit() {
+        var $form = $('#contact-form');
 
-        // Eliminate old errors.
-        $('[data-validation="error"]').remove();
+        $('body').on('submit', $form, function (e) {
+            e.preventDefault();
 
-        $.ajax({
-            url      : '/include/form.php',
-            type     : 'POST',
-            dataType : 'json',  /* <-- Parse the response as JSON object */
-            data     : $form.serialize() + '&ajax=true',
+            // Eliminate old errors.
+            $('[data-validation="error"]').remove();
 
-            success: function(data) {
+            $.ajax({
+                url      : '/include/form.php',
+                type     : 'POST',
+                dataType : 'json',  /* <-- Parse the response as JSON object */
+                data     : $form.serialize() + '&ajax=true',
 
-                if (data == 'success') {
-                    $form.parent().html('<h2 class="main-subheader">Thanks for your message!</h2><p>I\'ll be sure to get back to you during the next day.</p>');
-                } else {
-                    $.each( data, function( key, val ) {    
-                        $('[name="' + key + '"]').addClass('error').after('<small class="error" data-validation="error">'+ val +'</small>');
-                    });
-                }
-            },
-            error: function(data) {
-                $form.parent().html('<h2 class="main-subheader">Houston, we have a problem</h2><p>It looks like there was an issue with our contact form. We\'re sorry about that!</p><p>Go ahead and <a class="intro-link" href="mailto:wguldin@gmail.com">just email me directly</a>, if you don\'t mind.');
-                throw new Error('Error hit in form response');
-            },
-        });
-    });
-});
+                success: function(data) {
 
-// ============================================================
-// SVG 
-// ============================================================
-
-
-if ($('html').hasClass('lt-ie9')) {
-
-} else {
-
-    // Remove fallback if javascript fires.
-    $('.intro-main-svg-icon').html('');
-
-    ;( function( window ) {
-        
-        'use strict';
-
-        function extend( a, b ) {
-            for( var key in b ) { 
-                if( b.hasOwnProperty( key ) ) {
-                    a[key] = b[key];
-                }
-            }
-            return a;
-        }
-
-        // from http://stackoverflow.com/a/11381730/989439
-        function mobilecheck() {
-            var check = false;
-            (function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
-            return check;
-        }
-
-        // http://snipplr.com/view.php?codeview&id=5259
-        function isMouseLeaveOrEnter( e, handler ) { 
-            if (e.type != 'mouseout' && e.type != 'mouseover') return false; 
-            var reltg = e.relatedTarget ? e.relatedTarget : 
-            e.type == 'mouseout' ? e.toElement : e.fromElement; 
-            while (reltg && reltg != handler) reltg = reltg.parentNode; 
-            return (reltg != handler); 
-        }
-
-        /*** svgIcon ***/
-
-        function svgIcon( el, config, options ) {
-            this.el = el;
-            this.options = extend( {}, this.options );
-            extend( this.options, options );
-            
-            this.svg = Snap();
-            this.svg.attr( 'viewBox', '0 0 312.666 291.333' );
-            this.el.appendChild( this.svg.node );
-           
-            // state
-            this.toggled = false;
-            
-            // click event (if mobile use touchstart)
-            this.clickevent = mobilecheck() ? 'touchstart' : 'click';
-            
-            // icons configuration
-            this.config = config[ this.el.getAttribute( 'data-icon-name' ) ];
-            if( !this.config ) return;
-            var self = this;
-            
-            // load external svg
-            Snap.load( this.config.url, function (f) {
-                var g = f.select( 'g' );
-                self.svg.append( g );
-                self.options.onLoad();
-                self._initEvents();
-            });
-        }
-
-        svgIcon.prototype.options = {
-            speed : 800,
-            easing : mina.linear,
-            evtoggle : 'mouseover',
-            onLoad : function() { return false; },
-            onToggle : function() { return false; }
-        };
-
-        svgIcon.prototype._initEvents = function() {
-            var self = this, toggleFn =  function( ev ) {
-                    if( ( ( ev.type.toLowerCase() === 'mouseover' || ev.type.toLowerCase() === 'mouseout' ) && isMouseLeaveOrEnter( ev, this ) ) || ev.type.toLowerCase() === self.clickevent ) {
-                        self.toggle(true);
-                        self.options.onToggle();    
+                    if (data == 'success') {
+                        $form.parent().html(data);
+                    } else {
+                        $.each( data, function( key, val ) {    
+                            $('[name="' + key + '"]').addClass('error').after('<small class="error" data-validation="error">'+ val +'</small>');
+                        });
                     }
-                };
+                },
+                error: function(data) {
+                    $form.parent().html('<h2 class="main-subheader">Houston, we have a problem</h2><p>It looks like there was an issue with our contact form. We\'re sorry about that!</p><p>Go ahead and <a class="intro-link" href="mailto:wguldin@gmail.com">just email me directly</a>, if you don\'t mind.');
+                    throw new Error('Error hit in form response');
+                },
+            });
+        });
+    }
 
-            if( this.options.evtoggle === 'mouseover' ) {
-                this.el.addEventListener( 'mouseover', toggleFn );
-                this.el.addEventListener( 'mouseout', toggleFn );
-            }
-            else {
-                this.el.addEventListener( this.clickevent, toggleFn );
-            }
-        };
+    asyncSubmit();
 
-        svgIcon.prototype.toggle = function( motion ) {
-            if( !this.config.animation ) return;
-            var self = this;
-            for( var i = 0, len = this.config.animation.length; i < len; ++i ) {
-                var a = this.config.animation[ i ],
-                    el = this.svg.select( a.el ),
-                    animProp = this.toggled ? a.animProperties.from : a.animProperties.to,
-                    val = animProp.val, 
-                    timeout = motion && animProp.delayFactor ? animProp.delayFactor : 0;
+    // ============================================================
+    // Case Study Javascript - Tile Height
+    // ============================================================
+
+    function setTileHeight() {
+        var tile      = $('.case-study__tile');
+        var tileWidth = tile.width();
+
+        if (tile.length) {
+            tile.css('height', tileWidth + 'px');
+        } 
+    }
+
+    setTileHeight();
+
+    $(window).on('resize', function() {
+        setTileHeight();
+    });
+
+    // ============================================================
+    // Case Study Javascript - Header Animations
+    // ============================================================
+
+    function showAgesHeader(number) {
+        
+        if (number.length == false) {
+            return;
+        }
+
+        number.addClass('is-active');
+        $('#headline-text').addClass('is-active');
+        $('#headline-subhead').addClass('is-active');
+        
+        var numberValue = 1;
+
+        setTimeout( function(){              
+            incrementNumber(numberValue, number);
+        }, 260);
+    }
+
+    function incrementNumber(numberValue, number) {
+        if(numberValue == 100) {
+            clearTimeout(numberAnimation);
+            return;
+        }
+        
+        numberValue++
+        
+        if (numberValue > number.text()) {
+            number.text(numberValue);
+        }
+
+        var numberAnimation = setTimeout(function() {
+            incrementNumber(numberValue, number);
+        }, 20);
+    }
+
+    showAgesHeader($('#headline-number'));
+
+    function fadeImagesSequentially(container) {
+
+        var image = $(container + ' ' + 'img');
+        var imageTotal = image.size();
+        var randomArray = randomSort(imageTotal);
+
+        image.each(function(i){
+            var $this = $(this);
+            
+            setTimeout( function() {
+                $this.fadeTo(350, 1);
+            }, randomArray[i] * 50);
+        })
+
+        function randomSort(imageTotal) {
+            var randomArray = new Array();
+            
+            for (var i = 0; i < imageTotal; i++) {
+                var randomNumber = Math.floor(Math.random() * imageTotal);
                 
-                if( animProp.before ) {
-                    el.attr( JSON.parse( animProp.before ) );
+                if($.inArray(randomNumber, randomArray) > 0) {
+                    --i
+                } else {
+                    randomArray.push(randomNumber);
                 }
+            }
+            return randomArray;
+        }
+    }
 
-                if( motion ) {
-                    setTimeout(function( el, val, animProp ) { 
-                        return function() { el.animate( JSON.parse( val ), self.options.speed, self.options.easing, function() {
-                            if( animProp.after ) {
-                                this.attr( JSON.parse( animProp.after ) );
-                            }
-                            if( animProp.animAfter ) {
-                                this.animate( JSON.parse( animProp.animAfter ), self.options.speed, self.options.easing );
-                            }
-                        } ); }; 
-                    }( el, val, animProp ), timeout * self.options.speed );
+    function loadImage(src, alt, container) {
+        var deferred = $.Deferred();
+        var image = new Image();
+
+        if ($(container).length == false) {
+            throw new Error("Container selector is undefined");
+        }
+        
+        image.onload = function() {
+            container.append(image);
+            $(image).addClass('case-study__tile--image').css("opacity", 0);
+            $(image).attr("alt", alt);
+
+            deferred.resolve();
+        };
+        
+        image.src = src;
+
+        return deferred.promise();
+    }
+
+    function loadAllImages(imageContainer) {
+
+        var images = [];
+
+        if($(imageContainer).length == false) {
+            return;
+        }
+
+        $(imageContainer).each(function(){
+            var $this = $(this);
+
+            var desktop = window.matchMedia("(min-width: 56em)").matches;
+            var tablet  = window.matchMedia("(max-width: 55.99em)").matches;
+            var mobile  = window.matchMedia("(max-width: 35.99em)").matches;
+
+            if (desktop && $this.attr('data-desktop')) {
+                images.push(loadImage($this.attr('data-image'), $this.attr('data-alt'), $this.closest('div')));
+                return;
+
+            } else if (!mobile && tablet && $this.attr('data-tablet')) {
+                images.push(loadImage($this.attr('data-image'), $this.attr('data-alt'), $this.closest('div')));                                
+                return;
+            }
+        });
+
+        $.when.apply($, images).done(function() {
+            showAgesHeader($('#headline-number'));
+            fadeImagesSequentially('.case-study__mosaic');
+        });
+    }
+
+    loadAllImages('span[data-image]');
+
+    // ============================================================
+    // SVG Icon
+    // ============================================================
+
+    if ($('.intro-main-svg-icon').length == false) {
+        return;
+    } else {
+
+        // Remove fallback if javascript fires.
+        $('.intro-main-svg-icon').html('');
+
+        // Taken from Snap SVG codrops tutorial - http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/
+
+        ;( function( window ) {
+            
+            'use strict';
+
+            function extend( a, b ) {
+                for( var key in b ) { 
+                    if( b.hasOwnProperty( key ) ) {
+                        a[key] = b[key];
+                    }
+                }
+                return a;
+            }
+
+            // from http://stackoverflow.com/a/11381730/989439
+            function mobilecheck() {
+                var check = false;
+                (function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+                return check;
+            }
+
+            // http://snipplr.com/view.php?codeview&id=5259
+            function isMouseLeaveOrEnter( e, handler ) { 
+                if (e.type != 'mouseout' && e.type != 'mouseover') return false; 
+                var reltg = e.relatedTarget ? e.relatedTarget : 
+                e.type == 'mouseout' ? e.toElement : e.fromElement; 
+                while (reltg && reltg != handler) reltg = reltg.parentNode; 
+                return (reltg != handler); 
+            }
+
+            /*** svgIcon ***/
+
+            function svgIcon( el, config, options ) {
+                this.el = el;
+                this.options = extend( {}, this.options );
+                extend( this.options, options );
+                
+                this.svg = Snap();
+                this.svg.attr( 'viewBox', '0 0 312.666 291.333' );
+                this.el.appendChild( this.svg.node );
+               
+                // state
+                this.toggled = false;
+                
+                // click event (if mobile use touchstart)
+                this.clickevent = mobilecheck() ? 'touchstart' : 'click';
+                
+                // icons configuration
+                this.config = config[ this.el.getAttribute( 'data-icon-name' ) ];
+                if( !this.config ) return;
+                var self = this;
+                
+                // load external svg
+                Snap.load( this.config.url, function (f) {
+                    var g = f.select( 'g' );
+                    self.svg.append( g );
+                    self.options.onLoad();
+                    self._initEvents();
+                });
+            }
+
+            svgIcon.prototype.options = {
+                speed : 800,
+                easing : mina.linear,
+                evtoggle : 'mouseover',
+                onLoad : function() { return false; },
+                onToggle : function() { return false; }
+            };
+
+            svgIcon.prototype._initEvents = function() {
+                var self = this, toggleFn =  function( ev ) {
+                        if( ( ( ev.type.toLowerCase() === 'mouseover' || ev.type.toLowerCase() === 'mouseout' ) && isMouseLeaveOrEnter( ev, this ) ) || ev.type.toLowerCase() === self.clickevent ) {
+                            self.toggle(true);
+                            self.options.onToggle();    
+                        }
+                    };
+
+                if( this.options.evtoggle === 'mouseover' ) {
+                    this.el.addEventListener( 'mouseover', toggleFn );
+                    this.el.addEventListener( 'mouseout', toggleFn );
                 }
                 else {
-                    el.attr( JSON.parse( val ) );
+                    this.el.addEventListener( this.clickevent, toggleFn );
                 }
+            };
+
+            svgIcon.prototype.toggle = function( motion ) {
+                if( !this.config.animation ) return;
+                var self = this;
+                for( var i = 0, len = this.config.animation.length; i < len; ++i ) {
+                    var a = this.config.animation[ i ],
+                        el = this.svg.select( a.el ),
+                        animProp = this.toggled ? a.animProperties.from : a.animProperties.to,
+                        val = animProp.val, 
+                        timeout = motion && animProp.delayFactor ? animProp.delayFactor : 0;
                     
-            }
-            this.toggled = !this.toggled;
-        };
+                    if( animProp.before ) {
+                        el.attr( JSON.parse( animProp.before ) );
+                    }
 
-        // add to global namespace
-        window.svgIcon = svgIcon;
+                    if( motion ) {
+                        setTimeout(function( el, val, animProp ) { 
+                            return function() { el.animate( JSON.parse( val ), self.options.speed, self.options.easing, function() {
+                                if( animProp.after ) {
+                                    this.attr( JSON.parse( animProp.after ) );
+                                }
+                                if( animProp.animAfter ) {
+                                    this.animate( JSON.parse( animProp.animAfter ), self.options.speed, self.options.easing );
+                                }
+                            } ); }; 
+                        }( el, val, animProp ), timeout * self.options.speed );
+                    }
+                    else {
+                        el.attr( JSON.parse( val ) );
+                    }
+                        
+                }
+                this.toggled = !this.toggled;
+            };
 
-    })( window );
+            // add to global namespace
+            window.svgIcon = svgIcon;
 
-    (function() {
-        new svgIcon( document.querySelector( '.intro-main-svg-icon' ), svgIconConfig, { easing : mina.easeinout } );
-    })();
+        })( window );
 
+        (function() {
+            new svgIcon( document.querySelector( '.intro-main-svg-icon' ), svgIconConfig, { easing : mina.easeinout } );
+        })();
+    }
 }
 
+})(jQuery);
