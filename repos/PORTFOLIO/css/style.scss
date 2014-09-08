@@ -101,8 +101,6 @@ header {
   }
 
   .chiclet-button {
-    padding: .5em 0;
-    max-width: 100%;
     margin-top: 2em;
     color: #fff;
     background-color: $blue;
@@ -112,28 +110,20 @@ header {
       color: $blue;
       background-color: #fff;
     }
-
+ 
     @include mq(52em) {
       max-width: 18em;
       margin-top: .5em;
       float: left;
-    }
+    } 
   }
 }
-
-main[role="main"] {
-  width: 94%;
-  max-width: 68em;
-  padding: 0 3%;
-  margin: 0 auto;
-  z-index: 1;
-} 
 
 nav[role="navigation"] {
   width: 100%;
   background-color: #fff;
   @include box-shadow(0 2px 4px 0 rgba(3, 33, 67, .4));
-  position: relative;
+  position: relative; 
   z-index: 3;
   
   .nav-logo { 
@@ -235,6 +225,8 @@ nav[role="navigation"] {
   margin: 0 auto;
   display: block;
   width: 100%;
+  padding: .5em 0;
+  max-width: 100%;
 
   border-radius: 6px;
   border: 2px solid $blue;
@@ -254,9 +246,12 @@ nav[role="navigation"] {
   }
 
   @include mq(25em) {
-    @include rem(max-width, 10rem);
     margin-left: 0;
   } 
+
+  @include mq(36em) {
+    @include rem(max-width, 10rem);
+  }
 
   @include mq(52em) {
     font-size: .9em;
@@ -275,6 +270,14 @@ nav[role="navigation"] {
   }
 }
 
+.chiclet-button--primary {
+  width: auto;
+  display: block;
+  max-width: none;
+  margin: 3em 4em;
+  padding: .7em 1.5em;
+}
+
 // ============================================================
 // Contact Form
 // ============================================================
@@ -284,11 +287,12 @@ nav[role="navigation"] {
 }
 
 .contact-form__container {
-  float: left;
-  margin-right: 4em;
+  width: 100%;
 
   @include mq(52em) {
     width: 60%;
+    float: left;
+    margin-right: 4em;
   }
 }
 
@@ -348,8 +352,8 @@ input[type="radio"], input[type="checkbox"] {
   height: 1.2em;
   @include rem(margin-right, .7rem);
   vertical-align: middle; 
-  display: inline-block; 
-}
+  display: inline-block;  
+} 
 
 .input-note {
   color: $text-light;
@@ -387,8 +391,17 @@ input.error, textarea.error {
 
 .about__mug {
   width: 100%;
-  height: auto;
+  max-width: 8em;
+  float: right;
   border-radius: 50%;
+  margin: 3em 0 1em 1em;
+
+  @include mq(52em) {
+    float: none;
+    max-width: none;
+    height: auto;
+    margin: 0;
+  }
 }
 
 // ============================================================
@@ -405,13 +418,12 @@ input.error, textarea.error {
   font-size: 2em;
   font-family: "grey-sans-semibold", arial, sans-serif;
   text-align: center;
-  text-shadow: 2px 2px 3px $dark-blue; 
+  text-shadow: 2px 2px 3px tint($text, 60%); 
 
   @include mq(60em) {
     font-size: 3.2em;
-    margin: .7em auto .5em;
+    margin: .7em auto .5em; 
   }
-
 }
 
 .section-main-image {
@@ -427,7 +439,7 @@ input.error, textarea.error {
 }
 
 .section-text {
-    p:first-child {
+    p:first-child { 
       margin-top: 0;
     }
 }
@@ -435,7 +447,7 @@ input.error, textarea.error {
 .browser {
   display: inline-block;
   border: 1px solid lighten(#96a0a2, 10%);
-  background-color: lighten($blue, 40%);
+  background-color: $blue-tint;
   padding-top: 1.5em;
   border-radius: .3em .2em; 
   position: relative;
@@ -467,10 +479,10 @@ input.error, textarea.error {
 
     .section-main-image {
       @include mq(52em) {
-        float: left;
+        float: left; 
         width: 60%;
         height: auto;
-        max-width: 32em;
+        max-width: 40em;
         margin: 0 2em 0 0;
       }
     }
@@ -491,7 +503,7 @@ input.error, textarea.error {
       .chiclet-button {
         font-size: .8em;
         max-width: 100%;
-        width: auto;
+        width: 100%;
         display: inline-block;
       }
     }
@@ -499,7 +511,9 @@ input.error, textarea.error {
 }
 
 .portfolio {
-  border-bottom: 1px solid lighten($blue, 40%);
+  border-bottom: 1px solid lighten($blue, 30%);
+  @include clearfix;
+  clear: both;
 }
 
 .jack {  
@@ -510,7 +524,7 @@ input.error, textarea.error {
     padding: 1em;
     background-color: #ecf5ff;
 
-    .quote-attribution {
+    .quote-attribution { 
       display: block;
       margin-top: 1em;
     }
@@ -525,7 +539,7 @@ input.error, textarea.error {
     @include mq(52em) {
       width: 60%;
       max-width: 33em;
-      float: left;
+      float: left; 
     }
   }
 
@@ -541,6 +555,7 @@ input.error, textarea.error {
 
     @include mq(60em) { 
       width: 26%;
+      margin: 0 0 0 4em;
     }
 
     figcaption {
@@ -553,11 +568,11 @@ input.error, textarea.error {
 
     @include mq(52em) {
       margin-top: 1em;
+      clear: left;
     }
 
     img {
       @include mq(52em) {
-
         padding-right: 1.2em;
         border-right: 2px solid $blue;
       }
@@ -667,111 +682,21 @@ $tertiaryColor: #D9DBD2;
 .case-study__header {
   position: relative; 
   @include clearfix;
-}
+  padding: 1.5em 0;
 
-.case-study__mosaic {
-  width:100%;
-  @include flexbox;
-  @include flex-wrap(wrap);
-  @include clearfix;
-}
-
-.case-study__tile {
-  background-color: transparent;
-  width: 20%;
-  border-top-width: 0;
-  border-right-width: 0;
-  position: relative;
-  @include flexbox;
-  @include align-items(center);
-  @include justify-content(center);
-
-  &:nth-child(n+16) {
-    display: none;
+  @include mq(52em) {
+    padding: 1.1em 0 2.1em;
   }
-
-  @include mq(36em) {
-    width: 10%;
-    
-    &:nth-child(n+16) {
-      @include flexbox;
-    }
-    &:nth-child(n+51) {
-      display: none;
-    }
-  }
-
-  @include mq(56em) {
-    width: 5%;
-
-    &:nth-child(n+51) {
-      @include flexbox;
-    }
-  
-    &:nth-child(n+81) {
-      border-bottom: 0;
-    }
-  }
-}
-
-.case-study__number {
-  color: #fff;
-  display: none;
-
-  @include mq(56em) {
-    font-size: 0.85em;
-  }
-
-  @include mq(62em) {
-    font-size: 1em;
-  }
-}
-
-.case-study__tile--image {
-  display: none !important;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  @include transition(opacity 250ms ease-in);
-}
-
-.case-study__title {
-  font-size: 2.2em;
-  margin-top: 0;
-  text-shadow: 2px 2px 3px $dark-blue; 
-
-  span {
-    color: #fff;
-  }
-}
-
-.case-study__subhead {
-  color: #fff;
-  display: block;
-  text-align: center;
-  width: 100%;
-  font-family: "grey-sans-semibold", arial, sans-serif;
-  text-align: center;
-  text-shadow: 1px 1px 3px $dark-blue; 
-  font-size: 1.3em;
-  padding: 0 1em;
 }
 
 .case-study__h-group {
-  top: 1.5em;
-  position: absolute;
   width: 100%;
   font-size: .7em;
+  margin-top: 1em;
 
   @include mq(22em) {
     font-size: .8em;
     padding: 0 .5em;
-    top: 2.5em;
-  }
- 
-  @include mq(32em) {
-    top: 3.2em;
   }
   
   @include mq(36em) {
@@ -788,26 +713,34 @@ $tertiaryColor: #D9DBD2;
 
   @include mq(48em) {
     font-size: 1.2em;
-    top: 4em;
+    margin-top: 1.2em;
   }
   
   @include mq(56em) {
     font-size: 1em;
-    top: 3em;
   }
  
   @include mq(60em) {
     font-size: 1.2em;
-    top: 2.7em;
-  }
-
-  @include mq(65em) {
-    top: 25%;
   }
 }
 
- 
-#headline-number {
+.intro .case-study__title {
+  font-size: 2.5em;
+  margin-top: 0;
+  padding: 0 .2em;
+  text-shadow: 2px 2px 3px $dark-blue; 
+
+  @include mq(28em) {
+    padding: 0 .4em;
+  }
+
+  span {
+    color: #fff;
+  }
+}
+
+.case-study__title--number {
   width: 2.1em;
   display: inline-block;
   text-align: right;
@@ -816,36 +749,174 @@ $tertiaryColor: #D9DBD2;
   opacity: 0;
 }
 
-.is-active {
-  opacity: 1 !important;
+.case-study__subhead {
+  color: #fff;
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-family: "grey-sans-semibold", arial, sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 3px $dark-blue; 
+  font-size: 1.6em;
+  padding: .7em 1em 0;
+  clear: left;
+
+  @include mq(36em) {
+    font-size: 1.3em;
+  }
 }
 
-// ============================================================
-// Article Image
-// ============================================================
+.is-active {
+  opacity: 1;
+}
 
-.article__image { 
-  width: 400px;
-  margin-top: 1em;
+.age {
+  display: inline-block;
+  color: $blue;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: .9em;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 0.6em;
+  position: absolute; 
+  @include transition(opacity 500ms ease-in);
+  opacity: 0;
+  z-index: -2;
+
+  @include mq(36em) {
+    font-size: 1.3em;
+  }
+
+  &.is-active {
+    opacity: 0.35;
+  }
+
+  .no-js & {
+    opacity: 0.35;
+  }
 } 
 
-.article__quote {
-  font-size: 1.2em;
-  line-height: 1.6;
+.age--1 {
+  top: 34%;
+  right: 39%;
+}
+
+.age--2 {
+  top: 15%;
+  left: 2%;
+}
+
+.age--3 {
+  top: 5%;
+  left: 27%;
+}
+
+.age--4 {
+  right: 6%;
+  bottom: 7%;
+}
+
+.age--5 {
+  bottom: 20%;
+  right: 25%;
+}
+
+.age--6 {
+  bottom: 5%;
+  left: 17%;
+}
+
+.age--7 {
+  top: 8%;
+  right: 3%;
+}
+
+.age--8 {
+  bottom: 16%; 
+  right: 54%;
+} 
+
+.age--9 { 
+  top: 9%;
+  right: 24%;
+}
+ 
+// ============================================================
+// Article Styling
+// ============================================================
+
+.article__image {  
   width: 100%;
-  margin: 1.5em 0;
+  margin: 0 0 2em;
+  float: right;
+
+  img {
+    width: 100%;
+
+    @include mq(32em) {
+      width: 60%;
+      float: left;
+    }
+
+    @include mq(40em) {
+      width: 70%;
+    }
+  } 
+}   
+
+.article__quote {
   padding: 1em 0;
   border: solid tint($blue, 50);
-  border-width: 2px 0;
- 
-  @include mq(28em) {
-    float: right; 
-    width: 8em; 
-    border: solid tint($blue, 50);
-    border-width: 0 0 0 2px; 
-    padding: 0 0 0 1em; 
-    margin: 0 1em 1em 2em;  
+  border-width: 2px 0; 
+  width: 100%; 
+  margin: 2em 0 0;
+
+  @include mq(32em) {
+    width: 30%;
+    float: left;
+    margin: 0 0 0 5%;
   }
+
+  @include mq(40em) {
+    width: 26%;
+    margin-left: 4%;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.8;
+  }
+}
+
+.infobox {
+  margin: 0 -20% 1em 3em;
+  padding-left: 1.7em;
+  font-size: .8em;
+  float: right;
+  border-left: 2px solid tint($blue, 50);
+  max-width: 20em;
+
+  dl {
+    margin-bottom: 0; 
+  }
+  dd {
+    margin-top: .25em;
+  } 
+  ul {
+    margin-top: 0;
+  }
+}
+
+.infobox--header {
+  font-family: "grey-sans-semibold", $sans-stack;
+  font-size: 1.3em;
+  margin: 0 0 .5em;
+}
+
+.infobox--subheader {
+  font-weight: bold;
+  margin-top: 1em;
 }
 
 // ============================================================

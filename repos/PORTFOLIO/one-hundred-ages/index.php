@@ -27,7 +27,7 @@
 <body>
 
 <nav role="navigation">
-    <a><img class="nav-logo" src="../img/mini-logo.svg" alt="Will Guldin Design"/></a>
+    <a href="/"><img class="nav-logo" src="../img/mini-logo.svg" alt="Will Guldin Design"/></a>
     <ul>
         <li><a class="link--highlight" href="../">Home</a></li>
         <li><a class="link--highlight" href="../#recent-work">Work</a></li>
@@ -36,136 +36,66 @@
     </ul>
 </nav>
 
-<header class="case-study__header" role="banner">
-    <div class="case-study__mosaic">
-        <div class="case-study__tile"><span class="case-study__number">3</span></div>
-        <div class="case-study__tile"><span class="case-study__number">62</span></div>
-        <div class="case-study__tile"><span class="case-study__number">99</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/025_400.jpg">25</span></div>
-        <div class="case-study__tile"><span class="case-study__number">51</span></div>
-        <div class="case-study__tile"><span class="case-study__number">2</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/009_400.jpg">9</span></div>
-        <div class="case-study__tile"><span class="case-study__number">66</span></div>
-        <div class="case-study__tile"><span class="case-study__number">71</span></div>
-        <div class="case-study__tile"><span class="case-study__number">38</span></div>
-        <div class="case-study__tile"><span class="case-study__number">78</span></div>
-        <div class="case-study__tile"><span class="case-study__number">69</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/015_400.jpg">15</span></div>
-        <div class="case-study__tile"><span class="case-study__number">61</span></div>
-        <div class="case-study__tile"><span class="case-study__number">36</span></div>
-        <div class="case-study__tile"><span class="case-study__number">52</span></div>
-        <div class="case-study__tile"><span class="case-study__number">56</span></div>
-        <div class="case-study__tile"><span class="case-study__number">85</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/019_400.jpg">19</span></div>
-        <div class="case-study__tile"><span class="case-study__number">74</span></div>
-        <div class="case-study__tile"><span class="case-study__number">68</span></div>
-        <div class="case-study__tile"><span class="case-study__number">80</span></div>
-        <div class="case-study__tile"><span class="case-study__number">60</span></div>
-        <div class="case-study__tile"><span class="case-study__number">14</span></div>
-        <div class="case-study__tile"><span class="case-study__number">48</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/059_400.jpg">59</span></div>
-        <div class="case-study__tile"><span class="case-study__number">86</span></div>
-        <div class="case-study__tile"><span class="case-study__number">17</span></div>
-        <div class="case-study__tile"><span class="case-study__number">33</span></div>
-        <div class="case-study__tile"><span class="case-study__number">53</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/039_400.jpg">39</span></div>
-        <div class="case-study__tile"><span class="case-study__number">47</span></div>
-        <div class="case-study__tile"><span class="case-study__number">8</span></div>
-        <div class="case-study__tile"><span class="case-study__number">32</span></div>
-        <div class="case-study__tile"><span class="case-study__number">87</span></div>
-        <div class="case-study__tile"><span class="case-study__number">31</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/049_400.jpg">49</span></div>
-        <div class="case-study__tile"><span class="case-study__number">30</span></div>
-        <div class="case-study__tile"><span class="case-study__number">64</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/088_400.jpg">88</span></div>
-        <div class="case-study__tile"><span class="case-study__number">1</span></div>
-        <div class="case-study__tile"><span class="case-study__number">11</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/004_400.jpg">4</span></div>
-        <div class="case-study__tile"><span class="case-study__number">65</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/021_400.jpg">21</span></div>
-        <div class="case-study__tile"><span class="case-study__number">67</span></div>
-        <div class="case-study__tile"><span class="case-study__number">57</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/073_400.jpg">73</span></div>
-        <div class="case-study__tile"><span class="case-study__number">16</span></div>
-        <div class="case-study__tile"><span class="case-study__number">35</span></div>
-        <div class="case-study__tile"><span class="case-study__number">41</span></div>
-        <div class="case-study__tile"><span class="case-study__number">37</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/044_400.jpg">44</span></div>
-        <div class="case-study__tile"><span class="case-study__number">75</span></div>
-        <div class="case-study__tile"><span class="case-study__number">34</span></div>
-        <div class="case-study__tile"><span class="case-study__number">94</span></div>
-        <div class="case-study__tile"><span class="case-study__number">96</span></div>
-        <div class="case-study__tile"><span class="case-study__number">92</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-tablet="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/097_400.jpg">97</span></div>
-        <div class="case-study__tile"><span class="case-study__number">12</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/043_400.jpg">43</span></div>
-        <div class="case-study__tile"><span class="case-study__number">81</span></div>
-        <div class="case-study__tile"><span class="case-study__number">22</span></div>
-        <div class="case-study__tile"><span class="case-study__number">95</span></div>
-        <div class="case-study__tile"><span class="case-study__number">100</span></div>
-        <div class="case-study__tile"><span class="case-study__number">50</span></div>
-        <div class="case-study__tile"><span class="case-study__number">55</span></div>
-        <div class="case-study__tile"><span class="case-study__number">24</span></div>
-        <div class="case-study__tile"><span class="case-study__number">27</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/063_400.jpg">63</span></div>
-        <div class="case-study__tile"><span class="case-study__number">7</span></div>
-        <div class="case-study__tile"><span class="case-study__number">83</span></div>
-        <div class="case-study__tile"><span class="case-study__number">5</span></div>
-        <div class="case-study__tile"><span class="case-study__number">6</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/077_400.jpg">77</span></div>
-        <div class="case-study__tile"><span class="case-study__number">91</span></div>
-        <div class="case-study__tile"><span class="case-study__number">93</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/040_400.jpg">40</span></div>
-        <div class="case-study__tile"><span class="case-study__number">23</span></div>
-        <div class="case-study__tile"><span class="case-study__number">20</span></div>
-        <div class="case-study__tile"><span class="case-study__number">10</span></div>
-        <div class="case-study__tile"><span class="case-study__number">90</span></div>
-        <div class="case-study__tile"><span class="case-study__number">26</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/042_400.jpg">42</span></div>
-        <div class="case-study__tile"><span class="case-study__number">98</span></div>
-        <div class="case-study__tile"><span class="case-study__number">84</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/058_400.jpg">58</span></div>
-        <div class="case-study__tile"><span class="case-study__number">45</span></div>
-        <div class="case-study__tile"><span class="case-study__number">82</span></div>
-        <div class="case-study__tile"><span class="case-study__number">70</span></div>
-        <div class="case-study__tile"><span class="case-study__number">72</span></div>
-        <div class="case-study__tile"><span class="case-study__number">89</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/079_400.jpg">79</span></div>
-        <div class="case-study__tile"><span class="case-study__number">28</span></div>
-        <div class="case-study__tile"><span class="case-study__number">46</span></div>
-        <div class="case-study__tile"><span class="case-study__number">76</span></div>
-        <div class="case-study__tile"><span class="case-study__number">13</span></div>
-        <div class="case-study__tile"><span class="case-study__number">29</span></div>
-        <div class="case-study__tile"><span class="case-study__number">18</span></div>
-        <div class="case-study__tile"><span class="case-study__number" data-desktop="true" data-alt="A portrait from 100 Ages, A Century of Voices" data-image="/img/400/054_400.jpg">54</span></div>
-    </div>
-
+<header class="case-study__header intro" role="banner">
     <div class="case-study__h-group">
-        <h1 class="section-header case-study__title"><span id="headline-number">1</span> <span id="headline-text">Ages, A Century of Voices</span></h1>
+        <h1 class="section-header case-study__title"><span id="headlineNumber" class="case-study__title--number">1</span> <span id="headline-text">Ages, A Century of Voices</span></h1>
         <h2 id="headline-subhead" class="case-study__subhead">A cross-generational story about all of us</h2>
     </div>
+    <span class="age age--1">37</span>
+    <span class="age age--2">23</span>
+    <span class="age age--3">4</span>
+    <span class="age age--4">78</span>
+    <span class="age age--5">56</span>
+    <span class="age age--6">89</span>
+    <span class="age age--7">17</span>
+    <span class="age age--8">64</span>
+    <span class="age age--9">95</span>
 </header>
 
 <main role="main">
 <article>
     <section>
-        <img class="article__image" src="/img/400/052_400.jpg" alt="Miguel Rodriguez, 52 years old" />
-
-        <h3>New header needed</h3>
-
         <p>When Miguel Rodriguez, 52, arrived at the hospital after blacking out, he thought to himself “You might have one chance in life and that was my last chance.”</p>
-
-        <blockquote class="article__quote">“You might have one chance in life and that was my last chance."</blockquote>
 
         <p>That was more than 17 years ago, and he’s been sober ever since.</p>
 
         <p>His story is one that we all can relate to in some way — either through our own struggles or though those of people we know. That’s the power of 100 Ages, A Century of Voices. Each interview with someone of a different age tells you a little bit more about the experiences we all share.</p>
+
+        <figure class="article__image">
+            <img src="/img/052_400.jpg" alt="Miguel Rodriguez, 52 years old" />
+            
+            <figcaption class="article__quote">
+                <blockquote>
+                    <p>“You might have one chance in life and that was my last chance."</p>
+                    <cite>&mdash; Miguel Rodriguez, 52</cite>
+                </blockquote>
+            </figcaption>    
+        </figure>
 
         <p>That’s what excited me about the project, and why I wanted to be a part of it. Since it had such strong storytelling behind it, my ultimate goal was to create a design that would stay out of the way.</p>
  
         <h3>About the Columbia Missourian</h3>
 
         <p>The organization behind this project was the <a href="http://www.columbiamissourian.com/" class="link--highlight">Columbia Missourian</a>, a 24/7 news operation that covers Columbia, Mo. It is part of the Missouri School of Journalism and uses professional journalists as its editors and teachers. The paper routinely wins recognition for its reporting.</p>
+
+        <aside class="infobox">
+            <h4 class="infobox--header">Project Details</h4>
+            <dl>
+                <dt class="infobox--subheader">Timeline</dt>
+                <dd>Late Spring - Summer 2013</dd>
+                <dt class="infobox--subheader">Responsibilities</dt>
+                <dd>
+                    <ul>
+                        <li>Worked with editors &amp; photojournalists to create the project's design.</li>
+                        <li>Coded all parts of website and used a frontend framework to build the site.</li>                                                             
+                    </ul>
+                </dd>
+                <dt class="infobox--subheader">Columbia Missourian traffic</dt>
+                <dd>+250,000 unique visitors/month</dd>
+                <dt class="infobox--subheader">Cutest interview</dt>
+                <dd><a href="http://media.columbiamissourian.com/100ages/#/2" class="link--highlight">2-year-olds Adam &amp; Max Sedillo</a></dd>
+            </dl>
+        </aside>
 
         <p>After agreeing to work on the site for the project, I met with the editors of the Missourian and with the two photojournalists leading the project. We discussed what the goals for the project would be and all agreed that the final product should stand out from the Missourian’s regular website and reflect the quality of the paper’s journalism.</p> 
 
@@ -189,7 +119,7 @@
 
         <h3>A bold experiment</h3>
 
-        <p>100 Ages, A Century of Voices, reflected a kind of web project that was difficult to undertake, and it was inspiring to be a part of it. Within days of publication the project recieved attention on several photography blogs and ultimately won an Award of Excellence from the <a href="http://www.snd.org/">Society for News Design.</a></p>
+        <p>100 Ages, A Century of Voices, reflected a kind of web project that was difficult to undertake, and it was inspiring to be a part of it. Within days of publication the project recieved attention on several photography blogs and ultimately won an Award of Excellence from the <a class="link--highlight" href="http://www.snd.org/">Society for News Design.</a></p>
 
         <p>All that would be moot, however, if I wasn’t satisfied with the final product. Like many who visited the site, though, I came away with a sense that the project told us all a little bit more about what it is to be human.</p>
 
@@ -202,9 +132,9 @@
 
         <p>I hope you’ll take a look at the work as well. I’ve learned a lot more since I first completed this project, but it remains one of the most valuable things I’ve done in my professional career.</p>
 
-        <a href="http://media.columbiamissourian.com/100ages/#/" class="chiclet-button">Visit the site</a>
+        <a href="http://media.columbiamissourian.com/100ages/#/" class="chiclet-button--primary chiclet-button">Visit the site</a>
 
-    </section>
+    </section> 
 </article>
 </main>
 

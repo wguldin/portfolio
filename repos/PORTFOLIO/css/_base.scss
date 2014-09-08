@@ -28,13 +28,13 @@ body {
 }
 
 p { 
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 48em; 
 } 
 
 article {
-  max-width: 45em;
-  margin: 0 auto;
+  max-width: 35em;
+  margin: 2.3em auto;
 }
 
 button {
@@ -79,18 +79,59 @@ strong {
   font-family: "grey-sans-semibold", arial, sans-serif;
 }
 
+main[role="main"] {
+  width: 88%;
+  max-width: 68em;
+  margin: 0 6%;
+  z-index: 1;
+
+  @include mq(36em) {
+    margin: 0 3%;
+    width: 94%;
+  }
+} 
+
+blockquote {
+  margin: 0;
+
+  p {
+    margin: 0;
+  }
+
+  cite {
+    margin-top: 1em;
+    font-size: .7em;
+    color: $text-light;
+  }
+}
+
+input, textarea, select {
+  font-family: "grey-sans-regular", $sans-stack;
+}
+
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 2em;
+}
+ 
 // ==========================================================================
 // Links and such
 // ==========================================================================
 
 a, span.chiclet-button, button.chiclet-button { 
-  @include transition(color 400ms ease, background-color 400ms ease, box-shadow 400ms ease);
+  @include transition(color 250ms ease, background-color 250ms ease, box-shadow 250ms ease);
 }
 
 .link--highlight {
   position: relative;
   text-decoration: none;
   z-index: 999;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
   color: $blue;
   @include link-animate($blue, #fff);
 }

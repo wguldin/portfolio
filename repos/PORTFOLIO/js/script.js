@@ -2,7 +2,7 @@
 
 $('html').removeClass('no-js').addClass('js');
 
-
+// Cutting the mustard test, courtesy of BBC News
 if('querySelector' in document
     && 'localStorage' in window
     && 'addEventListener' in window) {
@@ -10,6 +10,17 @@ if('querySelector' in document
     // ============================================================
     // Site JS 
     // ============================================================
+
+    // Defeat the spam bots with JS!
+    function createEmailLink () {
+        if ($('.email-link').length == false ) {
+            return;
+        } 
+
+        $('.email-link').replaceWith('<a class="link--highlight" href="mailto:wguldin@gmail.com">wguldin@gmail.com</a>');
+    }
+
+    createEmailLink();
 
     function formDropdown (value) {
         var input = $('#contact-method input');
@@ -54,7 +65,7 @@ if('querySelector' in document
               
                 $('html,body').animate({
                   scrollTop: target.offset().top
-                }, 500);
+                }, 250);
 
               }    
             }
@@ -75,7 +86,7 @@ if('querySelector' in document
             $.ajax({
                 url      : '/include/form.php',
                 type     : 'POST',
-                dataType : 'json',  /* <-- Parse the response as JSON object */
+                dataType : 'json',  // <-- Parse the response as JSON object
                 data     : $form.serialize() + '&ajax=true',
 
                 success: function(data) {
@@ -99,25 +110,6 @@ if('querySelector' in document
     asyncSubmit();
 
     // ============================================================
-    // Case Study Javascript - Tile Height
-    // ============================================================
-
-    function setTileHeight() {
-        var tile      = $('.case-study__tile');
-        var tileWidth = tile.width();
-
-        if (tile.length) {
-            tile.css('height', tileWidth + 'px');
-        } 
-    }
-
-    setTileHeight();
-
-    $(window).on('resize', function() {
-        setTileHeight();
-    });
-
-    // ============================================================
     // Case Study Javascript - Header Animations
     // ============================================================
 
@@ -130,10 +122,11 @@ if('querySelector' in document
         number.addClass('is-active');
         $('#headline-text').addClass('is-active');
         $('#headline-subhead').addClass('is-active');
-        
+
         var numberValue = 1;
 
-        setTimeout( function(){              
+        setTimeout( function(){         
+            $('.age').addClass('is-active');     
             incrementNumber(numberValue, number);
         }, 260);
     }
@@ -152,94 +145,10 @@ if('querySelector' in document
 
         var numberAnimation = setTimeout(function() {
             incrementNumber(numberValue, number);
-        }, 20);
+        }, 10);
     }
 
-    showAgesHeader($('#headline-number'));
-
-    function fadeImagesSequentially(container) {
-
-        var image = $(container + ' ' + 'img');
-        var imageTotal = image.size();
-        var randomArray = randomSort(imageTotal);
-
-        image.each(function(i){
-            var $this = $(this);
-            
-            setTimeout( function() {
-                $this.fadeTo(350, 1);
-            }, randomArray[i] * 50);
-        })
-
-        function randomSort(imageTotal) {
-            var randomArray = new Array();
-            
-            for (var i = 0; i < imageTotal; i++) {
-                var randomNumber = Math.floor(Math.random() * imageTotal);
-                
-                if($.inArray(randomNumber, randomArray) > 0) {
-                    --i
-                } else {
-                    randomArray.push(randomNumber);
-                }
-            }
-            return randomArray;
-        }
-    }
-
-    function loadImage(src, alt, container) {
-        var deferred = $.Deferred();
-        var image = new Image();
-
-        if ($(container).length == false) {
-            throw new Error("Container selector is undefined");
-        }
-        
-        image.onload = function() {
-            container.append(image);
-            $(image).addClass('case-study__tile--image').css("opacity", 0);
-            $(image).attr("alt", alt);
-
-            deferred.resolve();
-        };
-        
-        image.src = src;
-
-        return deferred.promise();
-    }
-
-    function loadAllImages(imageContainer) {
-
-        var images = [];
-
-        if($(imageContainer).length == false) {
-            return;
-        }
-
-        $(imageContainer).each(function(){
-            var $this = $(this);
-
-            var desktop = window.matchMedia("(min-width: 56em)").matches;
-            var tablet  = window.matchMedia("(max-width: 55.99em)").matches;
-            var mobile  = window.matchMedia("(max-width: 35.99em)").matches;
-
-            if (desktop && $this.attr('data-desktop')) {
-                images.push(loadImage($this.attr('data-image'), $this.attr('data-alt'), $this.closest('div')));
-                return;
-
-            } else if (!mobile && tablet && $this.attr('data-tablet')) {
-                images.push(loadImage($this.attr('data-image'), $this.attr('data-alt'), $this.closest('div')));                                
-                return;
-            }
-        });
-
-        $.when.apply($, images).done(function() {
-            showAgesHeader($('#headline-number'));
-            fadeImagesSequentially('.case-study__mosaic');
-        });
-    }
-
-    loadAllImages('span[data-image]');
+    showAgesHeader($('#headlineNumber'));
 
     // ============================================================
     // SVG Icon
@@ -248,9 +157,128 @@ if('querySelector' in document
     if ($('.intro-main-svg-icon').length == false) {
         return;
     } else {
-
         // Remove fallback if javascript fires.
         $('.intro-main-svg-icon').html('');
+        
+        var svgIconConfig = {
+            logo : {
+                url : '/img/logo-initial-new.svg',
+                animation : [
+                    { 
+                        el : 'path:nth-child(1)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 129.179,159.033 135.782,161.373 202.062,103.825 195.745,101.474 z"}' }, 
+                            to : { val : '{"path" : "M 164.521,218.67 171.524,218.562 213.584,141.574 206.848,141.572 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(2)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 12.902,35.723 124.312,75.665 120.042,79.52 8.469,39.513 z"}' }, 
+                            to : { val : '{"path" : "M 149.989,41.557 268.275,41.559 265.561,46.624 147.098,46.617 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(3)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 96.958,6.092 157.372,50.724 152.003,53.228 91.249,8.571 z"}' }, 
+                            to : { val : '{"path" : "M 141.354,136.238 216.424,136.379 213.584,141.574 138.228,141.617 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(4)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 100.132,143.244 93.692,143.932 83.977,167.761 90.437,167.073 z"}' }, 
+                            to : { val : '{"path" : "M 144.448,141.479 138.3,141.494 125.192,164.111 131.684,164.111 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(5)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 177.979,16.337 178.111,22.49 200.989,35.167 200.865,28.675 z"}' }, 
+                            to : { val : '{"path" : "M 265.729,46.328 259.256,46.328 247.078,68.983 253.568,68.983 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(6)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 37.966,216.927 153.499,188.807 152.064,194.2 36.127,222.589 z"}' }, 
+                            to : { val : '{"path" : "M 52.976,217.781 171.813,217.984 169.14,222.875 49.841,222.84 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(7)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 225.917,263.589 219.494,265.52 260.037,73.452 266.464,71.471 z"}' }, 
+                            to : { val : '{"path" : "M 147.351,46.184 154.054,46.202 59.511,218.111 52.79,218.135 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(8)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 82.474,42.831 101.414,34.803 103.937,40.789 84.984,48.783 z"}' }, 
+                            to : { val : '{"path" : "M 247.115,89.542 247.078,68.983 253.568,68.983 253.57,89.542 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(9)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 47.563,252.055 161.824,284.895 167.462,265.452 53.137,232.428 z"}' }, 
+                            to : { val : '{"path" : "M 50.202,222.84 50.288,243.227 169.109,243.107 169.14,222.875 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(10)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 7.356,90.43 37.726,179.903 60.88,183.733 26.969,83.834 z"}' }, 
+                            to : { val : '{"path" : "M 259.4,46.425 248.367,67.122 153.933,67.243 153.963,46.563 z"}' }
+                        }
+                    },
+                    {
+                        el : 'rect:nth-child(11)',
+                        animProperties : {
+                            from : { val : '{"transform" : "matrix(0.958 0.2868 -0.2868 0.958 49.3218 -53.3131)", "x" : "196.334", "y" : "138.44"}' },
+                            to : { val : '{"transform" : "matrix(-0.0036 -1 1 -0.0036 -45.3317 303.6028)", "x" : "118.308", "y" : "171.144"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(12)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 283.777,266.438 296.586,282.118 278.103,185.26 265.5,169.516 z"}' }, 
+                            to : { val : '{"path" : "M 216.424,136.379 216.186,156.535 169.109,243.107 169.14,222.875 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(13)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 173.29,164.655 192.508,171.877 209.182,191.604 189.673,184.41 z"}' }, 
+                            to : { val : '{"path" : "M 144.379,141.584 144.424,162.104 131.876,184.664 131.705,163.885 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(14)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 192.173,259.316 207.039,245.073 171.061,207.59 148.518,213.828 z"}' }, 
+                            to : { val : '{"path" : "M 143.989,141.543 143.975,162.117 195.9,162.107 207,141.537 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(15)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 305.869,8.381 131.279,97.754 140.435,104.019 293.987,25.842 z"}' }, 
+                            to : { val : '{"path" : "M 153.987,46.136 153.933,67.243 70.597,217.947 59.511,217.889 z"}' }
+                        }
+                    },
+                    {
+                        el : 'path:nth-child(16)', 
+                        animProperties : { 
+                            from : { val : '{"path" : "M 61.779,108.571 82.467,101.721 111.885,107.989 92.208,114.512 z"}' }, 
+                            to : { val : '{"path" : "M 268.219,41.651 268.467,63.43 253.57,89.542 253.33,68.827 z"}' }
+                        }  
+                    },
+                ]
+            }
+        };
 
         // Taken from Snap SVG codrops tutorial - http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/
 
@@ -311,11 +339,19 @@ if('querySelector' in document
                     self.svg.append( g );
                     self.options.onLoad();
                     self._initEvents();
+
+                    // Toggle the animation on page load.
+                    setTimeout(function(){
+                        self.toggle(true);
+                    }, 200);
+                    setTimeout(function(){
+                        self.toggle(true);
+                    }, 1200);
                 });
             }
 
             svgIcon.prototype.options = {
-                speed : 800,
+                speed : 400,
                 easing : mina.linear,
                 evtoggle : 'mouseover',
                 onLoad : function() { return false; },
