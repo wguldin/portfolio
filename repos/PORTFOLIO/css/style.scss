@@ -17,7 +17,7 @@ header {
   @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3)); 
   z-index: 2;
 }
-
+ 
 .intro {
 
   @include rem(font-size, 1rem); 

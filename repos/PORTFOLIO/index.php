@@ -15,8 +15,6 @@
 
 <header class="intro" role="banner">
     
-    <!--<div class="nav-menu"><img alt="Menu Icon - Activate to display navigation options." src="/img/icon-menu.png" /> Menu</div>-->
-
     <div class="intro-main">
         <div class="intro-main-svg-frame">
             <span class="intro-main-svg-icon" data-icon-name="logo">
