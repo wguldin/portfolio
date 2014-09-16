@@ -22,11 +22,13 @@
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-weight: normal;
   font-family: "grey-sans-regular", arial, sans-serif;
   @include clearfix;
 }
-
+ 
 p { 
   line-height: 1.7;
   max-width: 48em; 

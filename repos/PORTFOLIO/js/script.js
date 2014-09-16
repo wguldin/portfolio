@@ -12,19 +12,19 @@ if('querySelector' in document
     // ============================================================
 
     // Defeat the spam bots with JS!
-    function createEmailLink () {
+    function createEmailLink (text) {
         if ($('.email-link').length == false ) {
             return;
-        } 
+        }  
 
-        $('.email-link').replaceWith('<a class="link--highlight" href="mailto:wguldin@gmail.com">wguldin@gmail.com</a>');
+        $('.email-link').replaceWith('<a class="link--highlight" href="mailto:wguldin@gmail.com">' + text + '</a>');
     }
 
-    createEmailLink();
+    createEmailLink('wguldin@gmail.com');
 
     function formDropdown (value) {
-        var input = $('#contact-method input');
-        var inputText = $('#contact-method span');
+        var input = $('#method input');
+        var inputText = $('#method span');
 
         switch (value) {
             
@@ -74,33 +74,60 @@ if('querySelector' in document
 
     scrollToLink();
 
-    function asyncSubmit() {
-        var $form = $('#contact-form');
+    function addErrorClassesToLabels() {
+        $('label.error').removeClass('error');
+        $('.error').closest('label').addClass('error');
+    }
 
-        $('body').on('submit', $form, function (e) {
+    addErrorClassesToLabels();
+
+    function removeErrorsWhenInputIsActive() {
+        $('body').on('input', 'label.error input, label.error textarea', function() {
+          
+          var $this = $(this);
+          var label = $this.closest('label.error');
+
+          if ($this.val().length >= 1 ) {
+            
+            label.removeClass('error');
+
+            label.find('small.error').addClass('is-hidden').fadeOut(350, function() {
+              $(this).remove();
+            });
+          }
+
+        });
+    }
+
+    removeErrorsWhenInputIsActive();
+      
+    function asyncSubmit() {
+
+        $('body').on('submit', '#contact-form', function (e) {
             e.preventDefault();
 
-            // Eliminate old errors.
-            $('[data-validation="error"]').remove();
+            var $form = $(this);
 
             $.ajax({
-                url      : '/include/form.php',
+                url      : $form.attr('action'),
                 type     : 'POST',
-                dataType : 'json',  // <-- Parse the response as JSON object
-                data     : $form.serialize() + '&ajax=true',
+                data     : $form.serialize(),
 
                 success: function(data) {
-
-                    if (data == 'success') {
-                        $form.parent().html(data);
-                    } else {
-                        $.each( data, function( key, val ) {    
-                            $('[name="' + key + '"]').addClass('error').after('<small class="error" data-validation="error">'+ val +'</small>');
-                        });
+                    $form.parent().html(data);
+                     
+                    // For validation errors
+                    if ($('.error').length) {
+                        addErrorClassesToLabels();
+                    }
+                
+                    // For error submitting form too quickly, replace email with link (for spam prevention).
+                    if ($('.email-link').length) {
+                        createEmailLink('contact me directly by email.');
                     }
                 },
                 error: function(data) {
-                    $form.parent().html('<h2 class="main-subheader">Houston, we have a problem</h2><p>It looks like there was an issue with our contact form. We\'re sorry about that!</p><p>Go ahead and <a class="intro-link" href="mailto:wguldin@gmail.com">just email me directly</a>, if you don\'t mind.');
+                    $form.parent().html('<h3>Houston, we have a problem</h3><p>It looks like there was an issue with our contact form. We\'re sorry about that!</p><p>Go ahead and <a class="link--highlight" href="mailto:wguldin@gmail.com">just email me directly</a>, if you don\'t mind.');
                     throw new Error('Error hit in form response');
                 },
             });

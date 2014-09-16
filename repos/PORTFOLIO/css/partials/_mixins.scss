@@ -3,7 +3,9 @@ $light-blue: #ECF5FF;
 $blue-grey: #B5C5D8;
 $dark-blue: #032143;
 $secondary-blue: #C0DDFF;
-$blue-tint: #dce3f5;
+$blue-tint: #dce3f5; 
+
+$error-color: #ffe6bf;
 
 $sans-stack: arial, sans-serif;
 $swift-out: cubic-bezier(.55,0,.1,1);
@@ -83,7 +85,7 @@ $supported: true !default;
   @include rem(padding, 1px 2px 1px);
 
   background-image: linear-gradient(to top, $background-color, $background-color);
-  background-size: 100% .12em;
+  background-size: 100% .08em;
   background-position: bottom;
   background-repeat: no-repeat;
 

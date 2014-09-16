@@ -1,7 +1,7 @@
 @import "base";
 
 // ============================================================
-// Sidebar/topbar styling
+// Topbar styling
 // ============================================================
 
 header {
@@ -67,7 +67,6 @@ header {
     line-height: 1.4;
 
     margin: 0;
-    padding: 0 0 0 .2em;
     display: inline-block;
     vertical-align: middle;
 
@@ -75,13 +74,9 @@ header {
     color: #fff;
     text-shadow: 2px 2px 3px $dark-blue; 
 
-    @include mq(32em) {
-      font-size: 1.7em;
-    }
-
     @include mq(38em) {
-      font-size: 2em;
-      padding-left: .75em;
+      padding: 0 0 0 .2em;
+      font-size: 3em;
     }
 
     @include mq(52em) {
@@ -95,16 +90,25 @@ header {
     font-size: .45em;
     color: #fff;
     font-family: "grey-sans-bold", $sans-stack;
+    font-weight: normal;
     text-shadow: 1px 1px 1px $dark-blue; 
     display: block;
     text-transform: uppercase;
   }
 
-  .chiclet-button {
+  .chiclet-button--primary {
     margin-top: 2em;
     color: #fff;
     background-color: $blue;
     border-color: #fff;
+    margin-left: 0;
+    max-width: none;
+    margin-bottom: 0;
+    width: 100%;
+
+    @include mq(48em) {
+      max-width: 29em;
+    }
 
     &:hover {
       color: $blue;
@@ -112,7 +116,7 @@ header {
     }
  
     @include mq(52em) {
-      max-width: 18em;
+      max-width: 20em;
       margin-top: .5em;
       float: left;
     } 
@@ -150,7 +154,7 @@ nav[role="navigation"] {
       padding: 1.2em .9em;
     }
   }
-}
+} 
 
 // ============================================================
 // SVG Styling
@@ -159,8 +163,16 @@ nav[role="navigation"] {
 .logo-bar, .logo-block {
   fill: $blue;
   stroke: $blue;
-  stroke-width: 2px;
+  stroke-width: 5px;
   stroke-linejoin: bevel;
+
+  @include mq(38em) {
+    stroke-width: 3px;
+  }
+
+  @include mq(52em) {
+    stroke-width: 2px;
+  }
 }
 
 .intro-main-svg-frame {
@@ -222,11 +234,11 @@ nav[role="navigation"] {
   text-decoration: none;
   text-align: center;
 
-  margin: 0 auto;
+  margin: 1em auto 0;
   display: block;
   width: 100%;
+  max-width: 24em;
   padding: .5em 0;
-  max-width: 100%;
 
   border-radius: 6px;
   border: 2px solid $blue;
@@ -239,23 +251,7 @@ nav[role="navigation"] {
 
   @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2));
 
-  font-size: .8em;
-
-  @include mq(22em) {
-    font-size: 1em;
-  }
-
-  @include mq(25em) {
-    margin-left: 0;
-  } 
-
-  @include mq(36em) {
-    @include rem(max-width, 10rem);
-  }
-
-  @include mq(52em) {
-    font-size: .9em;
-  }
+  font-size: .9em;
 
   &:hover {
     color: #fff;
@@ -294,6 +290,16 @@ nav[role="navigation"] {
     float: left;
     margin-right: 4em;
   }
+
+  @include mq(70em) {
+    margin-right: 2.2em;
+  }
+
+  .chiclet-button {
+    @include mq(36em) {
+      margin-left: 0;
+    }
+  }
 }
 
 .contact-form {
@@ -328,12 +334,20 @@ input {
 
 input[type="text"], input[type="tel"], input[type="email"], textarea {
   @include rem(padding, .5rem .6rem);
-  display: inline-block;
+  display: block;
   border: 1px solid #B9B9B9;
-  @include box-shadow(inset 0 1px 3px #ddd);
+  box-shadow: inset 0 1px 3px #ddd;
   border-radius: 4px;
   background-color: #FAFAFA;
   margin-top: .2em;
+  outline: 0;
+  max-width: 33em;
+
+  &:focus {
+    border-color: lighten($blue, 15%);
+    box-shadow: inset 0 1px 3px #ddd, 0 0 5px rgba(lighten($blue, 15%), 0.7);
+    outline: 0;
+  }
 }
 
 .contact-options {
@@ -374,10 +388,34 @@ button.chiclet-button {
   margin-top: 1.5em;
 }
 
-input.error, textarea.error {
-  border-color: #ffc54a;
-  background-color: #FFFAEF;
-} 
+small.error {
+  color: darken($error-color, 45%);  
+  display: block;
+  clear: left;
+  @include transition(max-height 250ms $swift-out);
+  max-height: 2em;
+
+  &.is-hidden {
+    max-height: 0;
+  }
+}
+ 
+label.error { 
+  input, textarea {
+    background-color: lighten($error-color, 5%);
+    border-color: darken($error-color, 25%);
+
+    &:focus {
+      border-color: darken($error-color, 40%);
+      box-shadow: inset 0 1px 3px #ddd, 0 0 5px rgba(darken($error-color, 30%), 0.7);
+      outline: 0;
+    }
+
+    &:hover {
+      border-color: darken($error-color, 40%);
+    }
+  }
+}
 
 .about {
   width: 100%;
@@ -396,6 +434,14 @@ input.error, textarea.error {
   border-radius: 50%;
   margin: 3em 0 1em 1em;
 
+  @include mq(28em) {
+    max-width: 10em;
+  }
+
+  @include mq(36em) {
+    max-width: 11em;
+  }
+
   @include mq(52em) {
     float: none;
     max-width: none;
@@ -408,17 +454,17 @@ input.error, textarea.error {
 // Home page styling
 // ============================================================
 
-.main-rdes-logo {
-  background-color: #a4d47e;
-}
-
 .section-header {
-  margin: 1em auto .7em;
+  margin: .7em auto .5em; 
   width: 100%;
   font-size: 2em;
   font-family: "grey-sans-semibold", arial, sans-serif;
   text-align: center;
   text-shadow: 2px 2px 3px tint($text, 60%); 
+
+  @include mq(36em) {
+    font-size: 2.65em;
+  }
 
   @include mq(60em) {
     font-size: 3.2em;
@@ -444,6 +490,203 @@ input.error, textarea.error {
     }
 }
 
+.portfolio--case-study {
+  figure {
+    @include clearfix;
+    width: 100%;
+    max-width: 68em;
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  .chiclet-button {
+    margin-top: 1.5em;
+  }
+}
+
+.portfolio {
+  border-bottom: 1px solid lighten($blue, 30%);
+  @include clearfix;
+  clear: both;
+}
+
+.jack {  
+  .section-text {
+    display: inline-block;
+    vertical-align: top;
+    @include clearfix;
+
+    @include mq(36em) {
+      display: inline;
+    }
+
+    @include mq(52em) {
+      display: inline-block;
+      vertical-align: top;
+      width: 60%;
+      max-width: 33em;
+      float: left; 
+    }
+  }
+
+  .device__frame.jack-image {
+    width: 100%;
+
+    @include mq(32em) {
+      width: 34%;
+      float: left;
+      margin-right: 4%;
+      min-width: 15em;
+    }
+
+    @include mq(52em) {
+      float: right;
+      margin: 0 1% 0 2%;
+    }
+
+    @include mq(70em) {
+      margin: 0 3% 0 2%;
+    }
+
+    img {
+      @include mq(70em) {
+        padding-left: 7.5%;
+      }
+    }
+  }
+
+  .section-secondary-image {
+    margin: .8em 0 0 0;
+
+    @include mq(52em) {
+      margin-top: 1em;
+      clear: left;
+    }
+
+    img {
+      width: 100%;
+      border-bottom: 2px solid $blue;
+      padding-bottom: 1em;
+
+      @include mq(32em) {
+        width: auto;
+      }
+
+      @include mq(48em) {
+        border: 0;
+        padding: 0 1.2em 0 0;
+        border-right: 2px solid $blue;
+      }
+    }
+    
+    figcaption {
+      display: inline-block;
+      vertical-align: top;
+      font-size: .9em;
+      line-height: 1.6; 
+      color: $text-light;
+      margin-top: 1em;
+      width: 100%;
+
+      @include mq(32em) {
+        width: 80%;
+      }
+
+      @include mq(48em) {
+        font-size: .8em;
+        line-height: 1.5;
+        margin: 0 0 0 1.2em;
+        width: 12%;
+        min-width: 10em;
+      }
+    }
+  }
+}
+
+.ages {
+  figure {
+    max-width: 35em;
+    margin: 0 auto 2.5em;
+    
+    @include mq(52em) {
+      margin-left: 3%;
+      max-width: 68em;
+    }
+
+    .browser {
+      @include mq(70em) {
+        width: 58.5%;
+      }
+    }
+  }
+
+  figcaption {
+    width: 100%;
+
+    @include mq(52em) {
+      float: left;
+      width: 30%;
+      max-width: 25em; 
+    }
+  }
+
+  .section-main-image {
+    @include mq(52em) {
+      float: left; 
+      width: 60%;
+      height: auto;
+      max-width: 40em;
+      margin: 0 2em 0 0;
+    }
+  }
+}
+
+.rdes {
+  figure {
+    @include mq(48em) {
+      padding-right: 1em;
+    }
+
+    @include mq(70em) {
+      padding-right: 0;
+    }
+  }
+
+  .section-main-image {
+    @include mq(48em) {
+      float: left; 
+      width: 58.5%;
+      height: auto;
+      max-width: 40em;
+      margin: 0 2em 0 0;
+    }
+  }
+
+
+  figcaption {
+    width: 100%;
+
+    @include mq(48em) {
+      display: inline;
+      float: none;
+      width: 30%;
+      max-width: 25em; 
+    }
+
+    @include mq(55em) {
+      float: left;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+// ============================================================
+// Device Screenshot Examples
+// ============================================================
+
 .browser {
   display: inline-block;
   border: 1px solid lighten(#96a0a2, 10%);
@@ -456,13 +699,17 @@ input.error, textarea.error {
   &:before {
     position: absolute;
     left: 0px;
-    top: 0;
+    top: 0; 
     content: "\2022\2022\2022";
     color: tint($dark-blue, 40);
     font-size: 120px;
     letter-spacing: -10px;
-    line-height: .7rem;
     font-weight: 300;
+    line-height: .6rem;
+
+    @include mq(36em) {
+      line-height: .7rem;
+    }
   }
 
   img {
@@ -471,208 +718,48 @@ input.error, textarea.error {
   }
 }
 
-.portfolio--case-study {
-  figure {
-    @include clearfix;
-    width: 100%;
-    max-width: 68em;
-
-    .section-main-image {
-      @include mq(52em) {
-        float: left; 
-        width: 60%;
-        height: auto;
-        max-width: 40em;
-        margin: 0 2em 0 0;
-      }
-    }
-
-    figcaption {
-      width: 100%;
-
-      @include mq(52em) {
-        float: left;
-        width: 30%;
-        max-width: 25em; 
-      }
-
-      p:first-child {
-        margin-top: 0;
-      }
-
-      .chiclet-button {
-        font-size: .8em;
-        max-width: 100%;
-        width: 100%;
-        display: inline-block;
-      }
-    }
-  }
-}
-
-.portfolio {
-  border-bottom: 1px solid lighten($blue, 30%);
+.device__frame {
+  display: inline-block;
   @include clearfix;
-  clear: both;
-}
 
-.jack {  
-  blockquote {
-    font-size: .9em;
-    width: 19%;
-    margin: .1em 3em 0 0;
-    padding: 1em;
-    background-color: #ecf5ff;
-
-    .quote-attribution { 
-      display: block;
-      margin-top: 1em;
-    }
-  }
-
-  blockquote, .section-main-image, .section-text {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  .section-text {
-    @include mq(52em) {
-      width: 60%;
-      max-width: 33em;
-      float: left; 
-    }
-  }
-
-  .section-main-image {
-    width: 80%;
-    margin: 0 auto 1.5em;
-
-    @include mq(52em) {
-      margin: 0 0 0 2em;
-      width: 28%;
-      float: left;
-    }
-
-    @include mq(60em) { 
-      width: 26%;
-      margin: 0 0 0 4em;
-    }
-
-    figcaption {
-      margin-top: 1.5em;
-    }
-  }
-
-  .section-secondary-image {
+  &.responsive-image {
     margin: 0;
-
-    @include mq(52em) {
-      margin-top: 1em;
-      clear: left;
-    }
-
-    img {
-      @include mq(52em) {
-        padding-right: 1.2em;
-        border-right: 2px solid $blue;
-      }
-    }
-    
-    figcaption {
-      display: inline-block;
-      vertical-align: top;
-      font-size: .8em;
-      color: $text-light;
-
-      @include mq(52em) {
-        line-height: 1.5;
-        margin-left: 1.2em;
-        width: 12%;
-        min-width: 10em;
-      }
-    }
-
-    img {
-      width: 95%;
-      margin: .5em 0;
-
-      @include mq(52em) {
-        width: auto;
-        margin: 0;
-      }
-    }
+    float: left;
+    margin-left: -6em;
+    width: 12.5em; 
+    margin: 0 1.5em 0 -6em;
   }
 }
 
-// ============================================================
-// Device Frames Styling
-// ============================================================
+.device__caption {
+  width: auto;
+  display: inline-block;
+  font-size: .8em;
+  color: #737373;
+  margin-top: 1em;
+}
 
-$ipadScreenWidth: 100%;
-$ipadScreenHeight: (4/3)*$ipadScreenWidth;
+.device__image {
+  @include clearfix;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6px;
+  float: left;
+}
 
-$ipadTotalWidth: $ipadScreenWidth/.8;
-$ipadTotalHeight: (4/3)*$ipadTotalWidth;
+.device__image--ipad {
+  background-image: url("/img/apple-ipad.svg");
+  width: 100%;
+  height: auto;
+  padding: 15% 6.5% 15% 7.7%;
+  background-size: 100%;
+}
 
-$secondaryColor: #A0A29B;
-$tertiaryColor: #D9DBD2;
-
-.ipad-image {
-  width: $ipadTotalWidth;
-  height: $ipadTotalHeight;
-  padding: (($ipadTotalHeight - $ipadScreenHeight)/2) (($ipadTotalWidth - $ipadScreenWidth)/2);
-
-  border: 2px solid $secondaryColor;
-  border-top-left-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
-  border-top-right-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
-  border-bottom-left-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
-  border-bottom-right-radius: percentage(($ipadScreenWidth/15%)*(4/3))/100 percentage(($ipadScreenWidth/15%))/100;
-
-  @include box-shadow(2px 2px 8px lighten(#2E2E2E, 20%));
-
-  background-color: #2E2E2E;
-  background-image: -webkit-linear-gradient(top, #2E2E2E, #181818);
-  background-image: -moz-linear-gradient(top, #2E2E2E, #181818);
-  background-image: -ms-linear-gradient(top, #2E2E2E, #181818);
-  background-image: -o-linear-gradient(top, #2E2E2E, #181818);
-  background-image: linear-gradient(to bottom, #2E2E2E, #181818);
-
-  position: relative;
-  box-sizing: border-box;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  &:after, &:before {
-    content: '';
-    z-index: 2;
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  // Camera
-  &:after {
-    height:percentage(($ipadScreenWidth/45%))/100;
-    width: percentage(($ipadScreenWidth/45%)*(4/3))/100;
-    background-color: $tertiaryColor;
-    border: 1px solid $secondaryColor;
-    margin: 0 auto;
-    left: 49.5%;
-    top: $ipadTotalWidth * .035;
-  }
-
-  // Button 
-  &:before {
-    height: percentage(($ipadScreenWidth/25%))/100;
-    width: percentage(($ipadScreenWidth/25%)*(4/3))/100;
-    border-radius: 50%;
-    background-color: $tertiaryColor;
-    border: 2px solid $secondaryColor;
-    left: (($ipadTotalWidth/90%)/3)*100%;
-    bottom: $ipadScreenWidth * .025;
-  }
+.device__image--android {
+  background-image: url('/img/android-nexus.svg');
+  width: 12.5em;
+  height: 24em;
+  padding: 2.2em 0.8em 2.6em;
 }
 
 // ============================================================
@@ -953,38 +1040,14 @@ footer ul {
   padding: 0;
 }
 
-footer nav {
-  padding-top: 0;
-  display: inline-block;
-  vertical-align: middle;
-
-  border-right: 1px solid #fff;
+footer {
 
   ul {
-    padding: 0;
-    display: block;
-    font-family: 'grey-sans-bold', $sans-stack;
-    text-transform: uppercase;
-  } 
+    float: none;
+  }
 
-  li {  
-    border-top: 1px solid #fff; 
-
-    &:first-child { 
-      border-top: none; 
-    }  
-
-    a {
-      display: inline-block; 
-      padding: .65em 4em .55em 1.7em;
-      width: 100%;
-    
-      &:hover { 
-        background-color: #badaff;
-        color: $blue;
-        cursor: pointer;
-        cursor: hand; 
-      }  
-    }
+  a.link--highlight {
+    color: #fff;
+    @include link-animate(#fff, $blue);
   }
 }

@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!--[if !lt IE 9]><!-->
-        <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <!--<![endif]-->
-
-    <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="css/styles-ie.css" />
-            <script src="js/vendor/html5shiv.min.js"></script>
-    <![endif]-->
-
-</head>
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT']."/include/header.php");
+?>
 
 <body>
 
@@ -109,6 +87,13 @@
 
         <p>By making these few layouts I was able to quickly make sure the Missourian and I were on the same page. With their signoff, I began to build the website. Working in the evenings after my full-time design internship at the Reading Eagle, I was able to finish the project in two months.</p>
 
+        <figure class="device__frame responsive-image">
+            <img src="../img/screenshot_2.png" class="device__image device__image--android" alt="100 Ages, A Century of Voices website screenshot shown on a smart phone" />
+            <figcaption class="device__caption">
+                Responsive stuff here and here and here and here and here and here.
+            </figcaption> 
+        </figure>
+
         <h3>Responsive to a mobile web</h3>
 
         <p>Touchscreen devices are poised to outpace desktop usage online, if they haven’t done so already. Every site I’ve built is “responsive” meaning the same website adapts its design to each device viewing it, from a cramped smartphone to an oversized monitor.</p>
@@ -138,35 +123,6 @@
 </article>
 </main>
 
-<footer>
-    <!--<nav>
-        <ul>
-            <li class="is-selected"><a href="/home">Home</a></li>
-            <li><a href="/tangram-blog">Blog</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>-->
-    <ul class="footer-contact">
-        <li>&copy; Will Guldin</li>
-        <li><a href="tel:1-501-920-7064">501.920.7064</a></li>
-        <li><a href="mailto:wguldin@gmail.com">wguldin@gmail.com</a></li>
-    </ul>
-</footer>
-    
-    <script src="../js/jquery.js"></script>
-    <script src="../js/script.js"></script>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <!--<script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>-->
-
-</body>
-</html>
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT']."/include/footer.php");
+?>
