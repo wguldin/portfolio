@@ -11,7 +11,7 @@ $sans-stack: arial, sans-serif;
 $swift-out: cubic-bezier(.55,0,.1,1);
 
 $text: #383838;
-$text-light: tint($text, 30%);
+$text-light: #8a979f;
 
 // ============================================================
 // Utility Mixins
@@ -55,13 +55,20 @@ $supported: true !default;
   @each $prefix in -webkit-, -moz-, -o-, '' {
           #{$prefix}transition: #{$value};
   }
-}
+} 
 
 @mixin box-shadow($value...) {
   @each $prefix in -webkit-, -moz-, '' {
           #{$prefix}box-shadow: #{$value};
   }
 }
+
+@mixin calc($property, $expression, $fallback) { 
+  #{$property}: #{$fallback};
+  #{$property}: -moz-calc(#{$expression}); 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
 
 // ============================================================
 // Gradients
@@ -130,7 +137,7 @@ $supported: true !default;
 // and it will provide pixel fallbacks for REM measurements.
 
 
-$root-font-size: 16;
+$root-font-size: 20;
 
 @function parseInt($n) { 
   @return $n / ($n * 0 + 1);

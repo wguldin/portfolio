@@ -14,11 +14,14 @@
     </ul>
 </nav>
 
-<header class="case-study__header intro" role="banner">
-    <div class="case-study__h-group">
-        <h1 class="section-header case-study__title"><span id="headlineNumber" class="case-study__title--number">1</span> <span id="headline-text">Ages, A Century of Voices</span></h1>
-        <h2 id="headline-subhead" class="case-study__subhead">A cross-generational story about all of us</h2>
+<header class="intro case-study__header" role="banner">
+    
+    <div class="header__intro">
+        <h1 class="intro__main-head"><span id="headlineNumber">1</span><span> Ages</span></h1>
+        <h2 class="intro__subheader">A Century of Voices</h2>
     </div>
+    <p class="intro__description">A pair of photojournalists recorded and edited 100 interviews with people of all ages. With my help, they told a timeless story about life's experiences.</p>
+
     <span class="age age--1">37</span>
     <span class="age age--2">23</span>
     <span class="age age--3">4</span>
@@ -28,6 +31,7 @@
     <span class="age age--7">17</span>
     <span class="age age--8">64</span>
     <span class="age age--9">95</span>
+    
 </header>
 
 <main role="main">
@@ -83,14 +87,14 @@
 
         <p>After discussing the project and its goals, I took a few days to come up with an early design draft.</p>
 
-        <p>I quickly settled on using large portrait photos of each person being interviewed, along with a modern typeface to give the project a clean look. This was all inspired by a simple design style that puts the focus on the conten.</p>
+        <p>I quickly settled on using large portrait photos of each person being interviewed, along with a modern typeface to give the project a clean look. This was all inspired by a simple design style that puts the focus on the content.</p>
 
         <p>By making these few layouts I was able to quickly make sure the Missourian and I were on the same page. With their signoff, I began to build the website. Working in the evenings after my full-time design internship at the Reading Eagle, I was able to finish the project in two months.</p>
 
         <figure class="device__frame responsive-image">
             <img src="../img/screenshot_2.png" class="device__image device__image--android" alt="100 Ages, A Century of Voices website screenshot shown on a smart phone" />
             <figcaption class="device__caption">
-                Responsive stuff here and here and here and here and here and here.
+                100 Ages, and every project I work on, is designed to work well on a range of devices, including smartphones. 
             </figcaption> 
         </figure>
 
@@ -111,8 +115,8 @@
         <p>Here’s what one of the photojournalists on the project had to say about my involvement:</p>
 
         <blockquote class="article__quote--featured">
-            <p>"Quote here and here and here and maybe some here about working with me on the project. I hope they have something kind of OK to say about me and the work I did."</p>
-            <cite>-Attribution here and here.</cite>
+            <p>"Will Guldin is that rare combination of both hard work and talent.  Will went above and beyond the call of duty when he served as the designer for the 100 Ages: A Century of Voices ​​project, sharing our vision of a clean and sophisticated layout.  He was always ready to hear our thoughts, while contributing his own expertise to make the final product flawless in multiple formats."</p>
+            <cite>Photojournalist Kathleen Alaimo</cite>
         </blockquote>
 
         <p>I hope you’ll take a look at the work as well. I’ve learned a lot more since I first completed this project, but it remains one of the most valuable things I’ve done in my professional career.</p>

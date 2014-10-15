@@ -1,5 +1,8 @@
-<form id="contact-form" action="/include/process.php" method="POST" class="contact-form">        
+<form id="contact-form" action="include/process.php" method="POST" class="contact-form">     
   <?php echo htmlspecialchars($error["time"]); ?>       
+
+  <h3>Contact Me</h3>
+  <small class="input-note">All fields are required, unless marked "optional"</small>
 
   <label>Full name 
     <input name="name" type="text" value="<?php echo htmlspecialchars($_POST['name']); ?>"/>

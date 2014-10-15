@@ -1,5 +1,5 @@
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT']."/include/header.php");
+    include_once("include/header.php");
 ?>
 
 <body>
@@ -14,22 +14,21 @@
 </nav>
 
 <header class="intro" role="banner">
-    
-    <div class="intro-main">
-        <div class="intro-main-svg-frame">
-            <span class="intro-main-svg-icon" data-icon-name="logo">
-                <img src="/img/logo-fallback.png" alt="Will Guldin Design logo">
-            </span>
-        </div>
-
-        <h1><span class="intro-main-runin">Digital Designer</span> Will Guldin</h1>
-
-        <aside>
-            <p>Effective design begins with a great idea. I'd love to talk with you about yours. I work at <a href="http://www.midwayusa.com" class="link--highlight">MidwayUSA</a> as a web designer, but still take on some projects in my free time. Email me at <span class="email-link">wguldin [at] gmail [dot] com</span> if I can help you with anything, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
-            <a href="#contact" class="chiclet-button chiclet-button--primary">Contact me about your project</a>
-        </aside>
+    <div class="intro-main-svg-frame">
+        <span class="intro-main-svg-icon" data-icon-name="logo">
+            <img src="/img/logo-fallback.png" alt="Will Guldin Design logo">
+        </span>
     </div>
 
+    <div class="intro__header">
+        <h2 class="intro__subheader">Digital Designer</h2>
+        <h1 class="intro__main-head">Will Guldin</h1>
+    </div> 
+
+    <aside class="intro__text">
+        <a href="#contact" class="chiclet-button chiclet-button--primary intro__button">Contact me about your project</a>
+        <p class="intro__description">Effective design begins with a great idea. I'd love to talk with you about yours. I work at <a href="http://www.midwayusa.com" class="link--highlight">MidwayUSA</a> as a web designer, but still take on some projects in my free time. Email me at <span class="email-link">wguldin [at] gmail [dot] com</span> if I can help you with anything, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
+    </aside>
 </header>
 
 <main role="main" id="recent-work">
@@ -43,7 +42,7 @@
             <figcaption>
                 <p><strong class="section-text-summary">This collection of personal stories underscores the common bonds of life that we all share.</strong></p>
                 <p>As the only designer for this project, I came up with an effective and simple presentation for it, while coding all parts of the website.</p>
-                <a href="/" class="chiclet-button disabled">Full case study coming soon</a>            
+                <a href="/one-hundred-ages" class="chiclet-button">Read the case study</a>            
             </figcaption>
         </figure>
     </section>
@@ -93,10 +92,8 @@
             <p>If you have any questions about my work, or would like to talk about your project, just drop a line here using this form. You can also email me at <span class="email-link">wguldin [at] gmail [dot] com</span>.</p>
             <p>We'll discuss if my skills and schedule are the right fit for you and go from there.</p>
             <div class="contact-form__container">
-                <h3>Contact Me</h3>
-                <small class="input-note">All fields are required, unless marked "optional"</small>
                 <?php
-                    include($_SERVER['DOCUMENT_ROOT']."/include/form.php");
+                    include("include/form.php");
                 ?>
             </div>
             <div class="about">
@@ -110,7 +107,7 @@
 </main>
 
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT']."/include/footer.php");
+    include_once("include/footer.php");
 ?>
 
 

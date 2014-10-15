@@ -7,6 +7,7 @@
 @import "partials/h5bp";
 @import "bourbon/bourbon";
 @import "neat/neat"; 
+@import "partials/normalize";
 
 //base materials  
 @import "partials/typography";
@@ -17,7 +18,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
- }
+}
  
 body {
   margin: 0;
@@ -50,19 +51,10 @@ button {
   user-select: none;
 }
 
-html {
-  min-height: 100%;
-  min-width: 17.5em;
-  font-size: 16px;
-
-  @include mq(28em) {
-    font-size: 20px;
-  }
-
-  @include mq(48em) {
-    font-size: 18px;
-  }
-
+html { 
+  min-height: 100%; 
+  min-width: 17.5em; 
+  font-size: 20px;
 }
 
 h1,h2,h3,h4,h5,h6, p, strong, span {
@@ -82,13 +74,20 @@ strong {
 }
 
 main[role="main"] {
-  width: 88%;
+  width: 80%;
   max-width: 68em;
-  margin: 0 6%;
+  margin: 0 auto;
   z-index: 1;
 
   @include mq(36em) {
-    margin: 0 3%;
+    width: 84%;
+  }
+
+  @include mq(48em) {
+    width: 88%;
+  }
+
+  @include mq(56em) {
     width: 94%;
   }
 } 
@@ -97,13 +96,15 @@ blockquote {
   margin: 0;
 
   p {
+    color: $text-light;
     margin: 0;
   }
 
   cite {
+    color: $text;
+    display: inline-block;
     margin-top: 1em;
     font-size: .7em;
-    color: $text-light;
   }
 }
 
@@ -136,4 +137,10 @@ a, span.chiclet-button, button.chiclet-button {
   -webkit-backface-visibility: hidden;
   color: $blue;
   @include link-animate($blue, #fff);
+
+  .no-backgroundsize & {
+    color: $blue;
+    text-decoration: underline;
+    background: none;
+  }
 }

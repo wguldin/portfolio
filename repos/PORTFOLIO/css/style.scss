@@ -3,123 +3,238 @@
 // ============================================================
 // Topbar styling
 // ============================================================
-
-header {
-  background: $blue;
-  background-image: -webkit-gradient(radial, 16% 28%, 0, 16% 28%, 141, from(shade($blue, 12%)), to($blue));
-  background-image: -webkit-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue);
-  background-image:    -moz-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue);
-  background-image:     -ms-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue); 
-  background-image:      -o-radial-gradient(16% 28%, circle, shade($blue, 12%), $blue);
-  background-image:       radial-gradient(circle at 16% 28%, shade($blue, 12%), $blue);
-
-  border-bottom: 1px solid $blue;
-  @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3)); 
+ 
+header.intro {
   z-index: 2;
-}
- 
-.intro {
-
-  @include rem(font-size, 1rem); 
-  @include clearfix;
-
+  padding: 1.8em;
   width: 100%;
-  text-align: left;
-  padding: 1.5em 0 3em;
+  text-align: left; 
+  overflow: hidden;
+  position:relative;
 
-  .intro-main {
-    width: 90%;
-    margin: 0 auto;
+  background: $blue; 
+  background-image: -webkit-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%));
+  background-image:    -moz-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%));
+  background-image:     -ms-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%)); 
+  background-image:      -o-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%));
+  background-image:       radial-gradient(circle at 60% 73%, $blue, shade($blue, 18%));
+  border-bottom: 1px solid $blue;
 
-    @include mq(52em) {
-      width: 94%;
-      max-width: 68em;
-      padding-left: 6%;
-    }
-    
-    @include clearfix;
-  }
+  @include clearfix; 
+  @include rem(font-size, 1rem); 
+  @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3));
 
-  aside {
-    clear: both;
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
 
-    @include mq(52em) {
-      clear: none;
-      float: left;
-      width: 67%;
-      width: -webkit-calc(100% - 16em); 
-      width: -moz-calc(100% - 16em); 
-      width: calc(100% - 16em); 
-    }
-  }
-
-  p {
-    color: #fff;
-
-    a {
-      color: #fff;
-      @include link-animate(#fff, $blue);
-    }
-  }
-
-  h1 {
-    font-size: 2.3em;
-    line-height: 1.4;
-
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
-
-    font-family: "grey-sans-semibold", $sans-stack;
-    color: #fff;
-    text-shadow: 2px 2px 3px $dark-blue; 
-
-    @include mq(38em) {
-      padding: 0 0 0 .2em;
-      font-size: 3em;
-    }
-
-    @include mq(52em) {
-      font-size: 2.5em;
-      padding: 0;
-      float: left;
-    }
-  }
-
-  .intro-main-runin {
-    font-size: .45em;
-    color: #fff;
-    font-family: "grey-sans-bold", $sans-stack;
-    font-weight: normal;
-    text-shadow: 1px 1px 1px $dark-blue; 
+  @include mq(37.5em) {
     display: block;
-    text-transform: uppercase;
+  } 
+
+  @include mq(52em) {
+    display: block;
+  }
+}  
+
+.chiclet-button--primary.intro__button {
+  margin-top: 2em;
+  color: #fff;
+  background-color: $blue;
+  border-color: #fff;
+  margin-left: 0;
+  max-width: none;
+  margin-bottom: 0;
+  width: 100%;
+  padding: .7em 1em; 
+  font-size: 0.8em;
+  
+  &:hover {
+    color: $blue;
+    background-color: #fff;
   }
 
-  .chiclet-button--primary {
-    margin-top: 2em;
-    color: #fff;
-    background-color: $blue;
-    border-color: #fff;
-    margin-left: 0;
-    max-width: none;
-    margin-bottom: 0;
+  @include mq(37.5em) {
+    padding: .7em 1.5em;
+    max-width: none
+  }
+
+  @include mq(40em) {
+    max-width: 28em;
+  }
+
+  @include mq(52em) {
+    max-width: 24em;
+    font-size: .83em;
+    margin-top: 1.5em;
+    @include order(1);
+  } 
+}
+
+.intro__header {
+  font-family: "grey-sans-semibold", $sans-stack;
+  width: 100%; 
+
+  // -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  // font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+
+  white-space: nowrap;
+
+  @include mq(37.5em) {
+    width: 70%;
+    display: inline-block;
+    padding-left: .5em;
+  }
+
+  @include mq(52em) {
+    width: 60%;
+    float: left;
+    clear: none;
+  }
+}  
+
+.intro__subheader {
+  font-size: 1.1em;
+  letter-spacing: 0.02em;
+  display: block;
+  color: #fff;
+  text-shadow: 1px 1px 2px $dark-blue;
+  margin: 0;
+
+  @include mq(32em) {
+    font-size: 1.6em;
+  }
+}
+
+.intro__main-head {
+  width: auto;
+  font-size: 1.8em;
+  letter-spacing: .05em;
+  line-height: 1.4;
+  margin: 0; 
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  text-shadow: 2px 2px 3px $dark-blue;
+  text-transform: uppercase;
+
+  span {
+    color: inherit;
+  }
+
+  @include mq(25em) {
+    font-size: 2em;
+  }
+
+  @include mq(30em) {
+    font-size: 2.6em;
+  }
+
+  @include mq(32em) {
+    font-size: 2.8em;
+  }
+
+  @include mq(37.5em) {
+    font-size: 2.6em;
+  }
+
+  @include mq(42em) {
+    font-size: 2.8em;
+  }
+
+  @include mq(52em) {
+    line-height: 1.2;
+  }
+
+  @include mq(58em) {
+    font-size: 3.5em;
+  }
+
+  @include mq(64em) {
+    font-size: 4em;
+  }
+
+  @include mq(70em) {
+    font-size: 4.5em;
+  }
+}
+
+.intro__text { 
+  float: none;
+  width: 100%;
+
+  @include mq(37.5em) {
     width: 100%;
+    text-align: left;
+    display: block;
+    margin-top: 2.5em;
+  }
 
-    @include mq(48em) {
-      max-width: 29em;
-    }
+  @include mq(52em) {
+    width: 60%;
+    float: left;
+    margin: .5em 0 0 0;
+    @include flexbox();
+    @include flex-direction(column);
+  }
+}
+  
+.intro__description {
+  color: #fff;
+  margin-bottom: 0;
 
-    &:hover {
-      color: $blue;
-      background-color: #fff;
+  a {
+    color: #fff;
+    @include link-animate(#fff, $blue);
+
+    .no-backgroundsize & { 
+      color: #fff;
+      text-decoration: underline;
+      background: none;
     }
- 
-    @include mq(52em) {
-      max-width: 20em;
-      margin-top: .5em;
-      float: left;
-    } 
+  }
+
+  @include mq(52em) {
+    margin-top: 0;
+
+    @include order(0);
+  }
+} 
+
+.intro-main-svg-frame {
+  display: inline-block;
+  vertical-align: middle;
+  border: .5em solid #fff;
+  background-color: #fff;
+  overflow: hidden;
+  width: 8em; 
+  height: 8em; 
+  float: none; 
+  margin: 0 2em 1.5em;
+  border-radius: 50%;
+
+  @include mq(37.5em) {
+    margin: 0 .5em 0 0;
+    float: left;
+    display: inline-block;
+    width: 5em; 
+    height: 5em;
+  }
+
+  @include mq(37.5em) {
+    width: 6.5em; 
+    height: 6.5em;
+  }
+
+  @include mq(52em) {
+    width: 11em; 
+    height: 11em;
+    float: left; 
+    margin: 0 1.5em;
   }
 }
 
@@ -129,11 +244,18 @@ nav[role="navigation"] {
   @include box-shadow(0 2px 4px 0 rgba(3, 33, 67, .4));
   position: relative; 
   z-index: 3;
-  
+  font-size: 0.8em;
+
+  @include mq(28em) {
+    font-size: 0.9em;
+  }
+
   .nav-logo { 
     height: 4em;
     margin-left: .6em;
     padding: .1em;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   ul {
@@ -161,57 +283,17 @@ nav[role="navigation"] {
 // ============================================================
 
 .logo-bar, .logo-block {
-  fill: $blue;
-  stroke: $blue;
-  stroke-width: 5px;
+  fill: $blue-tint;
+  stroke: $blue;  
+  stroke-width: 2px;
   stroke-linejoin: bevel;
 
-  @include mq(38em) {
-    stroke-width: 3px;
-  }
-
   @include mq(52em) {
-    stroke-width: 2px;
-  }
-}
-
-.intro-main-svg-frame {
-  display: inline-block;
-  vertical-align: middle;
-
-  border: .5em solid #fff;
-  background-color: #fff;
-  overflow: hidden;
-  margin: 0 1em 1em 0;
-
-  width: 4em;
-  height: 4em;
-  border-radius:  2em;
-
-  @include mq(24em) {
-    width: 5em;
-    height: 5em;
-    border-radius: 2.5em;
-  }
-
-  @include mq(38em) {
-    width: 7em;
-    height: 7em;
-    border-radius: 3.5em;
-  }
-
-  @include mq(52em) {
-    margin: 0 auto;
-    width: 11em;
-    height: 11em;
-    border-radius: 5.5em;
-    margin-right: 2.5em;
-    float: left;
+    stroke-width: 1px;
   }
 }
 
 .intro-main-svg-icon {
-  
   svg {
     width: 100%;
     margin: 0 auto;
@@ -241,7 +323,7 @@ nav[role="navigation"] {
   padding: .5em 0;
 
   border-radius: 6px;
-  border: 2px solid $blue;
+  border: 1px solid $blue;
   color: $blue;
 
   cursor: hand;
@@ -284,6 +366,8 @@ nav[role="navigation"] {
 
 .contact-form__container {
   width: 100%;
+  position: relative;
+  margin: 0 0 2.5em;
 
   @include mq(52em) {
     width: 60%;
@@ -302,8 +386,51 @@ nav[role="navigation"] {
   }
 }
 
-.contact-form {
-  margin: 1em 0 2.5em;
+.contact-form__container {
+  position: relative;
+  @include clearfix;
+}
+
+.contact-form__container:before {
+  content: '';
+  background: #fff; 
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: -1%;
+  opacity: 0;
+  @include transition(opacity 250ms $swift-out);
+}
+
+.contact-form__container.is-loading:before {
+    opacity: .8;
+    width: 101%;
+    height: 102%; 
+}
+
+.loader {
+  width: 7em;
+  height: 7em;
+  position: absolute; 
+  @include calc(top, "50% - 3.5em", 40%);
+  @include calc(left, "50% - 3.5em", 40%);
+  border-radius: 50%;
+  border: .15em solid $blue;
+  border-left-color: transparent;
+
+  -webkit-animation: spin-loader 750ms infinite linear;
+  animation:         spin-loader 750ms infinite linear;
+}
+
+@-webkit-keyframes spin-loader {
+  0% {   -webkit-transform: rotate(0deg);   transform: rotate(0deg);   }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+ 
+@keyframes spin-loader {
+  0% {   -webkit-transform: rotate(0deg);   transform: rotate(0deg);   }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 label, fieldset {
@@ -504,12 +631,29 @@ label.error {
   .chiclet-button {
     margin-top: 1.5em;
   }
-}
+} 
 
 .portfolio {
-  border-bottom: 1px solid lighten($blue, 30%);
-  @include clearfix;
+  border-bottom: 1px solid #E7EEF2;
   clear: both;
+  position: relative;
+
+  &:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+  }
 }
 
 .jack {  
@@ -564,15 +708,12 @@ label.error {
       margin-top: 1em;
       clear: left;
     }
-
+ 
     img {
       width: 100%;
+      max-width: 466px;
       border-bottom: 2px solid $blue;
       padding-bottom: 1em;
-
-      @include mq(32em) {
-        width: auto;
-      }
 
       @include mq(48em) {
         border: 0;
@@ -644,7 +785,7 @@ label.error {
 }
 
 .rdes {
-  figure {
+  figure { 
     @include mq(48em) {
       padding-right: 1em;
     }
@@ -691,10 +832,14 @@ label.error {
   display: inline-block;
   border: 1px solid lighten(#96a0a2, 10%);
   background-color: $blue-tint;
-  padding-top: 1.5em;
+  padding-top: 1.3em;
   border-radius: .3em .2em; 
   position: relative;
   overflow: hidden;
+
+  @include mq(37.5em) {
+    padding-top: 1.5em;
+  }
 
   &:before {
     position: absolute;
@@ -723,11 +868,23 @@ label.error {
   @include clearfix;
 
   &.responsive-image {
-    margin: 0;
-    float: left;
-    margin-left: -6em;
-    width: 12.5em; 
-    margin: 0 1.5em 0 -6em;
+    margin: 0 auto;
+    float: none;
+    display: block;
+
+    @include mq(37.5em) {
+      float: left;
+      width: 12.5em; 
+      margin: 0 1.5em 0 0;
+    }
+
+    @include mq(48em) {
+      margin-left: -2em;
+    }
+
+    @include mq(58em) {
+      margin-left: -6em;
+    }
   }
 }
 
@@ -736,7 +893,7 @@ label.error {
   display: inline-block;
   font-size: .8em;
   color: #737373;
-  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .device__image {
@@ -759,71 +916,85 @@ label.error {
   background-image: url('/img/android-nexus.svg');
   width: 12.5em;
   height: 24em;
-  padding: 2.2em 0.8em 2.6em;
+  padding: 3.2em 1.2em 3.4em;
 }
 
 // ============================================================
 // Case Study Styling
 // ============================================================
 
-.case-study__header {
-  position: relative; 
-  @include clearfix;
-  padding: 1.5em 0;
-
-  @include mq(52em) {
-    padding: 1.1em 0 2.1em;
-  }
+#headlineNumber { 
+  width: 2em;
+  display: inline-block;
+  text-align: right;
 }
 
-.case-study__h-group {
-  width: 100%;
-  font-size: .7em;
-  margin-top: 1em;
+.intro.case-study__header {
+  text-align: center;
+  padding: 1.8em 1em;
 
-  @include mq(22em) {
-    font-size: .8em;
-    padding: 0 .5em;
-  }
-  
-  @include mq(36em) {
-    font-size: .95em;
-  }
-
-  @include mq(39em) {
-    font-size: 1em;
-  }
-
-  @include mq(42em) {
-    font-size: 1.1em;
+  @include mq(32em) {
+    text-align: left;
   }
 
   @include mq(48em) {
-    font-size: 1.2em;
-    margin-top: 1.2em;
-  }
-  
-  @include mq(56em) {
-    font-size: 1em;
-  }
- 
-  @include mq(60em) {
-    font-size: 1.2em;
-  }
-}
-
-.intro .case-study__title {
-  font-size: 2.5em;
-  margin-top: 0;
-  padding: 0 .2em;
-  text-shadow: 2px 2px 3px $dark-blue; 
-
-  @include mq(28em) {
-    padding: 0 .4em;
+    padding: 1.8em;
   }
 
-  span {
-    color: #fff;
+  .header__intro {
+    float: left;
+    width: auto;
+  }
+
+  .intro__description {
+    float: left;
+    max-width: 46em;
+
+    @include mq(52em) {
+      width: 18em;
+      margin: 0.1em 0 0 1.7em;
+    }
+
+    @include mq(59em) {   
+      width: 21em;
+      margin: 0.1em 0 0 3em;
+    }
+    
+    @include mq(65em) {
+      width: 23em;
+      margin: 0.4em 0 0 3em;
+    }
+  }
+
+  .intro__main-head {
+    @include mq(25em) {
+      font-size: 3em;
+    }
+
+    @include mq(30em) {
+      font-size: 3.5em;
+    }
+
+    @include mq(37.5em) {
+      font-size: 3.1em;
+      line-height: 1.2;
+    }
+
+    @include mq(52em) {
+      font-size: 3em;
+    }
+
+    @include mq(58em) {
+      font-size: 3.5em;
+    }
+
+    @include mq(64em) {
+      font-size: 4em;
+    }
+
+    @include mq(70em) {
+      font-size: 4.5em;
+    }
   }
 }
 
@@ -857,19 +1028,24 @@ label.error {
   opacity: 1;
 }
 
+
 .age {
   display: inline-block;
-  color: $blue;
-  width: 2.5em;
-  height: 2.5em;
-  font-size: .9em;
-  background-color: #fff;
+  color: $blue-tint;
+  text-shadow: 1px 1px 1px $blue; 
+  background-color: rgba(69, 106, 200, 1);
+  border-radius: 50%;
   text-align: center;
   padding-top: 0.6em;
   position: absolute; 
   @include transition(opacity 500ms ease-in);
   opacity: 0;
   z-index: -2;
+  pointer-events: none;
+
+  width: 2.5em;
+  height: 2.5em;
+  font-size: .75em;
 
   @include mq(36em) {
     font-size: 1.3em;
@@ -885,8 +1061,8 @@ label.error {
 } 
 
 .age--1 {
-  top: 34%;
-  right: 39%;
+  top: -4%;
+  right: 40%;
 }
 
 .age--2 {
@@ -900,23 +1076,23 @@ label.error {
 }
 
 .age--4 {
-  right: 6%;
+  right: 3%;
   bottom: 7%;
 }
 
 .age--5 {
-  bottom: 20%;
-  right: 25%;
+  bottom: 4%;
+  right: 35%;
 }
 
 .age--6 {
   bottom: 5%;
-  left: 17%;
+  left: 13%;
 }
 
 .age--7 {
   top: 8%;
-  right: 3%;
+  right: 10%;
 }
 
 .age--8 {
@@ -925,8 +1101,8 @@ label.error {
 } 
 
 .age--9 { 
-  top: 9%;
-  right: 24%;
+  top: 51%;
+  right: 18%;
 }
  
 // ============================================================
@@ -954,15 +1130,14 @@ label.error {
 
 .article__quote {
   padding: 1em 0;
-  border: solid tint($blue, 50);
-  border-width: 2px 0; 
+  border-top: 2px solid $blue; 
   width: 100%; 
   margin: 2em 0 0;
 
   @include mq(32em) {
     width: 30%;
     float: left;
-    margin: 0 0 0 5%;
+    margin: 0 0 0 5%; 
   }
 
   @include mq(40em) {
@@ -976,16 +1151,67 @@ label.error {
   }
 }
 
+.article__quote--featured {
+  text-align: center;
+  font-size: .9em;
+  margin: 1.5em 8%;
+
+  @include mq(55em) {
+    font-size: 1.1em;
+    margin: 1em -5%;
+    text-align: center;
+  }
+
+  @include mq(63.75em) {
+    font-size: 1.3em;
+    margin: 1.5em -17%;
+    text-align: center;
+  }
+
+  p {
+    line-height: 2;
+  }
+
+  cite {
+
+    @include mq(55em) {
+      font-size: .6em;
+    }
+  }
+}
+
 .infobox {
-  margin: 0 -20% 1em 3em;
-  padding-left: 1.7em;
+  margin: 0;
+  padding: 1.3em 0 1.9em;
   font-size: .8em;
-  float: right;
-  border-left: 2px solid tint($blue, 50);
-  max-width: 20em;
+  border: solid $blue;
+  border-width: 2px 0;
+  margin: 0 0 1.7em 0;
+
+  @include mq(30em) {
+    font-size: 1em;
+  }
+
+  @include mq(37.5em) {
+    margin: 0 0 1em 3em;
+    padding: 0 0 0 1.7em;
+    float: right;
+    border-width: 0 0 0 2px;
+    max-width: 18em; 
+    font-size: .8em;
+  }
+
+  @include mq(54em) {
+    margin-right: -10%;
+  }
+
+  @include mq(62em) {
+    margin-right: -20%;
+    max-width: 20em;
+  }
 
   dl {
-    margin-bottom: 0; 
+    margin-bottom: 0;  
   }
   dd {
     margin-top: .25em;
@@ -1010,7 +1236,7 @@ label.error {
 // Footer Styling
 // ============================================================
 
-footer {
+.site-footer {
   background-color: $blue;
   position: relative;
   @include rem(font-size, .85rem);
@@ -1020,12 +1246,16 @@ footer {
 
 }
 
-footer ul {
-  padding: 2em 3.5%;
+.site-footer ul {
+  padding: 0;
   margin: 0;
   display: inline-block;
   list-style-type: none;
   color: #ffffff;
+
+  li {
+    margin-top: .2em;
+  }
 
   a {
     color: #ffffff;
@@ -1040,7 +1270,7 @@ footer ul {
   padding: 0;
 }
 
-footer {
+.site-footer {
 
   ul {
     float: none;
@@ -1049,5 +1279,11 @@ footer {
   a.link--highlight {
     color: #fff;
     @include link-animate(#fff, $blue);
+
+    .no-backgroundsize & {
+      color: #fff;
+      text-decoration: underline;
+      background: none;
+    }
   }
 }
