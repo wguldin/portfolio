@@ -307,6 +307,9 @@ body {
     content: "";
     display: table;
     clear: both; }
+  body.fit-page {
+    height: 100vh;
+    overflow: hidden; }
 
 p {
   line-height: 1.7;
@@ -357,6 +360,9 @@ main[role="main"] {
   @media screen and (min-width: 56em) {
     main[role="main"] {
       width: 94%; } }
+  main[role="main"].full-width {
+    width: 100%;
+    max-width: none; }
 
 blockquote {
   margin: 0; }
@@ -461,6 +467,20 @@ header.intro {
     header.intro {
       display: block; } }
 
+main.full-width header.intro {
+  height: 100%;
+  position: absolute;
+  padding-top: 0; }
+  @media screen and (min-width: 36em) {
+    main.full-width header.intro {
+      padding-top: 2em; } }
+
+main.full-width .intro-main-svg-frame {
+  margin-top: -3em; }
+  @media screen and (min-width: 36em) {
+    main.full-width .intro-main-svg-frame {
+      margin-top: 0; } }
+
 .chiclet-button--primary.intro__button {
   margin-top: 2em;
   color: #fff;
@@ -494,7 +514,6 @@ header.intro {
       order: 1; } }
 
 .intro__header {
-  font-family: "grey-sans-semibold", arial, sans-serif;
   width: 100%;
   white-space: nowrap; }
   @media screen and (min-width: 37.5em) {
@@ -508,26 +527,27 @@ header.intro {
       float: left;
       clear: none; } }
 
+.intro__main-head, .intro__subheader {
+  color: #fff;
+  font-family: "grey-sans-bold", arial, sans-serif;
+  font-weight: normal;
+  margin: 0; }
+
 .intro__subheader {
   font-size: 1.1em;
   letter-spacing: 0.02em;
-  display: block;
-  color: #fff;
-  text-shadow: 1px 1px 2px #032143;
-  margin: 0; }
+  text-shadow: 1px 1px 2px #032143; }
   @media screen and (min-width: 32em) {
     .intro__subheader {
       font-size: 1.6em; } }
 
 .intro__main-head {
-  width: auto;
   font-size: 1.8em;
   letter-spacing: .05em;
   line-height: 1.4;
-  margin: 0;
+  width: auto;
   display: inline-block;
   vertical-align: middle;
-  color: #fff;
   text-shadow: 2px 2px 3px #032143;
   text-transform: uppercase; }
   .intro__main-head span {
@@ -695,6 +715,10 @@ nav[role="navigation"] {
   display: block; }
 .intro-main-svg-icon img {
   width: 100%; }
+
+.intro-main-svg-frame .logo-404 {
+  width: 100%;
+  margin-top: 0.7em; }
 
 .chiclet-button {
   font-family: "grey-sans-semibold", arial, sans-serif;
@@ -869,7 +893,7 @@ input[type="radio"], input[type="checkbox"] {
   height: 1.2em;
   margin-right: 14px;
   margin-right: 0.7rem;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   display: inline-block; }
 
 .input-note {
@@ -1488,3 +1512,6 @@ label.error input, label.error textarea {
     color: #fff;
     text-decoration: underline;
     background: none; }
+
+.site-footer .email-link, header.intro .email-link {
+  color: #fff; }

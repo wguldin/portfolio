@@ -4,15 +4,9 @@
 
 <body>
 
-<nav role="navigation">
-    <a href="/"><img class="nav-logo" src="../img/mini-logo.svg" alt="Will Guldin Design"/></a>
-    <ul>
-        <li><a class="link--highlight" href="../">Home</a></li>
-        <li><a class="link--highlight" href="../#recent-work">Work</a></li>
-        <li><a class="link--highlight" href="../#contact">Contact</a></li>
-        <!--<li><a class="intro-link" href="#">Blog</a></li>-->
-    </ul>
-</nav>
+<?php 
+    include_once("include/navigation.php");
+?>
 
 <header class="intro case-study__header" role="banner">
     
