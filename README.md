@@ -1,4 +1,4 @@
-# COLOPHON #
+# Colophon, or a ReadMe #
 
 The personal portfolio site of Will Guldin. Originally published 2011ish. Iterative updates still ongoing.
 
@@ -12,7 +12,3 @@ Hosting provided by Digital Ocean.
 Thanks for looking around,
 
 Will
-
-
-
-
