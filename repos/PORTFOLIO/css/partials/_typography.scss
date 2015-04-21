@@ -2,8 +2,6 @@
 // Fonts
 // ===========================================================
 
-@import "partials/mixins";
-
 @include declare-font-face("grey-sans-ultrathin", "GreySans-UltraThin-webfont");
 
 @include declare-font-face("grey-sans-thin", "GreySans-Thin-webfont");
@@ -18,4 +16,4 @@
 
 @include declare-font-face("grey-sans-extrabold", "GreySans-ExtraBold-webfont");
 
-@include declare-font-face("grey-sans-black", "GreySans-Black-webfont");
+@include declare-font-face("grey-sans-black", "GreySans-Black-webfont"); 

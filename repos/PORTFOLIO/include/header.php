@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js lt-ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html class="no-js" lang="en"><![endif]-->
+<!--[if !IE]><html class="no-js" lang="en-US"><![endif]-->
 
 <head>
 
@@ -16,6 +16,14 @@
     <?php if (function_exists('customPageHeader')){
       customPageHeader();
     }?>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js"></script>
+    <script>
+      WebFont.load({
+        custom: {
+          families: ['grey-sans-bold', 'grey-sans-semibold', 'grey-sans-regular']
+        }
+      });
+    </script>
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -39,8 +47,7 @@
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="/css/style-ie.css" />
+            <link rel="stylesheet" type="text/css" href="/css/style_ie.css" />
             <script src="/js/vendor/html5shiv.min.js"></script>
     <![endif]-->
-
 </head>

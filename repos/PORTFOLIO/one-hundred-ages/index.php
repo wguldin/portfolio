@@ -5,16 +5,16 @@
 <body>
 
 <?php 
-    include_once("include/navigation.php");
+    include_once($_SERVER['DOCUMENT_ROOT']."/include/navigation.php");
 ?>
 
 <header class="intro case-study__header" role="banner">
     
-    <div class="header__intro">
+    <div class="header__intro" id="HundredAgesHeading">
         <h1 class="intro__main-head"><span id="headlineNumber">1</span><span> Ages</span></h1>
         <h2 class="intro__subheader">A Century of Voices</h2>
     </div>
-    <p class="intro__description">A pair of photojournalists recorded and edited 100 interviews with people of all ages. With my help, they told a timeless story about life's experiences.</p>
+    <p class="intro__description" id="HundredAgesDesc">A pair of photojournalists recorded and edited 100 interviews with people of all ages. With my help, they told a timeless story about life's experiences.</p>
 
     <span class="age age--1">37</span>
     <span class="age age--2">23</span>
@@ -28,15 +28,13 @@
     
 </header>
 
-<main role="main">
-<article>
+<main role="main" id="main">
+<article aria-labelledby="HundredAgesHeading" aria-describedby="HundredAgesDesc" >
     <section>
         <p>When Miguel Rodriguez, 52, arrived at the hospital after blacking out, he thought to himself “You might have one chance in life and that was my last chance.”</p>
 
         <p>That was more than 17 years ago, and he’s been sober ever since.</p>
-
-        <p>His story is one that we all can relate to in some way — either through our own struggles or though those of people we know. That’s the power of 100 Ages, A Century of Voices. Each interview with someone of a different age tells you a little bit more about the experiences we all share.</p>
-
+        
         <figure class="article__image">
             <img src="/img/052_400.jpg" alt="Miguel Rodriguez, 52 years old" />
             
@@ -47,6 +45,8 @@
                 </blockquote>
             </figcaption>    
         </figure>
+
+        <p>His story is one that we all can relate to in some way — either through our own struggles or though those of people we know. That’s the power of 100 Ages, A Century of Voices. Each interview with someone of a different age tells you a little bit more about the experiences we all share.</p>
 
         <p>That’s what excited me about the project, and why I wanted to be a part of it. Since it had such strong storytelling behind it, my ultimate goal was to create a design that would stay out of the way.</p>
  
@@ -86,7 +86,7 @@
         <p>By making these few layouts I was able to quickly make sure the Missourian and I were on the same page. With their signoff, I began to build the website. Working in the evenings after my full-time design internship at the Reading Eagle, I was able to finish the project in two months.</p>
 
         <figure class="device__frame responsive-image">
-            <img src="../img/screenshot_2.png" class="device__image device__image--android" alt="100 Ages, A Century of Voices website screenshot shown on a smart phone" />
+            <img src="/img/hundred-ages-screenshot.jpg" class="device__image" alt="100 Ages, A Century of Voices website screenshot shown on a smart phone" />
             <figcaption class="device__caption">
                 100 Ages, and every project I work on, is designed to work well on a range of devices, including smartphones. 
             </figcaption> 
@@ -108,14 +108,14 @@
 
         <p>Here’s what one of the photojournalists on the project had to say about my involvement:</p>
 
-        <blockquote class="article__quote--featured">
-            <p>"Will Guldin is that rare combination of both hard work and talent.  Will went above and beyond the call of duty when he served as the designer for the 100 Ages: A Century of Voices ​​project, sharing our vision of a clean and sophisticated layout.  He was always ready to hear our thoughts, while contributing his own expertise to make the final product flawless in multiple formats."</p>
-            <cite>Photojournalist Kathleen Alaimo</cite>
+        <blockquote class="article__quote--featured"> 
+            <p>&ldquo;Will Guldin is that rare combination of both hard work and talent.  Will went above and beyond the call of duty when he served as the designer for the 100 Ages: A Century of Voices ​​project, sharing our vision of a clean and sophisticated layout.  He was always ready to hear our thoughts, while contributing his own expertise to make the final product flawless in multiple formats.&rdquo;</p>
+            <cite><a class="link--highlight" href="http://katiealaimo.virb.com/">Photojournalist Kathleen Alaimo</a></cite>
         </blockquote>
 
         <p>I hope you’ll take a look at the work as well. I’ve learned a lot more since I first completed this project, but it remains one of the most valuable things I’ve done in my professional career.</p>
 
-        <a href="http://media.columbiamissourian.com/100ages/#/" class="chiclet-button--primary chiclet-button">Visit the site</a>
+        <a href="http://media.columbiamissourian.com/100ages/#/" class="chiclet-button">Visit the site</a>
 
     </section> 
 </article>

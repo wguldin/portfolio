@@ -31,5 +31,5 @@
 
   <input type="hidden" name="loadtime" value="<?php echo htmlspecialchars(time()); ?>">
 
-  <button type="submit" name="submit" class="chiclet-button">Send</button>
+  <button type="submit" name="submit" class="chiclet-button">Send Message</button>
 </form>

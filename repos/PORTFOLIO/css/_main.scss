@@ -2,10 +2,9 @@
 // Topbar styling
 // ============================================================
  
-header.intro {
-  z-index: 2;
-  padding: 1.8em;
-  width: 100%;
+header.intro, .insert {
+  padding: 1.8em; 
+  width: 100%; 
   text-align: left; 
   overflow: hidden;
   position:relative;
@@ -17,10 +16,13 @@ header.intro {
   background-image:      -o-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%));
   background-image:       radial-gradient(circle at 60% 73%, $blue, shade($blue, 18%));
   border-bottom: 1px solid $blue;
-
+  z-index: 0;
+  
   @include clearfix; 
   @include rem(font-size, 1rem); 
-  @include box-shadow(0 4px 8px 0 rgba(69,106,200,.3));
+
+
+  @include box-shadow(inset 0 7px 6px -4px rgba(3,33,67,0.4), inset 0 -6px 6px -4px rgba(3,33,67,0.4));
 
   @include flexbox;
   @include flex-direction(column);
@@ -33,7 +35,29 @@ header.intro {
 
   @include mq(52em) {
     display: block;
-  } 
+  }
+}
+
+span[itemprop] { 
+  color: inherit;
+} 
+
+.intro__wrapper {
+  @include clearfix;
+  max-width: 49em;
+  margin: 0 auto;
+  width: 100%;
+
+  @include mq(52em) {
+    margin: 0 0 0 2em;
+    max-width: 34em;
+  }
+
+  @include mq(80em) {
+    max-width: 63em;
+    position: relative;
+    margin: 0 auto;
+  }
 }
 
 main.full-width header.intro { 
@@ -57,7 +81,7 @@ main.full-width .intro-main-svg-frame {
 .chiclet-button--primary.intro__button {
   margin-top: 2em;
   color: #fff;
-  background-color: $blue;
+  background-color: $blue-shade;
   border-color: #fff;
   margin-left: 0;
   max-width: none;
@@ -67,12 +91,12 @@ main.full-width .intro-main-svg-frame {
   font-size: 0.8em;
   
   &:hover {
-    color: $blue;
+    color: $blue-shade;
     background-color: #fff;
   }
 
   @include mq(37.5em) {
-    padding: .7em 1.5em;
+    padding: .6em 1.4em;
     max-width: none
   }
 
@@ -91,6 +115,7 @@ main.full-width .intro-main-svg-frame {
 .intro__header {
   width: 100%;
   white-space: nowrap;
+  font-size: 1.1em;
 
   @include mq(37.5em) {
     width: 70%;
@@ -99,13 +124,15 @@ main.full-width .intro-main-svg-frame {
   }
 
   @include mq(52em) {
-    width: 60%;
-    float: left;
-    clear: none;
+    padding-left: 0;
+  }
+
+  @include mq(80em) {
+    padding-left: 13em;
   }
 }  
 
-.intro__main-head, .intro__subheader {
+.intro__main-head, .intro__subheader, .ssnd h4 {
   color: #fff;
   font-family: "grey-sans-bold", $sans-stack;
   font-weight: normal;
@@ -126,9 +153,6 @@ main.full-width .intro-main-svg-frame {
   font-size: 1.8em;
   letter-spacing: .05em;
   line-height: 1.4;
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
   text-shadow: 2px 2px 3px $dark-blue;
   text-transform: uppercase;
 
@@ -172,24 +196,27 @@ main.full-width .intro-main-svg-frame {
     font-size: 4.5em;
   }
 }
-
+ 
 .intro__text { 
-  float: none;
   width: 100%;
 
   @include mq(37.5em) {
     width: 100%;
     text-align: left;
     display: block;
-    margin-top: 2.5em;
+    margin-top: 1.5em;
   }
 
   @include mq(52em) {
-    width: 60%;
-    float: left;
     margin: .5em 0 0 0;
     @include flexbox();
     @include flex-direction(column);
+    width: 100%;
+  }
+
+  @include mq(80em) {
+    max-width: 63em;
+    padding-left: 14em;
   }
 }
   
@@ -199,7 +226,7 @@ main.full-width .intro-main-svg-frame {
 
   a {
     color: #fff;
-    @include link-animate(#fff, $blue);
+    @include link-animate(rgba(255, 255, 255, .25), #fff);
 
     .no-backgroundsize & { 
       color: #fff;
@@ -216,16 +243,16 @@ main.full-width .intro-main-svg-frame {
 } 
 
 .intro-main-svg-frame {
-  display: inline-block;
-  vertical-align: middle;
   border: .5em solid #fff;
   background-color: #fff;
   overflow: hidden;
-  width: 8em; 
-  height: 8em; 
-  float: none; 
-  margin: 0 2em 1.5em;
+  width: 11em; 
+  height: 11em; 
+  margin: 0 auto 1.5em;
   border-radius: 50%;
+  display: block;
+
+  @include transition(all 150ms $swift-out);
 
   @include mq(37.5em) {
     margin: 0 .5em 0 0;
@@ -241,68 +268,221 @@ main.full-width .intro-main-svg-frame {
   }
 
   @include mq(52em) {
-    width: 11em; 
-    height: 11em;
-    float: left; 
-    margin: 0 1.5em;
+    background: none;
+    border: 0;
+    height: 45em;
+    margin: 0 1.5em 0 auto;
+    opacity: .3;
+    position: absolute;
+    right: -9em;
+    top: -11em;
+    width: 40em;
+    z-index: -1;
+ 
+    $scaleRatio : 32/45;
+
+    &.is-animated {
+      @include transform(scale($scaleRatio));
+    } 
+  }
+
+  @include mq(80em) {
+    background: #fff;
+    border: 0.5em solid #fff;
+    float: none;
+    height: 12em;
+    left: 0;
+    margin: 0 .5em 0 0;
+    opacity: 1;
+    padding: .5em; 
+    top: 0;
+    width: 12em;
+    z-index: 1;
+
+    &.is-animated {
+      @include transform(none);
+    }
   }
 }
 
 nav[role="navigation"] {
   width: 100%;
-  background-color: #fff;
+  background-color: #fff; 
   @include box-shadow(0 2px 4px 0 rgba(3, 33, 67, .4));
   position: relative; 
   z-index: 3;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  height: 3.5em;
+  @include transition(height $swift-out 150ms);
+  overflow: hidden;
 
-  @include mq(28em) {
-    font-size: 0.9em;
-  }
-
-  .nav-logo { 
-    height: 4em;
-    margin-left: .6em;
-    padding: .1em;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  &:after {
+    content: '';
+    width: 100%;
+    display: block;
+    height: 3.4em;
     position: absolute;
-    right: 0;
-    height: 4em;
     top: 0;
+    padding-right: 100%;
+    background-color: #fff;
+    z-index: -1;
+  }
 
-    li {
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 1em;
-      padding: 1.2em .9em;
-    }
+  &.is-active {
+    height: 13.7em;
   }
 } 
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+
+  @include mq(37.5em) {
+    width: auto;
+    z-index: 1;
+  }
+
+  .no-js & {
+    width: auto;
+    z-index: 1;
+  }
+}
+
+.nav-list-item {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid $blue-tint;
+  display: block;
+  vertical-align: middle; 
+  font-size: 1em;
+  padding: 1em .9em; 
+  @include transition(background-color $swift-out 150ms);
+
+  @include mq(37.5em) {
+    display: inline-block;
+    border: 0;
+  }
+
+  .no-js & {
+    display: inline-block;
+    border: 0;
+  }
+
+  &:hover {
+    background-color: $blue-tint;
+    cursor: pointer;
+
+    @include mq(37.5em) {
+      background-color: transparent;
+      cursor: auto;
+    }
+
+    .no-js & {
+      background-color: transparent;
+      cursor: auto;
+    }
+  }
+}
+
+.nav-logo { 
+  height: 3.5em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.4em;
+}
+
+.nav-logo-link {
+  position: absolute;
+  top: -.05em;
+}
+
+.nav-icon--mobile {
+  background-color: $blue;
+  border: 1px solid $blue;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: .075em .25em;
+  position: absolute;
+  top: 0.5em; 
+  right: 0.5em;
+  width: 3.1em; 
+
+  @include box-shadow(1px 1px 3px 0 rgba(0,0,0,0.15));
+  @include transform(translate3d(0,0,0));
+  @include user-select(none);
+  
+  &:before,
+  &:after,
+  .nav-icon__text {
+    content:'';
+    background: #fff; 
+    display:block;
+    height: 4px;
+    margin: 6px 0;
+    width:100%;
+    @include transition(transform $swift-out 150ms, opacity $swift-out 150ms);
+  }
+
+  .nav-icon__text  {
+    text-indent: -9999px;
+  }
+
+  &:hover {
+    background-color: shade($blue, 20); 
+  }
+
+  .no-js & {
+    display: none;
+  }
+
+  @include mq(37.5em) {
+    display: none;
+  }
+}
+
+.is-active > .nav-icon--mobile {
+  .nav-icon__text {
+    opacity: 0;
+  }
+
+  &:before {
+    @include transform(translate3d(0,10px,0) rotate(45deg));
+  }
+
+  &:after {
+    @include transform(translate3d(0,-10px,0) rotate(-45deg));
+  }
+}
 
 // ============================================================
 // SVG Styling
 // ============================================================
 
 .logo-bar, .logo-block {
-  fill: $blue-tint;
-  stroke: $blue;  
-  stroke-width: 2px;
+  fill: $blue-tint; 
+  stroke: $blue;   
+  stroke-width: .5pt; 
   stroke-linejoin: bevel;
 
   @include mq(52em) {
-    stroke-width: 1px;
+    fill: $blue-shade;
+    stroke: #fff;
   }
-}
 
+  @include mq(80em) {
+    fill: $blue-tint; 
+    stroke: $blue;    
+  }
+
+}
+ 
 .intro-main-svg-icon {
   svg {
     width: 100%;
@@ -329,7 +509,8 @@ nav[role="navigation"] {
 
 .chiclet-button {
   font-family: "grey-sans-semibold", $sans-stack;
-  padding: .5em 1.5em;
+  font-weight: normal; 
+
   text-decoration: none;
   text-align: center;
 
@@ -339,29 +520,27 @@ nav[role="navigation"] {
   max-width: 24em;
   padding: .5em 0;
 
-  border-radius: 6px;
+  border-radius: 4px;
   border: 1px solid $blue;
-  color: $blue;
-
-  cursor: hand;
+  color: #fff;
+ 
   cursor: pointer;
 
-  background-color: transparent;
+  background-color: $blue;
 
-  @include box-shadow(2px 2px 2px 0 rgba(0,0,0,.2));
+  @include box-shadow(1px 1px 3px 0 rgba(0,0,0,0.15));
 
-  font-size: .9em;
+  font-size: .8em;
 
   &:hover {
-    color: #fff;
-    background-color: $blue;
+    background-color: shade($blue, 20); 
   }
 
   &.disabled {
     background-color: transparent;
     border: 1px solid #afafaf; 
     color: #afafaf;
-    pointer-events: none;
+    pointer-events: none; 
   }
 }
 
@@ -370,7 +549,7 @@ nav[role="navigation"] {
   display: block;
   max-width: none;
   margin: 3em 4em;
-  padding: .7em 1.5em;
+  padding: .5em 1.25em; 
 }
 
 // ============================================================
@@ -406,9 +585,13 @@ nav[role="navigation"] {
 .contact-form__container {
   position: relative;
   @include clearfix;
+
+  legend {
+    max-width: 100%;
+  }
 }
 
-.contact-form__container:before {
+.has-loader:before {
   content: '';
   background: #fff; 
   width: 0;
@@ -420,15 +603,26 @@ nav[role="navigation"] {
   @include transition(opacity 250ms $swift-out);
 }
 
-.contact-form__container.is-loading:before {
+.has-loader.is-loading:before {
     opacity: .8;
     width: 101%;
     height: 102%; 
 }
 
+.loader-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  background-color: rgba(255,255,255,.8);
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+}
+
 .loader {
-  width: 7em;
+  width: 7em; 
   height: 7em;
+  display: none;
   position: absolute; 
   @include calc(top, "50% - 3.5em", 40%);
   @include calc(left, "50% - 3.5em", 40%);
@@ -438,6 +632,21 @@ nav[role="navigation"] {
 
   -webkit-animation: spin-loader 750ms infinite linear;
   animation:         spin-loader 750ms infinite linear;
+}
+
+.lazyload-container {
+  position: relative;
+  width: 100%;
+  min-height: 8em;
+}
+
+.loader--image-preloader {
+  width: 4em;
+  height: 4em;
+  display: block;
+
+  @include calc(top, "50% - 2em", 40%);
+  @include calc(left, "50% - 2em", 40%);
 }
 
 @-webkit-keyframes spin-loader {
@@ -450,7 +659,7 @@ nav[role="navigation"] {
   100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
-label, fieldset {
+label, fieldset { 
   display: block;
   line-height: 1.8;
   margin-top: 1.75em;
@@ -466,8 +675,8 @@ h3 {
   @include rem(margin, 1rem 0 0);
 }
 
-label:first-child {
-  margin-top: 1em;
+label:first-of-type {
+  margin-top: .8em;
 }
 
 input {
@@ -477,7 +686,7 @@ input {
 }
 
 input[type="text"], input[type="tel"], input[type="email"], textarea {
-  @include rem(padding, .5rem .6rem);
+  @include rem(padding, 0 0.5rem);
   display: block;
   border: 1px solid #B9B9B9;
   box-shadow: inset 0 1px 3px #ddd;
@@ -485,13 +694,18 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
   background-color: #FAFAFA;
   margin-top: .2em;
   outline: 0;
-  max-width: 33em;
+  max-width: 26em;
 
   &:focus {
     border-color: lighten($blue, 15%);
     box-shadow: inset 0 1px 3px #ddd, 0 0 5px rgba(lighten($blue, 15%), 0.7);
     outline: 0;
   }
+}
+
+textarea {
+  max-width: 33em;
+  @include rem(padding, .5rem .6rem);
 }
 
 .contact-options {
@@ -503,12 +717,13 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
     width: auto;
     margin: .5em 2em .5em 0;
     height: 1em;
+    cursor: pointer;
 } 
 
 input[type="radio"], input[type="checkbox"] { 
   width: 1.2em;
   height: 1.2em;
-  @include rem(margin-right, .7rem);
+  @include rem(margin-right, .2rem);
   vertical-align: text-bottom; 
   display: inline-block;  
 } 
@@ -521,7 +736,7 @@ input[type="radio"], input[type="checkbox"] {
     width: 100%;
     max-width: 37em;
   }
-}
+} 
 
 textarea {
   width: 100%;
@@ -575,7 +790,6 @@ label.error {
   width: 100%;
   max-width: 8em;
   float: right;
-  border-radius: 50%;
   margin: 3em 0 1em 1em;
 
   @include mq(28em) {
@@ -594,20 +808,53 @@ label.error {
   }
 }
 
+.about__mug img {
+  max-width: 8em;
+  border-radius: 50%; 
+  width: 100%;
+
+  @include mq(28em) {
+    max-width: 10em;
+  }
+
+  @include mq(36em) {
+    max-width: 11em;
+  }
+
+  @include mq(52em) {
+    max-width: none;
+    height: auto;
+  }
+}
+
 // ============================================================
 // Home page styling
 // ============================================================
 
 .section-header {
   margin: .7em auto .5em; 
-  width: 100%;
-  font-size: 2em;
-  font-family: "grey-sans-semibold", arial, sans-serif;
-  text-align: center;
-  text-shadow: 2px 2px 3px tint($text, 60%); 
+  font-size: 1.5em;
+  font-family: "grey-sans-bold", arial, sans-serif;
+  font-weight: normal;
+  text-align: center;  
+
+  @include mq(24em) {
+    font-size: 1.8em;
+  }
+
+  @include mq(26em) {
+    margin-left: -0.9em;
+    margin-right: -1em; 
+  }
+
+  @include mq(28em) {
+    font-size: 2em;
+  }
 
   @include mq(36em) {
     font-size: 2.65em;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @include mq(60em) {
@@ -626,7 +873,7 @@ label.error {
   @include mq(52em) {
     margin-left: 3%;
   }
-}
+} 
 
 .section-text {
     p:first-child { 
@@ -635,12 +882,6 @@ label.error {
 }
 
 .portfolio--case-study {
-  figure {
-    @include clearfix;
-    width: 100%;
-    max-width: 68em;
-  }
-
   p:first-child {
     margin-top: 0;
   }
@@ -650,28 +891,297 @@ label.error {
   }
 } 
 
-.portfolio {
-  border-bottom: 1px solid #E7EEF2;
+.portfolio--case-study--description {
+  @include clearfix;
+  width: 100%;
+  max-width: 68em; 
+}
+
+.portfolio { 
+  border-bottom: 1px solid $blue-tint;
   clear: both;
   position: relative;
 
   &:after {
     display: block;
     content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
+    width: 9px;
+    height: 9px;
+    border: $blue-tint 1px solid;
     position: absolute;
     bottom: -5px;
     left: 50%;
     margin-left: -5px;
     background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
 }
+
+.jack, .ssnd {
+  border-bottom: 0;
+
+  &:after {
+    content: none;
+  }
+}
+
+// ============================================================
+// Checkout styling
+// ============================================================
+
+.checkout {
+  @include clearfix;
+
+  figure {
+    margin: 0 auto 2em;
+    width: 95%;
+
+    @include mq(37.5em) {
+      @include flexbox; 
+    }
+  }
+
+  figcaption {
+    max-width: 42em;
+
+    a {
+      margin: 0;
+    }
+  }
+
+  img {
+    max-width: 10em;
+    margin: 0 auto 1.5em;
+    width: 100%;
+    height: 100%;
+    max-width: 10em;
+    display: block;
+
+    @include mq(26em) {
+      max-width: 12em;
+    }
+
+    @include mq(32em) {
+      float: left;
+      margin-right: 5%;
+      max-width: 10em;
+    }
+
+    @include mq(37.5em) {
+      min-width: 8.5em;
+      max-width: 14em;
+      width: 20%;
+    }
+  }
+}
+
+.create-account__example {
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.create-account {
+  @include transition(opacity 500ms $swift-out);
+  opacity: 0;
+
+  @include mq(65em) {
+    @include flexbox;
+    margin-right: -16vw;
+  }
+
+  &:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+.link--trigger {
+  cursor: pointer;
+
+  @include mq(65em) {
+    position: absolute;
+    top: -4em;
+  }
+}
+
+.create-account__image {
+  width: auto;
+
+  @include mq(65em) {
+    margin: 0 2em 0 -8vw;
+  }
+
+  img {
+    border: 1px solid tint($text, 70%);
+    width: 100%;
+    max-width: 608px;
+  }
+}
+
+.create-account__caption {
+  margin-top: 1.5em;
+  padding-top: 1em;
+  border-top: 2px solid $blue;
+  
+  @include mq(65em) {
+    @include flex(1);
+    padding: 0;
+    margin: 3.8em 0 0 0;
+    max-width: 12em;
+    position: relative;
+  } 
+
+  @include mq(72em) {
+    max-width: 16em;
+    margin: 3.5em 0 0 0;
+  }
+
+  p {
+    display: inline;
+
+    @include mq(65em) {
+      display: block;
+    }
+  }
+}
+
+.inset-figure {
+  width: 100%;
+  float: left;
+  margin-bottom: 1em;
+
+  @include mq(32em) {
+    width: 60%;
+  }
+
+  @include mq(48em) {
+    margin: 1.3em 0 0 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.inset-figure__caption {
+  width: 90%;
+}
+
+.card-mask {
+  @include clearfix;
+
+  @include mq(32em) {
+    width: 55%;
+  }
+
+  @include mq(48em) {
+    margin: 0 1em 0 0;
+  }
+
+  img {
+    margin: 0 0 0 -.5em;
+  }
+}
+
+.satisfaction h3 {
+  @include user-select(none);
+  display: inline-block;
+  font-family: "grey-sans-thin";
+  font-size: 9em;
+
+  @include mq(48em) {
+    font-size: 14.6em;
+  }
+}
+
+.satisfaction__number {
+  line-height: 0.7;
+  display: block;
+  color: $blue;
+  margin-left: -7px;
+
+  @include mq(48em) {
+    margin-left: -14px;
+  }
+
+  span {
+    color: inherit;
+    @include transform(rotate(3deg));
+    display: inline-block;
+  }
+}
+
+.satisfaction__text {
+  font-size: .17em;
+  font-family: "grey-sans-extrabold";
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  display: block;
+  color: $text-light;
+  margin-top: 0.3em;
+}
+
+// ============================================================
+// SSND styling
+// ============================================================
+
+.ssnd .section-main-image {
+  max-width: 17em; 
+  padding: .5em .5em .2em .5em;
+  border-radius: .5em;
+  background-color: #fff;
+  @include box-shadow(2px 2px 6px 0 rgba(0, 0, 0, 0.35));
+  margin: 0 1em 1em 0;
+  float: left;
+  min-height: 5em;
+  @include transition(background-color 175ms $swift-out);
+
+  &:hover {
+    background-color: lighten($blue-tint, 5);
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.insert {
+  margin: 2em 0 2em -3.2%;
+  width: 106.4%;
+
+  p {
+    color: #fff;
+  }
+}
+
+.insert-header {
+  color: #fff; 
+  text-shadow: 1px 2px 2px $dark-blue;
+  margin: 0 0 .5em;
+  font-size: 2.2em;
+  text-align: center;
+}
+
+.insert-description {
+  max-width: 58em;
+  margin: 0 auto;
+
+  p { 
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// ============================================================
+// JACK. styling
+// ============================================================
 
 .jack {  
   .section-text {
@@ -686,13 +1196,22 @@ label.error {
     @include mq(52em) {
       display: inline-block;
       vertical-align: top;
-      width: 60%;
+      width: 52%;
       max-width: 33em;
+      float: left; 
+    }
+
+
+    @include mq(58em) {
+      display: inline-block;
+      vertical-align: top;
+      width: 60%;
+      max-width: 33em; 
       float: left; 
     }
   }
 
-  .device__frame.jack-image {
+  .device__frame.jack-image { 
     width: 100%;
 
     @include mq(32em) {
@@ -725,26 +1244,30 @@ label.error {
       margin-top: 1em;
       clear: left;
     }
+
+    .loader-overlay {
+      border-radius: 0;
+    }
  
-    img {
-      width: 100%;
+    .lazyload-container {
       max-width: 466px;
       border-bottom: 2px solid $blue;
       padding-bottom: 1em;
+      box-sizing: content-box;
+      display: inline-block;
 
-      @include mq(48em) {
+      @include mq(50em) {
         border: 0;
-        padding: 0 1.2em 0 0;
+        padding: 0 .9em 0 0;
         border-right: 2px solid $blue;
+      }
+
+      img {
+        width: 100%;
       }
     }
     
     figcaption {
-      display: inline-block;
-      vertical-align: top;
-      font-size: .9em;
-      line-height: 1.6; 
-      color: $text-light;
       margin-top: 1em;
       width: 100%;
 
@@ -752,10 +1275,10 @@ label.error {
         width: 80%;
       }
 
-      @include mq(48em) {
+      @include mq(50em) {
         font-size: .8em;
         line-height: 1.5;
-        margin: 0 0 0 1.2em;
+        margin: -.3em 0 0 .9em;
         width: 12%;
         min-width: 10em;
       }
@@ -763,17 +1286,21 @@ label.error {
   }
 }
 
+// ============================================================
+// Hundred Ages styling
+// ============================================================
+
 .ages {
   figure {
     max-width: 35em;
-    margin: 0 auto 2.5em;
+    margin: 0 auto 2em;
     
     @include mq(52em) {
       margin-left: 3%;
       max-width: 68em;
     }
 
-    .browser {
+    .portfolio-image {
       @include mq(70em) {
         width: 58.5%;
       }
@@ -800,6 +1327,10 @@ label.error {
     }
   }
 }
+
+// ============================================================
+// RDES styling
+// ============================================================
 
 .rdes {
   figure { 
@@ -845,38 +1376,16 @@ label.error {
 // Device Screenshot Examples
 // ============================================================
 
-.browser {
+.portfolio-image {
   display: inline-block;
+  border-radius: 6px; 
   border: 1px solid lighten(#96a0a2, 10%);
-  background-color: $blue-tint;
-  padding-top: 1.3em;
-  border-radius: .3em .2em; 
   position: relative;
-  overflow: hidden;
-
-  @include mq(37.5em) {
-    padding-top: 1.5em;
-  }
-
-  &:before {
-    position: absolute;
-    left: 0px;
-    top: 0; 
-    content: "\2022\2022\2022";
-    color: tint($dark-blue, 40);
-    font-size: 120px;
-    letter-spacing: -10px;
-    font-weight: 300;
-    line-height: .6rem;
-
-    @include mq(36em) {
-      line-height: .7rem;
-    }
-  }
 
   img {
     width: 100%;
     height: auto;
+    border-radius: 4px;
   }
 }
 
@@ -915,25 +1424,9 @@ label.error {
 
 .device__image {
   @include clearfix;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 6px;
   float: left;
-}
-
-.device__image--ipad {
-  background-image: url("/img/apple-ipad.svg");
   width: 100%;
-  height: auto;
-  padding: 15% 6.5% 15% 7.7%;
-  background-size: 100%;
-}
-
-.device__image--android {
-  background-image: url('/img/android-nexus.svg');
-  width: 12.5em;
-  height: 24em;
-  padding: 3.2em 1.2em 3.4em;
+  @include rem(margin, .35rem 0 1rem 0);
 }
 
 // ============================================================
@@ -1015,7 +1508,225 @@ label.error {
   }
 }
 
-.case-study__title--number {
+.checkout-case-study .case-study__header {
+  padding: 0 .5em; 
+  min-height: 12.5em;
+
+  @include mq(48em) {
+    min-height: 16.5em;
+  }
+
+  @include mq(52em) {
+    padding: 0 2em;
+  }
+}
+
+.case-study__header__h-group {
+  text-align: left;
+  margin-top: .4em; 
+  max-width: 46.5em;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  width: 94%;
+  margin: .5em auto 0;
+
+  @include mq(32em) {
+    text-align: inherit;
+  }
+
+  @include mq(48em) {
+    width: 100%;
+  }
+
+  @include mq(68em) {
+    font-size: 1.1em;
+  }
+}
+
+.h-group__main__container {
+  text-align: left;
+  width: 100%;
+  @include rem(margin-left, 1rem);
+
+  @include mq(58em) {
+    text-align: center; 
+  }
+
+  @include mq(68em) {
+    margin: 1.5em auto 0;
+  }
+}
+
+.h-group__main {
+  display: inline-block;
+  font-family: "grey-sans-bold", $sans-stack;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1;
+  text-shadow: 2px 2px 3px $dark-blue;
+  text-transform: uppercase;
+  margin: 0.15em 0 -0.02em 0;
+
+  @include mq(25em) {
+    font-size: 4.8em;
+  }
+
+  @include mq(28em) {
+    font-size: 5em;
+  }
+
+  @include mq(32em) {
+    font-size: 5.9em;
+  }
+
+  @include mq(34.5em) {
+    font-size: 6.5em;
+  }
+
+  @include mq(40em) {
+    font-size: 8.2em;
+  }
+
+  @include mq(48em) {
+    margin: 0.15em 0 -0.02em -20px;
+    font-size: 8.7em;
+  }
+
+  @include mq(54em) {
+    font-size: 9.2em;
+    @include rem(margin-left, -1.5rem);
+  }
+
+  @include mq(58em) {
+    font-size: 10.6em;
+  }
+
+  @include mq(68em) {
+    font-size: 11.2em;
+    margin-top: 0;
+  }
+
+  span {
+    color: #fff;
+    text-shadow: 2px 2px 3px $dark-blue;
+  }
+
+  .number {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 0.85;
+  }
+
+  .number-text {
+    font-size: 0.24em;
+    width: 4.4em;
+    line-height: 1;
+    margin-left: 0.5em;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.15;
+    letter-spacing: .05em;
+    text-align: left;
+  }
+}
+
+.h-group__sub {
+  margin: 0;
+  display: inline;
+}
+
+.h-group__sub__description {
+  color: #fff; 
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  text-shadow: 1px 1px 3px $dark-blue;
+  padding: .2em .4em;
+  line-height: 1.35;
+  font-size: 0.7em;
+
+  @include mq(28em) {
+    font-size: .8em;
+  }
+
+  @include mq(40em) {
+    margin: 0 0 .25em;
+    line-height: 1;
+  }
+
+  @include mq(48em) {
+    margin: 0 0 0.75em 0;
+    font-size: .85em;
+  }
+
+  @include mq(54em) {
+    font-size: .9em;
+  }
+
+  @include mq(62em) {
+    font-size: 1em;
+  }
+
+  &:after {
+    @include mq(40em) {
+      content: '';
+      background-color: $blue;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      opacity: .7;
+      top:0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: .8em;
+  }
+}
+
+#checkoutCaseGraphic {
+  width: 100%;
+  height: 100%; 
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  background: $blue-shade;
+  border: 1px solid $blue-tint;
+  border-radius: 50%;
+
+  @include transition(opacity 1457ms ease-in-out);
+
+  &:nth-child(3n) {
+    @include transition(opacity 1125ms ease-in-out);
+  }
+
+  &:nth-child(5n) {
+    @include transition(opacity 1284ms ease-in-out);
+  }
+
+  &:nth-child(8n) {
+    @include transition(opacity 1333ms ease-in-out);
+  }
+
+  &:nth-child(12n) {
+    @include transition(opacity 927ms ease-in-out);
+  }
+
+  &:nth-child(16n) {
+    @include transition(opacity 1652ms ease-in-out);
+  }
+}
+
+.case-study__title--number { 
   width: 2.1em;
   display: inline-block;
   text-align: right;
@@ -1050,7 +1761,7 @@ label.error {
   display: inline-block;
   color: $blue-tint;
   text-shadow: 1px 1px 1px $blue; 
-  background-color: rgba(69, 106, 200, 1);
+  background-color: $blue-shade;
   border-radius: 50%;
   text-align: center;
   padding-top: 0.6em;
@@ -1069,11 +1780,11 @@ label.error {
   }
 
   &.is-active {
-    opacity: 0.35;
+    opacity: 0.4;
   }
 
   .no-js & {
-    opacity: 0.35;
+    opacity: 0.4;
   }
 } 
 
@@ -1128,7 +1839,7 @@ label.error {
 
 .article__image {  
   width: 100%;
-  margin: 0 0 2em;
+  margin: 1em 0 2em;
   float: right;
 
   img {
@@ -1143,7 +1854,63 @@ label.error {
       width: 70%;
     }
   } 
-}   
+}
+
+.article__quotes {
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  position: relative;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.7em;
+
+    @include mq(55em) {
+      font-size: 1em;
+    }
+  }
+
+  blockquote {
+    margin: 0;
+  }
+}
+
+.slick-list {
+  overflow: hidden;
+  margin: 0 3em;
+}
+
+.slick-next, .slick-prev {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: $blue;
+  position: absolute;
+  top: 24%;
+  border-radius: 50%;
+  cursor: pointer;
+  @include transition(background-color 200ms ease-in-out);
+
+  &:hover {
+    background-color: $blue-shade;
+  }
+}
+
+.slick-next {
+  right: 0;
+  background-image: url('/img/arrow-next.png');
+  background-repeat: no-repeat;
+  background-position: 45% 50%;
+}
+
+.slick-prev {
+  left: 0;
+  background-image: url('/img/arrow-prev.png');
+  background-repeat: no-repeat;
+  background-position: 40% 50%;
+}
 
 .article__quote {
   padding: 1em 0;
@@ -1169,24 +1936,32 @@ label.error {
 }
 
 .article__quote--featured {
-  text-align: center;
+  text-align: left;
   font-size: .9em;
-  margin: 1.5em 8%;
+  margin: 0;
+
+  p {
+    font-size: .8em;
+    line-height: 1.7;
+  }
 
   @include mq(55em) {
+    margin: 1.5em 8%;
+    text-align: center;
     font-size: 1.1em;
     margin: 1em -5%;
     text-align: center;
+
+    p {
+      font-size: 1em;
+      line-height: 2;
+    }
   }
 
   @include mq(63.75em) {
     font-size: 1.3em;
     margin: 1.5em -17%;
     text-align: center;
-  }
-
-  p {
-    line-height: 2;
   }
 
   cite {
@@ -1201,8 +1976,8 @@ label.error {
   margin: 0;
   padding: 1.3em 0 1.9em;
   font-size: .8em;
-  border: solid $blue;
-  border-width: 2px 0;
+  border: solid $blue; 
+  border-width: 1px 0;
   margin: 0 0 1.7em 0;
 
   @include mq(30em) {
@@ -1214,7 +1989,7 @@ label.error {
     padding: 0 0 0 1.7em;
     float: right;
     border-width: 0 0 0 2px;
-    max-width: 18em; 
+    max-width: 18em;  
     font-size: .8em;
   }
 
@@ -1256,7 +2031,7 @@ label.error {
 .site-footer {
   background-color: $blue;
   position: relative;
-  @include rem(font-size, .85rem);
+  @include rem(font-size, .85rem); 
   width: 100%;
   height: 8em;
   @include box-shadow(inset 0 7px 7px -5px rgba(3, 33, 67, 0.4));
@@ -1273,7 +2048,7 @@ label.error {
   li {
     margin-top: .2em;
   }
-
+ 
   a {
     color: #ffffff;
   }
@@ -1295,7 +2070,7 @@ label.error {
 
   a.link--highlight {
     color: #fff;
-    @include link-animate(#fff, $blue);
+    @include link-animate(rgba(255, 255, 255, .25), #fff);
 
     .no-backgroundsize & {
       color: #fff;

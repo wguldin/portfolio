@@ -4,14 +4,14 @@
 // Imports for project
 
 //third party 
-@import "partials/h5bp";
+@import "partials/h5bp"; 
 @import "bourbon/bourbon";
 @import "neat/neat"; 
 @import "partials/normalize";
 
 //base materials  
-@import "partials/typography";
 @import "partials/mixins";
+@import "partials/typography";
 
 // Establishes box model for site.
 *, *:before, *:after {
@@ -26,7 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-weight: normal;
-  font-family: "grey-sans-regular", arial, sans-serif;
+  font-family: "grey-sans-regular", $sans-stack;
   @include clearfix;
 
   &.fit-page {
@@ -56,10 +56,14 @@ button {
   user-select: none;
 }
 
-html { 
+html {  
   min-height: 100%; 
-  min-width: 17.5em; 
-  font-size: 20px;
+  font-size: 18px; 
+  min-width: 17.125em;
+
+  @include mq(48em) {
+    font-size: 20px;
+  }
 }
 
 h1,h2,h3,h4,h5,h6, p, strong, span {
@@ -79,13 +83,13 @@ strong {
 }
 
 main[role="main"] {
-  width: 80%;
+  width: 84%;
   max-width: 68em;
   margin: 0 auto;
   z-index: 1;
 
   @include mq(36em) {
-    width: 84%;
+    width: 86%;
   }
 
   @include mq(48em) {
@@ -99,7 +103,7 @@ main[role="main"] {
   &.full-width {
     width: 100%;
     max-width: none;
-  }
+  } 
 } 
 
 blockquote {
@@ -117,25 +121,41 @@ blockquote {
     font-size: .7em;
   }
 }
-
+ 
 input, textarea, select {
   font-family: "grey-sans-regular", $sans-stack;
 }
 
-dd {
+dd { 
   margin: 0;
 }
 
 ul {
   list-style-type: square;
   padding-left: 2em;
+
+  li {
+    margin-bottom: .5em;
+  }
+}    
+
+.caption {
+  font-size: .9em;
+  line-height: 1.6; 
+  color: $text-light;
+  display: inline-block;
+  vertical-align: top;
+
+  p {
+    color: inherit;
+  }
 }
- 
+
 // ==========================================================================
 // Links and such
 // ==========================================================================
 
-a, span.chiclet-button, button.chiclet-button { 
+a, span.chiclet-button, button.chiclet-button, .nav-icon--mobile { 
   @include transition(color 250ms ease, background-color 250ms ease, box-shadow 250ms ease);
 }
 
@@ -143,14 +163,21 @@ a, span.chiclet-button, button.chiclet-button {
   position: relative;
   text-decoration: none;
   z-index: 999;
-  overflow: hidden;
+  overflow: hidden; 
   -webkit-backface-visibility: hidden;
   color: $blue;
-  @include link-animate($blue, #fff);
+  @include link-animate(rgba(69, 106, 200, 0.075), $blue, rgba(69, 106, 200, 0.5));
 
   .no-backgroundsize & {
     color: $blue;
     text-decoration: underline;
     background: none;
-  }
+  } 
+}
+
+.slash-seperator {
+  letter-spacing: -0.2em;
+  margin: 0 0.4em 0 0.3em;
+  opacity: 0.4;
+  color: inherit;
 }

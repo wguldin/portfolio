@@ -1,17 +1,15 @@
 $blue: #456ac8;
-$light-blue: #ECF5FF;
-$blue-grey: #B5C5D8;
 $dark-blue: #032143;
-$secondary-blue: #C0DDFF;
-$blue-tint: #dce3f5; 
+$blue-tint: #dce3f5;  
+$blue-shade: #708ACC;
 
 $error-color: #ffe6bf;
 
-$sans-stack: arial, sans-serif;
+$sans-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $swift-out: cubic-bezier(.55,0,.1,1);
 
 $text: #383838;
-$text-light: #8a979f;
+$text-light: #647077;
 
 // ============================================================
 // Utility Mixins
@@ -45,7 +43,7 @@ $supported: true !default;
   }
 }
 
-@mixin transform($value) {
+@mixin transform($value...) {
   @each $prefix in -webkit-, -moz-, -ms-, '' {
           #{$prefix}transform: #{$value};
   }
@@ -70,6 +68,15 @@ $supported: true !default;
   #{$property}: calc(#{$expression}); 
 } 
 
+@mixin user-select($property: none) {
+    -webkit-touch-callout: $property;
+    -webkit-user-select: $property;
+    -khtml-user-select: $property;
+    -moz-user-select: $property;
+    -ms-user-select: $property;
+    user-select: $property;
+  }
+
 // ============================================================
 // Gradients
 // ============================================================
@@ -88,19 +95,25 @@ $supported: true !default;
 // Link Animation Mixin
 // ============================================================
 
-@mixin link-animate($background-color, $text-color) {
+@mixin link-animate($background-color, $active-text-color, $underlineColor: 'default') {
   @include rem(padding, 1px 2px 1px);
 
+  @if($underlineColor == 'default') { 
+    $underlineColor: $background-color; 
+  }
+
   background-image: linear-gradient(to top, $background-color, $background-color);
-  background-size: 100% .08em;
+  background-size: 100% 0;
   background-position: bottom;
   background-repeat: no-repeat;
+  border-bottom: 1px dotted $underlineColor;
 
-  @include transition(background-size 155ms $swift-out, color 130ms $swift-out 25ms);
+  @include transition(background-size 155ms $swift-out, color 130ms $swift-out 25ms, border-bottom-width 100ms $swift-out);
   
-  &:hover, &.is-selected {
-    color: $text-color;
+  &:hover, &.is-selected { 
+    color: $active-text-color;
     background-size: 100% 100%;
+    border-bottom: 0;
   }
 }
 
