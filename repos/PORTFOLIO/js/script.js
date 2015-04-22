@@ -72,14 +72,6 @@ if('querySelector' in document
     });
 
     // ===============================================================
-    // PJAX Navigation
-    // ===============================================================
-
-    (function() {
-        $("a[data-pjax]").pjax("#main", { fragment: "#main" });
-    });
-
-    // ===============================================================
     // Defeat the spam bots with JS! Email Link Transform
     // ===============================================================
     
@@ -112,7 +104,7 @@ if('querySelector' in document
     // ===============================================================
 
     $('.link--trigger').on('click', function() {
-        $('.create-account').toggleClass('is-visible');
+        $('.checkout-compare').toggleClass('is-visible is-transparent');
     });
 
 

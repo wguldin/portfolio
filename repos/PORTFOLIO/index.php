@@ -22,7 +22,7 @@
             <a href="#contact" class="chiclet-button chiclet-button--primary intro__button">Contact me about your project</a>
             <p class="intro__description" itemprop="description">Effective design begins with a great idea. I'd love to talk with you about yours. I work at <span itemprop="worksFor">a Midwest-based eCommerce company</span> as a <span itemprop="jobtitle">web designer</span>, but still take on some projects in my free time. Email me at <span class="email-link">wguldin [at] gmail [dot] com</span> if I can help you with anything, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
         </aside>
-
+ 
         <meta itemprop="telephone" content="501-920-7064" />
         <meta itemprop="email" content="wguldin@gmail.com" />
         <meta itemprop="url" content="http://willguldin.com" />

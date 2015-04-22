@@ -977,12 +977,12 @@ label.error {
   }
 }
 
-.create-account__example {
+.checkout-compare__example {
   position: relative;
   margin-bottom: 3em;
 }
 
-.create-account {
+.checkout-compare {
   @include transition(opacity 500ms $swift-out);
   opacity: 0;
 
@@ -991,7 +991,7 @@ label.error {
     margin-right: -16vw;
   }
 
-  &:first-child {
+  &.is-transparent {
     position: absolute;
     top: 0;
     left: 0;
@@ -1011,7 +1011,7 @@ label.error {
   }
 }
 
-.create-account__image {
+.checkout-compare__image {
   width: auto;
 
   @include mq(65em) {
@@ -1025,7 +1025,7 @@ label.error {
   }
 }
 
-.create-account__caption {
+.checkout-compare__caption {
   margin-top: 1.5em;
   padding-top: 1em;
   border-top: 2px solid $blue;
