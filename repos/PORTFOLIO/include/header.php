@@ -43,11 +43,10 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
     <!--[if !lt IE 9]><!-->
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css?v=4" />
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
             <link rel="stylesheet" type="text/css" href="/css/style_ie.css" />
-            <script src="/js/vendor/html5shiv.min.js"></script>
     <![endif]-->
 </head>

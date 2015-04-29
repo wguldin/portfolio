@@ -107,6 +107,26 @@ if('querySelector' in document
         $('.checkout-compare').toggleClass('is-visible is-transparent');
     });
 
+    // ===============================================================
+    // Refresh arrow
+    // ===============================================================
+    
+    var refreshButton = $('.refresh-trigger');
+
+    if (refreshButton.length) {
+        setTimeout(function() {
+            refreshButton.addClass('is-visible');
+        }, 1500);
+
+        var rotationAngle = 0;
+
+        refreshButton.on('click', function() {
+            rotationAngle += 360;
+
+            refreshButton.css({'transform': 'rotate(' + rotationAngle + 'deg)'});
+            $('.intro-main-svg-icon').trigger('click');
+        });
+    }
 
     // ===============================================================
     // Form Javascript
@@ -605,7 +625,7 @@ if('querySelector' in document
             }
 
             function determineEventToggle() {
-                if(window.matchMedia("(min-width: 52em) and (max-width: 80em)").matches) {
+                if(window.matchMedia("(min-width: 52em) and (max-width: 95em)").matches) {
                     return 'click';
                 } else {
                     return 'mouseover';

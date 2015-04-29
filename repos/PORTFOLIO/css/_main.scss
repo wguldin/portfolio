@@ -38,6 +38,42 @@ header.intro, .insert {
   }
 }
 
+.refresh-trigger {
+  display: none;
+
+  @include mq(52em) {
+    background-color: #fff;
+    border-radius: 50%; 
+    @include box-shadow(1px 1px 1px $text);
+    opacity: 0;
+    display: block;
+
+    /*! Icon created by Sergey Krivoy for the Noun Project */   
+    background-image: url('/img/refresh.png');
+    background-size: 65.5%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    height: 2em;
+    width: 2em;
+
+    position: absolute;
+    right: 1.5em;
+    bottom: 1.5em;
+
+    @include transition(150ms opacity ease-in, 150ms transform $swift-out);
+    @include user-select(none);
+
+    &.is-visible {
+      opacity: .9;
+    }
+  }
+
+  @include mq(95em) {
+    display: none;
+  }
+}
+
 span[itemprop] { 
   color: inherit;
 } 
@@ -55,6 +91,9 @@ span[itemprop] {
 
   @include mq(80em) {
     max-width: 63em;
+  }
+
+  @include mq(95em) {
     position: relative;
     margin: 0 auto;
   }
@@ -127,7 +166,7 @@ main.full-width .intro-main-svg-frame {
     padding-left: 0;
   }
 
-  @include mq(80em) {
+  @include mq(95em) {
     padding-left: 13em;
   }
 }  
@@ -214,7 +253,7 @@ main.full-width .intro-main-svg-frame {
     width: 100%;
   }
 
-  @include mq(80em) {
+  @include mq(95em) {
     max-width: 63em;
     padding-left: 14em;
   }
@@ -286,7 +325,7 @@ main.full-width .intro-main-svg-frame {
     } 
   }
 
-  @include mq(80em) {
+  @include mq(95em) {
     background: #fff;
     border: 0.5em solid #fff;
     float: none;
@@ -476,7 +515,7 @@ nav[role="navigation"] {
     stroke: #fff;
   }
 
-  @include mq(80em) {
+  @include mq(95em) {
     fill: $blue-tint; 
     stroke: $blue;    
   }

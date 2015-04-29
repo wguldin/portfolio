@@ -19,14 +19,15 @@
         </div> 
 
         <aside class="intro__text">
-            <a href="#contact" class="chiclet-button chiclet-button--primary intro__button">Contact me about your project</a>
-            <p class="intro__description" itemprop="description">Effective design begins with a great idea. I'd love to talk with you about yours. I work at <span itemprop="worksFor">a Midwest-based eCommerce company</span> as a <span itemprop="jobtitle">web designer</span>, but still take on some projects in my free time. Email me at <span class="email-link">wguldin [at] gmail [dot] com</span> if I can help you with anything, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
+            <a href="#contact" class="chiclet-button chiclet-button--primary intro__button">Contact me with any questions</a>
+            <p class="intro__description" itemprop="description">As a <span itemprop="jobtitle">designer</span>, I've always tried to embrace challenges. After working for <span itemprop="worksFor">an eCommerce company</span> for the past two years, my wife and I are moving to the wonderful state of Wisconsin. I'm hoping to find a new set of problems to solve there. To get in touch, email me at <span class="email-link">wguldin [at] gmail [dot] com</span>, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
         </aside>
  
         <meta itemprop="telephone" content="501-920-7064" />
         <meta itemprop="email" content="wguldin@gmail.com" />
         <meta itemprop="url" content="http://willguldin.com" />
     </div>
+    <span class="refresh-trigger"></span>
 </header>
 
 <main role="main" id="main" class="has-loader">
@@ -63,7 +64,6 @@
 
         <div class="section-content">
             <div class="device__frame jack-image lazyload-container">
-              <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>  
               <picture>
                   <!--[if IE 9]><video style="display: none;"><![endif]-->
                       <source media="(min-width: 90em)" data-srcset="/img/jack-large.jpg, /img/jack-extralarge.jpg 2x">
@@ -86,7 +86,6 @@
                 <meta itemprop="thumbnailUrl" content="http://willguldin.com/img/jack-composite.jpg"/>
       
                 <div class="lazyload-container">
-                  <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>
                   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/img/jack-composite.jpg" alt="Several pages from JACK. Magazine"/>
                 </div>
                 <figcaption class="caption">JACK Magazine used a blend of original illustrations, culinary stock photography and studio shots to create a distinctive editorial voice.</figcaption>
@@ -128,7 +127,6 @@
       <h2 class="section-header" itemprop="name">100 Ages, A Century of Voices</h2>
       <figure class="section-content portfolio--case-study--description">
           <div class="portfolio-image section-main-image lazyload-container">
-              <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>
               <picture> 
                   <!--[if IE 9]><video style="display: none;"><![endif]-->
                       <source media="(min-width: 90em)" data-srcset="/img/ages-large.jpg, /img/ages-extralarge.jpg 2x">
@@ -162,7 +160,6 @@
         <h2 class="section-header" itemprop="name">Roy Dudley Estate Sales</h2>
         <figure class="section-content portfolio--case-study--description">
             <div class="portfolio-image section-main-image lazyload-container">
-                <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>
                 <picture>
                     <!--[if IE 9]><video style="display: none;"><![endif]-->
                         <source media="(min-width: 90em)" data-srcset="/img/rdes-large.jpg,  /img/rdes-extralarge.jpg 2x">
@@ -176,7 +173,6 @@
                 <p><strong class="section-text-summary">Roy Dudley Estate Sales needed a website that could highlight upcoming sales and be easy to edit.</strong></p>
                 <p>Working with them, I came up with a design that puts focus on the company's sales.</p>
                 <p>I also made sure the site could be edited without any downtime, something that wasn't possible before.</p>
-                <a href="http://rdes.willguldin.com/" class="chiclet-button">Visit the test site</a>            
             </figcaption>   
         </figure>
     </section>
@@ -184,14 +180,12 @@
     <section id="contact" class="contact">
         <h2 class="section-header">How can I help you?</h2>
         <div class="section-content">
-            <p>If you have any questions about my work, or would like to talk about your project, just drop a line here using this form. You can also email me at <span class="email-link">wguldin [at] gmail [dot] com</span>.</p>
-            <p>We'll discuss if my skills and schedule are the right fit for you and go from there.</p>
+            <p>If you have any questions about my work, or would like to talk about a project, just drop a line here using this form. You can also email me at <span class="email-link">wguldin [at] gmail [dot] com</span>.</p>
             <div class="contact-form__container has-loader">
                 <?php include("include/form.php"); ?>
             </div>
             <div class="about">
               <div class="lazyload-container about__mug">
-                <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>
                 <picture>
                     <!--[if IE 9]><video style="display: none;"><![endif]-->
                         <source media="(min-width: 80em)" data-srcset="/img/portrait-large.jpg, /img/portrait-extralarge.jpg 2x">
