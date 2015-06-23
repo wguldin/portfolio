@@ -37,39 +37,48 @@ if('querySelector' in document
     // When image is loading, add loader to it 
     // ===============================================================
 
-    var lazyloadedImage, observerConfig, imageObserver;
+    function addLazyLoaders () {
 
-    lazyloadedImage = $(".lazyload");
+        if($('html').hasClass('mutationobserver') == false) {
+            return;
+        }
 
-    observerConfig = {
-        attributes: true,
-        childList: true,
-        characterData: true,
-        characterDataOldValue: true,
-        subtree: true
-    };
-     
-    imageObserver = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            var newValue  = $(mutation.target).prop(mutation.attributeName);
+        var lazyloadedImage, observerConfig, imageObserver;
 
-            if (newValue.indexOf('lazyloaded') !== -1) {
-                $(mutation.target).trigger('lazyloadComplete');
-            }
+        lazyloadedImage = $(".lazyload");
+
+        observerConfig = {
+            attributes: true,
+            childList: true,
+            characterData: true,
+            characterDataOldValue: true,
+            subtree: true
+        };
+         
+        imageObserver = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                var newValue  = $(mutation.target).prop(mutation.attributeName);
+
+                if (newValue.indexOf('lazyloaded') !== -1) {
+                    $(mutation.target).trigger('lazyloadComplete');
+                }
+            });
         });
-    });
 
-    lazyloadedImage.each(function() {
-        imageObserver.observe(this, observerConfig);
-    });
-
-    $(document).on('lazyloadComplete', lazyloadedImage, function(event) {
-        var container = $(event.target).closest('.lazyload-container');
-
-        $(container).find('.loader-overlay').fadeOut(150, function(){
-            $(this).remove();
+        lazyloadedImage.each(function() {
+            imageObserver.observe(this, observerConfig);
         });
-    });
+
+        $(document).on('lazyloadComplete', lazyloadedImage, function(event) {
+            var container = $(event.target).closest('.lazyload-container');
+
+            $(container).find('.loader-overlay').fadeOut(150, function(){
+                $(this).remove();
+            });
+        });
+    }
+
+    addLazyLoaders();
 
     // ===============================================================
     // Defeat the spam bots with JS! Email Link Transform

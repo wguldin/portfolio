@@ -9,8 +9,8 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?= isset($PageTitle) ? $PageTitle : "Will Guldin, Freelance Digital Designer and Consultant in Columbia, Missouri"?></title>
-    <meta name="description" content="Will Guldin is a freelance digital designer and consultant out of Columbia, Missouri, with several years of experience. I'd love to help with your great idea.">
+    <title><?= isset($PageTitle) ? $PageTitle : "Will Guldin, Digital Designer in Middleton, Wisconsin"?></title>
+    <meta name="description" content="Will Guldin is a digital designer and consultant out of Columbia, Missouri, with several years of experience. He is currently looking for a full-time digital design position.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     <?php if (function_exists('customPageHeader')){
@@ -43,10 +43,10 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
     <!--[if !lt IE 9]><!-->
-        <link rel="stylesheet" type="text/css" href="/css/style.css?v=4" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css?v=5" />
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="/css/style_ie.css" />
+            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=5" />
     <![endif]-->
 </head>

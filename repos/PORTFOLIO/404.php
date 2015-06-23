@@ -8,10 +8,10 @@
     include_once("include/navigation.php");
 ?>
 
-<main role="main" class="full-width">
+<main role="main" class="full-width error-page">
   <header class="intro" role="banner">
     
-    <div class="intro-main-svg-frame">
+    <div class="intro-main-svg-frame is-404">
         <img class="logo-404" src="/img/logo-broken.svg" alt="404 page logo">
     </div>
 

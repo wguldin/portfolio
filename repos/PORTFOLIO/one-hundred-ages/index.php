@@ -115,7 +115,7 @@
 
         <p>I hope you’ll take a look at the work as well. I’ve learned a lot more since I first completed this project, but it remains one of the most valuable things I’ve done in my professional career.</p>
 
-        <a href="http://media.columbiamissourian.com/100ages/#/" class="chiclet-button">Visit the site</a>
+        <a href="http://columbiamissourian.com/app/legacy/100ages/" class="chiclet-button">Visit the site</a>
 
     </section> 
 </article>

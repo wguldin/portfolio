@@ -20,7 +20,7 @@
 
         <aside class="intro__text">
             <a href="#contact" class="chiclet-button chiclet-button--primary intro__button">Contact me with any questions</a>
-            <p class="intro__description" itemprop="description">As a <span itemprop="jobtitle">designer</span>, I've always tried to embrace challenges. After working for <span itemprop="worksFor">an eCommerce company</span> for the past two years, my wife and I are moving to the wonderful state of Wisconsin. I'm hoping to find a new set of problems to solve there. To get in touch, email me at <span class="email-link">wguldin [at] gmail [dot] com</span>, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
+            <p class="intro__description" itemprop="description">After working for <span itemprop="worksFor">an eCommerce company</span> for the past two years, my wife and I have just moved to the wonderful state of Wisconsin. I'm hoping to find a position as a <span itemprop="jobtitle">digital designer</span>, and solve a new set of problems. To get in touch, email me at <span class="email-link">wguldin [at] gmail [dot] com</span>, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
         </aside>
  
         <meta itemprop="telephone" content="501-920-7064" />
@@ -33,8 +33,6 @@
 <main role="main" id="main" class="has-loader">
   <div class="loader"></div> 
     <section class="portfolio portfolio--case-study checkout" itemscope itemtype="http://schema.org/WebSite">
-      <meta itemprop="" content=""/>
-
       <h2 class="section-header">A Faster, Smarter Checkout</h2>
       <figure class="portfolio--case-study--description">
           <img itemprop="image" src="/img/checkout-mobile-screenshot.jpg" alt="Screenshot from checkout redesign of shipping address selection page">
@@ -64,16 +62,20 @@
 
         <div class="section-content">
             <div class="device__frame jack-image lazyload-container">
+              <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>  
               <picture>
                   <!--[if IE 9]><video style="display: none;"><![endif]-->
-                      <source media="(min-width: 90em)" data-srcset="/img/jack-large.jpg, /img/jack-extralarge.jpg 2x">
-                      <source media="(min-width: 60em)" data-srcset="/img/jack-medium.jpg, /img/jack-large.jpg 2x">
-                      <source data-srcset="/img/jack-small.jpg, /img/jack-medium.jpg 2x">
+                      <source media="(min-width: 90em)" data-srcset="/img/jack-large.jpg, /img/jack-extralarge.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                      <source media="(min-width: 60em)" data-srcset="/img/jack-medium.jpg, /img/jack-large.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                      <source data-srcset="/img/jack-small.jpg, /img/jack-medium.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
                   <!--[if IE 9]></video><![endif]-->
+                  <!--[if gte IE 9]><!-->
                     <img class="device__image lazyload" itemprop="image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="Brewmaster splash page from JACK Magazine, an all-digital Men's cooking magazine">
+                  <!--<![endif]-->
+                  <!--[if lt IE 9]><img class="device__image lazyload" itemprop="image" src="/img/jack-small.jpg"  alt="Brewmaster splash page from JACK Magazine, an all-digital Men's cooking magazine"><![endif]-->
               </picture>
-            </div>        
-            <div class="section-text">
+            </div>            
+            <div class="section-text"> 
                 <p itemprop="description">
                     <strong class="section-text-summary">Meredith Corporation, one of the nation's largest magazine publishers, was looking for a different take on the traditional food magazine.</strong>
                 </p>
@@ -86,6 +88,7 @@
                 <meta itemprop="thumbnailUrl" content="http://willguldin.com/img/jack-composite.jpg"/>
       
                 <div class="lazyload-container">
+                  <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>  
                   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/img/jack-composite.jpg" alt="Several pages from JACK. Magazine"/>
                 </div>
                 <figcaption class="caption">JACK Magazine used a blend of original illustrations, culinary stock photography and studio shots to create a distinctive editorial voice.</figcaption>
@@ -94,9 +97,7 @@
     </section>
 
     <section class="portfolio portfolio--case-study insert ssnd" itemscope itemtype="http://schema.org/WebSite">
-      <meta itemprop="" content=""/>
-
-      <h2 class="insert-header">Helping a contest live up to its reputation</h3>
+      <h2 class="insert-header">Helping a contest live up to its reputation</h2>
       <figure class="insert-description"> 
           <div class="section-main-image">
             <a href="http://ssnd.missouri.edu">           
@@ -127,15 +128,18 @@
       <h2 class="section-header" itemprop="name">100 Ages, A Century of Voices</h2>
       <figure class="section-content portfolio--case-study--description">
           <div class="portfolio-image section-main-image lazyload-container">
+              <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>  
               <picture> 
                   <!--[if IE 9]><video style="display: none;"><![endif]-->
-                      <source media="(min-width: 90em)" data-srcset="/img/ages-large.jpg, /img/ages-extralarge.jpg 2x">
-                      <source media="(min-width: 70em)" data-srcset="/img/ages-medium.jpg, /img/ages-large.jpg 2x">
-                      <source media="(min-width: 52em)" data-srcset="/img/ages-small.jpg, /img/ages-medium.jpg 2x">
-                      <source data-srcset="/img/ages-medium.jpg, /img/ages-large.jpg 2x">
+                      <source media="(min-width: 90em)" data-srcset="/img/ages-large.jpg, /img/ages-extralarge.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                      <source media="(min-width: 70em)" data-srcset="/img/ages-medium.jpg, /img/ages-large.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                      <source media="(min-width: 52em)" data-srcset="/img/ages-small.jpg, /img/ages-medium.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                      <source data-srcset="/img/ages-medium.jpg, /img/ages-large.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
                   <!--[if IE 9]></video><![endif]-->
-                  
-                  <img class="lazyload" itemprop="image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="100 Ages, A Century of Voices">
+                  <!--[if gte IE 9]><!-->
+                    <img class="lazyload" itemprop="image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="100 Ages, A Century of Voices">
+                  <!--<![endif]-->
+                  <!--[if lt IE 9]><img class="lazyload" itemprop="image" src="/img/ages-small.jpg" alt="100 Ages, A Century of Voices"><![endif]-->
               </picture>
           </div>
           <figcaption itemprop="description">
@@ -160,18 +164,21 @@
         <h2 class="section-header" itemprop="name">Roy Dudley Estate Sales</h2>
         <figure class="section-content portfolio--case-study--description">
             <div class="portfolio-image section-main-image lazyload-container">
+                <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>  
                 <picture>
                     <!--[if IE 9]><video style="display: none;"><![endif]-->
-                        <source media="(min-width: 90em)" data-srcset="/img/rdes-large.jpg,  /img/rdes-extralarge.jpg 2x">
-                        <source data-srcset="/img/rdes-medium.jpg, /img/rdes-large.jpg 2x">
+                        <source media="(min-width: 90em)" data-srcset="/img/rdes-large.jpg, /img/rdes-extralarge.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="> 
+                        <source data-srcset="/img/rdes-medium.jpg, /img/rdes-large.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
                     <!--[if IE 9]></video><![endif]-->
-
+                    <!--[if gte IE 9]><!-->
                     <img class="lazyload" itemprop="image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="Roy Dudley Estate Sales Test Website">
+                    <!--<![endif]-->
+                    <!--[if lt IE 9]><img class="lazyload" itemprop="image" src="/img/rdes-large.jpg" alt="Roy Dudley Estate Sales Test Website"><![endif]-->
                 </picture>
             </div>
             <figcaption itemprop="description">
-                <p><strong class="section-text-summary">Roy Dudley Estate Sales needed a website that could highlight upcoming sales and be easy to edit.</strong></p>
-                <p>Working with them, I came up with a design that puts focus on the company's sales.</p>
+                <p><strong class="section-text-summary">Roy Dudley Estate Sales needed a website that could highlight upcoming sales and be easy to edit and maintain.</strong></p>
+                <p>Working with them, I came up with a design that puts more focus on the company's upcoming sales and that makes it simple to sign up for their email list.</p>
                 <p>I also made sure the site could be edited without any downtime, something that wasn't possible before.</p>
             </figcaption>   
         </figure>
@@ -186,13 +193,16 @@
             </div>
             <div class="about">
               <div class="lazyload-container about__mug">
+                <div class="loader-overlay"><div class="loader loader--image-preloader"></div></div>                
                 <picture>
                     <!--[if IE 9]><video style="display: none;"><![endif]-->
-                        <source media="(min-width: 80em)" data-srcset="/img/portrait-large.jpg, /img/portrait-extralarge.jpg 2x">
-                        <source data-srcset="/img/portrait-medium.jpg, /img/portrait-large.jpg 2x">
+                        <source media="(min-width: 80em)" data-srcset="/img/portrait-large.jpg, /img/portrait-extralarge.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <source data-srcset="/img/portrait-medium.jpg, /img/portrait-large.jpg 2x" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
                     <!--[if IE 9]></video><![endif]-->
-                    
+                    <!--[if gte IE 9]><!-->
                     <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="Portrait of Will Guldin, Digital Designer">
+                    <!--<![endif]-->
+                    <!--[if lt IE 9]><img class="lazyload" src="/img/portrait-medium.jpg"  alt="Portrait of Will Guldin, Digital Designer"><![endif]-->
                 </picture>
               </div>
 

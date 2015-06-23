@@ -100,22 +100,9 @@ span[itemprop] {
 }
 
 main.full-width header.intro { 
-  height: 100%;
-  position: absolute;
-  padding-top: 0;
-
-  @include mq(36em) {
-    padding-top: 2em;
-  }
+  @include calc(min-height, '100vh - 3.15em', 100%);
+  @include box-shadow(none);
 }
-
-main.full-width .intro-main-svg-frame {
-  margin-top: -3em;
-
-  @include mq(36em) {
-    margin-top: 0;
-  }
-}  
 
 .chiclet-button--primary.intro__button {
   margin-top: 2em;
@@ -257,6 +244,19 @@ main.full-width .intro-main-svg-frame {
     max-width: 63em;
     padding-left: 14em;
   }
+
+  .is-404 ~ & {
+    @include mq(48em) {
+      width: 60%;
+      margin: 0;
+      float: left;
+    }
+
+    @include mq(56em) {
+      width: 70%;
+      max-width: 48em;
+    } 
+  }
 }
   
 .intro__description {
@@ -307,22 +307,32 @@ main.full-width .intro-main-svg-frame {
   }
 
   @include mq(52em) {
-    background: none;
-    border: 0;
-    height: 45em;
-    margin: 0 1.5em 0 auto;
-    opacity: .3;
-    position: absolute;
-    right: -9em;
-    top: -11em;
-    width: 40em;
-    z-index: -1;
- 
-    $scaleRatio : 32/45;
+    &:not(.is-404) {
+      background: none;
+      border: 0;
+      height: 45em;
+      margin: 0 1.5em 0 auto;
+      opacity: .3;
+      position: absolute;
+      right: -9em;
+      top: -11em;
+      width: 40em;
+      z-index: -1;
 
-    &.is-animated {
-      @include transform(scale($scaleRatio));
-    } 
+      $scaleRatio : 32/45;
+
+      &.is-animated {
+        @include transform(scale($scaleRatio));
+      } 
+    }
+  }
+
+  @include mq(52em) {
+    &.is-404 {
+      width: 10em;
+      height: 10em;
+      margin-right: 2em;
+    }
   }
 
   @include mq(95em) {
@@ -655,7 +665,12 @@ nav[role="navigation"] {
   background-color: rgba(255,255,255,.8);
   top: 0;
   left: 0;
-  border-radius: 6px;
+  border-radius: 2px;
+  display: none;
+
+  .mutationobserver & {
+    display: block;
+  }
 }
 
 .loader {
@@ -774,6 +789,12 @@ input[type="radio"], input[type="checkbox"] {
   & + p {
     width: 100%;
     max-width: 37em;
+  }
+
+  .chiclet-button + & {
+    margin-top: 1em;
+    font-style: italic;
+    font-size: .8em;
   }
 } 
 
@@ -1192,6 +1213,7 @@ label.error {
 }
 
 .insert {
+  display: block;
   margin: 2em 0 2em -3.2%;
   width: 106.4%;
 
@@ -1417,14 +1439,14 @@ label.error {
 
 .portfolio-image {
   display: inline-block;
-  border-radius: 6px; 
+  border-radius: 4px; 
   border: 1px solid lighten(#96a0a2, 10%);
   position: relative;
 
   img {
     width: 100%;
     height: auto;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 }
 
