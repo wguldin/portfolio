@@ -1,19 +1,43 @@
+// ============================================================
+// @Font-Face Mixin
+// ============================================================
+
+// Based on most bullet-proof font syntax: http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style : normal, $font-stretch : normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../fonts/#{$font-family}/#{$font-filename}/#{$font-filename}.eot');
+    src: url('../fonts/#{$font-family}/#{$font-filename}/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/#{$font-family}/#{$font-filename}/#{$font-filename}.woff2') format('woff2'),
+         url('../fonts/#{$font-family}/#{$font-filename}/#{$font-filename}.woff') format('woff'),
+         url('../fonts/#{$font-family}/#{$font-filename}/#{$font-filename}.ttf') format('truetype'),
+         url('../fonts/#{$font-family}/#{$font-filename}/#{$font-filename}.svg##{$font-family}') format('svg');
+
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
+
 // ===========================================================
 // Fonts
 // ===========================================================
 
-@include declare-font-face("grey-sans-ultrathin", "GreySans-UltraThin-webfont");
+@include declare-font-face("Texta", "Texta-Regular-webfont", normal, normal);
+@include declare-font-face("Texta", "Texta-Italic-webfont", normal, italic);
+@include declare-font-face("Texta", "Texta-Thin-webfont", 100, normal);
+@include declare-font-face("Texta", "Texta-Thin-Italic-webfont", 100, italic);
+@include declare-font-face("Texta", "Texta-Light-webfont", 200, normal);
+@include declare-font-face("Texta", "Texta-Light-Italic-webfont", 200, italic);
+@include declare-font-face("Texta", "Texta-Book-webfont", 300, normal);
+@include declare-font-face("Texta", "Texta-Book-Italic-webfont", 300, italic);
+@include declare-font-face("Texta", "Texta-Medium-webfont", 500, normal);
+@include declare-font-face("Texta", "Texta-Medium-Italic-webfont", 500, italic);
+@include declare-font-face("Texta", "Texta-Bold-webfont", 600, normal);
+@include declare-font-face("Texta", "Texta-Bold-Italic-webfont", 600, italic);
+@include declare-font-face("Texta", "Texta-Heavy-webfont", 700, normal);
+@include declare-font-face("Texta", "Texta-Heavy-Italic-webfont", 700, italic);
+@include declare-font-face("Texta", "Texta-Black-webfont", 800, normal);
+@include declare-font-face("Texta", "Texta-Black-Italic-webfont", 800, italic);
 
-@include declare-font-face("grey-sans-thin", "GreySans-Thin-webfont");
-
-@include declare-font-face("grey-sans-light", "GreySans-Light-webfont");
-
-@include declare-font-face("grey-sans-regular", "GreySans-Regular-webfont");
-
-@include declare-font-face("grey-sans-semibold", "GreySans-SemiBold-webfont");
-
-@include declare-font-face("grey-sans-bold", "GreySans-Bold-webfont");
-
-@include declare-font-face("grey-sans-extrabold", "GreySans-ExtraBold-webfont");
-
-@include declare-font-face("grey-sans-black", "GreySans-Black-webfont"); 

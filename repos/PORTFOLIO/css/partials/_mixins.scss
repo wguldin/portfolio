@@ -118,28 +118,6 @@ $supported: true !default;
 }
 
 // ============================================================
-// @Font-Face Mixin
-// ============================================================
-
-// Folder containing font and font file must have the same name for this to work.
-// Based on most bullet-proof font syntax: http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
-
-@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style : normal, $font-stretch : normal) {
-  @font-face {
-    font-family: '#{$font-family}';
-    src: url('../fonts/#{$font-filename}/#{$font-filename}.eot');
-    src: url('../fonts/#{$font-filename}/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/#{$font-filename}/#{$font-filename}.woff') format('woff'),
-         url('../fonts/#{$font-filename}/#{$font-filename}.ttf') format('truetype'),
-         url('../fonts/#{$font-filename}/#{$font-filename}.svg##{$font-family}') format('svg');
-
-    font-weight: $font-weight;
-    font-style: $font-style;
-    font-stretch: $font-stretch;
-  }
-}
-
-// ============================================================
 // REM Mixin
 // ============================================================
 

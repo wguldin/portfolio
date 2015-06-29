@@ -34,53 +34,6 @@ if('querySelector' in document
     });
 
     // ===============================================================
-    // When image is loading, add loader to it 
-    // ===============================================================
-
-    function addLazyLoaders () {
-
-        if($('html').hasClass('mutationobserver') == false) {
-            return;
-        }
-
-        var lazyloadedImage, observerConfig, imageObserver;
-
-        lazyloadedImage = $(".lazyload");
-
-        observerConfig = {
-            attributes: true,
-            childList: true,
-            characterData: true,
-            characterDataOldValue: true,
-            subtree: true
-        };
-         
-        imageObserver = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                var newValue  = $(mutation.target).prop(mutation.attributeName);
-
-                if (newValue.indexOf('lazyloaded') !== -1) {
-                    $(mutation.target).trigger('lazyloadComplete');
-                }
-            });
-        });
-
-        lazyloadedImage.each(function() {
-            imageObserver.observe(this, observerConfig);
-        });
-
-        $(document).on('lazyloadComplete', lazyloadedImage, function(event) {
-            var container = $(event.target).closest('.lazyload-container');
-
-            $(container).find('.loader-overlay').fadeOut(150, function(){
-                $(this).remove();
-            });
-        });
-    }
-
-    addLazyLoaders();
-
-    // ===============================================================
     // Defeat the spam bots with JS! Email Link Transform
     // ===============================================================
     
@@ -95,25 +48,81 @@ if('querySelector' in document
     createEmailLink('wguldin@gmail.com');
 
     // ===============================================================
-    // Quote Slider
+    // Sliders
     // ===============================================================
+
+    function convertEm(value) {
+        return value * 16; // Just used for media queries, since it ignores parent context.
+    }
 
     if ($('.article__quotes').length) {
         $('.article__quotes').slick({
           infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
-          nextArrow: '<span class="slick-next"></span>',
-          prevArrow: '<span class="slick-prev"></span>', 
+          nextArrow: '<span class="slick-next"><img src="/img/arrow.png" alt="Next Slide Arrow" /></span>',
+          prevArrow: '<span class="slick-prev"><img src="/img/arrow.png" alt="Previous Slide Arrow" /></span>', 
         });
     }
+
+    $('.image--main__slider').each(function(index, item) {
+        var carouselId = "carouselMain" + index;
+        this.id = carouselId;
+        
+        $(this).slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '#carouselNav' + index,
+            infinite: true,
+            lazyload: 'onDemand',
+        });
+    })
+
+    $('.image--nav__slider').each(function(index, item) {
+        var carouselId = "carouselNav" + index;
+        this.id = carouselId;
+        
+        $(this).slick({
+            slidesToScroll: 1,
+            slidesToShow: 3,
+            asNavFor: '#carouselMain' + index,
+            dots: false,
+            focusOnSelect: true,
+            centerMode: false,
+            infinite: true,
+            lazyload: 'onDemand',
+            nextArrow: '<span class="slick-next"><img src="/img/arrow.png" alt="Next Slide Arrow" /></span>',
+            prevArrow: '<span class="slick-prev"><img src="/img/arrow.png" alt="Previous Slide Arrow" /></span>', 
+            responsive: [
+                {
+                    breakpoint: convertEm(36), // These breakpoints are max-width.
+                    settings: {
+                        slidesToShow: 3,
+                        centerMode: true,
+                    }
+                },
+                {
+                    breakpoint: convertEm(48), // These breakpoints are max-width.
+                    settings: {
+                        slidesToShow: 2,
+                        centerMode: false,
+                    }
+                }
+            ]
+        });
+    })
 
     // ===============================================================
     // New version trigger
     // ===============================================================
 
     $('.link--trigger').on('click', function() {
-        $('.checkout-compare').toggleClass('is-visible is-transparent');
+        var checkoutImageContainer = $(this).closest('.checkout-compare__example');
+        var checkoutImages = checkoutImageContainer.find('.checkout-compare');
+
+        checkoutImages.toggleClass('is-visible is-transparent');
     });
 
     // ===============================================================
@@ -287,6 +296,10 @@ if('querySelector' in document
             return;
         }
 
+        if (number.text() === '100') {
+            number.text('1');
+        }
+
         number.addClass('is-active');
         $('#headline-text').addClass('is-active');
         $('#headline-subhead').addClass('is-active');
@@ -319,11 +332,20 @@ if('querySelector' in document
     showAgesHeader($('#headlineNumber'));
 
     // ============================================================
+    // Math utility for checkout graphic
+    // ============================================================
+
+    // Returns a random number between min (inclusive) and max (exclusive)
+    function getRandomArbitrary(min, max) {
+      return parseFloat(Math.random() * (max - min) + min).toFixed(2);
+    }
+
+    // ============================================================
     // Case Study Javascript - Checkout Header Animations
     // ============================================================
 
-    (function() {
-        
+    function initializeCheckoutGraphic() {
+
         // Track number of dots to animate.
         var dotDiameter = 14;
         var totalDots;
@@ -361,7 +383,8 @@ if('querySelector' in document
             for(row = 0; row <= rowNumber; row++) {
 
                 createDots(dotsPerRow, dotGap, $graphic, cy, row);
-                cy = round(cy + rowGap, 1);
+
+                cy = Math.round(cy + rowGap);
             }
             
             runAnimation();
@@ -387,7 +410,7 @@ if('querySelector' in document
                 var dot = '<div class="dot" style="opacity: ' + opacity + '; height: ' + height + 'px; width: ' + width + 'px; left: ' + left + 'px; top: ' + top + 'px;"></div>';
                 document.getElementById('checkoutCaseGraphic').insertAdjacentHTML('beforeend', dot)
                 
-                cx = round(cx + dotSize, 1);  
+                cx = Math.round(cx + dotSize);  
             } 
         }
 
@@ -431,7 +454,7 @@ if('querySelector' in document
 
         function animateDots() {
 
-            if(animationRunCount >= 5) {
+            if(animationRunCount >= 3) {
                 clearAnimationTimeout();
                 return; 
             }
@@ -450,43 +473,9 @@ if('querySelector' in document
         }
 
         createAnimatedHeader('#checkoutCaseGraphic');
-    })(); 
- 
-    // ============================================================
-    // Math Utilities for graphic
-    // ============================================================
-
-    function isEven(value) {
-        if (value%2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
-    // Returns a random number between min (inclusive) and max (exclusive)
-    function getRandomArbitrary(min, max) {
-      return round(Math.random() * (max - min) + min, 2);
-    }
-
-    function round(value, exp) {
-      if (typeof exp === 'undefined' || +exp === 0)
-        return Math.round(value);
-
-      value = +value;
-      exp  = +exp;
-
-      if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0))
-        return NaN;
-
-      // Shift
-      value = value.toString().split('e');
-      value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
-
-      // Shift back
-      value = value.toString().split('e');
-      return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
-    }
+    initializeCheckoutGraphic();
 
     // ============================================================
     // SVG Icon

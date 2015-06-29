@@ -8,6 +8,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat"; 
 @import "partials/normalize";
+@import "partials/slick";
 
 //base materials  
 @import "partials/mixins";
@@ -19,14 +20,15 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
 }
- 
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-weight: normal;
-  font-family: "grey-sans-regular", $sans-stack;
+  font-family: "Texta", $sans-stack; 
+  font-weight: 500;
+  font-style: normal;
   @include clearfix;
 
   &.fit-page {
@@ -43,8 +45,9 @@ body {
 }
  
 p { 
-  line-height: 1.7;
-  max-width: 48em; 
+  line-height: 1.4;
+  font-size: 1.1em;
+  max-width: 42em; 
 } 
 
 article {
@@ -77,8 +80,12 @@ h1,h2,h3,h4,h5,h6, p, strong, span {
   color: $text;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
 h1, h2 {
-  font-family: "grey-sans-semibold", arial, sans-serif;
+  font-weight: 500;
 }
 
 .is-hidden { 
@@ -86,7 +93,11 @@ h1, h2 {
 }
 
 strong {
-  font-family: "grey-sans-semibold", arial, sans-serif; 
+  font-weight: 800; 
+}
+
+em {
+  font-style: italic;
 }
 
 main[role="main"] {
@@ -125,12 +136,15 @@ blockquote {
     color: $text;
     display: inline-block;
     margin-top: 1em;
-    font-size: .7em;
+
+    @include mq(52em) {
+      font-size: .7em;
+    }
   }
 }
  
 input, textarea, select {
-  font-family: "grey-sans-regular", $sans-stack;
+  font-weight: 400;
 }
 
 dd { 
@@ -148,13 +162,17 @@ ul {
 
 .caption {
   font-size: .9em;
-  line-height: 1.6; 
+  line-height: 1.4; 
   color: $text-light;
   display: inline-block;
   vertical-align: top;
 
   p {
     color: inherit;
+  }
+
+  .example-slider & {
+    margin: 0.6em 0 -0.3em 0;
   }
 }
 
@@ -171,7 +189,6 @@ a, span.chiclet-button, button.chiclet-button, .nav-icon--mobile {
   text-decoration: none;
   z-index: 999;
   overflow: hidden; 
-  -webkit-backface-visibility: hidden;
   color: $blue;
   @include link-animate(rgba(69, 106, 200, 0.075), $blue, rgba(69, 106, 200, 0.5));
 

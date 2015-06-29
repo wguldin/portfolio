@@ -9,13 +9,13 @@
 ?>
 
 <header class="intro case-study__header" role="banner">
-    
-    <div class="header__intro" id="HundredAgesHeading">
-        <h1 class="intro__main-head"><span id="headlineNumber">1</span><span> Ages</span></h1>
-        <h2 class="intro__subheader">A Century of Voices</h2>
+    <div class="intro__text--wrapper">
+        <h1 class="header__intro" id="HundredAgesHeading">
+            <span class="intro__main-head"><span id="headlineNumber">100</span><span> Ages</span></span>
+            <span class="intro__subheader">A Century of Voices</span>
+        </h1>
+        <h2 class="intro__description" id="HundredAgesDesc">A pair of photojournalists recorded and edited 100 interviews with people of all ages. With my help, they told a timeless story about life's experiences.</h2>
     </div>
-    <p class="intro__description" id="HundredAgesDesc">A pair of photojournalists recorded and edited 100 interviews with people of all ages. With my help, they told a timeless story about life's experiences.</p>
-
     <span class="age age--1">37</span>
     <span class="age age--2">23</span>
     <span class="age age--3">4</span>
@@ -69,7 +69,7 @@
                 <dt class="infobox--subheader">Columbia Missourian traffic</dt>
                 <dd>+250,000 unique visitors/month</dd>
                 <dt class="infobox--subheader">Cutest interview</dt>
-                <dd><a href="http://media.columbiamissourian.com/100ages/#/2" class="link--highlight">2-year-olds Adam &amp; Max Sedillo</a></dd>
+                <dd><a href="http://columbiamissourian.com/app/legacy/100ages/#/2" class="link--highlight">2-year-olds Adam &amp; Max Sedillo</a></dd>
             </dl>
         </aside>
 

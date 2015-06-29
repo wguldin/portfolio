@@ -2,11 +2,9 @@
 <!--[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 8]><html lang="en" class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if IE 9]><html lang="en" class="no-js lt-ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><html class="no-js" lang="en"><![endif]-->
-<!--[if !IE]><html class="no-js" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><?= isset($PageTitle) ? $PageTitle : "Will Guldin, Digital Designer in Middleton, Wisconsin"?></title>
@@ -20,7 +18,7 @@
     <script>
       WebFont.load({
         custom: {
-          families: ['grey-sans-bold', 'grey-sans-semibold', 'grey-sans-regular']
+          families: ['texta: 3n, 4n, 4i, 5n, 8n']
         }
       });
     </script>
@@ -43,10 +41,10 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
     <!--[if !lt IE 9]><!-->
-        <link rel="stylesheet" type="text/css" href="/css/style.css?v=5" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css?v=6" />
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=5" />
+            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=6" />
     <![endif]-->
 </head>

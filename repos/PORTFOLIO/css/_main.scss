@@ -6,7 +6,7 @@ header.intro, .insert {
   padding: 1.8em; 
   width: 100%; 
   text-align: left; 
-  overflow: hidden;
+  overflow: hidden; 
   position:relative;
 
   background: $blue; 
@@ -36,6 +36,19 @@ header.intro, .insert {
   @include mq(52em) {
     display: block;
   }
+
+  p {
+    line-height: 1.5;
+    text-shadow: 1px 1px 1px $dark-blue;
+
+    @include mq(36em) {
+      line-height: 1.7;
+    }
+
+    @include mq(68em) {
+      font-size: 1.3em;
+    }
+  } 
 }
 
 .refresh-trigger {
@@ -47,6 +60,7 @@ header.intro, .insert {
     @include box-shadow(1px 1px 1px $text);
     opacity: 0;
     display: block;
+    cursor: pointer;
 
     /*! Icon created by Sergey Krivoy for the Noun Project */   
     background-image: url('/img/refresh.png');
@@ -86,7 +100,7 @@ span[itemprop] {
 
   @include mq(52em) {
     margin: 0 0 0 2em;
-    max-width: 34em;
+    max-width: 42em;
   }
 
   @include mq(80em) {
@@ -99,13 +113,21 @@ span[itemprop] {
   }
 }
 
+.intro__text--wrapper {
+  @include mq(68em) {
+    @include clearfix;
+    margin: 0 auto;
+    max-width: 68em;
+  }
+}
+
 main.full-width header.intro { 
   @include calc(min-height, '100vh - 3.15em', 100%);
   @include box-shadow(none);
 }
 
 .chiclet-button--primary.intro__button {
-  margin-top: 2em;
+  margin-top: 1.1em;
   color: #fff;
   background-color: $blue-shade;
   border-color: #fff;
@@ -113,8 +135,7 @@ main.full-width header.intro {
   max-width: none;
   margin-bottom: 0;
   width: 100%;
-  padding: .7em 1em; 
-  font-size: 0.8em;
+  padding: .35em .5em; 
   
   &:hover {
     color: $blue-shade;
@@ -122,17 +143,16 @@ main.full-width header.intro {
   }
 
   @include mq(37.5em) {
-    padding: .6em 1.4em;
+    padding: .4em 1.4em;
     max-width: none
   }
 
   @include mq(40em) {
-    max-width: 28em;
+    max-width: 24em;
   }
 
   @include mq(52em) {
-    max-width: 24em;
-    font-size: .83em;
+    max-width: 20em;
     margin-top: 1.5em;
     @include order(1);
   } 
@@ -152,74 +172,78 @@ main.full-width header.intro {
   @include mq(52em) {
     padding-left: 0;
   }
-
-  @include mq(95em) {
-    padding-left: 13em;
-  }
 }  
 
-.intro__main-head, .intro__subheader, .ssnd h4 {
+.intro__subheader, .intro__main-head, .ssnd h4 {
   color: #fff;
-  font-family: "grey-sans-bold", $sans-stack;
-  font-weight: normal;
+  font-weight: 600;
   margin: 0; 
+}
+
+.intro__main-head {
+  font-weight: 300;
+}
+
+.intro__subheader, .ssnd h4 {
+  font-weight: normal;
 }
 
 .intro__subheader {
   font-size: 1.1em;
-  letter-spacing: 0.02em;
-  text-shadow: 1px 1px 2px $dark-blue;
+  font-style: italic;
+  text-shadow: 1px 1px 1px $dark-blue;
 
   @include mq(32em) {
-    font-size: 1.6em;
+    font-size: 1.25em;
+  }
+
+  @include mq(64em) {
+    font-size: 1.4em;
+  }
+
+  @include mq(68em) {
+    font-size: 1.5em;
   }
 }
 
 .intro__main-head {
-  font-size: 1.8em;
-  letter-spacing: .05em;
-  line-height: 1.4;
+  font-size: 3.45em;
   text-shadow: 2px 2px 3px $dark-blue;
-  text-transform: uppercase;
 
   span {
     color: inherit;
   }
 
   @include mq(25em) {
-    font-size: 2em;
+    font-size: 3.8em;
   }
 
   @include mq(30em) {
-    font-size: 2.6em;
+    font-size: 4.3em;
   }
 
   @include mq(32em) {
-    font-size: 2.8em;
+    font-size: 4.8em;
   }
 
   @include mq(37.5em) {
-    font-size: 2.6em;
+    font-size: 4.2em;
   }
 
   @include mq(42em) {
-    font-size: 2.8em;
-  }
-
-  @include mq(52em) {
-    line-height: 1.2;
+    font-size: 5.4em;
   }
 
   @include mq(58em) {
-    font-size: 3.5em;
+    font-size: 4.7em;
   }
 
   @include mq(64em) {
-    font-size: 4em;
+    font-size: 5.2em;
   }
 
-  @include mq(70em) {
-    font-size: 4.5em;
+  @include mq(68em) {
+    font-size: 6em;
   }
 }
  
@@ -238,11 +262,11 @@ main.full-width header.intro {
     @include flexbox();
     @include flex-direction(column);
     width: 100%;
+    padding-right: 2em;
   }
 
-  @include mq(95em) {
-    max-width: 63em;
-    padding-left: 14em;
+  @include mq(64em) {
+    padding-right: 0;
   }
 
   .is-404 ~ & {
@@ -360,7 +384,7 @@ nav[role="navigation"] {
   @include box-shadow(0 2px 4px 0 rgba(3, 33, 67, .4));
   position: relative; 
   z-index: 3;
-  font-size: 0.9em;
+  font-size: .9em;
   height: 3.5em;
   @include transition(height $swift-out 150ms);
   overflow: hidden;
@@ -409,8 +433,8 @@ nav[role="navigation"] {
   border-top: 1px solid $blue-tint;
   display: block;
   vertical-align: middle; 
-  font-size: 1em;
-  padding: 1em .9em; 
+  @include rem(font-size, 1.1rem);
+  padding: 0.6em 0.7em; 
   @include transition(background-color $swift-out 150ms);
 
   @include mq(37.5em) {
@@ -557,8 +581,7 @@ nav[role="navigation"] {
 // ============================================================
 
 .chiclet-button {
-  font-family: "grey-sans-semibold", $sans-stack;
-  font-weight: normal; 
+  font-weight: 500; 
 
   text-decoration: none;
   text-align: center;
@@ -566,8 +589,8 @@ nav[role="navigation"] {
   margin: 1em auto 0;
   display: block;
   width: 100%;
-  max-width: 24em;
-  padding: .5em 0;
+  max-width: 22em;
+  padding: .35em 0;
 
   border-radius: 4px;
   border: 1px solid $blue;
@@ -579,7 +602,7 @@ nav[role="navigation"] {
 
   @include box-shadow(1px 1px 3px 0 rgba(0,0,0,0.15));
 
-  font-size: .8em;
+  font-size: 1em;
 
   &:hover {
     background-color: shade($blue, 20); 
@@ -667,10 +690,6 @@ nav[role="navigation"] {
   left: 0;
   border-radius: 2px;
   display: none;
-
-  .mutationobserver & {
-    display: block;
-  }
 }
 
 .loader {
@@ -715,8 +734,8 @@ nav[role="navigation"] {
 
 label, fieldset { 
   display: block;
-  line-height: 1.8;
-  margin-top: 1.75em;
+  line-height: 1.4;
+  margin-top: 1.3em;
 }
 
 fieldset {
@@ -724,8 +743,8 @@ fieldset {
 }
 
 h3 {
-  font-size: 1.5em;
-  font-family: "grey-sans-semibold", $sans-stack;
+  font-size: 2.5em;
+  font-weight: 500;
   @include rem(margin, 1rem 0 0);
 }
 
@@ -734,7 +753,7 @@ label:first-of-type {
 }
 
 input {
-  @include rem(font-size, 1rem);
+  @include rem(font-size, 1.1rem);
   width: 100%;
   @include rem(min-height, 2rem);
 }
@@ -775,10 +794,9 @@ textarea {
 } 
 
 input[type="radio"], input[type="checkbox"] { 
-  width: 1.2em;
-  height: 1.2em;
-  @include rem(margin-right, .2rem);
-  vertical-align: text-bottom; 
+  width: auto;
+  height: auto;
+  @include rem(margin-right, .5rem);
   display: inline-block;  
 } 
 
@@ -794,13 +812,13 @@ input[type="radio"], input[type="checkbox"] {
   .chiclet-button + & {
     margin-top: 1em;
     font-style: italic;
-    font-size: .8em;
+    font-size: 1em;
   }
 } 
 
 textarea {
   width: 100%;
-  @include rem(font-size, 1rem);
+  @include rem(font-size, 1.1rem);
 }
 
 button.chiclet-button {
@@ -892,34 +910,24 @@ label.error {
 // ============================================================
 
 .section-header {
-  margin: .7em auto .5em; 
-  font-size: 1.5em;
-  font-family: "grey-sans-bold", arial, sans-serif;
-  font-weight: normal;
+  margin: .3em auto; 
+  font-size: 3.4em;
+  font-weight: 300;
   text-align: center;  
 
-  @include mq(24em) {
-    font-size: 1.8em;
-  }
-
-  @include mq(26em) {
-    margin-left: -0.9em;
-    margin-right: -1em; 
-  }
-
   @include mq(28em) {
-    font-size: 2em;
+    font-size: 2.7em;
   }
 
   @include mq(36em) {
-    font-size: 2.65em;
+    font-size: 3.2em;
     margin-left: 0;
     margin-right: 0;
   }
 
   @include mq(60em) {
-    font-size: 3.2em;
-    margin: .7em auto .5em; 
+    font-size: 3.8em;
+    margin: .4em auto; 
   }
 }
 
@@ -983,7 +991,7 @@ label.error {
   border-bottom: 0;
 
   &:after {
-    content: none;
+    content: none !important;
   }
 }
 
@@ -1004,36 +1012,44 @@ label.error {
   }
 
   figcaption {
-    max-width: 42em;
-
     a {
       margin: 0;
     }
   }
+}
+
+.checkout__image {
+  max-width: 10em;
+  margin: 0 auto 1.5em;
+  width: 100%;
+  height: 100%;
+  max-width: 10em;
+  display: block;
+
+  @include mq(26em) {
+    max-width: 12em;
+  }
+
+  @include mq(32em) {
+    float: left;
+    margin-right: 5%;
+    max-width: 10em;
+  }
+
+  @include mq(37.5em) {
+    min-width: 8.5em;
+    max-width: 15em;
+    width: 20%;
+  }
+
+  @include mq(68em) {
+    width: 25%;
+    float: none;
+    margin: 0 3em 0 3.3em;
+  }
 
   img {
-    max-width: 10em;
-    margin: 0 auto 1.5em;
     width: 100%;
-    height: 100%;
-    max-width: 10em;
-    display: block;
-
-    @include mq(26em) {
-      max-width: 12em;
-    }
-
-    @include mq(32em) {
-      float: left;
-      margin-right: 5%;
-      max-width: 10em;
-    }
-
-    @include mq(37.5em) {
-      min-width: 8.5em;
-      max-width: 14em;
-      width: 20%;
-    }
   }
 }
 
@@ -1122,7 +1138,7 @@ label.error {
   }
 
   @include mq(48em) {
-    margin: 1.3em 0 0 0;
+    margin: 0;
   }
 
   img {
@@ -1153,11 +1169,16 @@ label.error {
 .satisfaction h3 {
   @include user-select(none);
   display: inline-block;
-  font-family: "grey-sans-thin";
-  font-size: 9em;
+  font-weight: 300;
+  font-size: 14em;
+  margin-top: 0;
+
+  @include mq(40em) {
+    font-size: 18em;
+  }
 
   @include mq(48em) {
-    font-size: 14.6em;
+    font-size: 20.4em;
   }
 }
 
@@ -1168,24 +1189,30 @@ label.error {
   margin-left: -7px;
 
   @include mq(48em) {
-    margin-left: -14px;
+    margin: -12px 0 0 -14px;
   }
 
   span {
     color: inherit;
-    @include transform(rotate(3deg));
+    @include transform(rotate(2deg));
     display: inline-block;
   }
 }
 
 .satisfaction__text {
-  font-size: .17em;
-  font-family: "grey-sans-extrabold";
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
+  font-weight: 700;
   display: block;
   color: $text-light;
-  margin-top: 0.3em;
+  margin: -.2em 0 .1em 0;
+  @include rem(font-size, 4.3rem);
+
+  @include mq(40em) {
+    @include rem(font-size, 5.5rem);
+  }
+
+  @include mq(52em) {
+      @include rem(font-size, 6.3rem);
+  }
 }
 
 // ============================================================
@@ -1203,12 +1230,36 @@ label.error {
   min-height: 5em;
   @include transition(background-color 175ms $swift-out);
 
+  @include mq(60em) {
+    display: inline-block;
+  }
+
   &:hover {
     background-color: lighten($blue-tint, 5);
   }
 
   img {
     width: 100%;
+  }
+}
+
+.ssnd-link {
+  text-decoration: none;
+
+  span {
+    margin: -0.4em 0 .25em 3.7%;
+    display: block;
+  }
+}
+
+.ssnd .insert-description {
+  @include mq(60em) {
+    @include calc(width, "100% - 18em", 80%);
+    display: inline-block;
+  }
+
+  p {
+    font-size: 1.1em;
   }
 }
 
@@ -1226,7 +1277,7 @@ label.error {
   color: #fff; 
   text-shadow: 1px 2px 2px $dark-blue;
   margin: 0 0 .5em;
-  font-size: 2.2em;
+  font-size: 2.8em;
   text-align: center;
 }
 
@@ -1241,14 +1292,13 @@ label.error {
 }
 
 // ============================================================
-// JACK. styling
+// JACK. & graphic styling
 // ============================================================
 
-.jack {  
+.example {
   .section-text {
     display: inline-block;
     vertical-align: top;
-    @include clearfix;
 
     @include mq(36em) {
       display: inline;
@@ -1257,92 +1307,47 @@ label.error {
     @include mq(52em) {
       display: inline-block;
       vertical-align: top;
-      width: 52%;
-      max-width: 33em;
-      float: left; 
-    }
-
-
-    @include mq(58em) {
-      display: inline-block;
-      vertical-align: top;
-      width: 60%;
-      max-width: 33em; 
-      float: left; 
+      @include calc(width, "100% - 22em", 52%);
     }
   }
 
-  .device__frame.jack-image { 
+  .example-slider { 
     width: 100%;
+    margin: 0 auto 1.5em; 
+    max-width: 18em;
 
-    @include mq(32em) {
-      width: 34%;
+    @include mq(36em) {
       float: left;
-      margin-right: 4%;
-      min-width: 15em;
+      max-width: 12em;
+      margin: 0 2em 0 auto;
+      @include clearfix;
     }
 
-    @include mq(52em) {
-      float: right;
-      margin: 0 1% 0 2%;
-    }
-
-    @include mq(70em) {
-      margin: 0 3% 0 2%;
-    }
-
-    img {
-      @include mq(70em) {
-        padding-left: 7.5%;
-      }
+    @include mq(56em) {
+      float: none;
+      max-width: 17em;
+      margin: 0 0 0 2em;
+      display: inline-block;
     }
   }
+}
 
-  .section-secondary-image {
-    margin: .8em 0 0 0;
+.graphic .section-content, .jack .section-content {
+  @include mq(52em) {
+    @include flexbox;
+  }
 
+  .section-text {
     @include mq(52em) {
-      margin-top: 1em;
-      clear: left;
+      float: none;
+      @include order(1);
     }
-
-    .loader-overlay {
-      border-radius: 0;
-    }
- 
-    .lazyload-container {
-      max-width: 466px;
-      border-bottom: 2px solid $blue;
-      padding-bottom: 1em;
-      box-sizing: content-box;
-      display: inline-block;
-
-      @include mq(50em) {
-        border: 0;
-        padding: 0 .9em 0 0;
-        border-right: 2px solid $blue;
-      }
-
-      img {
-        width: 100%;
-      }
-    }
-    
-    figcaption {
-      margin-top: 1em;
-      width: 100%;
-
-      @include mq(32em) {
-        width: 80%;
-      }
-
-      @include mq(50em) {
-        font-size: .8em;
-        line-height: 1.5;
-        margin: -.3em 0 0 .9em;
-        width: 12%;
-        min-width: 10em;
-      }
+  }
+  .example-slider {
+    @include mq(52em) {
+      float: none;
+      margin: 0 0 0 2em;
+      @include order(2);
     }
   }
 }
@@ -1351,20 +1356,12 @@ label.error {
 // Hundred Ages styling
 // ============================================================
 
-.ages {
+.ages, .rdes {
   figure {
-    max-width: 35em;
-    margin: 0 auto 2em;
-    
-    @include mq(52em) {
-      margin-left: 3%;
-      max-width: 68em;
-    }
+    width: 100%;
 
-    .portfolio-image {
-      @include mq(70em) {
-        width: 58.5%;
-      }
+    @include mq(52em) {
+      @include flexbox;
     }
   }
 
@@ -1372,64 +1369,38 @@ label.error {
     width: 100%;
 
     @include mq(52em) {
-      float: left;
-      width: 30%;
-      max-width: 25em; 
+      max-width: 20em;
     }
-  }
 
-  .section-main-image {
-    @include mq(52em) {
-      float: left; 
-      width: 60%;
-      height: auto;
-      max-width: 40em;
-      margin: 0 2em 0 0;
+    a {
+      margin-left: 0;
     }
   }
 }
 
-// ============================================================
-// RDES styling
-// ============================================================
-
-.rdes {
-  figure { 
-    @include mq(48em) {
-      padding-right: 1em;
-    }
-
-    @include mq(70em) {
-      padding-right: 0;
-    }
+.ages .section-main-image {
+  @include mq(52em) {
+    @include order(1);
   }
+}
 
-  .section-main-image {
-    @include mq(48em) {
-      float: left; 
-      width: 58.5%;
-      height: auto;
-      max-width: 40em;
-      margin: 0 2em 0 0;
-    }
+.ages figcaption {
+  @include mq(52em) {
+    @include order(2);
+    margin: 0 2em;
   }
+}
 
+.rdes .section-main-image {
+  @include mq(52em) {
+    @include order(2);
+    margin: 0 2em;
+  }
+}
 
-  figcaption {
-    width: 100%;
-
-    @include mq(48em) {
-      display: inline;
-      float: none;
-      width: 30%;
-      max-width: 25em; 
-    }
-
-    @include mq(55em) {
-      float: left;
-      display: inline-block;
-      vertical-align: top;
-    }
+.rdes figcaption {
+  @include mq(52em) {
+    @include order(1);
   }
 }
 
@@ -1478,7 +1449,7 @@ label.error {
 .device__caption {
   width: auto;
   display: inline-block;
-  font-size: .8em;
+  font-size: .9em;
   color: #737373;
   margin-bottom: 1em;
 }
@@ -1495,9 +1466,19 @@ label.error {
 // ============================================================
 
 #headlineNumber { 
-  width: 2em;
+  width: 1.45em;
   display: inline-block;
   text-align: right;
+  opacity: 0;
+
+  &.is-active {
+    opacity: 1;
+    @include transition(opacity 120ms $swift-out);
+  }
+
+  .no-js & {
+    opacity: 1;
+  }
 }
 
 .intro.case-study__header {
@@ -1509,35 +1490,43 @@ label.error {
   }
 
   @include mq(48em) {
-    padding: 1.8em;
+    padding: 1em 1.8em 1.8em 1.8em;
   }
 
   .header__intro {
     float: left;
     width: auto;
+    @include rem(font-size, 1rem);
+  }
+
+  .intro__subheader {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.1em;
   }
 
   .intro__description {
     float: left;
     max-width: 46em;
+    @include rem(font-size, 1.2rem);
+    line-height: 1.4;
+    text-shadow: 1px 1px 1px $dark-blue;
 
-    @include mq(52em) {
-      width: 18em;
-      margin: 0.1em 0 0 1.7em;
-    }
-
-    @include mq(59em) {   
-      width: 21em;
-      margin: 0.1em 0 0 3em;
+    @include mq(58em) {   
+      width: 19em;
+      margin: 1.05em 0 0 2.4em;
+      line-height: 1.5;
     }
     
     @include mq(65em) {
       width: 23em;
-      margin: 0.4em 0 0 3em;
+      margin: 1.6em 0 0 2em;
     }
   }
 
   .intro__main-head {
+    line-height: 1;
+
     @include mq(25em) {
       font-size: 3em;
     }
@@ -1547,12 +1536,7 @@ label.error {
     }
 
     @include mq(37.5em) {
-      font-size: 3.1em;
-      line-height: 1.2;
-    }
-
-    @include mq(52em) {
-      font-size: 3em;
+      font-size: 5.7em;
     }
 
     @include mq(58em) {
@@ -1564,37 +1548,24 @@ label.error {
     }
 
     @include mq(70em) {
-      font-size: 4.5em;
+      font-size: 5.6em;
     }
   }
 }
 
 .checkout-case-study .case-study__header {
-  padding: 0 .5em; 
-  min-height: 12.5em;
-
-  @include mq(48em) {
-    min-height: 16.5em;
-  }
+  padding: 1em;
+  min-height: 11em;
 
   @include mq(52em) {
-    padding: 0 2em;
+    padding: 0 0 0 2em;
   }
 }
 
 .case-study__header__h-group {
-  text-align: left;
-  margin-top: .4em; 
-  max-width: 46.5em;
-  margin: 0 auto;
   z-index: 2;
   position: relative;
-  width: 94%;
-  margin: .5em auto 0;
-
-  @include mq(32em) {
-    text-align: inherit;
-  }
+  width: 100%;
 
   @include mq(48em) {
     width: 100%;
@@ -1606,66 +1577,53 @@ label.error {
 }
 
 .h-group__main__container {
-  text-align: left;
+  text-align: center;
   width: 100%;
-  @include rem(margin-left, 1rem);
 
-  @include mq(58em) {
-    text-align: center; 
+  @include mq(36em) {
+    text-align: left; 
   }
 
   @include mq(68em) {
-    margin: 1.5em auto 0;
+    text-align: center;
   }
 }
 
 .h-group__main {
   display: inline-block;
-  font-family: "grey-sans-bold", $sans-stack;
-  font-weight: normal;
-  font-size: 4em;
-  line-height: 1;
+  font-weight: 300;
+  font-size: 2.5em;
+  line-height: .7;
   text-shadow: 2px 2px 3px $dark-blue;
-  text-transform: uppercase;
-  margin: 0.15em 0 -0.02em 0;
-
-  @include mq(25em) {
-    font-size: 4.8em;
-  }
+  margin: 0.25em 0 -0.02em 0;
 
   @include mq(28em) {
-    font-size: 5em;
+    font-size: 3em;
   }
 
   @include mq(32em) {
-    font-size: 5.9em;
+    font-size: 3.4em;
   }
 
-  @include mq(34.5em) {
-    font-size: 6.5em;
+  @include mq(36em) {
+    font-size: 3.8em;
   }
 
-  @include mq(40em) {
-    font-size: 8.2em;
+  @include mq(42em) {
+    font-size: 4.1em;
   }
 
   @include mq(48em) {
-    margin: 0.15em 0 -0.02em -20px;
-    font-size: 8.7em;
+    font-size: 4.4em;
   }
 
   @include mq(54em) {
-    font-size: 9.2em;
-    @include rem(margin-left, -1.5rem);
+    font-size: 5em;
   }
 
   @include mq(58em) {
-    font-size: 10.6em;
-  }
-
-  @include mq(68em) {
-    font-size: 11.2em;
-    margin-top: 0;
+    font-size: 6em;
+    margin-top: .15em;
   }
 
   span {
@@ -1678,74 +1636,45 @@ label.error {
     vertical-align: top;
     line-height: 0.85;
   }
-
-  .number-text {
-    font-size: 0.24em;
-    width: 4.4em;
-    line-height: 1;
-    margin-left: 0.5em;
-    display: inline-block;
-    vertical-align: top;
-    line-height: 1.15;
-    letter-spacing: .05em;
-    text-align: left;
-  }
 }
 
-.h-group__sub {
-  margin: 0;
-  display: inline;
-}
-
-.h-group__sub__description {
-  color: #fff; 
+.h-group__description {
   display: inline-block;
-  margin: 0 auto;
+  margin: .6em auto;
   position: relative;
   text-shadow: 1px 1px 3px $dark-blue;
-  padding: .2em .4em;
   line-height: 1.35;
-  font-size: 0.7em;
+  font-size: 1.2em;
+  text-align: center;
 
-  @include mq(28em) {
-    font-size: .8em;
+  @include mq(32em) {
+    font-size: 1.3em;
   }
 
-  @include mq(40em) {
-    margin: 0 0 .25em;
-    line-height: 1;
+  @include mq(36em) {
+    text-align: left;
   }
 
-  @include mq(48em) {
-    margin: 0 0 0.75em 0;
-    font-size: .85em;
+  @include mq(52em) {
+    font-size: 1.5em;
   }
 
-  @include mq(54em) {
-    font-size: .9em;
+  @include mq(58em) {
+    font-size: 1.6em;
   }
 
-  @include mq(62em) {
-    font-size: 1em;
+  @include mq(68em) {
+    text-align: center;
+    width: 100%;
   }
 
-  &:after {
-    @include mq(40em) {
-      content: '';
-      background-color: $blue;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 4px;
-      opacity: .7;
-      top:0;
-      left: 0;
-      z-index: -1;
+  span {
+    color: #fff;
+    display: inline;
+
+    @include mq(48em) {
+      display: block;
     }
-  }
-
-  &:last-child {
-    margin-bottom: .8em;
   }
 }
 
@@ -1801,7 +1730,7 @@ label.error {
   display: block;
   text-align: center;
   width: 100%;
-  font-family: "grey-sans-semibold", arial, sans-serif;
+  font-weight: 500;
   text-align: center;
   text-shadow: 1px 1px 3px $dark-blue; 
   font-size: 1.6em;
@@ -1816,7 +1745,6 @@ label.error {
 .is-active {
   opacity: 1;
 }
-
 
 .age {
   display: inline-block;
@@ -1939,38 +1867,151 @@ label.error {
   }
 }
 
-.slick-list {
-  overflow: hidden;
+.article__quotes .slick-list {
   margin: 0 3em;
 }
 
 .slick-next, .slick-prev {
   width: 1.5em;
   height: 1.5em;
-  background-color: $blue;
   position: absolute;
   top: 24%;
-  border-radius: 50%;
   cursor: pointer;
-  @include transition(background-color 200ms ease-in-out);
+  background-color: $blue;
+  border-radius: 50%;
+  @include transition(background-color 100ms $swift-out);
 
   &:hover {
-    background-color: $blue-shade;
+    background-color: tint($blue, 12%);
+  }
+
+  &:active {
+    background-color: tint($blue, 24%);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
   }
 }
 
 .slick-next {
   right: 0;
-  background-image: url('/img/arrow-next.png');
-  background-repeat: no-repeat;
-  background-position: 45% 50%;
 }
 
 .slick-prev {
   left: 0;
-  background-image: url('/img/arrow-prev.png');
-  background-repeat: no-repeat;
-  background-position: 40% 50%;
+  @include transform(rotate(180deg));
+}
+
+.image--nav__slider, .image--main__slider {
+  list-style-type: none;
+
+  &:not(.slick-slider) {
+    display: none;
+  }
+}
+
+.image--main__slider li {
+  margin-bottom: 0;
+}
+
+.image--main__slider figure {
+  background: #fff;
+  padding-bottom: .5em;
+}
+
+.image--main {
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  border: 1px solid lighten($text-light, 45%);
+  margin: 0;
+}
+
+.image--nav {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  border: 1px solid lighten($text-light, 45%);
+  margin: 0 -1px; // Slick incorrectly calcs width if border is applied, this offsets that.
+}
+
+.image--nav__slider {
+  padding: 0 2.6em;
+  margin: 0.8em 0 0 0;
+
+  @include mq(36em) {
+    padding: 0 2.1em;
+  }
+}
+
+.image--nav__slider .slick-slide {
+  margin-left: 8px;
+  cursor: pointer;
+  opacity: .6;
+  @include transition(opacity 120ms $swift-out);
+  
+  @include mq(36em) {
+    opacity: 1;
+  }
+
+  &.slick-center {
+    opacity: 1;
+  } 
+}
+
+.image--nav__slider .slick-active ~ .slick-slide {
+  @include mq(36em) {
+    opacity: .6; 
+  }
+}
+
+.image--main__slider {
+  margin: 0;
+  padding: 0 0 0.3em 0;
+  border-bottom: 1px dotted darken($blue-tint, 5%);
+}
+
+.image--main__slider li {
+  border: 1px solid lighten($blue-tint, 20%);
+}
+
+.graphic .image--main {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.variable-height figure {
+  @include flexbox;
+  @include flex-direction(column);
+  height: 21.5em;
+}
+
+.variable-height__container {
+  background-color: #fff;
+  @include flex(1, 1, 0);
+  @include flexbox;
+  @include align-items(baseline);
+  @include justify-content(center);
+
+  .image--main {
+    max-height: 16.6em;
+    border: none;
+  }
+}
+
+.slick-prev {
+  top: 30%;
+}
+
+.slick-next {
+  top: 30%;
 }
 
 .article__quote {
@@ -2002,8 +2043,8 @@ label.error {
   margin: 0;
 
   p {
-    font-size: .8em;
-    line-height: 1.7;
+    font-size: 1em;
+    line-height: 1.8;
   }
 
   @include mq(55em) {
@@ -2014,7 +2055,7 @@ label.error {
     text-align: center;
 
     p {
-      font-size: 1em;
+      font-size: 1.1em;
       line-height: 2;
     }
   }
@@ -2024,19 +2065,12 @@ label.error {
     margin: 1.5em -17%;
     text-align: center;
   }
-
-  cite {
-
-    @include mq(55em) {
-      font-size: .6em;
-    }
-  }
 }
 
 .infobox {
   margin: 0;
   padding: 1.3em 0 1.9em;
-  font-size: .8em;
+  font-size: .9em;
   border: solid $blue; 
   border-width: 1px 0;
   margin: 0 0 1.7em 0;
@@ -2051,7 +2085,7 @@ label.error {
     float: right;
     border-width: 0 0 0 2px;
     max-width: 18em;  
-    font-size: .8em;
+    font-size: .9em;
   }
 
   @include mq(54em) {
@@ -2075,7 +2109,7 @@ label.error {
 }
 
 .infobox--header {
-  font-family: "grey-sans-semibold", $sans-stack;
+  font-weight: 500;
   font-size: 1.3em;
   margin: 0 0 .5em;
 }
@@ -2092,7 +2126,7 @@ label.error {
 .site-footer {
   background-color: $blue;
   position: relative;
-  @include rem(font-size, .85rem); 
+  @include rem(font-size, 1rem); 
   width: 100%;
   height: 8em;
   @include box-shadow(inset 0 7px 7px -5px rgba(3, 33, 67, 0.4));
@@ -2107,7 +2141,8 @@ label.error {
   color: #ffffff;
 
   li {
-    margin-top: .2em;
+    margin: 0 0 .25em 0;
+
   }
  
   a {
@@ -2118,7 +2153,7 @@ label.error {
 .footer-contact {
   text-align: right;
   position: absolute;
-  bottom: 1.5em;
+  top: 1.2em;
   right: 5%;
   padding: 0;
 }
