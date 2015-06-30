@@ -429,6 +429,8 @@ nav[role="navigation"] {
   @include mq(37.5em) {
     width: auto;
     z-index: 1;
+    height: 3.4em;
+    margin-right: 1em;
   }
 
   .no-js & {

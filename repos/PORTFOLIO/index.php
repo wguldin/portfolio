@@ -71,14 +71,14 @@
                 <li><figure><img class="image--main" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_08.jpg" alt="Cooking salmon on a plank" /><figcaption class="caption">Meredith, publisher of Better Homes &amp; Gardens, gave us access to its image library.</figcaption></figure></li>                 
               </ul>
               <ul class="image--nav__slider">
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_01.jpg" alt="Prototype layout from Jack Magazine, for a story about Bell's Brewery." /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_02.jpg" alt="Round up of some of the best BBQ places in the country." /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_03.jpg" alt="Write up of BBQ joint Lillie Q's in Chicago, IL." /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_04.jpg" alt="Hop illustration for article about the beer Hopslam" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_05.jpg" alt="Inside page from the Hopslam story" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_06.jpg" alt="Pierce Courchaine steps up to cook a big meal" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_07.jpg" alt="Jack's recipe index" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_08.jpg" alt="Cooking salmon on a plank" /></li>                
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_01.jpg" alt="Prototype layout from Jack Magazine, for a story about Bell's Brewery." /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_02.jpg" alt="Round up of some of the best BBQ places in the country." /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_03.jpg" alt="Write up of BBQ joint Lillie Q's in Chicago, IL." /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_04.jpg" alt="Hop illustration for article about the beer Hopslam" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_05.jpg" alt="Inside page from the Hopslam story" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_06.jpg" alt="Pierce Courchaine steps up to cook a big meal" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_07.jpg" alt="Jack's recipe index" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_08.jpg" alt="Cooking salmon on a plank" /></li>                
               </ul>
             </div>            
             <div class="section-text"> 
@@ -121,14 +121,14 @@
               <li><figure><div class="variable-height__container"><div><img class="image--main" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_08.jpg" alt="Illustration for Vox Magazine" /></div></div><figcaption class="caption">A fun illustration for a story about a basketball tournament MU was playing in. Vox, a city magazine, often has a lighter tone than other publications.</figcaption></figure></li>                  
             </ul>
             <ul class="image--nav__slider">
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_01.jpg" alt="Proposed cover for Vox Magazine" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_02.jpg" alt="Columbia Missourian sports front" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_03.jpg" alt="Columbia Missourian infographics two-page spread" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_04.jpg" alt="Cover for Vox Magazine" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_05.jpg" alt="Vox Magazine Inside Feature Design" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_06.jpg" alt="Proposed cover for Vox Magazine" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_07.jpg" alt="Reading Eagle local section front" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_08.jpg" alt="Illustration for Vox Magazine" /></li>                
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_01.jpg" alt="Proposed cover for Vox Magazine" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_02.jpg" alt="Columbia Missourian sports front" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_03.jpg" alt="Columbia Missourian infographics two-page spread" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_04.jpg" alt="Cover for Vox Magazine" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_05.jpg" alt="Vox Magazine Inside Feature Design" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_06.jpg" alt="Proposed cover for Vox Magazine" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_07.jpg" alt="Reading Eagle local section front" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_08.jpg" alt="Illustration for Vox Magazine" /></li>                
             </ul>
           </div>
           <div class="section-text"> 

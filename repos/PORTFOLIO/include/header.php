@@ -42,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
     <!--[if !lt IE 9]><!-->
-        <link rel="stylesheet" type="text/css" href="/css/style.css?v=9" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css?v=12" />
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=9" />
+            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=12" />
             <script src="/js/shiv.min.js"></script>
     <![endif]-->
 </head>

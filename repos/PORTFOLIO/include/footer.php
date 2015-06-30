@@ -12,7 +12,7 @@
         <li><span class="email-link">wguldin [at] gmail [dot] com</span></li>
     </ul>
 </footer>
-    <script src="/js/plugins.js?v=12"></script>
-    <script src="/js/script.js?v=12"></script>
+    <script src="/js/plugins.js?v=15"></script>
+    <script src="/js/script.js?v=15"></script>
 </body>
 </html>
