@@ -60,8 +60,8 @@ if('querySelector' in document
           infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
-          nextArrow: '<span class="slick-next"><img src="/img/arrow.png" alt="Next Slide Arrow" /></span>',
-          prevArrow: '<span class="slick-prev"><img src="/img/arrow.png" alt="Previous Slide Arrow" /></span>', 
+          nextArrow: '<span class="slick-next"><img src="/img/arrow-next.png" alt="Next Slide Arrow" /></span>',
+          prevArrow: '<span class="slick-prev"><img src="/img/arrow-prev.png" alt="Previous Slide Arrow" /></span>'
         });
     }
 
@@ -76,7 +76,7 @@ if('querySelector' in document
             fade: true,
             asNavFor: '#carouselNav' + index,
             infinite: true,
-            lazyload: 'onDemand',
+            lazyload: 'onDemand'
         });
     })
 
@@ -93,21 +93,21 @@ if('querySelector' in document
             centerMode: false,
             infinite: true,
             lazyload: 'onDemand',
-            nextArrow: '<span class="slick-next"><img src="/img/arrow.png" alt="Next Slide Arrow" /></span>',
-            prevArrow: '<span class="slick-prev"><img src="/img/arrow.png" alt="Previous Slide Arrow" /></span>', 
+            nextArrow: '<span class="slick-next"><img src="/img/arrow-next.png" alt="Next Slide Arrow" /></span>',
+            prevArrow: '<span class="slick-prev"><img src="/img/arrow-prev.png" alt="Previous Slide Arrow" /></span>', 
             responsive: [
                 {
                     breakpoint: convertEm(36), // These breakpoints are max-width.
                     settings: {
                         slidesToShow: 3,
-                        centerMode: true,
+                        centerMode: true
                     }
                 },
                 {
                     breakpoint: convertEm(48), // These breakpoints are max-width.
                     settings: {
                         slidesToShow: 2,
-                        centerMode: false,
+                        centerMode: false
                     }
                 }
             ]
@@ -257,7 +257,7 @@ if('querySelector' in document
         $.ajax({
             url      : $form.attr('action'),
             type     : 'POST',
-            data     : $form.serialize(),
+            data     : $form.serialize()
 
         }).done(function(data){
             $form.replaceWith(data); 
@@ -481,8 +481,13 @@ if('querySelector' in document
     // SVG Icon
     // ============================================================
 
-    if ($('[data-icon-name="logo"]').length == false) {
+    function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
+
+    if ($('[data-icon-name="logo"]').length == false
+        || isIE() &&
+        window.matchMedia("(max-width: 48em)").matches) {
         return;
+
     } else {
         // Remove fallback if javascript fires.
         $('[data-icon-name="logo"]').html('');
@@ -675,13 +680,15 @@ if('querySelector' in document
                     self.options.onLoad();
                     self._initEvents();
 
-                    // Toggle the animation on page load.
-                    setTimeout(function(){
-                        self.toggle(true);
-                    }, 500); 
-                    setTimeout(function(){
-                        self.toggle(true);
-                    }, 1800);
+                    if (window.matchMedia("(min-width: 48em)").matches) {                        
+                        // Toggle the animation on page load.
+                        setTimeout(function(){
+                            self.toggle(true);
+                        }, 500); 
+                        setTimeout(function(){
+                            self.toggle(true);
+                        }, 1800);
+                    }
                 });
             }
 

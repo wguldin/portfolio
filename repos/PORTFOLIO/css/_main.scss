@@ -9,7 +9,7 @@ header.intro, .insert {
   overflow: hidden; 
   position:relative;
 
-  background: $blue; 
+  background-color: $blue; 
   background-image: -webkit-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%));
   background-image:    -moz-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%));
   background-image:     -ms-radial-gradient(60% 73%, circle, $blue, shade($blue, 18%)); 
@@ -47,6 +47,10 @@ header.intro, .insert {
 
     @include mq(68em) {
       font-size: 1.3em;
+    }
+
+    span {
+      color: #fff;
     }
   } 
 }
@@ -88,10 +92,6 @@ header.intro, .insert {
   }
 }
 
-span[itemprop] { 
-  color: inherit;
-} 
-
 .intro__wrapper {
   @include clearfix;
   max-width: 49em;
@@ -114,10 +114,16 @@ span[itemprop] {
 }
 
 .intro__text--wrapper {
+  width: 100%;
+
   @include mq(68em) {
     @include clearfix;
     margin: 0 auto;
     max-width: 68em;
+  }
+
+  .lt-ie9 .intro-main-svg-frame ~ & {
+    width: 60%;
   }
 }
 
@@ -189,12 +195,12 @@ main.full-width header.intro {
 }
 
 .intro__subheader {
-  font-size: 1.1em;
+  font-size: .9em;
   font-style: italic;
   text-shadow: 1px 1px 1px $dark-blue;
 
   @include mq(32em) {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
 
   @include mq(64em) {
@@ -207,27 +213,27 @@ main.full-width header.intro {
 }
 
 .intro__main-head {
-  font-size: 3.45em;
+  font-size: 2.8em;
   text-shadow: 2px 2px 3px $dark-blue;
 
   span {
-    color: inherit;
+    color: #fff;
   }
 
   @include mq(25em) {
-    font-size: 3.8em;
+    font-size: 3.2em;
   }
 
   @include mq(30em) {
-    font-size: 4.3em;
+    font-size: 4em;
   }
 
   @include mq(32em) {
-    font-size: 4.8em;
+    font-size: 4.5em;
   }
 
   @include mq(37.5em) {
-    font-size: 4.2em;
+    font-size: 4em;
   }
 
   @include mq(42em) {
@@ -376,6 +382,10 @@ main.full-width header.intro {
       @include transform(none);
     }
   }
+
+  .lt-ie9 & {
+    float: left;
+  }
 }
 
 nav[role="navigation"] {
@@ -445,6 +455,11 @@ nav[role="navigation"] {
   .no-js & {
     display: inline-block;
     border: 0;
+  }
+
+  .lt-ie9 & {
+    float: left;
+    width: 4em;
   }
 
   &:hover {
@@ -621,7 +636,11 @@ nav[role="navigation"] {
   display: block;
   max-width: none;
   margin: 3em 4em;
-  padding: .5em 1.25em; 
+  padding: .5em 1.25em;
+
+  .lt-ie10 & {
+    margin: 0 0 1em 0;
+  } 
 }
 
 // ============================================================
@@ -911,7 +930,7 @@ label.error {
 
 .section-header {
   margin: .3em auto; 
-  font-size: 3.4em;
+  font-size: 3.1em;
   font-weight: 300;
   text-align: center;  
 
@@ -956,6 +975,10 @@ label.error {
 
   .chiclet-button {
     margin-top: 1.5em;
+
+    .lt-ie10 & {
+      float: left;
+    }
   }
 } 
 
@@ -1012,6 +1035,10 @@ label.error {
   }
 
   figcaption {
+    @include mq(37.5em) {
+      @include flex(0 1 auto);
+    }
+
     a {
       margin: 0;
     }
@@ -1076,6 +1103,14 @@ label.error {
   &.is-visible {
     opacity: 1;
   }
+
+  .lt-ie9 &.is-before {
+    display: none;
+  }
+
+  .lt-ie9 &.is-after {
+    position: relative;
+  }
 }
 
 .link--trigger {
@@ -1084,6 +1119,10 @@ label.error {
   @include mq(65em) {
     position: absolute;
     top: -4em;
+  }
+
+  .no-js &, .lt-ie9 & {
+    display: none;
   }
 }
 
@@ -1107,7 +1146,7 @@ label.error {
   border-top: 2px solid $blue;
   
   @include mq(65em) {
-    @include flex(1);
+    @include flex(0 1 auto);
     padding: 0;
     margin: 3.8em 0 0 0;
     max-width: 12em;
@@ -1117,6 +1156,10 @@ label.error {
   @include mq(72em) {
     max-width: 16em;
     margin: 3.5em 0 0 0;
+  }
+
+  .lt-ie10 & {
+    margin: 5.5em 0 0 0;
   }
 
   p {
@@ -1193,7 +1236,7 @@ label.error {
   }
 
   span {
-    color: inherit;
+    color: $blue;
     @include transform(rotate(2deg));
     display: inline-block;
   }
@@ -1254,7 +1297,7 @@ label.error {
 
 .ssnd .insert-description {
   @include mq(60em) {
-    @include calc(width, "100% - 18em", 80%);
+    @include calc(width, "100% - 18em", 50%);
     display: inline-block;
   }
 
@@ -1352,6 +1395,15 @@ label.error {
   }
 }
 
+// IE Overrides
+
+.lt-ie10 {
+  .checkout__image, .graphic .example-slider, .jack .example-slider {
+    float: left;
+    margin-right: 32px;
+  }
+}
+
 // ============================================================
 // Hundred Ages styling
 // ============================================================
@@ -1376,11 +1428,29 @@ label.error {
       margin-left: 0;
     }
   }
+
+  .lt-ie9 &, .no-js & {
+    .portfolio-image {
+      display: none;
+    }
+
+    figcaption {
+      margin: 0 auto;
+      text-align: center;
+      max-width: 22em;
+
+      .chiclet-button {
+        margin: 1.5em auto;
+        float: none;
+      }
+    }
+  }
 }
 
 .ages .section-main-image {
   @include mq(52em) {
     @include order(1);
+    @include flex(0 1 auto);
   }
 }
 
@@ -1394,6 +1464,7 @@ label.error {
 .rdes .section-main-image {
   @include mq(52em) {
     @include order(2);
+    @include flex(0 1 auto);
     margin: 0 2em;
   }
 }
@@ -1867,6 +1938,18 @@ label.error {
   }
 }
 
+.lt-ie9, .no-js {
+  // hide slider content
+
+  .image--nav__slider li, .image--main__slider li {
+    display: none;
+  
+    &.is-fallback {
+      display: block;
+    }
+  }
+}
+
 .article__quotes .slick-list {
   margin: 0 3em;
 }
@@ -1894,6 +1977,9 @@ label.error {
     max-height: 100%;
     height: auto;
     width: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 }
 
@@ -1903,7 +1989,6 @@ label.error {
 
 .slick-prev {
   left: 0;
-  @include transform(rotate(180deg));
 }
 
 .image--nav__slider, .image--main__slider {
@@ -1999,6 +2084,11 @@ label.error {
   @include flexbox;
   @include align-items(baseline);
   @include justify-content(center);
+
+  div {
+    width: 100%;
+    max-height: 16.6em;
+  }
 
   .image--main {
     max-height: 16.6em;

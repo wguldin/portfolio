@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<!--[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 8]><html lang="en" class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if IE 9]><html lang="en" class="no-js lt-ie9"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie lt-ie10 lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie lt-ie10 lt-ie9"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie lt-ie10"><![endif]-->
+<!--[if (gt IE 9)|(IE)]><html lang="en" class="no-js ie"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?= isset($PageTitle) ? $PageTitle : "Will Guldin, Digital Designer in Middleton, Wisconsin"?></title>
+    <title><?= isset($PageTitle) ? $PageTitle : "Will Guldin, Designer and Front-End Developer in Middleton, Wisconsin"?></title>
     <meta name="description" content="Will Guldin is a digital designer and consultant out of Columbia, Missouri, with several years of experience. He is currently looking for a full-time digital design position.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
@@ -41,10 +42,11 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
     <!--[if !lt IE 9]><!-->
-        <link rel="stylesheet" type="text/css" href="/css/style.css?v=6" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css?v=9" />
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=6" />
+            <link rel="stylesheet" type="text/css" href="/css/style_ie.css?v=9" />
+            <script src="/js/shiv.min.js"></script>
     <![endif]-->
 </head>

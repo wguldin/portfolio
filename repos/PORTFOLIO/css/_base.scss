@@ -36,6 +36,9 @@ body {
   }
 }
 
+// Shiv Style for IE
+header,nav,article,footer,section,main,aside,figure,figcaption{display:block}
+
 .error-page .intro {
   padding: 1em 1.5em 0 1.5em;
 
