@@ -4,9 +4,10 @@ The personal portfolio site of Will Guldin. Originally published 2011ish. Iterat
 
 ------------------------------------------
 
-The typeface is Grey Sans, created by Jason Vandenberg.
+The typeface is Texta, designed by Daniel Hernández Sánchez & Miguel Hernández Montoya ©2014.
+Purchased through Fontspring.
 
-Built with SCSS, HTML5, Javascript, and a little hacked-together PHP. 
+Built with SCSS, HTML5, Javascript, and a little PHP. 
 * Comments give full credit to any code snippets or plugins used. Open Source FTW!
 
 Hosting provided by Digital Ocean.
