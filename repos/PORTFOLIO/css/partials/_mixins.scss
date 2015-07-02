@@ -36,13 +36,6 @@ $supported: true !default;
   }
 }
 
-@mixin ie-inline-block {
-  .lt-ie9 { 
-    zoom: 1;
-    display: inline;
-  }
-}
-
 @mixin transform($value...) {
   @each $prefix in -webkit-, -moz-, -ms-, '' {
           #{$prefix}transform: #{$value};

@@ -1633,6 +1633,10 @@ label.error {
   @include mq(52em) {
     padding: 0 0 0 2em;
   }
+
+  @include mq(62em) {
+    padding: 0;
+  }
 }
 
 .case-study__header__h-group {
@@ -1657,7 +1661,7 @@ label.error {
     text-align: left; 
   }
 
-  @include mq(68em) {
+  @include mq(62em) {
     text-align: center;
   }
 }
@@ -1736,7 +1740,7 @@ label.error {
     font-size: 1.6em;
   }
 
-  @include mq(68em) {
+  @include mq(62em) {
     text-align: center;
     width: 100%;
   }

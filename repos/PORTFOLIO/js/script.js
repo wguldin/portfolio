@@ -134,7 +134,7 @@ if('querySelector' in document
     if (refreshButton.length) {
         setTimeout(function() {
             refreshButton.addClass('is-visible');
-        }, 1500);
+        }, 500);
 
         var rotationAngle = 0;
 
@@ -679,16 +679,6 @@ if('querySelector' in document
                     self.svg.append( g );
                     self.options.onLoad();
                     self._initEvents();
-
-                    if (window.matchMedia("(min-width: 48em)").matches) {                        
-                        // Toggle the animation on page load.
-                        setTimeout(function(){
-                            self.toggle(true);
-                        }, 500); 
-                        setTimeout(function(){
-                            self.toggle(true);
-                        }, 1800);
-                    }
                 });
             }
 

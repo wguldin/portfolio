@@ -20,7 +20,7 @@
    
           <aside class="intro__text">
               <a href="#contact" class="chiclet-button chiclet-button--primary intro__button">Contact me with any questions</a>
-              <p class="intro__description" itemprop="description">After working for <span itemprop="worksFor">an eCommerce company</span> for the past two years, my wife and I have just moved to the wonderful state of Wisconsin. I'm hoping to find a position as a <span itemprop="jobtitle">digital designer</span>, and solve a new set of problems. To get in touch, email me at <span class="email-link">wguldin [at] gmail [dot] com</span>, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
+              <p class="intro__description" itemprop="description">After working for <span itemprop="worksFor">an eCommerce company</span> for the past two years, my wife and I just moved. Now, I'm looking for a full-time design or front-end development position. To get in touch, email me at <span class="email-link">wguldin [at] gmail [dot] com</span>, or call <a href="tel:1-501-920-7064" class="link--highlight">501.920.7064.</a></p>
           </aside>
         </div>
         <meta itemprop="telephone" content="501-920-7064" />
@@ -37,7 +37,7 @@
           <div class="checkout__image"><img itemprop="image" src="/img/checkout-mobile-screenshot.jpg" alt="Screenshot from checkout redesign of shipping address selection page"></div>
           <figcaption itemprop="description">
               <p><strong class="section-text-summary">After joining a large eCommerce company, I helped create a redesigned checkout process that was quicker and simpler for our customers.</strong></p>
-              <p>We came up with a design that adapts to a Customer's specific order. This allowed us to remove unnessecary distractions and helped customers focus on placing an order. As a lead designer on the project, I helped create user flows, mockups and full-fledged designs, which we then user tested and tweaked.</p>
+              <p>As a lead designer on the project, I helped create user flows, mockups and full-fledged designs, which we then user tested and tweaked.</p>
               <a href="/checkout-redesign" class="chiclet-button">Read the case study</a>            
           </figcaption>
       </figure>
@@ -71,23 +71,22 @@
                 <li><figure><img class="image--main" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_08.jpg" alt="Cooking salmon on a plank" /><figcaption class="caption">Meredith, publisher of Better Homes &amp; Gardens, gave us access to its image library.</figcaption></figure></li>                 
               </ul>
               <ul class="image--nav__slider">
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_01.jpg" alt="Prototype layout from Jack Magazine, for a story about Bell's Brewery." /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_02.jpg" alt="Round up of some of the best BBQ places in the country." /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_03.jpg" alt="Write up of BBQ joint Lillie Q's in Chicago, IL." /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_04.jpg" alt="Hop illustration for article about the beer Hopslam" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_05.jpg" alt="Inside page from the Hopslam story" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_06.jpg" alt="Pierce Courchaine steps up to cook a big meal" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_07.jpg" alt="Jack's recipe index" /></li>
-                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/jack_08.jpg" alt="Cooking salmon on a plank" /></li>                
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_01.jpg" alt="Prototype layout from Jack Magazine, for a story about Bell's Brewery." /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_02.jpg" alt="Round up of some of the best BBQ places in the country." /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_03.jpg" alt="Write up of BBQ joint Lillie Q's in Chicago, IL." /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_04.jpg" alt="Hop illustration for article about the beer Hopslam" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_05.jpg" alt="Inside page from the Hopslam story" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_06.jpg" alt="Pierce Courchaine steps up to cook a big meal" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_07.jpg" alt="Jack's recipe index" /></li>
+                <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/jack/nav/jack_08.jpg" alt="Cooking salmon on a plank" /></li>                
               </ul>
             </div>            
             <div class="section-text"> 
                 <p itemprop="description">
-                    <strong class="section-text-summary">Meredith Corporation, one of the nation's largest magazine publishers, was looking for a different take on the traditional food magazine.</strong>
+                    <strong class="section-text-summary">Meredith Corporation, a large magazine publisher, was looking for a different take on the traditional food magazine.</strong>
                 </p>
-                <p>To meet this challenge, we came up with JACK. Magazine, a cooking publication targeted toward young men. The content focused on recipes, cocktail mixes and articles about different restaurants or cooking techniques.</p>
-                <p>At the outset of the project, I knew a bold design was a must for this publication. I led a team of designers as we refined the brand and visual voice JACK. We wanted it make a statement, but that still felt approachable for our target audience. For the prototype of the publication, we created a tablet magazine, website and printed cookbook.</p> 
-                <p>I presented our design work to Meredith executives, who were impressed. The project, which was done while I was attending the Missouri School of Journalism, later won first place in a national student publication contest.</p>     
+                <p>To meet this challenge, we came up with JACK., a prototype cooking publication targeted toward young men. As Creative Director, I led a team of designers as we refined the brand and visual voice for JACK, which was primarily designed as a tablet app.</p>
+                <p>I presented our design work to Meredith executives, who were impressed. The project, which was done while I was attending the Missouri School of Journalism, later won first place in a national student publication contest.</p>
             </div>
         </div>
     </section>
@@ -102,7 +101,7 @@
           </div>
           <figcaption class="insert-description" itemprop="description">
               <p>The annual Student Society for News Design contest draws in hundreds of entries. This work represents the best student design in the country.</p>
-              <p>SSND's website didn't meet this standard. So, I redesigned it to make it easier to enter the contest and gave it a more modern aesthetic. Setting up a CMS for the organization and migrating their blog from a seperate website helped to better focus their online presence while making it easier to maintain.</p>
+              <p>SSND's website didn't meet this standard. So, I redesigned it to make it easier to enter the contest and gave it a more modern aesthetic. Setting up a CMS for the organization and migrating their blog from a separate website helped to better focus their online presence while making it easier to maintain.</p>
           </figcaption>
       </figure>
     </section>
@@ -121,14 +120,14 @@
               <li><figure><div class="variable-height__container"><div><img class="image--main" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_08.jpg" alt="Illustration for Vox Magazine" /></div></div><figcaption class="caption">A fun illustration for a story about a basketball tournament MU was playing in. Vox, a city magazine, often has a lighter tone than other publications.</figcaption></figure></li>                  
             </ul>
             <ul class="image--nav__slider">
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_01.jpg" alt="Proposed cover for Vox Magazine" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_02.jpg" alt="Columbia Missourian sports front" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_03.jpg" alt="Columbia Missourian infographics two-page spread" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_04.jpg" alt="Cover for Vox Magazine" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_05.jpg" alt="Vox Magazine Inside Feature Design" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_06.jpg" alt="Proposed cover for Vox Magazine" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_07.jpg" alt="Reading Eagle local section front" /></li>
-              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/print_08.jpg" alt="Illustration for Vox Magazine" /></li>                
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_01.jpg" alt="Proposed cover for Vox Magazine" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_02.jpg" alt="Columbia Missourian sports front" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_03.jpg" alt="Columbia Missourian infographics two-page spread" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_04.jpg" alt="Cover for Vox Magazine" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_05.jpg" alt="Vox Magazine Inside Feature Design" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_06.jpg" alt="Proposed cover for Vox Magazine" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_07.jpg" alt="Reading Eagle local section front" /></li>
+              <li><img class="image--nav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="/img/graphic-design/nav/print_08.jpg" alt="Illustration for Vox Magazine" /></li>                
             </ul>
           </div>
           <div class="section-text"> 
@@ -234,7 +233,7 @@
 
               <h3>About Me</h3>
               <div class="description">
-                  <p>My interest with visual design started in high school, when I practiced film art photography. I studied journalism in college, and eventually discovered that digital design was the perfect mixture of my technical and creative skills.</p>
+                  <p>My interest with visual design started in high school when I practiced film art photography. I studied journalism in college and eventually discovered that digital design was the perfect mixture of my technical and creative skills.</p>
                   <p>In my spare time, you might find me outside biking with my wife, Megan, or cooking in the kitchen.</p>
               </div>
            </div>
