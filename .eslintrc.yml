@@ -1,0 +1,30 @@
+env:
+  browser: true
+extends: 'eslint:recommended'
+rules:
+  indent:
+    - warn
+    - 4
+    - {SwitchCase: 1}
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - warn
+    - single
+  semi:
+    - error
+    - always
+  curly:
+    - error
+  complexity:
+    - warn
+    - 10
+globals:
+    bc: true
+    bootbox: true
+    Get: true
+    ko: true
+    moment: true
+    Sammy: true
+    $j: true
