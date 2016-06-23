@@ -1,0 +1,26 @@
+// Utilities
+// =============================================
+
+.u-clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.u-clear {
+    clear: both;
+}
+
+.u-float-left {
+    float: left !important;
+}
+
+.u-float-right {
+    float: right !important;
+}
+
+.u-text-center {
+    text-align: center !important;
+}
