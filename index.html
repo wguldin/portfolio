@@ -2,34 +2,35 @@
 layout: default
 ---
 
-<header class="c-header">
-    <nav class="c-header__nav">
-        <a href="/" class="c-btn c-btn-o u-float-left">Articles</a>
-        <h2 class="c-header__site-title">Will Guldin</h2>
-        <a href="/about" class="c-btn c-btn-subtle u-float-right">About</a>
-    </nav>
+<div>
+    <header class="c-header">
+        <h1 class="c-header__intro">Simple ideas to help design complex apps.</h1>
+        <hr class="c-header__divider">
+        <h3 class="c-header__byline h5">By Will Guldin</h3>
 
-    <h1 class="c-header__intro">Simple ideas about designing complex web apps.</h1>
+        <svg class="c-header__illustration" id="header-illustration"></svg>
+    </header>
 
-    <svg class="c-header__illustration" id="header-illustration"></svg>
-</header>
+    <div class="home o-content__wrapper">
+        <div class="o-content">
+            <ul class="c-post-list">
+              <!-- {% for post in site.posts %} -->
+                <li class="c-post-list__item">
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<!-- <div class="home">
+                    <h2 class="h1">
+                        {{ post.title }}
+                        <!-- <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> -->
+                    </h2>
 
-  <h1 class="page-heading">Posts</h1>
+                    <p>
+                        {{ post.excerpt }}
+                    </p>
+                </li>
+              <!-- {% endfor %} -->
+            </ul>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div> -->
+            <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        </div>
+    </div>
+</div>

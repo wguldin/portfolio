@@ -14,7 +14,7 @@ var headerGraphic = (function() {
         }
     };
 
-    self.lineCount = 789;
+    self.lineCount = 94;
 
     self.createGraphic = function() {
         for (var i = 0; i < self.lineCount; i++) {

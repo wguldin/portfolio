@@ -1,31 +1,49 @@
 .c-header {
-    width: 100%;
-    text-align: center;
+    position: relative;
+    min-height: 9.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.c-header--title {
-    font-size: $h4;
+.c-header__byline {
+    text-transform: uppercase;
+    color: $color-jade;
+}
+
+.c-header__divider {
+    border: 0;
+    background: $color-lime;
+    box-shadow: none;
+    margin: .7em 0 1.1em;
+    height: 1px;
+    width: 100%;
 }
 
 .c-header__intro {
+    color: $color-aqua;
     font-size: $h3;
+    font-family: $system-stack;
+    font-weight: 300;
+}
+
+.c-header__jump-btn {
+    color: $color-white;
+    border-radius: 50%;
 }
 
 .c-header__illustration {
-    position: fixed;
+    position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-
-    background: lighten(#dbecca, 5%);
-    // width: 100%;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    background: darken($color-gold-bg, 5%);
 
     line {
-        stroke: rgba($color-aqua, .25);
+        stroke: rgba($color-aqua, .15);
         stroke-width: .5;
     }
 }
