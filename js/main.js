@@ -10,7 +10,7 @@ var headerGraphic = (function() {
             self.svgWidth  = svgDimensions.width;
             self.svgHeight = svgDimensions.height;
 
-            self.createGraphic();
+            // self.createGraphic();
         }
     };
 

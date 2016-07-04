@@ -8,7 +8,7 @@ dl, dd, ol, ul, figure {
 
 // Basic Styling
 body {
-    background-color: $color-gold-bg;
+    background: linear-gradient(to bottom, $color-aqua, $color-jade);
     font-family: $system-stack;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
@@ -25,13 +25,14 @@ html {
 h1, h2, h3 {
     font-family: "league-spartan";
     font-weight: 400;
-    color: $color-navy;
+    color: $color-cool-grey;
 }
 
 h4, h5, h6  {
     font-family: $system-stack;
     font-weight: 300;
     color: $color-jade;
+    //color: $color-cool-grey;
 }
 
 $h1: 3.157em;

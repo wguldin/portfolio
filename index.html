@@ -4,14 +4,24 @@ layout: default
 
 <div>
     <header class="c-header">
-        <h1 class="c-header__intro">Simple ideas to help design complex apps.</h1>
-        <hr class="c-header__divider">
-        <h3 class="c-header__byline h5">By Will Guldin</h3>
+        <svg class="c-illustration" id="header-illustration" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1728 1296">
+            <g class="c-illustration__graphic c-illustration__graphic--mobile">
+                <path class="c-illustration__background" d="M0,0v184c0,0,959,0,1097,0s286.7-114.5,354.5-114.5C1621.7,69.5,1728,1296,1728,1296V0H0z"/>
+            	<path class="c-illustration__scene" d="M0,184c0,0,959,0,1097,0s286.7-114.5,354.5-114.5C1621.7,69.5,1728,1296,1728,1296H0V184z"/>
+            </g>
+            <g class="c-illustration__graphic c-illustration__graphic--desktop">
+            	<path class="c-illustration__background" d="M0,0v181.8c0,0,948.3,0,1017,0c42,0,112-102.9,142.9-102.9C1277,79,1728,1296,1728,1296V0H0z"/>
+            	<path class="c-illustration__scene" d="M0,181.8c0,0,948.3,0,1017,0c42,0,112-102.9,142.9-102.9C1277,79,1728,1296,1728,1296H0V181.8z"/>
+            </g>
+        </svg>
 
-        <svg class="c-header__illustration" id="header-illustration"></svg>
+        <h1 class="c-header__intro">Simple ideas to help design complex apps.</h1>
+        <h3 class="c-header__byline h5">By Will Guldin</h3>
     </header>
 
     <div class="home o-content__wrapper">
+        <div class="o-content__push"></div>
+
         <div class="o-content">
             <ul class="c-post-list">
               <!-- {% for post in site.posts %} -->
