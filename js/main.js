@@ -10,11 +10,11 @@ var headerGraphic = (function() {
             self.svgWidth  = svgDimensions.width;
             self.svgHeight = svgDimensions.height;
 
-            // self.createGraphic();
+            self.createGraphic();
         }
     };
 
-    self.lineCount = 94;
+    self.lineCount = 167;
 
     self.createGraphic = function() {
         for (var i = 0; i < self.lineCount; i++) {
