@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div>
+    <header class="c-header">
+        <svg class="c-header__illustration" id="header-illustration"></svg>
+
+        <h1 class="c-header__intro">Simple ideas to help design complex apps.</h1>
+        <h3 class="c-header__byline h5">Web Designer Will Guldin</h3>
+    </header>
+
+    <div class="home o-content__wrapper">
+        <div class="o-content__push"></div>
+
+        <div class="o-content">
+            <ul class="c-post-list">
+              <!-- {% for post in site.posts %} -->
+                <li class="c-post-list__item">
+                    <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span>
+
+                    <h2>
+                        {{ post.title }}
+                        <!-- <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> -->
+                    </h2>
+
+                    <p>
+                        {{ post.excerpt }}
+                    </p>
+                </li>
+              <!-- {% endfor %} -->
+            </ul>
+
+            <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.c-btn {
+    border-radius: $border-radius;
+    background: $color-aqua;
+    border-color: $color-aqua;
+    color: $color-white;
+}
+
+.c-btn--subtle {
+    background: $color-lime;
+    border-color: $color-lime;
+    color: $color-navy;
+}
+
+.c-btn--o {
+    background: transparent;
+    border: 1px solid;
+}

@@ -1,0 +1,93 @@
+// Basic Reset
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+// Basic Styling
+body {
+    font-family: $system-stack;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    text-size-adjust: 100%;
+}
+
+html {
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-family: "league-spartan", sans-serif;
+    font-weight: 400;
+    color: $color-cool-grey;
+}
+
+h4, h5, h6  {
+    font-family: $system-stack;
+    font-weight: 300;
+    color: $color-jade;
+    //color: $color-cool-grey;
+}
+
+$h1: 3.157em;
+h1, .h1 {
+    font-size: $h1;
+}
+
+$h2: 2.369em;
+h2, .h2 {
+    font-size: $h2;
+}
+
+$h3: 1.777em;
+h3, .h3 {
+    font-size: $h3;
+}
+
+$h4: 1.333em;
+h4, .h4 {
+    font-size: $h3;
+}
+
+$h5: 1em;
+h5, .h5 {
+    font-size: $h5;
+}
+
+$h6: .75em;
+h6, .h6 {
+    font-size: $h6;
+}
+
+button {
+    background-color: $color-aqua;
+    border-radius: $border-radius;
+}
+
+pre,
+code {
+    font-size: 15px;
+    // border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    // background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: .75em 1em;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
