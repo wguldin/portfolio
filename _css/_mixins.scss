@@ -21,3 +21,11 @@ $system-stack: -apple-system, BlinkMacSystemFont,
    font-weight: normal;
    font-style: normal;
 }
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

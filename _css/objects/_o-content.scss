@@ -2,8 +2,6 @@
     float: left;
     position: relative;
 
-    @include clearfix();
-
     .no-shapes & {
         background: $color-white;
     }
