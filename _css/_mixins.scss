@@ -1,12 +1,11 @@
-$color-navy:    #3b596a;
-$color-jade:    #427676;
-$color-aqua:    #3f9a82;
-$color-lime:    #a1cd73;
-$color-gold:    #ecdb60;
-$color-gold-bg: #fdfbf0;
-$color-white:   #fff;
+$color-maroon: #332532;
+$color-orange: #f77a52;
+$color-white: #f6f5f3;
+$color-brown: #644d52;
 
-$color-cool-grey: #464655;
+$color-yellow: #fff8d7;
+$color-dark-blue: #252d48;
+$color-blue: #38518d;
 
 $border-radius: 3px;
 
@@ -21,6 +20,23 @@ $system-stack: -apple-system, BlinkMacSystemFont,
    font-weight: normal;
    font-style: normal;
 }
+
+@font-face {
+   font-family: "cooper-hewitt-light";
+   src: url("/portfolio/assets/fonts/cooper-hewitt-thin.woff2") format("woff2"),
+        url("/portfolio/assets/fonts/cooper-hewitt-thin.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "cooper-hewitt";
+   src: url("/portfolio/assets/fonts/cooper-hewitt-book.woff2") format("woff2"),
+        url("/portfolio/assets/fonts/cooper-hewitt-book.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
 
 @mixin clearfix {
   &:after {

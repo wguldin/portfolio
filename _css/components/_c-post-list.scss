@@ -1,16 +1,6 @@
 .c-post-list__item {
     list-style-type: none;
-    margin-bottom: 2em;
-    padding-bottom: 2em;
-    border-bottom: 1px solid rgba($color-navy, .2);
-}
-
-.c-post-list__meta {
-    display: block;
-    color: $color-navy;
-    font-size: .7em;
-    font-family: "League Spartan", sans-serif;
-    margin-bottom: .5em;
-    text-transform: uppercase;
-    white-space: nowrap;
+    margin-bottom: 3em;
+    padding-bottom: 3em;
+    border-bottom: 10px solid $color-blue;
 }

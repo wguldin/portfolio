@@ -4,23 +4,28 @@ layout: default
 
 <div>
     <header class="c-header">
-        <svg class="c-header__illustration" id="header-illustration"></svg>
+        <time class="c-header__orb js-clock"></time>
 
-        <div class="c-header__group">
-            <h1 class="c-header__intro">Simple ideas to help design complex apps.</h1>
-        </div>
+        <svg class="c-header__illustration" id="header-illustration">
+            <defs>
+                <symbol id="star">
+                    <polygon class="st0" points="16,7.7 9.3,7.7 12.8,4.2 12.2,3.5 8.6,7 8.6,0 7.4,0 7.4,7 3.8,3.5 3.2,4.2 6.7,7.7 0,7.7 0,9 7,9
+                    	3.2,12.5 3.8,13.1 7.4,9.6 7.4,16 8.6,16 8.6,9.3 12.2,13.1 12.8,12.5 9.3,9 16,9 "/>
+                </symbol>
+            </defs>
+        </svg>
+
+        <h1 class="c-header__intro">
+            Simple ideas to help design complex apps.
+        </h1>
     </header>
 
     <div class="home o-content__wrapper">
-        <div class="o-content__push"></div>
-
         <div class="o-content">
-            <!-- <h3 class="h5">By Will Guldin</h3> -->
-
             <ul class="c-post-list">
               <!-- {% for post in site.posts %} -->
                 <li class="c-post-list__item">
-                    <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span>
+                    <!-- <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span> -->
 
                     <h2>
                         {{ post.title }}

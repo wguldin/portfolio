@@ -12,30 +12,37 @@ dl, dd, ol, ul, figure {
 
 // Basic Styling
 body {
-    font-family: $system-stack;
+    font-family: "cooper-hewitt", $system-stack;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     font-size: 1rem;
     font-weight: 400;
+    line-height: 1.4;
     margin: 0;
     text-size-adjust: 100%;
+    color: $color-maroon;
+    color: $color-yellow;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-    font-size: 16px;
+    font-size: 19px;
 }
 
 h1, h2, h3 {
     font-family: "league-spartan", sans-serif;
     font-weight: 400;
-    color: $color-cool-grey;
+    color: $color-orange;
+    color: $color-yellow;
 }
 
 h4, h5, h6  {
-    font-family: $system-stack;
+    font-family: "cooper-hewitt";
     font-weight: 300;
-    color: $color-jade;
-    //color: $color-cool-grey;
+    color: $color-orange;
+    color: $color-yellow;
 }
 
 $h1: 3.157em;
@@ -69,7 +76,7 @@ h6, .h6 {
 }
 
 button {
-    background-color: $color-aqua;
+    background-color: $color-orange;
     border-radius: $border-radius;
 }
 

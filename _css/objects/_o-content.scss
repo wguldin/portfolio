@@ -1,46 +1,35 @@
 .o-content__wrapper {
-    float: left;
-    position: relative;
-
     .no-shapes & {
         background: $color-white;
     }
 
     &::before {
-        clip-path: polygon(0 0, 10% 0, 100% 90%, 100% 100%, 0 100%);
+        clip-path: ellipse(50% 41% at 50% 41%);
         content: "";
         position: absolute;
         background: $color-white;
-        width: 100vw;
+        background: $color-dark-blue;
+        margin-left: -50vw;
+        width: 200vw;
         height: 100vh;
-        z-index: -1;
     }
 
     &::after {
         content: "";
         position: absolute;
         background: $color-white;
-        height: calc(100% - 100vh);
-        top: 100vh;
+        background: $color-dark-blue;
+        height: 100vh;
+        top: 87vh;
         width: 100vw;
-        z-index: -1;
-    }
-}
-
-.o-content__push {
-    float: right;
-    height: 100vh;
-    width: 100vw;
-    shape-outside: polygon(0 0%, 100% 101%, 100% 0); // 2.5% padding
-
-    .no-shapes & {
-        display: none;
     }
 }
 
 .o-content {
     max-width: 50em;
     font-size: 1em;
-    padding: 0 5%;
-    margin-top: 6em;
+    padding: 5.4em 5% 0;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
 }
