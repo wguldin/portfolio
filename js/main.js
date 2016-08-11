@@ -2,6 +2,7 @@ var headerGraphic = (function() {
     var self = {};
 
     self.svg = document.getElementById('header-illustration');
+    self.today = new Date();
 
     self.init = function() {
         if(self.svg) {
@@ -12,80 +13,63 @@ var headerGraphic = (function() {
 
             self.createGraphic();
         }
+
+        self.setTime();
     };
 
-    self.lineCount = 167;
+    self.setTime = function() {
+        // Displays time without seconds, adapts to locale.
+        var displayTime = self.today.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+
+        var clock = document.querySelectorAll('time.js-clock');
+
+        clock[0].innerHTML = displayTime.toString();
+    };
+
+    self.starCount = 76;
 
     self.createGraphic = function() {
-        for (var i = 0; i < self.lineCount; i++) {
-            var line = self.createLine();
+        var timePeriod = self.setTimePeriod();
 
-            self.svg.appendChild(line);
+        if (timePeriod === 'day') {
+            // self.createClouds();
         }
-    };
+        else if (timePeriod === 'night') {
+            for (var i = 0; i < self.starCount; i++) {
+                var line = self.createStar();
 
-    self.createLine = function() {
-        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        self.setAttributes(line, self.setLineCoordinates());
-
-        return line;
-    };
-
-    self.setLineCoordinates = function() {
-        var startSide = self.selectSide();
-        var startPoint = self.selectPoint(startSide);
-
-        var finalSide = self.selectSide(startSide);
-        var finalPoint = self.selectPoint(finalSide);
-
-        return {
-            'x1': startPoint['x'],
-            'y1': startPoint['y'],
-            'x2': finalPoint['x'],
-            'y2': finalPoint['y']
-        };
-    };
-
-    self.selectPoint = function(side) {
-        var point = {'x': null, 'y': null};
-
-        switch(side) {
-            case 't':
-                point['x'] = self.randomIntFromInterval(0, self.svgWidth);
-                point['y'] = self.svgHeight;
-                break;
-
-            case 'b':
-                point['x'] = self.randomIntFromInterval(0, self.svgWidth);
-                point['y'] = 0;
-                break;
-
-            case 'l':
-                point['x'] = 0;
-                point['y'] = self.randomIntFromInterval(0, self.svgHeight);
-                break;
-
-            case 'r':
-                point['x'] = self.svgWidth;
-                point['y'] = self.randomIntFromInterval(0, self.svgHeight);
-                break;
-        }
-
-        return point;
-    };
-
-    self.selectSide = function (existingSide) {
-        var sides = ['t', 'b', 'l', 'r'];
-
-        if(existingSide){
-            var i = sides.indexOf(existingSide);
-
-            if(i != -1) {
-                sides.splice(i, 1);
+                self.svg.appendChild(line);
             }
         }
+    };
 
-        return sides[Math.floor(Math.random()*sides.length)];
+    self.setTimePeriod = function() {
+        var hours = self.today.getHours();
+
+        if (hours >= 5 && hours <= 19) {
+            return 'day';
+        } else {
+            return 'night';
+        }
+    };
+
+    self.createStar = function() {
+        var star = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        star.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#star');
+
+        var x = self.randomIntFromInterval(0, self.svgWidth);
+        var y = self.randomIntFromInterval(0, self.svgHeight);
+        var deg = self.randomIntFromInterval(0, 360);
+
+        var weighted = Math.pow(Math.random(), .3);
+        var scaled = Math.floor(weighted * (max - min + 1)) + min;
+
+        self.setAttributes(star, {
+            'transform': 'translate(' + x + ' ' + y + ') rotate(' + deg + ')',
+            'style': 'opacity: .6; fill: #fff;'
+        });
+
+        return star;
     };
 
     // Helper functions
