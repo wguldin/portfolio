@@ -26,7 +26,7 @@ var headerGraphic = (function() {
         clock[0].innerHTML = displayTime.toString();
     };
 
-    self.starCount = 76;
+    self.starCount = 120;
 
     self.createGraphic = function() {
         var timePeriod = self.setTimePeriod();
@@ -36,9 +36,9 @@ var headerGraphic = (function() {
         }
         else if (timePeriod === 'night') {
             for (var i = 0; i < self.starCount; i++) {
-                var line = self.createStar();
+                var star = self.createStar();
 
-                self.svg.appendChild(line);
+                self.svg.appendChild(star);
             }
         }
     };

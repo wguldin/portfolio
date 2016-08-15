@@ -1,0 +1,38 @@
+.c-text-divider {
+    line-height: 1;
+    margin: 0 auto 1.5em;
+    position: relative;
+    text-align: center;
+    width: 75%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        top: .4em;
+    }
+}
+
+.c-text-divider__content {
+    display: inline-block;
+    font-family: "cooper-hewitt", $system-stack;
+    font-size: .7em;
+    letter-spacing: .4px;
+    padding: 0 1em;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.theme--night {
+    .c-text-divider::before {
+        background: $color-blue-025;
+    }
+
+    .c-text-divider__content {
+        background: darken($color-blue-050, 1.5%); // Match bg gradient at this point on layout.
+    }
+}
