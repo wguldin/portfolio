@@ -21,7 +21,8 @@ body {
     margin: 0;
     text-size-adjust: 100%;
     color: $color-maroon;
-    color: $color-yellow;
+    color: $color-yellow-020;
+    overflow-x: hidden;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -34,15 +35,11 @@ html {
 h1, h2, h3 {
     font-family: "league-spartan", sans-serif;
     font-weight: 400;
-    color: $color-orange;
-    color: $color-yellow;
 }
 
 h4, h5, h6  {
     font-family: "cooper-hewitt";
     font-weight: 300;
-    color: $color-orange;
-    color: $color-yellow;
 }
 
 $h1: 3.157em;

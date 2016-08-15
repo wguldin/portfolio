@@ -7,18 +7,19 @@
         clip-path: ellipse(50% 41% at 50% 41%);
         content: "";
         position: absolute;
-        background: $color-white;
-        background: $color-dark-blue;
-        margin-left: -50vw;
-        width: 200vw;
+        margin-left: -100vw;
+        width: 300vw;
         height: 100vh;
+
+        @media screen and (min-width: 36em) {
+            margin-left: -50vw;
+            width: 200vw;
+        }
     }
 
     &::after {
         content: "";
         position: absolute;
-        background: $color-white;
-        background: $color-dark-blue;
         height: 100vh;
         top: 87vh;
         width: 100vw;
@@ -28,8 +29,22 @@
 .o-content {
     max-width: 50em;
     font-size: 1em;
-    padding: 5.4em 5% 0;
+    padding: 2.5em 5% 0;
     margin: 0 auto;
     z-index: 1;
     position: relative;
+
+    @media screen and (min-width: 48em) {
+        padding-top: 5.4em;
+    }
+}
+
+.theme--night {
+    .o-content__wrapper::before {
+        background: $color-blue-075;
+    }
+
+    .o-content__wrapper::after {
+        background: $color-blue-075;
+    }
 }

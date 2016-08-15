@@ -3,9 +3,13 @@ $color-orange: #f77a52;
 $color-white: #f6f5f3;
 $color-brown: #644d52;
 
-$color-yellow: #fff8d7;
-$color-dark-blue: #252d48;
-$color-blue: #38518d;
+$color-yellow-020: #fff8d7;
+$color-yellow-030: darken(#fff8d7, 8%);
+$color-yellow-040: darken(#fff8d7, 16%);
+
+$color-blue-025: #6883c3;
+$color-blue-050: #38518d;
+$color-blue-075: #252d48;
 
 $border-radius: 3px;
 

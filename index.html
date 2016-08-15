@@ -31,16 +31,17 @@ layout: default
             <ul class="c-post-list">
               <!-- {% for post in site.posts %} -->
                 <li class="c-post-list__item">
-                    <!-- <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span> -->
+                    <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
+                        <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span>
 
-                    <h2>
-                        {{ post.title }}
-                        <!-- <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> -->
-                    </h2>
+                        <h2>
+                            {{ post.title }}
+                        </h2>
 
-                    <p>
-                        {{ post.excerpt }}
-                    </p>
+                        <p>
+                            {{ post.excerpt }}
+                        </p>
+                    </a>
                 </li>
               <!-- {% endfor %} -->
             </ul>

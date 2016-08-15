@@ -2,5 +2,32 @@
     list-style-type: none;
     margin-bottom: 3em;
     padding-bottom: 3em;
-    border-bottom: 10px solid $color-blue;
+    border-bottom: 10px solid $color-blue-050;
+}
+
+.c-post-list__link {
+    text-decoration: none;
+}
+
+.c-post-list__meta {
+    font-size: .8em;
+    margin: 0 0 1em 0;
+    display: block;
+
+
+    @media screen and (min-width: 36em) {
+        float: right;
+        margin: 0 0 1.5em 1.5em;
+        text-align: right;
+    }
+}
+
+.theme--night {
+    .c-post-list__link {
+        color: $color-yellow-020;
+
+        &:hover {
+            color: $color-yellow-040;
+        }
+    }
 }
