@@ -1,52 +1,23 @@
 ---
-layout: default
+layout: home
 ---
 
-<div>
-    <header class="c-header">
-        <time class="c-header__orb js-clock"></time>
+<div class="home">
+    <ul class="c-post-list">
+      <!-- {% for post in site.posts %} -->
+        <li class="c-post-list__item">
+            <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
+                <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span>
 
-        <svg class="c-header__illustration" id="header-illustration">
-            <defs>
-                <symbol id="star">
-                    <polygon class="st0" points="16,7.7 9.3,7.7 12.8,4.2 12.2,3.5 8.6,7 8.6,0 7.4,0 7.4,7 3.8,3.5 3.2,4.2 6.7,7.7 0,7.7 0,9 7,9
-                    	3.2,12.5 3.8,13.1 7.4,9.6 7.4,16 8.6,16 8.6,9.3 12.2,13.1 12.8,12.5 9.3,9 16,9 "/>
-                </symbol>
-            </defs>
-        </svg>
+                <h2>
+                    {{ post.title }}
+                </h2>
 
-        <h1 class="c-header__intro">
-            Simple ideas to help design complex apps.
-        </h1>
-
-        <div class="c-text-divider">
-            <h3 class="c-text-divider__content">
-                A Blog By Will Guldin
-            </h3>
-        </div>
-    </header>
-
-    <div class="home o-content__wrapper">
-        <div class="o-content">
-            <ul class="c-post-list">
-              <!-- {% for post in site.posts %} -->
-                <li class="c-post-list__item">
-                    <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
-                        <span class="c-post-list__meta">{{ post.date | date: "%b. %-d, %Y" }}</span>
-
-                        <h2>
-                            {{ post.title }}
-                        </h2>
-
-                        <p>
-                            {{ post.excerpt }}
-                        </p>
-                    </a>
-                </li>
-              <!-- {% endfor %} -->
-            </ul>
-
-            <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-        </div>
-    </div>
+                <p>
+                    {{ post.excerpt }}
+                </p>
+            </a>
+        </li>
+      <!-- {% endfor %} -->
+    </ul>
 </div>

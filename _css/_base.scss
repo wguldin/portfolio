@@ -17,7 +17,7 @@ body {
     font-kerning: normal;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.45;
     margin: 0;
     text-size-adjust: 100%;
     color: $color-maroon;
@@ -30,34 +30,42 @@ body {
 
 html {
     font-size: 19px;
+
+    @media screen and (min-width: 72em) {
+        font-size: 21px;
+    }
 }
 
 h1, h2, h3 {
     font-family: "league-spartan", sans-serif;
     font-weight: 400;
+    line-height: 1.2;
+    margin: 1.414em 0 .5em;
 }
 
 h4, h5, h6  {
     font-family: "cooper-hewitt";
     font-weight: 300;
+    line-height: 1.2;
+    margin: 1.414em 0 .5em;
 }
 
-$h1: 3.157em;
+$h1: 2.441em;
 h1, .h1 {
     font-size: $h1;
 }
 
-$h2: 2.369em;
+$h2: 1.953em;
 h2, .h2 {
     font-size: $h2;
 }
 
-$h3: 1.777em;
+$h3: 1.563em;
 h3, .h3 {
     font-size: $h3;
 }
 
-$h4: 1.333em;
+$h4: 1.25em;
 h4, .h4 {
     font-size: $h3;
 }
@@ -67,9 +75,19 @@ h5, .h5 {
     font-size: $h5;
 }
 
-$h6: .75em;
+$h6: .8em;
 h6, .h6 {
     font-size: $h6;
+}
+
+ul {
+    margin-bottom: 1.2em;
+    margin-left: 1em;
+    list-style-type: circle;
+}
+
+p {
+    margin-bottom: 1.2em;
 }
 
 button {

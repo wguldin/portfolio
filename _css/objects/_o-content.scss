@@ -1,7 +1,6 @@
 .o-content__wrapper {
-    .no-shapes & {
-        background: $color-white;
-    }
+    position: relative;
+    top: 8em;
 
     &::before {
         clip-path: ellipse(50% 41% at 50% 41%);
@@ -14,32 +13,26 @@
         @media screen and (min-width: 36em) {
             margin-left: -50vw;
             width: 200vw;
+            top: -10em;
         }
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        height: 100vh;
-        top: 87vh;
-        width: 100vw;
     }
 }
 
 .o-content {
-    max-width: 50em;
+    max-width: 42em;
     font-size: 1em;
-    padding: 2.5em 5% 0;
     margin: 0 auto;
     z-index: 1;
     position: relative;
-
-    @media screen and (min-width: 48em) {
-        padding-top: 5.4em;
-    }
+    top: -5.5em;
+    padding-top: 0;
 }
 
 .theme--night {
+    .o-content__wrapper {
+        background: $color-blue-075;
+    }
+
     .o-content__wrapper::before {
         background: $color-blue-075;
     }
