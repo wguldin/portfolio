@@ -4,10 +4,10 @@
     {% include head.html %}
 
     <body>
-        <div class="o-page__wrapper home">
+        <div class="home">
             <div class="wrapper">
                 <header class="c-header">
-                    <a href="{{ "/" | prepend: site.baseurl }}" class="c-header__orb">
+                    <a href="{{ "/" | prepend: site.baseurl }}" class="c-orb c-orb--header">
                         <time class="u-sr-only js-clock"></time>
                     </a>
 
@@ -31,8 +31,8 @@
                     </div>
                 </header>
 
-                <div class="o-content__wrapper">
-                    <div class="o-content">
+                <div class="l-content__wrapper l-content__wrapper--horizon">
+                    <div class="l-content l-content--horizon">
                         {{ content }}
                     </div>
                 </div>

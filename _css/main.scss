@@ -2,22 +2,22 @@
 
 // Setup
 // =============================================
-@import "susy/susy";
 @import "mixins";
 @import "base";
 
 // Objects
 // =============================================
-@import "objects/o-content";
-@import "objects/o-page";
+@import "layout/content";
 
 // Components
 // =============================================
-@import "components/c-button";
-@import "components/c-footer";
-@import "components/c-header";
-@import "components/c-post-list";
-@import "components/c-text-divider";
+@import "components/button";
+@import "components/footer";
+@import "components/header";
+@import "components/orb";
+@import "components/post-list";
+@import "components/post";
+@import "components/text-divider";
 
 // Utilities
 // =============================================

@@ -4,10 +4,17 @@ layout: default
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="c-post__header">
         <h1 class="c-post__title" itemprop="name headline">{{ page.title }}</h1>
-        <p class="c-post__meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
     </header>
 
     <div class="c-post__content" itemprop="articleBody">
+        {% assign drop_cap = content|strip_html|truncate:4|remove:'.' %}
+
+        <p class="c-post__meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+
+        <div class="c-orb c-orb--drop-cap">
+            {{ drop_cap }}
+        </div>
+
         {{ content }}
     </div>
 </article>
