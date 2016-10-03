@@ -1,6 +1,25 @@
-.o-content__wrapper {
+.l-content__wrapper {
+    padding-top: 2em;
+}
+
+.l-content {
+    max-width: 38em;
+    font-size: 1em;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+
+    padding-top: 0;
+}
+
+.l-content--horizon {
+    top: -5.5em;
+}
+
+.l-content__wrapper--horizon {
     position: relative;
     top: 8em;
+    padding-top: 0;
 
     &::before {
         clip-path: ellipse(50% 41% at 50% 41%);
@@ -15,29 +34,23 @@
             width: 200vw;
             top: -10em;
         }
-    }
-}
 
-.o-content {
-    max-width: 42em;
-    font-size: 1em;
-    margin: 0 auto;
-    z-index: 1;
-    position: relative;
-    top: -5.5em;
-    padding-top: 0;
+        .no-shapes & {
+            border-radius: 50%;
+        }
+    }
 }
 
 .theme--night {
-    .o-content__wrapper {
+    .l-content__wrapper {
         background: $color-blue-075;
     }
 
-    .o-content__wrapper::before {
+    .l-content__wrapper::before {
         background: $color-blue-075;
     }
 
-    .o-content__wrapper::after {
+    .l-content__wrapper::after {
         background: $color-blue-075;
     }
 }
