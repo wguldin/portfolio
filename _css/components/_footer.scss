@@ -11,7 +11,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        opacity: .8;
+        opacity: 1;
         z-index: -1;
     }
 }
@@ -21,7 +21,10 @@
 }
 
 .theme--night {
-    .c-footer::before {
-        background: darken($color-blue-075, 7.5%);
+    .c-footer__content {
+        background: $color-blue-050;
+        background-image: linear-gradient(to bottom, #344b83, #344c84);
+        box-shadow: 0px 0px 27px 20px #344c85;
+        color: #e9ebf2;
     }
 }

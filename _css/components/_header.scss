@@ -6,23 +6,6 @@
     }
 }
 
-.c-header__orb {
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
-    display: flex;
-    font-size: .5em;
-    height: 5rem;
-    justify-content: center;
-    margin: 0 auto;
-    padding-top: 3em;
-    position: relative;
-    text-decoration: none;
-    top: -2.5rem;
-    width: 5rem;
-    z-index: 1;
-}
-
 .c-header__intro {
     display: inline-block;
     font-family: "cooper-hewitt", $system-stack;

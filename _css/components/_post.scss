@@ -1,0 +1,29 @@
+.c-post {
+    position: relative;
+}
+
+.c-post__header {
+    position: absolute;
+    left: -4em;
+    height: 30em;
+    top: 0;
+    color: $color-blue-025;
+    writing-mode: vertical-rl;
+    text-align: left;
+    opacity: .85;
+}
+
+.c-post__title {
+    font-size: 1.6em;
+    line-height: 1.6;
+    margin-top: 0;
+    height: 12em;
+}
+
+.c-post__meta {
+    font-size: .7em;
+}
+
+.c-post__content {
+    margin-left: 4em;
+}
