@@ -15,7 +15,15 @@
 }
 
 .c-post-list__link {
+    @include clearfix();
+
+    display: block;
     text-decoration: none;
+    padding: 0;
+
+    &:before {
+        content: none;
+    }
 }
 
 .c-post-list__meta {
@@ -23,12 +31,15 @@
     margin: 0 0 1em 0;
     display: block;
 
-
     @media screen and (min-width: 36em) {
         float: right;
         margin: 0 0 1.5em 1.5em;
         text-align: right;
     }
+}
+
+.c-post-list__title {
+    margin-top: 0;
 }
 
 .theme--night {
