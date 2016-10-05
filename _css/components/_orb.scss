@@ -22,7 +22,7 @@
     font-size: 3.6em;
     margin: .1rem 1rem 0 0;
     float: left;
-    padding-top: .2em
+    padding-top: .2em;
 }
 
 .theme--night {
@@ -30,10 +30,6 @@
         background-color: $color-yellow-030;
         color: darken($color-blue-050, 2%);
         transition: background-color 90ms ease-out;
-
-        &:hover {
-            background-color: $color-yellow-040;
-        }
     }
 }
 

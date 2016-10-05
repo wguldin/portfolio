@@ -18,7 +18,7 @@ These apps all handled the problem in a similar way, and it was clear the contex
 
 
 ## The base
-If you are working on a web project, you probably know that most file uploading technically relies on manipulating the file input, which is (notoriously) (tough) (to customize). For this project, we didn't try and re-invent the wheel. Instead, we went with (dropzone). It seemed pretty robust compared to other options. We heavily modified it and created a custom component with our front-end framework, Knockout.js.
+If you are working on a web project, you probably know that most file uploading technically relies on manipulating the file input, which is (notoriously) (tough) (to customize). For this project, we didn't try and re-invent the wheel. Instead, we went with [dropzone](http://www.dropzonejs.com/). It seemed pretty robust compared to other options. We heavily modified it and created a custom component with our front-end framework, Knockout.js.
 
 ## A choice: Conversational or Attachment
 Before starting all that though, I researched the photo upload tool of a few web apps I routinely use, including Slack, Github, Trello, Basecamp and StackOverflow.

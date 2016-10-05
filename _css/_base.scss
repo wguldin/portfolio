@@ -20,8 +20,6 @@ body {
     line-height: 1.5;
     margin: 0;
     text-size-adjust: 100%;
-    color: $color-maroon;
-    color: $color-yellow-020;
     overflow-x: hidden;
 
     -webkit-font-smoothing: antialiased;
@@ -33,6 +31,35 @@ html {
 
     @media screen and (min-width: 72em) {
         font-size: 22px;
+    }
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    padding: 0 .05em;
+    color: $color-blue-010;
+    transition: 85ms color ease-in 15ms;
+
+    &:hover {
+        color: $color-blue-025;
+
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    &:before {
+        background: $color-blue-010;
+        content: "";
+        height: 1px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 85ms opacity ease-in 15ms;
+        z-index: -1;
+        opacity: 0;
     }
 }
 
@@ -123,5 +150,18 @@ pre {
         border: 0;
         padding-right: 0;
         padding-left: 0;
+    }
+}
+
+
+.theme--night {
+    color: $color-yellow-020;
+}
+
+.theme--day {
+    color: $color-maroon;
+
+    a {
+        color: $color-maroon;
     }
 }
