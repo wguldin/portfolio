@@ -1,6 +1,5 @@
 .c-footer {
     clear: both;
-    margin-top: 5em;
     padding: 2em;
     position: relative;
 
@@ -21,10 +20,11 @@
 }
 
 .theme--night {
+    .c-footer {
+        background: $color-yellow-020;
+    }
+
     .c-footer__content {
-        background: $color-blue-050;
-        background-image: linear-gradient(to bottom, #344b83, #344c84);
-        box-shadow: 0px 0px 27px 20px #344c85;
-        color: #e9ebf2;
+        color: $color-blue-050;
     }
 }
