@@ -40,6 +40,7 @@ a {
     padding: 0 .05em;
     color: $color-blue-010;
     transition: 85ms color ease-in 15ms;
+    font-weight: bold;
 
     &:hover {
         color: $color-blue-025;

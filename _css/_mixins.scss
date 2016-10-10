@@ -27,10 +27,10 @@ $system-stack: -apple-system, BlinkMacSystemFont,
 }
 
 @font-face {
-   font-family: "cooper-hewitt-light";
-   src: url("/portfolio/assets/fonts/cooper-hewitt-thin.woff2") format("woff2"),
-        url("/portfolio/assets/fonts/cooper-hewitt-thin.woff") format("woff");
-   font-weight: normal;
+   font-family: "cooper-hewitt";
+   src: url("/portfolio/assets/fonts/cooper-hewitt-medium.woff2") format("woff2"),
+        url("/portfolio/assets/fonts/cooper-hewitt-medium.woff") format("woff");
+   font-weight: bold;
    font-style: normal;
 }
 
