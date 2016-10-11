@@ -12,19 +12,20 @@
         content: none;
         left: 0;
     }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .c-post-list__link {
     @include clearfix();
 
+    background-image: none;
     display: block;
-    text-decoration: none;
-    padding: 0;
     font-weight: normal;
-
-    &:before {
-        content: none;
-    }
+    padding: 0;
+    text-decoration: none;
 }
 
 .c-post-list__meta {

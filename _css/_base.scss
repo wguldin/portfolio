@@ -26,6 +26,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+    text-shadow: none;
+    background: #B4D5FE;
+
+    color: $color-blue-075;
+}
+
+// seperate rule needed for firefox.
+::-moz-selection {
+    text-shadow: none;
+    background: #B4D5FE;
+
+    color: $color-blue-075;
+}
+
 html {
     font-size: 20px;
 
@@ -35,32 +50,20 @@ html {
 }
 
 a {
-    text-decoration: none;
-    position: relative;
-    padding: 0 .05em;
     color: $color-blue-010;
+    display: inline;
+    text-decoration: none;
     transition: 85ms color ease-in 15ms;
-    font-weight: bold;
+
+    // Underline
+    background-image: linear-gradient(to bottom, $color-blue-010, $color-blue-010);
+    background-position: 0 .9em;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    text-shadow: 1px 1px $color-blue-075, 1px -1px $color-blue-075, -1px 1px $color-blue-075, 1px 1px $color-blue-075;
 
     &:hover {
         color: $color-blue-025;
-
-        &:before {
-            opacity: 1;
-        }
-    }
-
-    &:before {
-        background: $color-blue-010;
-        content: "";
-        height: 1px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transition: 85ms opacity ease-in 15ms;
-        z-index: -1;
-        opacity: 0;
     }
 }
 
