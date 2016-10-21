@@ -1,8 +1,6 @@
-$color-maroon: #332532;
-$color-orange: #f77a52;
 $color-white: #f6f5f3;
-$color-brown: #644d52;
 
+// Night colors
 $color-yellow-020: #fff8d7;
 $color-yellow-030: darken(#fff8d7, 8%);
 $color-yellow-040: darken(#fff8d7, 16%);
@@ -11,6 +9,15 @@ $color-blue-010: #8aa3f6;
 $color-blue-025: #6883c3;
 $color-blue-050: #38518d;
 $color-blue-075: #252d48;
+
+
+// Day colors
+$color-gold-020: #f7f2da;
+$color-gold-070: #ffc861;
+$color-green-020: lighten(#a5de7f, 10%);
+$color-green-050: #42826c;
+$color-green-080: lighten(#002f32, 5%);
+$color-green-100: darken(#002f32, 2%);
 
 $border-radius: 3px;
 

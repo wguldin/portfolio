@@ -50,21 +50,14 @@ html {
 }
 
 a {
-    color: $color-blue-010;
     display: inline;
     text-decoration: none;
     transition: 85ms color ease-in 15ms;
 
     // Underline
-    background-image: linear-gradient(to bottom, $color-blue-010, $color-blue-010);
     background-position: 0 .9em;
     background-repeat: repeat-x;
     background-size: 1px 1px;
-    text-shadow: 1px 1px $color-blue-075, 1px -1px $color-blue-075, -1px 1px $color-blue-075, 1px 1px $color-blue-075;
-
-    &:hover {
-        color: $color-blue-025;
-    }
 }
 
 h1, h2, h3 {
@@ -133,17 +126,10 @@ p {
     }
 }
 
-button {
-    background-color: $color-orange;
-    border-radius: $border-radius;
-}
-
 pre,
 code {
     font-size: 15px;
-    // border: 1px solid $grey-color-light;
     border-radius: 3px;
-    // background-color: #eef;
 }
 
 code {
@@ -161,15 +147,30 @@ pre {
     }
 }
 
-
 .theme--night {
     color: $color-yellow-020;
+
+    a {
+        color: $color-blue-010;
+        background-image: linear-gradient(to bottom, $color-blue-010, $color-blue-010);
+        //text-shadow: 1px 1px $color-blue-075, 1px -1px $color-blue-075, -1px 1px $color-blue-075, 1px 1px $color-blue-075;
+
+        &:hover {
+            color: $color-blue-025;
+        }
+    }
 }
 
 .theme--day {
-    color: $color-maroon;
+    color: $color-green-080;
 
     a {
-        color: $color-maroon;
+        color: $color-green-050;
+        background-image: linear-gradient(to bottom, $color-green-050, $color-green-050);
+        //text-shadow: 1px 1px $color-green-100, 1px -1px $color-green-100, -1px 1px $color-green-100, 1px 1px $color-green-100;
+
+        &:hover {
+            color: $color-green-080;
+        }
     }
 }

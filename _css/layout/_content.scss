@@ -54,3 +54,17 @@
         background: $color-blue-075;
     }
 }
+
+.theme--day {
+    .l-content__wrapper {
+        background: $color-green-020;
+    }
+
+    .l-content__wrapper::before {
+        background: $color-green-020;
+    }
+
+    .l-content__wrapper::after {
+        background: $color-green-020;
+    }
+}

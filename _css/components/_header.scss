@@ -31,16 +31,6 @@
 }
 
 .theme--night {
-    .c-header__orb {
-        background-color: $color-yellow-030;
-        color: darken($color-blue-050, 2%);
-        transition: background-color 90ms ease-out;
-
-        &:hover {
-            background-color: $color-yellow-040;
-        }
-    }
-
     .c-header__intro {
         // Match bg gradient at this point on layout. Also ensures text legibility with svg objects.
         background: darken($color-blue-050, 2%);
@@ -60,11 +50,20 @@
 }
 
 .theme--day {
-    .c-header__orb {
-        background: $color-orange;
+    .c-header__intro {
+        // Match bg gradient at this point on layout. Also ensures text legibility with svg objects.
+        //background: darken($color-blue-050, 2%);
+        //box-shadow: 0px 0px 27px 20px darken($color-blue-050, 2%);
+
+        color: $color-green-100;
+        text-shadow: 0 1px 0 rgba($color-white, .3);
+    }
+
+    .c-header__byline {
+        color: $color-green-100;
     }
 
     .c-header__illustration {
-        background: linear-gradient(to bottom, $color-maroon, darken($color-maroon, 5%));
+        background: linear-gradient(to bottom, $color-gold-020, darken($color-gold-020, 5%));
     }
 }

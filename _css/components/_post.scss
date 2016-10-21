@@ -7,7 +7,6 @@
     left: -4em;
     height: 30em;
     top: 0;
-    color: $color-blue-025;
     writing-mode: vertical-rl;
     text-align: left;
     opacity: .85;
@@ -26,4 +25,16 @@
 
 .c-post__content {
     margin-left: 4em;
+}
+
+.theme--night {
+    .c-post__header {
+        color: $color-blue-025;
+    }
+}
+
+.theme--day {
+    .c-post__header {
+        color: $color-green-050;
+    }
 }

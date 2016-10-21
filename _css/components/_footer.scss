@@ -32,3 +32,13 @@
         color: $color-blue-050;
     }
 }
+
+.theme--night {
+    .c-footer {
+        background: $color-gold-020;
+    }
+
+    .c-footer__content {
+        color: $color-green-100;
+    }
+}

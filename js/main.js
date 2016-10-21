@@ -52,9 +52,9 @@ var headerGraphic = (function() {
         var hours = self.today.getHours();
 
         if (hours >= 5 && hours <= 19) {
-            return 'night';
+            return 'day';
         } else {
-            return 'night';
+            return 'day';
         }
     };
 

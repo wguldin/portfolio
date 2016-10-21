@@ -6,7 +6,7 @@
     list-style-type: none;
     margin-bottom: 3em;
     padding-bottom: 3em;
-    border-bottom: 10px solid $color-blue-050;
+    border-bottom: 10px solid;
 
     &:before {
         content: none;
@@ -51,5 +51,23 @@
         &:hover {
             color: $color-yellow-040;
         }
+    }
+
+    .c-post-list__item {
+        border-bottom-color: $color-blue-050;
+    }
+}
+
+.theme--day {
+    .c-post-list__link {
+        color: $color-green-080;
+
+        &:hover {
+            color: $color-green-100;
+        }
+    }
+
+    .c-post-list__item {
+        border-bottom-color: $color-green-050;
     }
 }
