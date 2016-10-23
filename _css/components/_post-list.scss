@@ -20,12 +20,14 @@
 
 .c-post-list__link {
     @include clearfix();
-
-    background-image: none;
     display: block;
     font-weight: normal;
     padding: 0;
-    text-decoration: none;
+
+    .theme--night &, .theme--day & {
+        background-image: none;
+        text-decoration: none;
+    }
 }
 
 .c-post-list__meta {
