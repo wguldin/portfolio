@@ -26,25 +26,51 @@ var headerGraphic = (function() {
         clock[0].innerHTML = displayTime.toString();
     };
 
-    self.starCount = 160;
+
 
     self.createGraphic = function() {
         var timePeriod = self.setTimePeriod();
-        var body = document.getElementsByTagName('BODY')[0];
 
         if (timePeriod === 'day') {
-            self.addClass(body, 'theme--day');
-
-            // self.createClouds();
+            self.dayTheme();
         }
         else if (timePeriod === 'night') {
-            self.addClass(body, 'theme--night');
+            self.nightTheme();
+        }
+    };
 
-            for (var i = 0; i < self.starCount; i++) {
-                var star = self.createStar();
+    self.dayTheme = function() {
+        var body = document.getElementsByTagName('BODY')[0];
 
-                self.svg.appendChild(star);
+        self.addClass(body, 'theme--day');
+        self.cloudCount = 120;
+
+        var cloudIllustration = 0;
+
+        for (var i = 0; i < self.cloudCount; i++) {
+            // We have several cloud versions 1-5, so make sure they are chosen evenly.
+            if (cloudIllustration < 6) {
+                cloudIllustration = cloudIllustration + 1;
+            } else {
+                cloudIllustration = 1;
             }
+
+            var cloud = self.createCloud(cloudIllustration);
+
+            self.svg.appendChild(cloud);
+        }
+    };
+
+    self.nightTheme = function() {
+        var body = document.getElementsByTagName('BODY')[0];
+
+        self.addClass(body, 'theme--night');
+        self.starCount = 160;
+
+        for (var i = 0; i < self.starCount; i++) {
+            var star = self.createStar();
+
+            self.svg.appendChild(star);
         }
     };
 
@@ -56,6 +82,21 @@ var headerGraphic = (function() {
         } else {
             return 'day';
         }
+    };
+
+    self.createCloud = function(cloudIllustration) {
+        var cloud = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        cloud.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#cloud' + cloudIllustration);
+
+        var x = self.randomIntFromInterval(0, self.svgWidth);
+        var y = self.randomIntFromInterval(0, self.svgHeight);
+
+        self.setAttributes(cloud, {
+            'transform': 'translate({0} {1}) scale(.5)'.format(x, y),
+            'style': 'fill: #fff; filter:url(#dropshadow);'
+        });
+
+        return cloud;
     };
 
     self.createStar = function() {
