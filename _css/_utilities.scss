@@ -36,6 +36,15 @@
     text-align: center !important;
 }
 
+.u-list-unstyled {
+    list-style-type: none;
+
+    li:before {
+        content: none;
+        left: 0;
+    }
+}
+
 // ========================================================
 // Spacing utility classes
 // Taken from Basscss framework

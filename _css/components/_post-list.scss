@@ -45,31 +45,3 @@
 .c-post-list__title {
     margin-top: 0;
 }
-
-.theme--night {
-    .c-post-list__link {
-        color: $color-yellow-020;
-
-        &:hover {
-            color: $color-yellow-040;
-        }
-    }
-
-    .c-post-list__item {
-        border-bottom-color: $color-blue-050;
-    }
-}
-
-.theme--day {
-    .c-post-list__link {
-        color: $color-green-080;
-
-        &:hover {
-            color: $color-green-100;
-        }
-    }
-
-    .c-post-list__item {
-        border-bottom-color: $color-green-050;
-    }
-}

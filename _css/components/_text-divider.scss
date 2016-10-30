@@ -1,6 +1,6 @@
 .c-text-divider {
     line-height: 1;
-    margin: 0 auto 1.5em;
+    margin: 0 auto;
     position: relative;
     text-align: center;
     width: 75%;
@@ -26,14 +26,4 @@
     text-transform: uppercase;
     width: auto;
     margin-top: 0;
-}
-
-.theme--night {
-    .c-text-divider::before {
-        background: $color-blue-025;
-    }
-
-    .c-text-divider__content {
-        background: darken($color-blue-050, 1.5%); // Match bg gradient at this point on layout.
-    }
 }

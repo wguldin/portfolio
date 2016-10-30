@@ -2,7 +2,6 @@ var headerGraphic = (function() {
     var self = {};
 
     self.svg = document.getElementById('header-illustration');
-    self.today = new Date();
 
     self.init = function() {
         if(self.svg) {
@@ -13,109 +12,83 @@ var headerGraphic = (function() {
 
             self.createGraphic();
         }
-
-        self.setTime();
     };
 
-    self.setTime = function() {
-        // Displays time without seconds, adapts to locale.
-        var displayTime = self.today.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
-
-        var clock = document.querySelectorAll('time.js-clock');
-
-        clock[0].innerHTML = displayTime.toString();
-    };
-
-
+    self.lineCount = 36;
 
     self.createGraphic = function() {
-        var timePeriod = self.setTimePeriod();
+        for (var i = 0; i < self.lineCount; i++) {
+            var line = self.createLine();
 
-        if (timePeriod === 'day') {
-            self.dayTheme();
-        }
-        else if (timePeriod === 'night') {
-            self.nightTheme();
+            self.svg.appendChild(line);
         }
     };
 
-    self.dayTheme = function() {
-        var body = document.getElementsByTagName('BODY')[0];
+    self.createLine = function() {
+        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        self.setAttributes(line, self.setLineCoordinates());
 
-        self.addClass(body, 'theme--day');
-        self.cloudCount = 120;
+        return line;
+    };
 
-        var cloudIllustration = 0;
+    self.setLineCoordinates = function() {
+        var startSide = self.selectSide();
+        var startPoint = self.selectPoint(startSide);
 
-        for (var i = 0; i < self.cloudCount; i++) {
-            // We have several cloud versions 1-5, so make sure they are chosen evenly.
-            if (cloudIllustration < 6) {
-                cloudIllustration = cloudIllustration + 1;
-            } else {
-                cloudIllustration = 1;
+        var finalSide = self.selectSide(startSide);
+        var finalPoint = self.selectPoint(finalSide);
+
+        var weightedOpacity = Math.pow(Math.random(), .25) - .1;
+
+        return {
+            'x1': startPoint['x'],
+            'y1': startPoint['y'],
+            'x2': finalPoint['x'],
+            'y2': finalPoint['y'],
+            'style': 'opacity: {0}'.format(weightedOpacity)
+        };
+    };
+
+    self.selectPoint = function(side) {
+        var point = {'x': null, 'y': null};
+
+        switch(side) {
+            case 't':
+                point['x'] = self.randomIntFromInterval(0, self.svgWidth);
+                point['y'] = self.svgHeight;
+                break;
+
+            case 'b':
+                point['x'] = self.randomIntFromInterval(0, self.svgWidth);
+                point['y'] = 0;
+                break;
+
+            case 'l':
+                point['x'] = 0;
+                point['y'] = self.randomIntFromInterval(0, self.svgHeight);
+                break;
+
+            case 'r':
+                point['x'] = self.svgWidth;
+                point['y'] = self.randomIntFromInterval(0, self.svgHeight);
+                break;
+        }
+
+        return point;
+    };
+
+    self.selectSide = function (existingSide) {
+        var sides = ['t', 'b', 'l', 'r'];
+
+        if(existingSide){
+            var i = sides.indexOf(existingSide);
+
+            if(i != -1) {
+                sides.splice(i, 1);
             }
-
-            var cloud = self.createCloud(cloudIllustration);
-
-            self.svg.appendChild(cloud);
         }
-    };
 
-    self.nightTheme = function() {
-        var body = document.getElementsByTagName('BODY')[0];
-
-        self.addClass(body, 'theme--night');
-        self.starCount = 160;
-
-        for (var i = 0; i < self.starCount; i++) {
-            var star = self.createStar();
-
-            self.svg.appendChild(star);
-        }
-    };
-
-    self.setTimePeriod = function() {
-        var hours = self.today.getHours();
-
-        if (hours >= 5 && hours <= 19) {
-            return 'day';
-        } else {
-            return 'day';
-        }
-    };
-
-    self.createCloud = function(cloudIllustration) {
-        var cloud = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-        cloud.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#cloud' + cloudIllustration);
-
-        var x = self.randomIntFromInterval(0, self.svgWidth);
-        var y = self.randomIntFromInterval(0, self.svgHeight);
-
-        self.setAttributes(cloud, {
-            'transform': 'translate({0} {1}) scale(.5)'.format(x, y),
-            'style': 'fill: #fff; filter:url(#dropshadow);'
-        });
-
-        return cloud;
-    };
-
-    self.createStar = function() {
-        var star = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-        star.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#star');
-
-        var x = self.randomIntFromInterval(0, self.svgWidth);
-        var y = self.randomIntFromInterval(0, self.svgHeight);
-        var deg = self.randomIntFromInterval(0, 360);
-
-        var weightedScale = Math.pow(Math.random(), .3);
-        var weightedOpacity = Math.pow(Math.random(), .3) - .1;
-
-        self.setAttributes(star, {
-            'transform': 'translate({0} {1}) rotate({2}) scale({3})'.format(x, y, deg, weightedScale),
-            'style': 'opacity: {0}; fill: #fff;'.format(weightedOpacity)
-        });
-
-        return star;
+        return sides[Math.floor(Math.random()*sides.length)];
     };
 
     // Helper functions
