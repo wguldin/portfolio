@@ -9,27 +9,27 @@
                 <header class="c-header">
                     {% assign active = page.url | downcase | split: '/' %}
 
-                    <nav class="c-nav col_lg_6-col_lg_7">
-                        <ul class="u-list-unstyled">
+                    <nav class="c-nav col-l5-col-l6">
+                        <ul class="u-list-unstyled u-text-right">
                             <li class="c-nav__item {% if active[2] == '' %}c-nav__item--active{% endif %}">
-                                <a href="/">
+                                <a href="/" class="c-nav__link">
                                     Writing
                                 </a>
                             </li>
                             <li class="c-nav__item {% if active[2] == 'work' %}c-nav__item--active{% endif %}">
-                                <a href="/work">
+                                <a href="/work" class="c-nav__link">
                                     Work
                                 </a>
                             </li>
                             <li class="c-nav__item {% if active[2] == 'about' %}c-nav__item--active{% endif %}">
-                                <a href="/about">
+                                <a href="/about" class="c-nav__link">
                                     Will
                                 </a>
                             </li>
                         </ul>
                     </nav>
 
-                    <div class="c-header__h-group col_lg_2-col_lg_5">
+                    <div class="c-header__h-group col-l2-col-l5 col-l-overlap">
                         <h1 class="c-header__title">
                             Will Guldin
                         </h1>

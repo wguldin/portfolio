@@ -1,3 +1,38 @@
 .c-nav {
     float: right;
+    position: relative;
+}
+
+.c-nav__item {
+    border: 1px solid $color-yellow-030;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    min-height: 4.3em;
+    min-width: 4.3em;
+    font-size: .9em;
+    text-align: center;
+    line-height: 4.3;
+    margin-right: .9em;
+
+    &::before {
+        background: $color-blue-075;
+        border-radius: 5px;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        opacity: .8;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.c-nav__link {
+    color: $color-yellow-030;
+    padding: 0 .5em;
+    position: relative;
+    z-index: 1;
 }
