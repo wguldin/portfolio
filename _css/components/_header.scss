@@ -39,7 +39,8 @@
     left: 0;
     z-index: 0;
 
-    line {
+    path {
         stroke: rgba($color-blue-010, .45);
+        stroke-width: 1px;
     }
 }

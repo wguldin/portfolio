@@ -1,3 +1,5 @@
+/* global SVG */
+
 var headerGraphic = (function() {
     var self = {};
 
@@ -17,18 +19,20 @@ var headerGraphic = (function() {
     self.lineCount = 36;
 
     self.createGraphic = function() {
-        for (var i = 0; i < self.lineCount; i++) {
-            var line = self.createLine();
+        var graphic = SVG('header-illustration');
 
-            self.svg.appendChild(line);
+        for (var i = 0; i < self.lineCount; i++) {
+            self.createLine(graphic);
         }
     };
 
-    self.createLine = function() {
-        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        self.setAttributes(line, self.setLineCoordinates());
+    self.createLine = function(graphic) {
+        var coord = self.setLineCoordinates();
+        var weightedOpacity = Math.pow(Math.random(), .25) - .1;
 
-        return line;
+        var line = graphic.path().M({x: coord['x1'], y: coord['y1']}).L({x: coord['x2'], y: coord['y2']}).drawAnimated();
+
+        line.attr({'style': 'opacity: {0}'.format(weightedOpacity)});
     };
 
     self.setLineCoordinates = function() {
@@ -38,14 +42,11 @@ var headerGraphic = (function() {
         var finalSide = self.selectSide(startSide);
         var finalPoint = self.selectPoint(finalSide);
 
-        var weightedOpacity = Math.pow(Math.random(), .25) - .1;
-
         return {
             'x1': startPoint['x'],
             'y1': startPoint['y'],
             'x2': finalPoint['x'],
-            'y2': finalPoint['y'],
-            'style': 'opacity: {0}'.format(weightedOpacity)
+            'y2': finalPoint['y']
         };
     };
 
