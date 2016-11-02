@@ -27,10 +27,16 @@ var headerGraphic = (function() {
     };
 
     self.createLine = function(graphic) {
-        var coord = self.setLineCoordinates();
+        var coords = self.setLineCoordinates();
+
+        // Favor higher opacity values, so most lines show up.
         var weightedOpacity = Math.pow(Math.random(), .25) - .1;
 
-        var line = graphic.path().M({x: coord['x1'], y: coord['y1']}).L({x: coord['x2'], y: coord['y2']}).drawAnimated();
+        // Set animation speed relative to distance.
+        var distance = self.getDistance(coords);
+        var speed = distance/2;
+
+        var line = graphic.path().M({x: coords['x1'], y: coords['y1']}).L({x: coords['x2'], y: coords['y2']}).drawAnimated({duration: speed});
 
         line.attr({'style': 'opacity: {0}'.format(weightedOpacity)});
     };
@@ -48,6 +54,15 @@ var headerGraphic = (function() {
             'x2': finalPoint['x'],
             'y2': finalPoint['y']
         };
+    };
+
+    self.getDistance = function(coords) {
+        var a = coords['x1'] - coords['x2'];
+        var b = coords['y1'] - coords['y2'];
+
+        var c = Math.sqrt( a*a + b*b );
+
+        return c;
     };
 
     self.selectPoint = function(side) {
