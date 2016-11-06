@@ -3,36 +3,99 @@
     position: relative;
 }
 
-.c-nav__item {
-    border: 1px solid $color-yellow-030;
+.c-nav__list {
+    background-color: transparent;
     border-radius: 4px;
-    display: inline-block;
+    border: 1px solid darken($color-yellow-020, 3%);
+    text-align: right;
+    z-index: 1;
     position: relative;
-    width: auto;
-    min-height: 4.3em;
-    min-width: 4.3em;
-    font-size: .9em;
-    text-align: center;
-    line-height: 4.3;
-    margin-right: .9em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 7em;
+    height: 7em;
+    float: right;
+}
 
-    &::before {
-        background: $color-blue-075;
-        border-radius: 5px;
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        opacity: .8;
-        width: 100%;
-        z-index: 1;
+.c-nav__item {
+    color: $color-yellow-020;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 0;
+    font-size: .6em;
+    font-weight: bold;
+    overflow: hidden;
+
+    // Re-arrange order with logo.
+    &:nth-child(1) {
+        order: 1;
+        border-bottom-right-radius: 4px;
+    }
+
+    &:nth-child(2) {
+        order: 3;
+        border-top-right-radius: 4px;
+    }
+
+    &:nth-child(3) {
+        order: 4;
+        border-top-left-radius: 4px;
+    }
+
+    &:before {
+        content: none;
+    }
+
+    a {
+        color: darken($color-yellow-020, 3%);
     }
 }
 
+.c-nav__item--active {
+    background-color: darken($color-yellow-020, 3%);
+
+    .c-nav__link {
+        color: $color-blue-075;
+    }
+
+    .c-nav__list:hover & {
+        background-color: transparent;
+
+        .c-nav__link {
+            color: darken($color-yellow-020, 3%);
+        }
+    }
+
+    .c-nav__list:hover &:hover {
+        background-color: darken($color-yellow-020, 3%);
+
+        .c-nav__link {
+            color: $color-blue-075;
+        }
+    }
+}
+
+.c-nav__item--initials {
+    order: 1;
+    font-weight: normal;
+    font-size: 1em;
+    border-top-right-radius: 4px;
+}
+
 .c-nav__link {
-    color: $color-yellow-030;
-    padding: 0 .5em;
-    position: relative;
-    z-index: 1;
+    color: darken($color-yellow-020, 3%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: color 100ms ease-in 20ms, background-color 100ms ease-in 20ms;
+
+    &:hover {
+        background-color: darken($color-yellow-020, 3%);
+        color: $color-blue-075;
+    }
 }

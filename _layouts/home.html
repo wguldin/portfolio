@@ -7,24 +7,28 @@
         <div class="home">
             <div class="wrapper">
                 <header class="c-header">
-                    {% assign active = page.url | downcase | split: '/' %}
+                    {% assign active = page.url %}
 
                     <nav class="c-nav col-l5-col-l6">
-                        <ul class="u-list-unstyled u-text-right">
-                            <li class="c-nav__item {% if active[2] == '' %}c-nav__item--active{% endif %}">
+
+                        <ul class="u-list-unstyled c-nav__list">
+                            <li class="c-nav__item {% if active == '/' %}c-nav__item--active{% endif %}">
                                 <a href="/" class="c-nav__link">
                                     Writing
                                 </a>
                             </li>
-                            <li class="c-nav__item {% if active[2] == 'work' %}c-nav__item--active{% endif %}">
+                            <li class="c-nav__item {% if active == '/work' %}c-nav__item--active{% endif %}">
                                 <a href="/work" class="c-nav__link">
                                     Work
                                 </a>
                             </li>
-                            <li class="c-nav__item {% if active[2] == 'about' %}c-nav__item--active{% endif %}">
+                            <li class="c-nav__item {% if active == '/about' %}c-nav__item--active{% endif %}">
                                 <a href="/about" class="c-nav__link">
                                     Will
                                 </a>
+                            </li>
+                            <li class="c-nav__item c-nav__item--initials" role="presentation">
+                                WG
                             </li>
                         </ul>
                     </nav>
