@@ -1,24 +1,7 @@
-$color-white: #f6f5f3;
-
-// Night colors
-$color-yellow-020: #fff8d7;
-$color-yellow-010: lighten($color-yellow-020, 2.5%);
-$color-yellow-030: darken($color-yellow-020, 8%);
-$color-yellow-040: darken($color-yellow-020, 16%);
-
-$color-blue-010: #8aa3f6;
-$color-blue-025: #6883c3;
-$color-blue-050: #38518d;
-$color-blue-075: #252d48;
-
-
-// Day colors
-$color-gold-070: #ffc861;
-$color-green-010: #ebfbe0;
-$color-green-020: lighten(#a5de7f, 10%);
-$color-green-050: #42826c;
-$color-green-080: lighten(#002f32, 5%);
-$color-green-100: darken(#002f32, 2%);
+$color-purple-000: #ECE7FF;
+$color-purple-050: #6036FF;
+$color-purple-075: #0F0438;
+$color-purple-100: #03000F;
 
 $border-radius: 3px;
 

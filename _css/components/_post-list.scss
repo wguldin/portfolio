@@ -5,7 +5,6 @@
 .c-post-list__item {
     list-style-type: none;
     padding: 3em 1em;
-    border-bottom: 7px solid rgba($color-blue-025, .9);
     position: relative;
 
     &:before {
@@ -13,9 +12,6 @@
         left: 0;
     }
 
-    &:first-child {
-        border-top: 7px solid rgba($color-blue-025, .9);
-    }
 }
 
 .c-post-list__link {
@@ -25,7 +21,6 @@
     font-weight: normal;
     padding: 0;
     background-image: none;
-    color: $color-blue-050;
     cursor: pointer;
     text-decoration: none;
     transition: color 150ms $swift-out;
@@ -38,13 +33,11 @@
         right: 0;
         bottom: 0;
         opacity: 0;
-        background: $color-blue-075;
         transition: opacity 150ms ease-in 50ms;
         z-index: -1;
     }
 
     &:hover, &:focus {
-        color: $color-yellow-030;
         outline: none;
 
         &:before {

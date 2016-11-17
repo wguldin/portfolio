@@ -1,13 +1,8 @@
-.l-content__wrapper {
-    padding: 2em 0;
-    background-color: lighten($color-yellow-020, 2.5%);
+.l-site {
+    padding: 0 4%;
 }
 
-.l-content {
-    max-width: 38em;
-    font-size: 1em;
-    margin: 0 auto;
-    z-index: 1;
-    position: relative;
-    padding-top: 0;
+.l-nav {
+    padding-top: 8%;
+    float: right;
 }

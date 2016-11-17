@@ -12,7 +12,7 @@ dl, dd, ol, ul, figure {
 
 // Basic Styling
 body {
-    font-family: "cooper-hewitt", $system-stack;
+    font-family: "PT Sans", sans-serif;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     font-size: 1rem;
@@ -21,24 +21,24 @@ body {
     margin: 0;
     text-size-adjust: 100%;
     overflow-x: hidden;
+    position: relative;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    color: $color-purple-000;
+    background-image: linear-gradient(to bottom, $color-purple-075, $color-purple-100);
 }
 
 ::selection {
     text-shadow: none;
     background: #B4D5FE;
-
-    color: $color-blue-075;
 }
 
 // seperate rule needed for firefox.
 ::-moz-selection {
     text-shadow: none;
     background: #B4D5FE;
-
-    color: $color-blue-075;
 }
 
 html {
@@ -52,12 +52,19 @@ html {
 a {
     display: inline;
     text-decoration: none;
-    transition: 85ms color ease-in 15ms;
+    transition: color 120ms ease-in, background-position 120ms ease-in;
+    color: $color-purple-050;
 
     // Underline
-    background-position: 0 .9em;
+    background-position: 0 .95em;
     background-repeat: repeat-x;
     background-size: 1px 1px;
+    background-image: linear-gradient(to bottom, $color-purple-050, $color-purple-050);
+
+    &:hover {
+        color: $color-purple-050;
+        background-position: 0 .8em;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,15 +105,6 @@ h6, .h6 {
 ul {
     margin-bottom: 1.2em;
     margin-left: 1em;
-    list-style-type: none;
-}
-
-li {
-    &::before {
-        content: "\2013";
-        position: relative;
-        left: -.5em;
-    }
 }
 
 p {

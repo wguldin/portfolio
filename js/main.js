@@ -1,9 +1,9 @@
 /* global SVG */
 
-var headerGraphic = (function() {
+var graphic = (function() {
     var self = {};
 
-    self.svg = document.getElementById('header-illustration');
+    self.svg = document.getElementById('illustration');
 
     self.init = function() {
         if(self.svg) {
@@ -16,10 +16,10 @@ var headerGraphic = (function() {
         }
     };
 
-    self.lineCount = 36;
+    self.lineCount = 48;
 
     self.createGraphic = function() {
-        var graphic = SVG('header-illustration');
+        var graphic = SVG('illustration');
 
         for (var i = 0; i < self.lineCount; i++) {
             self.createLine(graphic);
@@ -171,5 +171,5 @@ var headerGraphic = (function() {
 })();
 
 (function() {
-    headerGraphic.init();
+    graphic.init();
 })();

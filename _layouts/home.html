@@ -3,13 +3,51 @@
 
     {% include head.html %}
 
-    <body>
+    <body class="l-site">
+        <svg class="c-illustration" id="illustration"></svg>
+
         <div class="home">
             <div class="wrapper">
                 <header class="c-header">
+                    {% for post in site.posts %}
+                        {% if forloop.index == 1 %}
+                            <div class="c-header__background">
+                                <span class="c-header__label">Post N<span class="u-underline-flourish">o</span></span>
+                                <span class="c-header__number">{{forloop.index}}</span>
+                            </div>
+
+                            <div class="c-nav">
+                                <h2 class="c-nav__title">Will Guldin</h2>
+
+                                <div class="c-nav__description">
+                                    <p>UI/UX Designer at <a href="http://britecore.com/">BriteCore</a></p>
+                                    <p>
+                                        I write about simple ideas to help design complex apps.
+                                    </p>
+                                    <nav>
+                                        <ul class="u-list-unstyled c-nav__list">
+                                            <li class="c-nav__list-item"><a href="/">Writing</a></li>
+                                            <li class="c-nav__list-item"><a href="/work">Work</a></li>
+                                            <li class="c-nav__list-item"><a href="/about">About</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="c-header__h-group">
+                                <h1 class="c-header__title">{{ post.title }}</h1>
+                                <p class="c-header__subhead">
+                                    Short subheader here and here and here, maybe two lines
+                                </p>
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+
+
                     {% assign active = page.url %}
 
-                    <nav class="c-nav col-l5-col-l6">
+                    <!-- <nav class="c-nav col-l5-col-l6">
 
                         <ul class="u-list-unstyled c-nav__list">
                             <li class="c-nav__item {% if active == '/' %}c-nav__item--active{% endif %}">
@@ -42,20 +80,12 @@
                         <p class="c-header__description">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
                         </p>
-                    </div>
-
-                    <svg class="c-header__illustration" id="header-illustration"></svg>
+                    </div>-->
                 </header>
 
-                <div class="l-content__wrapper">
-                    <div class="l-content">
-                        {{ content }}
-                    </div>
-                </div>
+                {{ content }}
             </div>
         </div>
-
-        {% include footer.html %}
 
         <!-- TODO: get 'portfolio' out of link -->
         <script src="/portfolio/js/svg.min.js"></script>
