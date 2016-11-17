@@ -1,6 +1,6 @@
 .l-content__wrapper {
     padding: 2em 0;
-    background-color: $color-yellow-020;
+    background-color: lighten($color-yellow-020, 2.5%);
 }
 
 .l-content {
@@ -9,6 +9,5 @@
     margin: 0 auto;
     z-index: 1;
     position: relative;
-
     padding-top: 0;
 }

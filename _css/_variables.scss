@@ -2,8 +2,9 @@ $color-white: #f6f5f3;
 
 // Night colors
 $color-yellow-020: #fff8d7;
-$color-yellow-030: darken(#fff8d7, 8%);
-$color-yellow-040: darken(#fff8d7, 16%);
+$color-yellow-010: lighten($color-yellow-020, 2.5%);
+$color-yellow-030: darken($color-yellow-020, 8%);
+$color-yellow-040: darken($color-yellow-020, 16%);
 
 $color-blue-010: #8aa3f6;
 $color-blue-025: #6883c3;
@@ -20,6 +21,8 @@ $color-green-080: lighten(#002f32, 5%);
 $color-green-100: darken(#002f32, 2%);
 
 $border-radius: 3px;
+
+$swift-out: cubic-bezier(.55, 0, .1, 1);
 
 $system-stack: -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto,Oxygen, Ubuntu,Cantarell,

@@ -36,7 +36,7 @@ var headerGraphic = (function() {
         var distance = self.getDistance(coords);
         var speed = distance/2;
 
-        var line = graphic.path().M({x: coords['x1'], y: coords['y1']}).L({x: coords['x2'], y: coords['y2']}).drawAnimated({duration: speed});
+        var line = graphic.path().M({x: coords['x1'], y: coords['y1']}).L({x: coords['x2'], y: coords['y2']}).drawAnimated({duration: speed, delay: 200});
 
         line.attr({'style': 'opacity: {0}'.format(weightedOpacity)});
     };
