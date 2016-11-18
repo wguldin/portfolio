@@ -10,13 +10,15 @@ layout: home
                 <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
                     <span class="c-post-list__meta">{{ post.date | date: "%m . %d . %y" }}</span>
 
-                    <h2 class="c-post-list__title">
-                        {{ post.title }}
-                    </h2>
+                    <div class="c-post-list__content">
+                        <h2 class="c-post-list__title">
+                            {{ post.title }}
+                        </h2>
 
-                    <p class="mb0">
-                        {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
-                    </p>
+                        <p class="c-post-list__subhead">
+                            {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+                        </p>
+                    </div>
                 </a>
             </li>
         {% endif %}

@@ -47,6 +47,9 @@
 
 .c-header__label {
     float: left;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    position: relative;
+    left: .5em;
+    top: .5em;
     color: rgba($color-purple-000, .2);
 }
