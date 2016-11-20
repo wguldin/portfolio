@@ -3,22 +3,10 @@
 
     {% include head.html %}
 
-    <body>
-        <div class="o-page__wrapper">
-            <div class="wrapper">
-                <header class="c-header">
-                    <svg class="c-header__illustration" id="header-illustration"></svg>
-                </header>
+    <body class="l-site">
+        <svg class="c-illustration" id="illustration"></svg>
 
-                <div class="l-content__wrapper">
-                    <div class="l-content">
-                        {{ content }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {% include footer.html %}
+        {{ content }}
 
         <!-- TODO: get 'portfolio' out of link -->
         <script src="/portfolio/js/svg.min.js"></script>

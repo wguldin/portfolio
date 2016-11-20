@@ -6,85 +6,46 @@
     <body class="l-site">
         <svg class="c-illustration" id="illustration"></svg>
 
-        <div class="home">
-            <div class="wrapper">
-                <header class="c-header">
-                    {% for post in site.posts %}
-                        {% if forloop.index == 1 %}
-                            <div class="c-nav">
-                                <h2 class="c-nav__title">Will Guldin</h2>
+        <header class="c-header">
+            {% for post in site.posts %}
+                {% if forloop.index == 1 %}
+                    <div class="c-nav">
+                        <h2 class="c-nav__title">Will Guldin</h2>
 
-                                <div class="c-nav__description">
-                                    <p>UI/UX Designer at <a href="http://britecore.com/">BriteCore</a></p>
-                                    <p>
-                                        I write about simple ideas to help design complex apps.
-                                    </p>
-                                    <nav>
-                                        <ul class="u-list-unstyled c-nav__list">
-                                            <li class="c-nav__list-item"><a href="/">Writing</a></li>
-                                            <li class="c-nav__list-item"><a href="/work">Work</a></li>
-                                            <li class="c-nav__list-item"><a href="/about">About</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                        <div class="c-nav__description">
+                            <p>UI/UX Designer at <a href="http://britecore.com/">BriteCore</a></p>
+                            <p>
+                                I write about simple ideas to help design complex apps.
+                            </p>
+                            <nav>
+                                <ul class="u-list-unstyled c-nav__list">
+                                    <li class="c-nav__list-item"><a href="/">Writing</a></li>
+                                    <li class="c-nav__list-item"><a href="/work">Work</a></li>
+                                    <li class="c-nav__list-item"><a href="/about">About</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
 
-                            <a href="{{ post.url | prepend: site.baseurl }}" class="c-header__h-group">
-                                <h1 class="c-header__title">{{ post.title }}</h1>
-                                <p class="c-header__subhead">
-                                    Short subheader here and here and here, maybe two lines
-                                </p>
-                            </a>
-
-                            <div class="c-header__background">
-                                <span class="c-header__label">Post #</span>
-                                <span class="c-header__number">{{forloop.index}}</span>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-
-
-                    {% assign active = page.url %}
-
-                    <!-- <nav class="c-nav col-l5-col-l6">
-
-                        <ul class="u-list-unstyled c-nav__list">
-                            <li class="c-nav__item {% if active == '/' %}c-nav__item--active{% endif %}">
-                                <a href="/" class="c-nav__link">
-                                    Writing
-                                </a>
-                            </li>
-                            <li class="c-nav__item {% if active == '/work' %}c-nav__item--active{% endif %}">
-                                <a href="/work" class="c-nav__link">
-                                    Work
-                                </a>
-                            </li>
-                            <li class="c-nav__item {% if active == '/about' %}c-nav__item--active{% endif %}">
-                                <a href="/about" class="c-nav__link">
-                                    About
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div class="c-header__h-group col-l2-col-l5 col-l-overlap">
-                        <h1 class="c-header__title">
-                            Will Guldin
-                        </h1>
-
-                        <h2 class="c-header__subhead">
-                            UX/UI Designer &amp; Front-End Developer
-                        </h2>
-
-                        <p class="c-header__description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="c-header__h-group">
+                        <h1 class="c-header__title">{{ post.title }}</h1>
+                        <p class="c-header__subhead">
+                            Short subheader here and here and here, maybe two lines
                         </p>
-                    </div>-->
-                </header>
+                    </a>
 
-                {{ content }}
-            </div>
-        </div>
+                    <div class="c-header__background">
+                        <span class="c-header__label">Post #</span>
+                        <span class="c-header__number">{{forloop.index}}</span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+
+            {% assign active = page.url %}
+        </header>
+
+        {{ content }}
 
         <!-- TODO: get 'portfolio' out of link -->
         <script src="/portfolio/js/svg.min.js"></script>
