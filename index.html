@@ -5,7 +5,7 @@ layout: home
 <div class="home">
     <ul class="c-post-list">
     {% for post in site.posts %}
-        {% if forloop.index != 0 %}
+        {% if forloop.index != 1 %}
             <li class="c-post-list__item">
                 <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
                     <span class="c-post-list__meta">{{ post.date | date: "%m . %d . %y" }}</span>

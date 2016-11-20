@@ -1,55 +1,101 @@
 .c-header {
     position: relative;
-    height: 75vh;
+
+    @media (min-width: 42em) {
+        height: 75vh;
+    }
 }
 
 .c-header__h-group {
-    height: 100vh;
-    width: 64vw;
-    padding: 4% 0 0 4%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    margin-top: 1.2em;
+    background-image: none;
+    padding: 19% 0 5% 19.5%;
 
+    @media (min-width: 42em) {
+        height: 100vh;
+        width: 64vw;
+        padding: 0 0 0 5.7%;
+    }
+
+    &:hover ~ .c-header__background {
+        .c-header__number {
+            color: rgba($color-purple-000, .23);
+        }
+
+        .c-header__label {
+            color: rgba($color-purple-000, .3);
+        }
+    }
 }
 
 .c-header__title {
-    font-size: 2.6em;
     line-height: 1.5;
     font-weight: 400;
     margin: 0;
     color: $color-purple-050;
     font-family: "league-spartan";
+    font-size: 1.6em;
+
+    @media (min-width: 32em) {
+        font-size: 1.8em;
+    }
+
+    @media (min-width: 42em) {
+        font-size: 2.6em;
+    }
 }
 
 .c-header__subhead {
     margin-top: .5em;
     font-size: 1.2em;
     font-family: "cooper-hewitt-light";
+    color: $color-purple-000;
 }
 
 .c-header__background {
     font-family: "cooper-hewitt-light";
     position: absolute;
     z-index: 1;
-    top: 4%;
     user-select: none;
     pointer-events: none;
+    top: 10em;
+
+    @media (min-width: 42em) {
+        top: 0;
+    }
+}
+
+.c-header__number, .c-header__label {
+    position: absolute;
+    transition: color 150ms ease-in;
+
 }
 
 .c-header__number {
-    font-size: 100vh;
-    float: left;
-    padding-left: 8%;
+    font-size: 78vw;
     line-height: 1;
     color: rgba($color-purple-000, .15);
+
+    @media (min-width: 36em) {
+        font-size: 100vh;
+        left: 8vw;
+        top: 4vh;
+    }
 }
 
 .c-header__label {
-    float: left;
-    font-size: 1.5em;
-    position: relative;
-    left: .5em;
-    top: .5em;
+    font-size: 1.2em;
     color: rgba($color-purple-000, .2);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align: right;
+    white-space: nowrap;
+
+    @media (min-width: 42em) {
+        font-size: 1.4em;
+    }
 }

@@ -5,17 +5,24 @@
     font-family: "cooper-hewitt-book";
     text-align: right;
     margin-top: 5%;
-    max-width: 25%;
+
+    @media (min-width: 42em) {
+        max-width: 25%;
+    }
 }
 
 .c-nav__title {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 0;
+
+    @media  (min-width: 36em) {
+        font-size: 1.2em;
+    }
 }
 
 .c-nav__description {
     margin: .2em 0 0;
-    font-size: .8em;
+    font-size: .7em;
 }
 
 .c-nav__list {

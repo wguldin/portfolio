@@ -11,11 +11,6 @@
                 <header class="c-header">
                     {% for post in site.posts %}
                         {% if forloop.index == 1 %}
-                            <div class="c-header__background">
-                                <span class="c-header__label">Post N<span class="u-underline-flourish">o</span></span>
-                                <span class="c-header__number">{{forloop.index}}</span>
-                            </div>
-
                             <div class="c-nav">
                                 <h2 class="c-nav__title">Will Guldin</h2>
 
@@ -34,13 +29,17 @@
                                 </div>
                             </div>
 
-                            <div class="c-header__h-group">
+                            <a href="{{ post.url | prepend: site.baseurl }}" class="c-header__h-group">
                                 <h1 class="c-header__title">{{ post.title }}</h1>
                                 <p class="c-header__subhead">
                                     Short subheader here and here and here, maybe two lines
                                 </p>
-                            </div>
+                            </a>
 
+                            <div class="c-header__background">
+                                <span class="c-header__label">Post #</span>
+                                <span class="c-header__number">{{forloop.index}}</span>
+                            </div>
                         {% endif %}
                     {% endfor %}
 

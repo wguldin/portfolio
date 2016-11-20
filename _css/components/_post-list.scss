@@ -1,5 +1,7 @@
 .c-post-list {
-    margin: 6em 0 0 0;
+    @media (min-width: 42em) {
+        margin: 6em 0 0 0;
+    }
 }
 
 .c-post-list__item {
@@ -27,8 +29,18 @@
     text-align: right;
     color: rgba($color-purple-000, .2);
     font-family: "cooper-hewitt-light";
-    font-size: 1.4em;
-    margin-right: 2%;
+    font-size: 1.2em;
+    padding-left: 2%;
+
+    transition: color 150ms ease-in;
+
+    .c-post-list__link:hover & {
+        color: rgba($color-purple-000, .4);
+    }
+
+    @media (min-width: 36em) {
+        font-size: 1.4em;
+    }
 }
 
 .c-post-list__content {
@@ -61,11 +73,17 @@
 
 .c-post-list__title {
     margin-top: 0;
+    font-family: "league-spartan";
+    font-size: 1.5em;
 }
 
 .c-post-list__subhead {
     margin-top: 0;
     color: $color-purple-000;
     font-family: "cooper-hewitt-light";
-    font-size: 1.2em;
+    font-size: 1em;
+
+    @media (min-width: 36em) {
+        font-size: 1.2em;
+    }
 }
