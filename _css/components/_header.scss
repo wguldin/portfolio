@@ -62,9 +62,11 @@
     user-select: none;
     pointer-events: none;
     top: 10em;
+    left: 1em;
 
     @media (min-width: 42em) {
         top: 1.2em;
+        left: 0;
     }
 }
 
@@ -75,12 +77,12 @@
 }
 
 .c-header__number {
-    font-size: 8em;
+    font-size: 12em;
     line-height: 1;
     color: rgba($color-purple-000, .15);
-    left: 8.5vw;
+    left: 10vw;
 
-    @media (min-width: 36em) {
+    @media (min-width: 42em) {
         font-size: 100vh;
         left: 8vw;
         top: 4vh;

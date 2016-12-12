@@ -1,6 +1,4 @@
 .c-post {
-    margin-top: 1em;
-
     @media (min-width: 42em) {
         padding-top: 5.5%;
         display: flex;
@@ -49,6 +47,19 @@
 
     @media (min-width: 42em) {
         margin-left: 2em;
+    }
+}
+
+.c-post__image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    img {
+        max-width: 100%;
     }
 }
 

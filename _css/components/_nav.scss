@@ -4,7 +4,7 @@
     padding-right: 2%;
     font-family: "cooper-hewitt-book";
     text-align: right;
-    margin-top: 5%;
+    margin: 5% 0 7.5%;
 
     @media (min-width: 42em) {
         max-width: 25%;
@@ -21,12 +21,21 @@
 }
 
 .c-nav__description {
-    margin: .2em 0 0;
+    margin: .5em 0 0;
     font-size: .7em;
+
+    p {
+        display: inline;
+
+        @media (min-width: 42em) {
+            display: block;
+        }
+    }
 }
 
 .c-nav__list {
     width: 100%;
+    margin: 1em 0 0 0;
 }
 
 .c-nav__list-item {

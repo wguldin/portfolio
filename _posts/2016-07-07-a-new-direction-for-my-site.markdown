@@ -16,6 +16,8 @@ After moving a year ago for my wife's job, I joined BriteCore, a web-based appli
 
 Moving from that, and creating a new design system, has been really rewarding. When you're the only person working on a design, it's tough to avoid working in a vacuum. Our CEO, Phil, has a visual background, so he's been a big help with that. But I also try to hold myself accountable. One simple way is with a set of folded over post-it notes that have a few simple tenets on them.
 
+{% include image.html name="motivational-post-its.jpg" caption="These are a constant reminder to push myself." %}
+
 * Don't Settle
 * Be Original
 * Sketch!!
