@@ -9,23 +9,7 @@
         <header class="c-header">
             {% for post in site.posts %}
                 {% if forloop.index == 1 %}
-                    <div class="c-nav">
-                        <h2 class="c-nav__title">Will Guldin</h2>
-
-                        <div class="c-nav__description">
-                            <p>UI/UX Designer at <a href="http://britecore.com/">BriteCore</a>.</p>
-                            <p>
-                                I write about simple ideas to help design complex apps.
-                            </p>
-                            <nav>
-                                <ul class="u-list-unstyled c-nav__list">
-                                    <li class="c-nav__list-item"><a href="/">Writing</a></li>
-                                    <li class="c-nav__list-item"><a href="/work">Work</a></li>
-                                    <li class="c-nav__list-item"><a href="/about">About</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                    {% include nav.html %}
 
                     <a href="{{ post.url | prepend: site.baseurl }}" class="c-header__h-group">
                         <h1 class="c-header__title">{{ post.title }}</h1>
