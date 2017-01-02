@@ -4,19 +4,15 @@ title: "A new direction for my site"
 date: "2016-07-07 20:21:52 -0500"
 ---
 
-A blog, for me, has always been like a New Year's resolution. A couple of times before, I got excited about the idea, and even wrote up a few posts. But over time, my enthusiasm fizzled. It was hard because I felt like what I was writing about was already being said, in a much better way, by other talented web designers and developers.
+A blog, for me, has always been like a New Year's resolution. A couple of times before, I got excited about the idea, and even wrote up a few posts. But over time, my enthusiasm fizzled.
 
-That's changed a little bit over the past year. After moving, my new job has given me a different perspective on web design.
+It was hard because I felt like what I was writing about was already being said, in a much better way, by more talented web designers and developers.
 
-## All web things are not the same
+## A Fresh Perspective
 
-My last job was at a pretty typical internet retailer, which sold outdoor equipment and sporting goods. I am proud of what we accomplished there, but what we were doing had been written about and researched heavily.
+This began to change when I came to BriteCore. Before this, I worked as a web designer for a typical online retailer. Moving from that, to a web app used by insurance companies, has presented me with a whole new set of challenges.
 
-After moving a year ago for my wife's job, I joined BriteCore, a web-based application used by insurance companies. BriteCore, on the backend, is cutting edge. We do some awesome stuff with Python and AWS, but I was hired to overhaul its design. BriteCore had been without a designer for several years, and it's older pages needed to be reworked. There were usability issues, pages weren't responsive, and the HTML & CSS behind it all was showing its age.
-
-Moving from that, and creating a new design system, has been really rewarding. When you're the only person working on a design, it's tough to avoid working in a vacuum. Our CEO, Phil, has a visual background, so he's been a big help with that. But I also try to hold myself accountable. One simple way is with a set of folded over post-it notes that have a few simple tenets on them.
-
-{% include image.html name="motivational-post-its.jpg" caption="These notes are a constant reminder to push myself." %}
+Most days, I work from home, and I found it's important to stay motivated and be accountable to myself, even though I'm not in an office every day. To help with this, I wrote down a few key things I've learned on folded-over post it notes.
 
 * Don't Settle
 * Be Original
@@ -24,8 +20,18 @@ Moving from that, and creating a new design system, has been really rewarding. W
 * Solve Problems
 * App ≠ Web
 
-I set these up on my desk at home (I work remote most of the time) and try to look at them whenever I feel like I need to push myself harder. It's that last point that's really surprised me most. Coming from my background, I thought working on BriteCore would be like working on any other website. And there are a lot of similarities, but there's some important differences I didn't grasp at first. Instead of visiting a few times a month, people use your product daily, for hours at a time. And instead of just consuming information, users are often creating and updating a lot of it, too. That also often means many of the workflows in our app aren't as straightforward as the traditional checkout process ... or business brochure.
+I set these up on my desk at home and try to look at them whenever I feel like I need to push myself harder.
 
-Don't get me wrong, every website has sections where these things are true, like the area in Etsy where someone can manage their shop. But at BriteCore, understanding these things is key to me knowing what I need to do to create an effective design that solves our users' problems.
+{% include image.html name="motivational-post-its.jpg" caption="These notes are a constant reminder to push myself." %}
 
-That perspective is what I want to share with you, and I'm looking forward learning even more myself. Who knows, maybe this will be like a New Years resolution that sticks around past February.
+## All web things are not the same
+
+The last point has surprised the most about this job. Coming from my background, I thought working on BriteCore would be like working on a more traditional website. And while there are similarities, there's important differences too.
+
+* People using BriteCore typically work in it most of the day.
+* They end up doing a lot of data entry.
+* There's a variety of workflows, client setups and edge cases.
+
+Of course, every website has sections where these things are true, like the area in Etsy where someone can manage their shop. But at BriteCore, understanding these things is central to me knowing what I need to do to create an effective design that solves our users' problems.
+
+My new perspective on web app design is what I want to share with you, I'm looking forward to learning even more myself as I write about what we're doing. Who knows, maybe this will be like a New Years resolution that sticks around past February.
