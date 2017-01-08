@@ -44,6 +44,15 @@
     list-style-type: none;
 }
 
+.u-fade {
+    opacity: 1;
+    transition: opacity 10000ms ease-in;
+}
+
+.u-fade--out {
+    opacity: 0;
+}
+
 // ========================================================
 // Spacing utility classes
 // Taken from Basscss framework
