@@ -1,6 +1,96 @@
 /* global SVG */
 
-var graphic = (function() {
+// Declutter global namespace
+var folio = {
+    ajax: {},
+    graphic: {},
+    utils: {}
+};
+
+folio.ajax = (function() {
+    var self = {};
+
+    self.init = function() {
+        var siteUrl = 'http://'+(document.location.hostname||document.location.host);
+
+        self.pushState(siteUrl); // Init history tracking.
+        self.bindClickListener(siteUrl);
+        self.bindHistoryListener();
+    };
+
+    self.pushState = function(pageURL) {
+        history.pushState({url: pageURL}, '', pageURL); // Init history tracking
+    };
+
+    self.bindClickListener = function(siteUrl) {
+        var links = document.querySelectorAll('a[href^="/"], a[href^="'+siteUrl+'"]');
+
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                var linkURL = link.pathname;
+
+                self.pushState(linkURL);
+                self.loadPartial(linkURL);
+            });
+        }
+    };
+
+    self.bindHistoryListener = function() {
+        window.onpopstate = function(e) {
+            self.loadPartial(e.url);
+        };
+    };
+
+    self.loadPartial = function(url) {
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+
+        request.onload = function(data) {
+            if (request.status >= 200 && request.status < 400) {
+                var tempEl = document.createElement('html');
+
+                // Parse the response as html
+                tempEl.innerHTML = data.target.response;
+
+                var pageDom = tempEl;
+
+                // Get the inner contents
+                var innerPageDom = pageDom.querySelectorAll('#main')[0].innerHTML;
+
+                // Update Title
+                var pageTitle = pageDom.getElementsByTagName('title')[0].textContent;
+                document.title = pageTitle;
+
+                // Update Contents
+                var pageContent = document.getElementById('main');
+                pageContent.innerHTML = innerPageDom;
+
+                // Rebind links
+                self.bindClickListener();
+
+                // _gaq.push(['_trackPageview', State.url]);
+            } else {
+                // We reached our target server, but it returned an error
+                console.log('error');
+            }
+        };
+
+        request.onerror = function() {
+            // There was a connection error of some sort
+            console.log('error');
+        };
+
+        request.send();
+    }
+
+    return self;
+})();
+
+folio.graphic = (function() {
     var self = {};
 
     self.svg = document.getElementById('illustration');
