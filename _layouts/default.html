@@ -6,13 +6,42 @@
     <body class="l-site">
         <svg class="c-illustration" id="illustration"></svg>
 
-        {% include nav.html %}
+        <main id="main">
+            {% assign pageurl = page.url %}
 
-        {{ content }}
+            {% if pageurl == '/' %}
+                <header class="c-header" id="homeNav">
+                    {% for post in site.posts %}
+                        {% if forloop.index == 1 %}
+                            {% include nav.html %}
 
-        <!-- TODO: get 'portfolio' out of link -->
-        <script src="/portfolio/js/svg.min.js"></script>
-        <script src="/portfolio/js/main.js"></script>
+                            <a href="{{ post.url | prepend: site.baseurl }}" class="c-header__h-group">
+                                <h1 class="c-header__title">{{ post.title }}</h1>
+                                <p class="c-header__subhead">
+                                    Short subheader here and here and here, maybe two lines
+                                </p>
+                            </a>
 
+                            <div class="c-header__background">
+                                <span class="c-header__label">Post No. {{forloop.length}}</span>
+                                <span class="c-header__number">{{forloop.length}}</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </header>
+            {% else %}
+                <div id="pageNav">
+                    {% include nav.html %}
+                </div>
+            {% endif %}
+
+            <div class="l-content">
+                {{ content }}
+            </div>
+        </main>
+
+        <script src="{{ site.baseurl }}/js/vendor/history.min.js"></script>
+        <script src="{{ site.baseurl }}/js/vendor/svg.min.js"></script>
+        <script src="{{ site.baseurl }}/js/main.js"></script>
     </body>
 </html>
