@@ -11,7 +11,7 @@ folio.ajax = (function() {
     var self = {};
 
     self.init = function() {
-        var siteUrl = 'http://'+(document.location.hostname||document.location.host);
+        var siteUrl = window.location.pathname;
 
         self.pushState(siteUrl); // Init history tracking.
         self.bindClickListener(siteUrl);
@@ -41,11 +41,13 @@ folio.ajax = (function() {
 
     self.bindHistoryListener = function() {
         window.onpopstate = function(e) {
-            self.loadPartial(e.url);
+            self.loadPartial(e.state.url);
         };
     };
 
     self.loadPartial = function(url) {
+        self.loader('show');
+
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
 
@@ -72,6 +74,8 @@ folio.ajax = (function() {
                 // Rebind links
                 self.bindClickListener();
 
+                self.loader('hide');
+
                 // _gaq.push(['_trackPageview', State.url]);
             } else {
                 // We reached our target server, but it returned an error
@@ -81,11 +85,23 @@ folio.ajax = (function() {
 
         request.onerror = function() {
             // There was a connection error of some sort
-            console.log('error');
+            console.warning('error');
         };
 
         request.send();
     }
+
+    self.loader = function(display) {
+        var main = document.getElementById('main');
+
+        if (display === 'show') {
+            folio.utils.addClass(main, 'u-fade');
+            folio.utils.addClass(main, 'u-fade--out');
+        }
+        else if (display === 'hide') {
+            folio.utils.removeClass(main, 'u-fade');
+        }
+    };
 
     return self;
 })();
