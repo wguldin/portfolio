@@ -12,5 +12,11 @@ At BriteCore, I'm responsible for all aspect's of our app's design and visual di
 ## MidwayUSA
 As a web designer at MidwayUSA, I worked on a team during the overhaul of our checkout process, and I led the redesign of our account management page. For both of these, and other projects, we adhered to industry best practices and conducted internal user testing.
 
+## Freelance Work, Side Projects
+
+
+
+I also developed a portable device lab that I used
+
 ## Journalism
 Before becoming a digital designer, I studied journalism at the University of Missouri. It taught me some great lessons about communication, and I still consider myself a tough editor. While at MU, I also worked in several of newsrooms. It's hard to beat the feeling of working on Election Night, piecing together the day's news.
