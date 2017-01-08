@@ -70,23 +70,23 @@ var graphic = (function() {
 
         switch(side) {
             case 't':
-                point['x'] = self.randomIntFromInterval(0, self.svgWidth);
+                point['x'] = folio.utils.randomIntFromInterval(0, self.svgWidth);
                 point['y'] = self.svgHeight;
                 break;
 
             case 'b':
-                point['x'] = self.randomIntFromInterval(0, self.svgWidth);
+                point['x'] = folio.utils.randomIntFromInterval(0, self.svgWidth);
                 point['y'] = 0;
                 break;
 
             case 'l':
                 point['x'] = 0;
-                point['y'] = self.randomIntFromInterval(0, self.svgHeight);
+                point['y'] = folio.utils.randomIntFromInterval(0, self.svgHeight);
                 break;
 
             case 'r':
                 point['x'] = self.svgWidth;
-                point['y'] = self.randomIntFromInterval(0, self.svgHeight);
+                point['y'] = folio.utils.randomIntFromInterval(0, self.svgHeight);
                 break;
         }
 
@@ -107,69 +107,66 @@ var graphic = (function() {
         return sides[Math.floor(Math.random()*sides.length)];
     };
 
-    // Helper functions
-    // ============================================
-    self.setAttributes = function(el, attrs) {
-        for(var key in attrs) {
-            el.setAttribute(key, attrs[key]);
-        }
-    };
-
-    self.randomIntFromInterval = function(min, max) {
-        return Math.floor(Math.random()*(max-min+1)+min);
-    };
-
-    // Taken from Jake Trent (http://jaketrent.com/post/addremove-classes-raw-javascript/)
-    self.hasClass = function(el, className) {
-        if (el.classList) {
-            return el.classList.contains(className);
-        }
-        else {
-            return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
-        }
-    };
-
-    self.addClass = function(el, className) {
-        if (el.classList) {
-            el.classList.add(className);
-        }
-        else if (!self.hasClass(el, className)) {
-            el.className += ' ' + className;
-        }
-    };
-
-    self.removeClass = function(el, className) {
-        if (el.classList) {
-            el.classList.remove(className);
-        }
-        else if (self.hasClass(el, className)) {
-            var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-            el.className = el.className.replace(reg, ' ');
-        }
-    };
-
-    /*
-    Function: format
-    Give all Strings a format method. The kind where format strings are like:
-        "Here is the first arg: {0}, and here is the second: {1}."
-        Where {0} and {1} will be replaced by the first and second arguments
-        that are passed to the format function.
-    */
-    String.prototype.format = function() {
-        var string = this;
-
-        for (var i = 0; i < arguments.length; i++) {
-            var text = arguments[i];
-
-            string = string.replace(new RegExp('\\{'+i+'\\}', 'gm'), text);
-        }
-
-        return string;
-    };
-
     return self;
 })();
 
+folio.utils.randomIntFromInterval = function(min, max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+};
+
+// Taken from Jake Trent (http://jaketrent.com/post/addremove-classes-raw-javascript/)
+folio.utils.hasClass = function(el, className) {
+    if (el.classList) {
+        return el.classList.contains(className);
+    }
+    else {
+        return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+    }
+};
+
+folio.utils.addClass = function(el, className) {
+    if (el.classList) {
+        el.classList.add(className);
+    }
+    else if (!folio.utils.hasClass(el, className)) {
+        el.className += ' ' + className;
+    }
+};
+
+folio.utils.removeClass = function(el, className) {
+    if (el.classList) {
+        el.classList.remove(className);
+    }
+    else if (folio.utils.hasClass(el, className)) {
+        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+        el.className = el.className.replace(reg, ' ');
+    }
+};
+
+folio.utils.matches = function(el, selector) {
+    return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
+};
+
+/*
+Function: format
+Give all Strings a format method. The kind where format strings are like:
+    "Here is the first arg: {0}, and here is the second: {1}."
+    Where {0} and {1} will be replaced by the first and second arguments
+    that are passed to the format function.
+*/
+String.prototype.format = function() {
+    var string = this;
+
+    for (var i = 0; i < arguments.length; i++) {
+        var text = arguments[i];
+
+        string = string.replace(new RegExp('\\{'+i+'\\}', 'gm'), text);
+    }
+
+    return string;
+};
+
 (function() {
-    graphic.init();
+    folio.graphic.init();
+    folio.ajax.init();
 })();
