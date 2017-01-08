@@ -1,3 +1,5 @@
+{% assign active = page.url %}
+
 <div class="c-nav">
     <h2 class="c-nav__title">Will Guldin</h2>
 
@@ -8,8 +10,12 @@
         </p>
         <nav>
             <ul class="u-list-unstyled c-nav__list">
-                <li class="c-nav__list-item"><a href="{{ '/' | prepend: site.baseurl }}">Writing</a></li>
-                <li class="c-nav__list-item"><a href="{{ '/about' | prepend: site.baseurl }}">About my Work</a></li>
+                <li class="c-nav__list-item">
+                    <a href="{{ '/' | prepend: site.baseurl }}"  class="{% if active == '/' %}c-nav__link--active{% endif %}">Writing</a>
+                </li>
+                <li class="c-nav__list-item">
+                    <a href="{{ '/about' | prepend: site.baseurl }}" class="{% if active == '/about/' %}c-nav__link--active{% endif %}">About my Work</a>
+                </li>
             </ul>
         </nav>
     </div>
