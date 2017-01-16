@@ -9,6 +9,11 @@ rules:
   linebreak-style:
     - error
     - unix
+  no-console:
+    - error
+    - allow:
+        - warn
+        - error
   quotes:
     - warn
     - single
@@ -21,10 +26,5 @@ rules:
     - warn
     - 10
 globals:
-    bc: true
-    bootbox: true
-    Get: true
-    ko: true
-    moment: true
-    Sammy: true
-    $j: true
+    folio: true
+    SVG: true

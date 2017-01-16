@@ -1,5 +1,3 @@
-/* global SVG */
-
 // Declutter global namespace
 var folio = {
     ajax: {},
@@ -31,7 +29,17 @@ folio.ajax = (function() {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
 
-                var linkURL = link.pathname;
+                var target = e.target;
+                var linkURL;
+
+                if (folio.utils.matches(target, 'a')) {
+                    linkURL = e.target.pathname;
+                }
+                else {
+                    var parentLink = folio.utils.getClosest(target, 'a');
+
+                    linkURL = parentLink.pathname;
+                }
 
                 self.pushState(linkURL);
                 self.loadPartial(linkURL);
@@ -46,8 +54,12 @@ folio.ajax = (function() {
     };
 
     self.loadPartial = function(url) {
-        self.loader('show');
+        self.showLoader(function() {
+            self.loadPartialAjaxRequest(url);
+        });
+    };
 
+    self.loadPartialAjaxRequest = function(url) {
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
 
@@ -74,33 +86,41 @@ folio.ajax = (function() {
                 // Rebind links
                 self.bindClickListener();
 
-                self.loader('hide');
+                // Load at top of page
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+                self.hideLoader();
 
                 // _gaq.push(['_trackPageview', State.url]);
             } else {
                 // We reached our target server, but it returned an error
-                console.log('error');
+                console.warn('error');
             }
         };
 
         request.onerror = function() {
             // There was a connection error of some sort
-            console.warning('error');
+            console.warn('error');
         };
 
         request.send();
-    }
+    };
 
-    self.loader = function(display) {
+    self.showLoader = function(callback) {
+        var transitionTime = 100; // transitionend event caused a few bugs, using timeout instead.
         var main = document.getElementById('main');
 
-        if (display === 'show') {
-            folio.utils.addClass(main, 'u-fade');
-            folio.utils.addClass(main, 'u-fade--out');
-        }
-        else if (display === 'hide') {
-            folio.utils.removeClass(main, 'u-fade');
-        }
+        folio.utils.addClass(main, 'u-fade--out');
+
+        setTimeout(function() {
+            callback();
+        }, transitionTime);
+    };
+
+    self.hideLoader = function() {
+        var main = document.getElementById('main');
+
+        folio.utils.removeClass(main, 'u-fade--out');
     };
 
     return self;
@@ -251,6 +271,20 @@ folio.utils.removeClass = function(el, className) {
 
 folio.utils.matches = function(el, selector) {
     return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
+};
+
+folio.utils.getClosest = function (el, selector) {
+    var elem = el;
+
+    while (elem && elem.nodeType === 1) {
+        if (folio.utils.matches(elem, selector)) {
+            return elem;
+        }
+
+        elem = elem.parentNode;
+    }
+
+    return null;
 };
 
 /*
