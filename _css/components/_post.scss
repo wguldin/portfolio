@@ -12,6 +12,14 @@
         font-size: 1.4em;
     }
 
+    h3 {
+        font-size: .9em;
+        font-family: "league-spartan";
+        opacity: .95;
+        margin-top: 1.8em;
+        margin-bottom: .7em;
+    }
+
     ul {
         list-style: none;
         padding-left: 0;
@@ -19,19 +27,19 @@
     }
 
     li {
-        padding-left: .8em;
+        padding-left: .9em;
         position: relative;
     }
 
     li:before {
         content: "";
-        width: .5em;
-        height: .5em;
+        width: .4em;
+        height: .4em;
         border-radius: 50%;
         background-color: rgba($color-purple-050, .6);
         position: absolute;
         left: 0;
-        top: 24%;
+        top: .5em;
     }
 }
 
@@ -93,7 +101,7 @@
 }
 
 .c-post__image {
-    width: 100%;
+    width: 130%;
 
     img {
         max-width: 100%;
@@ -105,7 +113,7 @@
         padding-top: 1.5em;
         padding-bottom: 1em;
         margin-bottom: 1.5em;
-        margin-left: 13%; // Centers in Element
+        margin-left: -8.5%; // Centers in Element
 
         // I wanted to 'break out' the background from the parent container,
         // but without centering the post content, this is difficult with css.
@@ -113,8 +121,8 @@
         // Might revisit this with JS.
         &::after {
             content: "";
-            background-color: rgba(236, 231, 255, .15);
-            border: 4px solid rgba($color-purple-050, .6);
+            background-color: rgba(236, 231, 255, .1);
+            border: 4px solid rgba($color-purple-050, .3);
             left: -100vw;
             bottom: 0;
             position: absolute;
