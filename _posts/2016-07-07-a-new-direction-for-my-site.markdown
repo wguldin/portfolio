@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A new direction for my site"
+subheader: "After changing jobs, I finally feel like I've learned something worth sharing"
 date: "2016-07-07 20:21:52 -0500"
 ---
 
