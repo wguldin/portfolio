@@ -12,7 +12,7 @@ The other day at work, I had to revisit this old problem. We were redesigning a 
 
 Of course this had lots of limitations.
 
-* Multiple uploads at once weren't enabled.
+* Multiple uploads at once weren't [enabled](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/multiple).
 * Renaming of the file wasn't supported.
 * There were no loading indicators, or error messaging if something went wrong.
 
