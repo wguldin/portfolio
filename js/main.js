@@ -1,3 +1,5 @@
+/* global ga */
+
 // Declutter global namespace
 var folio = {
     ajax: {},
@@ -91,7 +93,7 @@ folio.ajax = (function() {
 
                 self.hideLoader();
 
-                // _gaq.push(['_trackPageview', State.url]);
+                ga('send', 'pageview', window.location.pathname);
             } else {
                 // We reached our target server, but it returned an error
                 console.warn('error');
