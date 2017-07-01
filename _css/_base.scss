@@ -120,12 +120,13 @@ p {
 
 pre,
 code {
-    font-size: 15px;
+    font-size: .8em;
     border-radius: 3px;
 }
 
 code {
-    padding: 1px 5px;
+    padding: 2px 4px;
+    background-color: hsl(253, 31%, 28%);
 }
 
 pre {
