@@ -1,26 +1,24 @@
-@charset "utf-8";
-
 // Setup
 // =============================================
-@import "variables";
-@import "mixins";
-@import "base";
+@import "_variables";
+@import "_mixins";
+@import "_base";
 
 // Objects
 // =============================================
-@import "layout/content";
+@import "layout/_content";
 
 // Components
 // =============================================
-@import "components/footer";
-@import "components/header";
-@import "components/illustration";
-@import "components/nav";
-@import "components/post-list";
-@import "components/post";
-@import "components/text-divider";
+@import "components/_footer";
+@import "components/_header";
+@import "components/_illustration";
+@import "components/_nav";
+@import "components/_post-list";
+@import "components/_post";
+@import "components/_text-divider";
 
 // Utilities
 // =============================================
-@import "utilities";
-@import "syntax-highlighting";
+@import "_utilities";
+@import "_syntax-highlighting";
