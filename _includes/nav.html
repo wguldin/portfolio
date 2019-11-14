@@ -11,10 +11,10 @@
         <nav>
             <ul class="u-list-unstyled c-nav__list">
                 <li class="c-nav__list-item">
-                    <a href="{{ '/' | prepend: site.baseurl }}"  class="{% if active == '/' %}c-nav__link--active{% endif %}">Writing</a>
+                    <a href="{{ '/' | prepend: site.baseurl }}"  class="c-nav__link {% if active == '/' %}c-nav__link--active{% endif %}">Writing</a>
                 </li>
                 <li class="c-nav__list-item">
-                    <a href="{{ '/about' | prepend: site.baseurl }}" class="{% if active == '/about/' %}c-nav__link--active{% endif %}">About my Work</a>
+                    <a href="{{ '/about' | prepend: site.baseurl }}" class="c-nav__link {% if active == '/about/' %}c-nav__link--active{% endif %}">About my Work</a>
                 </li>
             </ul>
         </nav>
