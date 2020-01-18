@@ -26,9 +26,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    color: $color-purple-000;
-    background-color: $color-purple-075;
-    background-image: linear-gradient(to bottom, $color-purple-075, $color-purple-100);
+    color: $color-primary-000;
+    background-color: $color-primary-075;
+    background-image: linear-gradient(to bottom, darken($color-primary-075, 5%), $color-primary-100);
 }
 
 ::selection {
@@ -54,17 +54,17 @@ a {
     display: inline;
     text-decoration: none;
     transition: color 120ms ease-in, background-position 120ms ease-in;
-    color: $color-purple-050;
+    color: $color-primary-050;
 
     // Underline
     background-position: 0 .95em;
     background-repeat: repeat-x;
     background-size: 1px 1px;
-    background-image: linear-gradient(to bottom, $color-purple-050, $color-purple-050);
+    background-image: linear-gradient(to bottom, $color-primary-050, $color-primary-050);
     cursor: pointer;
 
     &:hover {
-        color: $color-purple-050;
+        color: $color-primary-050;
         background-position: 0 .8em;
     }
 }

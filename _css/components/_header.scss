@@ -22,11 +22,11 @@
 
     &:hover ~ .c-header__background {
         .c-header__number {
-            color: rgba($color-purple-000, .23);
+            color: rgba($color-primary-000, .23);
         }
 
         .c-header__label {
-            color: rgba($color-purple-000, .3);
+            color: rgba($color-primary-000, .3);
         }
     }
 }
@@ -35,7 +35,7 @@
     line-height: 1.5;
     font-weight: 400;
     margin: 0;
-    color: $color-purple-050;
+    color: $color-primary-050;
     font-family: "league-spartan";
     font-size: 1.6em;
 
@@ -52,7 +52,7 @@
     margin-top: .5em;
     font-size: 1.2em;
     font-family: "cooper-hewitt-light";
-    color: $color-purple-000;
+    color: $color-primary-000;
 }
 
 .c-header__background {
@@ -79,7 +79,7 @@
 .c-header__number {
     font-size: 12em;
     line-height: 1;
-    color: rgba($color-purple-000, .15);
+    color: rgba($color-primary-000, .15);
     left: 10vw;
 
     @media (min-width: 42em) {
@@ -91,7 +91,7 @@
 
 .c-header__label {
     font-size: 1.2em;
-    color: rgba($color-purple-000, .2);
+    color: rgba($color-primary-000, .2);
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     text-align: right;

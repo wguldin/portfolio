@@ -27,7 +27,7 @@
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     text-align: right;
-    color: rgba($color-purple-000, .2);
+    color: rgba($color-primary-000, .2);
     font-family: "cooper-hewitt-light";
     font-size: 1.2em;
     padding-left: 2%;
@@ -35,7 +35,7 @@
     transition: color 150ms ease-in;
 
     .c-post-list__link:hover & {
-        color: rgba($color-purple-000, .4);
+        color: rgba($color-primary-000, .4);
     }
 
     @media (min-width: 36em) {
@@ -45,7 +45,7 @@
 
 .c-post-list__content {
     flex: 1;
-    border-top: 8px solid rgba($color-purple-000, .2);
+    border-top: 8px solid rgba($color-primary-000, .2);
     padding: 3% 3% 6% 3%;
     position: relative;
 
@@ -58,7 +58,7 @@
         bottom: 0;
         opacity: 0;
         z-index: -1;
-        background-color: rgba($color-purple-000, .1);
+        background-color: rgba($color-primary-000, .1);
     }
 
     &:hover, &:focus {
@@ -78,7 +78,7 @@
 
 .c-post-list__subhead {
     margin-top: 0;
-    color: $color-purple-000;
+    color: $color-primary-000;
     font-family: "cooper-hewitt-light";
     font-size: 1em;
 

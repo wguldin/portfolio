@@ -147,7 +147,7 @@ folio.graphic = (function() {
     self.lineCount = 48;
 
     self.createGraphic = function() {
-        var graphic = SVG('illustration');
+        var graphic = SVG('#illustration');
 
         for (var i = 0; i < self.lineCount; i++) {
             self.createLine(graphic);
@@ -164,7 +164,9 @@ folio.graphic = (function() {
         var distance = self.getDistance(coords);
         var speed = distance/2;
 
-        var line = graphic.path().M({x: coords['x1'], y: coords['y1']}).L({x: coords['x2'], y: coords['y2']}).drawAnimated({duration: speed, delay: 200});
+        var line = graphic.line(coords["x1"], coords["y1"], coords["x1"], coords["y1"]);
+        
+        line.animate(500, 250, 'now').plot([[coords["x1"], coords["y1"]], [coords["x2"], coords["y2"]]]);
 
         line.attr({'style': 'opacity: {0}'.format(weightedOpacity)});
     };
