@@ -1,61 +1,6 @@
 .c-nav {
-    float: right;
-    border-right: 1px solid $color-primary-050;
-    padding-right: 2%;
     font-family: "cooper-hewitt-book";
-    text-align: right;
-    margin: 5% 0 7.5%;
-
-    @media (min-width: 42em) {
-        max-width: 25%;
-    }
-}
-
-.c-nav__title {
-    font-size: 1em;
-    margin: 0;
-
-    @media  (min-width: 36em) {
-        font-size: 1.2em;
-    }
-}
-
-.c-nav__description {
-    margin: .5em 0 0;
-    font-size: .7em;
-
-    p {
-        display: inline;
-
-        @media (min-width: 42em) {
-            display: block;
-        }
-    }
-}
-
-.c-nav__list {
-    width: 100%;
-    margin: 1em 0 0 0;
-}
-
-.c-nav__list-item {
-    display: inline-block;
-    margin-right: .5em;
-
-    &:last-child {
-        margin-right: 0;
-    }
-}
-
-.c-nav__link--active {
-    background-color: rgba($color-primary-050, .8);
-    background-image: none;
-    border-radius: 3px;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, .12);
-    color: $color-primary-000;
-    padding: .5em .65em 1px;
-
-    &:hover {
-        color: $color-primary-000;
-    }
+    background: $color-primary-1;
+    color: white;
+    padding: 1em;
 }

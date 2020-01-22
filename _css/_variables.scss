@@ -1,9 +1,19 @@
-$color-primary-000: hsl(253, 100%, 95%);
-$color-primary-050: hsl(253, 100%, 61%);
-$color-primary-075: hsl(253, 87%, 12%);
-$color-primary-100: hsl(252, 100%, 6%);
+$color-background-1: hsl(218, 40, 88);
+$color-background-2: hsl(218, 40, 82);
+
+$color-primary-1: hsl(238, 51, 27);
+
+$color-gray-0: hsl(210, 17, 10);
+$color-gray-1: hsl(210, 17, 24);
 
 $border-radius: 3px;
+
+$base-font-size: 15px;
+
+$space-1: 1em;
+$space-2: 2em;
+$space-3: 4em;
+$space-4: 8em;
 
 $swift-out: cubic-bezier(.55, 0, .1, 1);
 

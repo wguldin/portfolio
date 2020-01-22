@@ -9,25 +9,15 @@
         <main id="main" class="u-fade">
             {% assign pageurl = page.url %}
 
+            {% include nav.html %}
+
             {% if pageurl == '/' %}
                 <header class="c-header" id="homeNav">
-                    {% for post in site.posts %}
-                        {% if forloop.index == 1 %}
-                            {% include nav.html %}
+                    <h2>Product Design Director at <a href="http://britecore.com/">BriteCore</a>.</h2>
 
-                            <a href="{{ post.url | prepend: site.baseurl }}" class="c-header__h-group">
-                                <h1 class="c-header__title">{{ post.title }}</h1>
-                                <p class="c-header__subhead">
-                                    {{ post.subheader }}
-                                </p>
-                            </a>
-
-                            <div class="c-header__background">
-                                <span class="c-header__label">Post No. {{forloop.length}}</span>
-                                <span class="c-header__number">{{forloop.length}}</span>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                    <p>
+                        In my role, I’ve helped create a design organization at a fully remote & distributed company. Along the way, we built a design system, launched a UX research program, and solved complex problems for people using our enterprise software.
+                    </p>
                 </header>
             {% else %}
                 <div id="pageNav">

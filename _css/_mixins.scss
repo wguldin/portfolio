@@ -1,7 +1,15 @@
 @font-face {
-   font-family: "league-spartan";
-   src: url("/assets/fonts/leaguespartan-bold.woff2") format("woff2"),
-        url("/assets/fonts/leaguespartan-bold.woff") format("woff");
+   font-family: "prospectus-medium";
+   src: url("/assets/fonts/ProspectusMReg.woff2") format("woff2"),
+        url("/assets/fonts/ProspectusMReg.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "prospectus-medium";
+   src: url("/assets/fonts/ProspectusSReg.woff2") format("woff2"),
+        url("/assets/fonts/ProspectusSReg.woff") format("woff");
    font-weight: normal;
    font-style: normal;
 }
@@ -13,15 +21,6 @@
    font-weight: normal;
    font-style: normal;
 }
-
-@font-face {
-   font-family: "cooper-hewitt-light";
-   src: url("/assets/fonts/cooper-hewitt-light.woff2") format("woff2"),
-        url("/assets/fonts/cooper-hewitt-light.woff") format("woff");
-   font-weight: normal;
-   font-style: normal;
-}
-
 
 @mixin clearfix {
   &:after {
