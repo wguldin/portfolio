@@ -18,16 +18,18 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
-    margin: 0;
+    margin: $space-4;
     text-size-adjust: 100%;
     overflow-x: hidden;
     position: relative;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
-    color: $color-gray-0;
+    color: $color-black;
     background-image: linear-gradient(to bottom, $color-background-1, $color-background-2);
+    background-repeat: no-repeat;
 }
 
 ::selection {
