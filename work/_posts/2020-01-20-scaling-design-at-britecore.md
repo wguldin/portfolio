@@ -5,7 +5,7 @@ subheader: "BriteCore, a fully remote and distributed company, had been without 
 date: "2020-01-20 11:05:37 -0500"
 ---
 
-BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. This meant features were routinely shipped without any kind of validation or feedback from customers using our insurance software, and that basic practices in product design, such as information architecture mapping and wireframing weren’t in place. 
+<p class="u-text--lg">BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. This meant features were routinely shipped without any kind of validation or feedback from customers using our insurance software, and that basic practices in product design, such as information architecture mapping and wireframing weren’t in place.</p>
 
 ## Laying the Foundation
 It would be another two years before BriteCore was able to scale its design team. This allowed me to create and grow a true design process within the organization:
