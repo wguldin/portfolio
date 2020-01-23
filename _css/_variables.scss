@@ -3,17 +3,20 @@ $color-background-2: hsl(218, 40, 82);
 
 $color-primary-1: hsl(238, 51, 27);
 
+$color-black: hsl(238, 10, 10);
+
 $color-gray-0: hsl(210, 17, 10);
 $color-gray-1: hsl(210, 17, 24);
+$color-gray-2: hsl(210, 17, 40);
 
 $border-radius: 3px;
 
-$base-font-size: 15px;
+$base-font-size: 18px;
 
-$space-1: 1em;
-$space-2: 2em;
-$space-3: 4em;
-$space-4: 8em;
+$space-1: .8;
+$space-2: 1.6em;
+$space-3: 3.2em;
+$space-4: 6.4em;
 
 $swift-out: cubic-bezier(.55, 0, .1, 1);
 

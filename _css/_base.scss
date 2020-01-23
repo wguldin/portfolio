@@ -45,6 +45,7 @@ body {
 
 html {
     font-size: $base-font-size;
+    min-height: 100%;
 }
 
 a {
@@ -137,8 +138,10 @@ pre {
     }
 }
 
-.reload {
-    position: fixed;
-    right: 1em;
-    bottom: 1em;
+main {
+    display: flex;
+}
+
+.l-content {
+    width: 100%;
 }

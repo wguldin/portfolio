@@ -1,22 +1,18 @@
 {% assign active = page.url %}
 
-<div class="c-nav">
-    <h2 class="c-nav__title">Will Guldin</h2>
-
-    <div class="c-nav__description">
-        <h2>Hi, I'm Will Guldin</h2>
-
-        <p>
-            As a product design leader, I’m passionate about growing effective teams, and designing complex, enterprise applications.        </p>
-        <nav>
-            <ul class="u-list-unstyled c-nav__list">
-                <li class="c-nav__list-item">
-                    <a href="{{ '/' | prepend: site.baseurl }}"  class="c-nav__link {% if active == '/' %}c-nav__link--active{% endif %}">Writing</a>
-                </li>
-                <li class="c-nav__list-item">
-                    <a href="{{ '/about' | prepend: site.baseurl }}" class="c-nav__link {% if active == '/about/' %}c-nav__link--active{% endif %}">About my Work</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
+<nav class="c-nav">
+    <ul class="u-list-unstyled c-nav__list">
+        <li class="c-nav__list-item">
+            <a href="{{ '/' | prepend: site.baseurl }}"  class="c-nav__link {% if active == '/' %}c-nav__link--active{% endif %}">Work</a>
+        </li>
+        <li class="c-nav__list-item">
+            <a href="{{ '/blog' | prepend: site.baseurl }}" class="c-nav__link {% if active == '/blog/' %}c-nav__link--active{% endif %}">Blog</a>
+        </li>
+        <li class="c-nav__list-item">
+            <a href="{{ '/presentations' | prepend: site.baseurl }}" class="c-nav__link {% if active == '/presentations/' %}c-nav__link--active{% endif %}">Presentations</a>
+        </li>
+        <li class="c-nav__list-item">
+            <a href="{{ '/about' | prepend: site.baseurl }}" class="c-nav__link {% if active == '/about/' %}c-nav__link--active{% endif %}">About Me</a>
+        </li>
+    </ul>
+</nav>

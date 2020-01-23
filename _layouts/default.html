@@ -4,30 +4,34 @@
     {% include head.html %}
 
     <body class="l-site">
-        <svg class="c-illustration" id="illustration"></svg>
+        {% include nav.html %}
 
-        <main id="main" class="u-fade">
+        <main id="main">
             {% assign pageurl = page.url %}
 
-            {% include nav.html %}
+            <div id="main-content" class="l-content u-fade">
+                {% if pageurl == '/' %}
+                    <header class="c-header" id="homeNav">
+                        <h2 class="c-header__title">Product Design Director @ <a target="_blank" href="http://britecore.com/">BriteCore</a></h2>
 
-            {% if pageurl == '/' %}
-                <header class="c-header" id="homeNav">
-                    <h2>Product Design Director at <a href="http://britecore.com/">BriteCore</a>.</h2>
+                        <p class="c-header__description">
+                            In my role, I’ve helped create a design organization at a fully remote & distributed company. Along the way, we built a design system, launched a UX research program, and solved complex problems for people using our enterprise software.
+                        </p>
+                    </header>
+                {% endif %}
 
-                    <p>
-                        In my role, I’ve helped create a design organization at a fully remote & distributed company. Along the way, we built a design system, launched a UX research program, and solved complex problems for people using our enterprise software.
-                    </p>
-                </header>
-            {% else %}
-                <div id="pageNav">
-                    {% include nav.html %}
-                </div>
-            {% endif %}
-
-            <div class="l-content">
                 {{ content }}
-            </div>
+            </div> 
+
+            <aside class="c-aside">
+                <img class="c-aside__initials" src="{{ site.baseurl }}/assets/images/initials.svg" alt="WG Initials">
+
+                <h2 class="c-aside__header">Hi, I'm Will Guldin</h2>
+
+                <p class="c-aside__description">
+                    As a product design leader, I’m passionate about growing effective teams, and designing complex, enterprise applications.
+                </p>
+            </aside>
         </main>
 
         <script src="{{ site.baseurl }}/js/vendor/history.min.js"></script>
