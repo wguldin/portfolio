@@ -8,11 +8,7 @@ layout: default
 
     <div class="c-post__content" itemprop="articleBody">
         {% assign drop_cap = content|strip_html|truncate:4|remove:'.' %}
-
-        <div class="c-post__dropcap">
-            {{ drop_cap }}
-        </div>
-
+        
         {{ content }}
     </div>
 </article>

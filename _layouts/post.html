@@ -3,28 +3,19 @@ layout: default
 ---
 <article class="c-post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="c-post__header">
+        <a href="{{ "/" | prepend: site.baseurl }}" class="c-post__back u-chevron u-chevron--left" title="Back to Homepage"><div class="u-sr-only">Back</div></a>
+
         <h1 class="c-post__title" itemprop="name headline">{{ page.title }}</h1>
     </header>
 
-    <div class="c-post__content" itemprop="articleBody">
-        {% assign drop_cap = content|strip_html|truncate:4|remove:'.' %}
-
+    <div itemprop="articleBody">
         <p class="c-post__meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                <a href="{{ "/" | prepend: site.baseurl }}">&laquo; Back to Posts</a>
-                <span class="px1">&bull;</span>
-                {{ page.date | date: "%b %-d, %Y" }}</time>
-
-                <div class="u-sr-only">
-                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                        <span itemprop="name">{{ page.author }}</span>
-                    </span>
-                </div>
-            </p>
-
-        <div class="c-post__dropcap">
-            {{ drop_cap }}
-        </div>
+            <div class="u-sr-only">
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ page.author }}</span>
+                </span>
+            </div>
+        </p>
 
         {{ content }}
     </div>
