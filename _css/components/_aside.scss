@@ -1,0 +1,31 @@
+.c-aside {
+    font-family: "cooper-hewitt-book";
+    background: rgba(34,36,104,0.9);
+    color: white;
+    padding: 1em;
+    position: relative;
+    width: 18rem;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.c-aside__header {
+    font-family: 'prospectus-medium';
+    font-size: 1.8em;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.c-aside__description {
+    margin-bottom: 0;
+}
+
+.c-aside__initials {
+    position: absolute;
+    top: -$space-3;
+    width: $space-4*2;
+    opacity: 15%;
+    right: -$space-3;
+    user-select: none;
+    pointer-events: none;
+}
