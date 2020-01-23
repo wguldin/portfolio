@@ -74,14 +74,14 @@ folio.ajax = (function() {
                 var pageDom = tempEl;
 
                 // Get the inner contents
-                var innerPageDom = pageDom.querySelectorAll('#main')[0].innerHTML;
+                var innerPageDom = pageDom.querySelectorAll('#main-content')[0].innerHTML;
 
                 // Update Title
                 var pageTitle = pageDom.getElementsByTagName('title')[0].textContent;
                 document.title = pageTitle;
 
                 // Update Contents
-                var pageContent = document.getElementById('main');
+                var pageContent = document.getElementById('main-content');
                 pageContent.innerHTML = innerPageDom;
 
                 // Rebind links
@@ -109,7 +109,7 @@ folio.ajax = (function() {
 
     self.showLoader = function(callback) {
         var transitionTime = 100; // transitionend event caused a few bugs, using timeout instead.
-        var main = document.getElementById('main');
+        var main = document.getElementById('main-content');
 
         folio.utils.addClass(main, 'u-fade--out');
 
@@ -119,7 +119,7 @@ folio.ajax = (function() {
     };
 
     self.hideLoader = function() {
-        var main = document.getElementById('main');
+        var main = document.getElementById('main-content');
 
         folio.utils.removeClass(main, 'u-fade--out');
     };
