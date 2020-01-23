@@ -13,7 +13,7 @@ It would be another two years before BriteCore was able to scale its design team
 * Routinely conducted usability tests and interviews with our users, sharing these results with our team.
 * Worked closely with development teams on several projects, including a rewritten quoting experience.
 * Instituted design reviews of all other new functionality, explaining design best practices in the process, and encouraging early design involvement.
-* Gave presentations on our design and product at BriteCon, our annual users  conference.
+* Gave talks on our design and product at BriteCon, our annual users  conference.
 
 Over several months, I noticed that these efforts bore fruit. Instead of hearing about in-progress work as it neared completion, I was able to insert design much earlier in the process, leading to consistently better experiences for our users.
 

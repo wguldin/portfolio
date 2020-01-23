@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Presentations
-permalink: /presentations/
+title: Talks
+permalink: /talks/
 ---
 
 In my role at BriteCore, I've had several opportunities to present to different audiences, including presenting every year on product design at our annual users conference, BriteCon.
