@@ -1,7 +1,16 @@
 .c-header {
-    padding-right: $space-4;
+    padding-right: 0;
     font-size: 1.25em;
-    margin-bottom: $space-4;
+    margin-bottom: $space-3;
+
+    @media (min-width: 32em) {
+        padding-right: $space-3;
+    }
+
+    @media (min-width: 67em) {
+        padding-right: $space-4;
+        margin-bottom: $space-4;
+    }
 }
 
 .c-header__title {

@@ -1,8 +1,15 @@
 .c-post {
-    padding: 0 $space-4 0 0;
     font-family: "prospectus-small";
 
+    @media (min-width: 48em) {
+        padding: 0 $space-3 0 0;
+    }
+
     @media (min-width: 72em) {
+        padding: 0 $space-3;
+    }
+
+    @media (min-width: 80em) {
         padding: 0 $space-4;
     }
 
@@ -71,12 +78,23 @@
     }
 
     @media (min-width: 72em) {
-            left: 4rem;
+            left: 1rem;
+    }
+
+    @media (min-width: 80em) {
+        left: 4rem;
     }
 }
 
-.c-post__readmore {
+// Double up on specificty to avoid !important
+a.c-post__readmore {
     font-family: 'cooper-hewitt-book';
+    background-position: 0 .95em;
+
+    &:hover {
+        background-position: 0 .95em;
+        background-position: 0 .8em;
+    }
 }
 
 .c-post__image {

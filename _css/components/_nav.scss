@@ -1,11 +1,22 @@
 .c-nav {
-    position: absolute;
-    right: 18em;
-    top: -($space-4/2);
+    @media (min-width: 48em) {
+        position: absolute;
+        right: 13.5em;
+        top: -($space-4/2);
+    }
+
+    @media (min-width: 67em) {
+        right: 18em;
+    }
 }
 
 .c-nav__list {
     display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 48em) {
+        justify-content: initial;
+    }
 }
 
 .c-nav__list-item {

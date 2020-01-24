@@ -18,7 +18,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
-    margin: $space-4;
+    margin: $space-2 $space-3 $space-3;
     text-size-adjust: 100%;
     overflow-x: hidden;
     position: relative;
@@ -30,6 +30,26 @@ body {
     color: $color-black;
     background-image: linear-gradient(to bottom, $color-background-1, $color-background-2);
     background-repeat: no-repeat;
+
+    @media (min-width: 48em) {
+        margin: $space-3*1.5;
+    }
+
+    @media (min-width: 67em) {
+        margin: $space-4;
+    }
+
+    @media (min-width: 90em) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 70em;
+    }
+    
+    @media (min-width: 110em) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80em;
+    }
 }
 
 ::selection {
@@ -141,6 +161,11 @@ pre {
 
 main {
     display: flex;
+    flex-direction: column-reverse;
+
+    @media (min-width: 48em) {
+        flex-direction: row;
+    }
 }
 
 hr {
@@ -153,4 +178,14 @@ hr {
 
 .l-content {
     width: 100%;
+}
+
+iframe, img {
+    max-width: 100%;
+}
+
+.about-img {
+    float: left;
+    margin: 0 1.5em 1.5em 0;
+    width: 200px;
 }
