@@ -17,7 +17,7 @@ Of course this had lots of limitations.
 * Renaming of the file wasn't supported.
 * There were no loading indicators, or error messaging if something went wrong.
 
-{% include image.html name="original-design.png" caption="Our original photo uploader required adding a new file input for each photo, pretty awful UX for dozens of uploads." %}
+{% include image.html name="original-design.png" caption="Our original photo uploader required adding a new file input for each photo, a cumbersome UX for dozens of uploads." %}
 
 [Dropzone](http://www.dropzonejs.com/), an awesome JS library, has pretty much solved the technical issues around file inputs. But we thought it's user experience could be improved, and set out create a custom design on top of the library.
 

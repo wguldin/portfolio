@@ -125,6 +125,7 @@ code {
 code {
     padding: 2px 4px;
     background-color: hsl(238, 31%, 28%);
+    color: $color-white;
 }
 
 pre {
@@ -140,6 +141,14 @@ pre {
 
 main {
     display: flex;
+}
+
+hr {
+    border: 0;
+    background: rgba($color-gray-1, .4);
+    height: 1px;
+    width: 100%;
+    margin-top: 1em;
 }
 
 .l-content {

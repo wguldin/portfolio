@@ -21,17 +21,22 @@ folio.ajax = (function() {
         history.pushState({url: pageURL}, '', pageURL); // Init history tracking
     };
 
-    self.bindClickListener = function(siteUrl) {
-        var links = document.querySelectorAll('a[href^="/"], a[href^="'+siteUrl+'"]');
-
+    self.bindClickListener = function(siteUrl, context) {
+        if(context) {
+            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]', context);
+        } else {
+            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]');
+        }
+ 
         for (var i = 0; i < links.length; i++) {
             var link = links[i];
 
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-
+                
                 var target = e.target;
                 var linkURL;
+                var currentURL = window.location.pathname.replace(/\/$/, "");
 
                 if (folio.utils.matches(target, 'a')) {
                     linkURL = e.target.pathname;
@@ -42,8 +47,11 @@ folio.ajax = (function() {
                     linkURL = parentLink.pathname;
                 }
 
-                self.pushState(linkURL);
-                self.loadPartial(linkURL);
+                if (currentURL != linkURL) {
+                    // Only update contents and routing if going to a new page.
+                    self.pushState(linkURL);
+                    self.loadPartial(linkURL);
+                }
             });
         }
     };
@@ -85,7 +93,7 @@ folio.ajax = (function() {
                 pageContent.innerHTML = innerPageDom;
 
                 // Rebind links
-                self.bindClickListener();
+                self.bindClickListener(url, pageContent);
 
                 // Load at top of page
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -129,6 +137,10 @@ folio.ajax = (function() {
 
 folio.utils.randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
+};
+
+folio.find = function (selector, parent) {
+    return Array.prototype.slice.call((parent ? parent : document).querySelectorAll(selector));
 };
 
 // Taken from Jake Trent (http://jaketrent.com/post/addremove-classes-raw-javascript/)

@@ -1,6 +1,10 @@
 .c-post {
-    padding: 0 $space-4;
+    padding: 0 $space-4 0 0;
     font-family: "prospectus-small";
+
+    @media (min-width: 72em) {
+        padding: 0 $space-4;
+    }
 
     ul {
         list-style: none;
@@ -28,6 +32,19 @@
         font-size: 1.52em;
         color: $color-gray-2;
     }
+
+    h3 {
+        font-size: 1.2em;
+        color: $color-gray-1;
+    }
+
+    a {
+        background-position: 0 1.1em;
+
+        &:hover {
+            background-position: 0 1em;
+        }
+    }
 }
 
 .c-post__title {
@@ -36,11 +53,11 @@
     margin-top: 0;
 }
 
-.c-post__back {
+.c-post__back { 
     background: none;
     font-size: 2.5em;
     position: absolute;
-    left: 4rem;
+    left: -1em;
     top: -4px;
     opacity: .3;
     transition: opacity 80ms ease-in;
@@ -52,42 +69,29 @@
     &:hover {
         opacity: .7;
     }
+
+    @media (min-width: 72em) {
+            left: 4rem;
+    }
+}
+
+.c-post__readmore {
+    font-family: 'cooper-hewitt-book';
 }
 
 .c-post__image {
-    width: 130%;
+    width: 100%;
+    background: $color-white;
+    padding: 1em 1em 0.4em 1em;
+    margin: 1em 0;
 
     img {
         max-width: 100%;
     }
-
-    @media (min-width: 42em) {
-        position: relative;
-        overflow-x: visible;
-        padding-top: 1.5em;
-        padding-bottom: 1em;
-        margin-bottom: 1.5em;
-        margin-left: -8.5%; // Centers in Element
-
-        // I wanted to 'break out' the background from the parent container,
-        // but without centering the post content, this is difficult with css.
-        // So, I use a pseudo element to break out the background.
-        // Might revisit this with JS.
-        &::after {
-            content: "";
-            background-color: rgba(236, 231, 255, .1);
-            border: 4px solid rgba($color-primary-1, .15);
-            left: -100vw;
-            bottom: 0;
-            position: absolute;
-            width: 200vw;
-            height: 100%;
-            z-index: -1;
-        }
-    }
 }
 
 .c-post__caption {
-    font-size: .7em;
-    color: $color-primary-1;
+    font-family: 'cooper-hewitt-book';
+    font-size: .9em;
+    color: $color-gray-2;
 }
