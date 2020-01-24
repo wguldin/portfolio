@@ -1,88 +1,80 @@
 .c-post-list {
-    @media (min-width: 42em) {
-        margin: 6em 0 0 0;
+    list-style: none;
+    margin: 0;
+    font-size: .95em;
+
+    @media (min-width: 48em) {
+        margin-right: -40%;
+    }
+
+    @media (min-width: 60em) {
+        margin-right: -20%;
+    }
+
+    @media (min-width: 67em) {
+        margin-right: 0;
     }
 }
 
 .c-post-list__item {
-    list-style-type: none;
-    padding: 0;
-    position: relative;
+    border: solid rgba($color-gray-1, .4);
+    border-width: 1px 0;
 
-    &:before {
-        content: none;
-        left: 0;
+    &:first-child {
+        border-top: 0;
+        margin-top: -2.4em;
     }
 }
 
 .c-post-list__link {
-    @include clearfix();
-
     display: flex;
     background-image: none;
-    cursor: pointer;
-}
-
-.c-post-list__meta {
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    text-align: right;
-    color: rgba($color-purple-000, .2);
-    font-family: "cooper-hewitt-light";
-    font-size: 1.2em;
-    padding-left: 2%;
-
-    transition: color 150ms ease-in;
-
-    .c-post-list__link:hover & {
-        color: rgba($color-purple-000, .4);
-    }
-
-    @media (min-width: 36em) {
-        font-size: 1.4em;
-    }
-}
-
-.c-post-list__content {
-    flex: 1;
-    border-top: 8px solid rgba($color-purple-000, .2);
-    padding: 3% 3% 6% 3%;
     position: relative;
+    padding: $space-2 $space-2 $space-2 0;
+    color: $color-gray-2;
 
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        z-index: -1;
-        background-color: rgba($color-purple-000, .1);
-    }
+    &:hover {
+        color: $color-gray-2;
+        
+        .c-post-list__meta {
+            opacity: .75;
+        }
 
-    &:hover, &:focus {
-        outline: none;
-
-        &:before {
-            opacity: 1;
+        .c-post-list__title {
+            color: $color-black;
         }
     }
 }
 
+.c-post-list__meta {
+    font-size: 8em;
+    font-family: "prospectus-large";
+    font-weight: normal;
+    line-height: 1; 
+    opacity: .15;
+    color: $color-primary-1;
+    width: 1ch;
+    text-align: center;
+    margin: 0 1rem 0 -.5ch;
+    line-height: 1ch;
+    user-select: none;
+    pointer-events: none;
+    transition: opacity 80ms ease-in;
+    flex-shrink: 0;
+}
+
 .c-post-list__title {
-    margin-top: 0;
-    font-family: "league-spartan";
-    font-size: 1.5em;
+    color: $color-gray-2;
+    font-size: 1.6em;
+    margin: 0 0 .25em 0;
+    transition: color 80ms ease-in;
 }
 
 .c-post-list__subhead {
-    margin-top: 0;
-    color: $color-purple-000;
-    font-family: "cooper-hewitt-light";
+    font-family: "prospectus-small";
+    color: $color-gray-1;
     font-size: 1em;
+    margin: 0;
+    transition: color 80ms ease-in;
 
-    @media (min-width: 36em) {
-        font-size: 1.2em;
-    }
 }

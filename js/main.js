@@ -3,7 +3,6 @@
 // Declutter global namespace
 var folio = {
     ajax: {},
-    graphic: {},
     utils: {}
 };
 
@@ -22,17 +21,27 @@ folio.ajax = (function() {
         history.pushState({url: pageURL}, '', pageURL); // Init history tracking
     };
 
-    self.bindClickListener = function(siteUrl) {
-        var links = document.querySelectorAll('a[href^="/"], a[href^="'+siteUrl+'"]');
-
+    self.bindClickListener = function(siteUrl, context) {
+        if(context) {
+            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]', context);
+        } else {
+            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]');
+        }
+ 
         for (var i = 0; i < links.length; i++) {
             var link = links[i];
 
             link.addEventListener('click', function(e) {
-                e.preventDefault();
-
                 var target = e.target;
+
+                if (target.hasClass('js-download')) {
+                    return;
+                }
+
+                e.preventDefault();
+                
                 var linkURL;
+                var currentURL = window.location.pathname.replace(/\/$/, "");
 
                 if (folio.utils.matches(target, 'a')) {
                     linkURL = e.target.pathname;
@@ -43,8 +52,19 @@ folio.ajax = (function() {
                     linkURL = parentLink.pathname;
                 }
 
-                self.pushState(linkURL);
-                self.loadPartial(linkURL);
+                if (currentURL != linkURL) {
+                    // Only update contents and routing if going to a new page.
+                    self.pushState(linkURL);
+                    self.loadPartial(linkURL);
+
+                    var intro = document.getElementById('intro');
+
+                    if(linkURL == '/') {
+                        folio.utils.addClass(intro, 'c-intro--home');
+                    } else {
+                        folio.utils.removeClass(intro, 'c-intro--home');
+                    }
+                }
             });
         }
     };
@@ -75,18 +95,18 @@ folio.ajax = (function() {
                 var pageDom = tempEl;
 
                 // Get the inner contents
-                var innerPageDom = pageDom.querySelectorAll('#main')[0].innerHTML;
+                var innerPageDom = pageDom.querySelectorAll('#main-content')[0].innerHTML;
 
                 // Update Title
                 var pageTitle = pageDom.getElementsByTagName('title')[0].textContent;
                 document.title = pageTitle;
 
                 // Update Contents
-                var pageContent = document.getElementById('main');
+                var pageContent = document.getElementById('main-content');
                 pageContent.innerHTML = innerPageDom;
 
                 // Rebind links
-                self.bindClickListener();
+                self.bindClickListener(url, pageContent);
 
                 // Load at top of page
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -110,7 +130,7 @@ folio.ajax = (function() {
 
     self.showLoader = function(callback) {
         var transitionTime = 100; // transitionend event caused a few bugs, using timeout instead.
-        var main = document.getElementById('main');
+        var main = document.getElementById('main-content');
 
         folio.utils.addClass(main, 'u-fade--out');
 
@@ -120,7 +140,7 @@ folio.ajax = (function() {
     };
 
     self.hideLoader = function() {
-        var main = document.getElementById('main');
+        var main = document.getElementById('main-content');
 
         folio.utils.removeClass(main, 'u-fade--out');
     };
@@ -128,118 +148,12 @@ folio.ajax = (function() {
     return self;
 })();
 
-folio.graphic = (function() {
-    var self = {};
-
-    self.svg = document.getElementById('illustration');
-
-    self.init = function() {
-        if(self.svg) {
-            var svgDimensions = self.svg.getBoundingClientRect();
-
-            self.svgWidth  = svgDimensions.width;
-            self.svgHeight = svgDimensions.height;
-
-            self.createGraphic();
-        }
-    };
-
-    self.lineCount = 48;
-
-    self.createGraphic = function() {
-        var graphic = SVG('illustration');
-
-        for (var i = 0; i < self.lineCount; i++) {
-            self.createLine(graphic);
-        }
-    };
-
-    self.createLine = function(graphic) {
-        var coords = self.setLineCoordinates();
-
-        // Favor higher opacity values, so most lines show up.
-        var weightedOpacity = Math.pow(Math.random(), .25) - .1;
-
-        // Set animation speed relative to distance.
-        var distance = self.getDistance(coords);
-        var speed = distance/2;
-
-        var line = graphic.path().M({x: coords['x1'], y: coords['y1']}).L({x: coords['x2'], y: coords['y2']}).drawAnimated({duration: speed, delay: 200});
-
-        line.attr({'style': 'opacity: {0}'.format(weightedOpacity)});
-    };
-
-    self.setLineCoordinates = function() {
-        var startSide = self.selectSide();
-        var startPoint = self.selectPoint(startSide);
-
-        var finalSide = self.selectSide(startSide);
-        var finalPoint = self.selectPoint(finalSide);
-
-        return {
-            'x1': startPoint['x'],
-            'y1': startPoint['y'],
-            'x2': finalPoint['x'],
-            'y2': finalPoint['y']
-        };
-    };
-
-    self.getDistance = function(coords) {
-        var a = coords['x1'] - coords['x2'];
-        var b = coords['y1'] - coords['y2'];
-
-        var c = Math.sqrt( a*a + b*b );
-
-        return c;
-    };
-
-    self.selectPoint = function(side) {
-        var point = {'x': null, 'y': null};
-
-        switch(side) {
-            case 't':
-                point['x'] = folio.utils.randomIntFromInterval(0, self.svgWidth);
-                point['y'] = self.svgHeight;
-                break;
-
-            case 'b':
-                point['x'] = folio.utils.randomIntFromInterval(0, self.svgWidth);
-                point['y'] = 0;
-                break;
-
-            case 'l':
-                point['x'] = 0;
-                point['y'] = folio.utils.randomIntFromInterval(0, self.svgHeight);
-                break;
-
-            case 'r':
-                point['x'] = self.svgWidth;
-                point['y'] = folio.utils.randomIntFromInterval(0, self.svgHeight);
-                break;
-        }
-
-        return point;
-    };
-
-    self.selectSide = function (existingSide) {
-        var sides = ['t', 'b', 'l', 'r'];
-
-        if(existingSide){
-            var i = sides.indexOf(existingSide);
-
-            if(i != -1) {
-                sides.splice(i, 1);
-            }
-        }
-
-        return sides[Math.floor(Math.random()*sides.length)];
-    };
-
-    return self;
-})();
-
 folio.utils.randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
+};
+
+folio.find = function (selector, parent) {
+    return Array.prototype.slice.call((parent ? parent : document).querySelectorAll(selector));
 };
 
 // Taken from Jake Trent (http://jaketrent.com/post/addremove-classes-raw-javascript/)
@@ -309,6 +223,5 @@ String.prototype.format = function() {
 };
 
 (function() {
-    folio.graphic.init();
     folio.ajax.init();
 })();

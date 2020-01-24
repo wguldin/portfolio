@@ -4,19 +4,20 @@ layout: default
 
 <div class="home">
     <ul class="c-post-list">
-    {% for post in site.posts %}
-        {% if forloop.index != 1 %}
+    {% for post in site.categories.work %}
+        {% if forloop.index %} 
             <li class="c-post-list__item">
                 <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
-                    <span class="c-post-list__meta">{{ post.date | date: "%m . %d . %y" }}</span>
-
+                    <div class="c-post-list__meta">
+                        {{ forloop.index }}
+                    </div>
                     <div class="c-post-list__content">
                         <h2 class="c-post-list__title">
                             {{ post.title }}
                         </h2>
 
                         <p class="c-post-list__subhead">
-                            {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+                            {{ post.subheader }}
                         </p>
                     </div>
                 </a>

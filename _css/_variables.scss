@@ -1,12 +1,28 @@
-$color-purple-000: #ECE7FF;
-$color-purple-050: #6036FF;
-$color-purple-075: #0F0438;
-$color-purple-100: #03000F;
+$color-background-1: hsl(218, 40, 88);
+$color-background-2: hsl(218, 40, 82);
+
+$color-primary-1: hsl(238, 51, 27);
+
+$color-black: hsl(238, 10, 10);
+
+$color-gray-0: hsl(210, 17, 10);
+$color-gray-1: hsl(210, 17, 24);
+$color-gray-2: hsl(210, 17, 40);
+
+$color-white: hsl(255,100,100);
 
 $border-radius: 3px;
+
+$base-font-size: 18px;
+
+$space-1: .8em;
+$space-2: 1.6em;
+$space-3: 3.2em;
+$space-4: 6.4em;
 
 $swift-out: cubic-bezier(.55, 0, .1, 1);
 
 $system-stack: -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto,Oxygen, Ubuntu,Cantarell,
                "Open Sans","Helvetica Neue",sans-serif;
+ 

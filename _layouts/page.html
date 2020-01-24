@@ -6,13 +6,7 @@ layout: default
         <h1 class="c-post__title" itemprop="name headline">{{ page.title }}</h1>
     </header>
 
-    <div class="c-post__content" itemprop="articleBody">
-        {% assign drop_cap = content|strip_html|truncate:4|remove:'.' %}
-
-        <div class="c-post__dropcap">
-            {{ drop_cap }}
-        </div>
-
+    <div class="c-post__content" itemprop="articleBody">        
         {{ content }}
     </div>
 </article>

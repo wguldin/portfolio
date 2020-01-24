@@ -1,103 +1,23 @@
 .c-header {
-    position: relative;
+    padding-right: 0;
+    font-size: 1.25em;
+    margin-bottom: $space-3;
 
-    @media (min-width: 42em) {
-        height: 75vh;
-    }
-}
-
-.c-header__h-group {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    background-image: none;
-    padding: 19% 0 5% 19.5%;
-
-    @media (min-width: 42em) {
-        height: 100vh;
-        width: 64vw;
-        padding: 1.2em 0 0 5.7%;
+    @media (min-width: 32em) {
+        padding-right: $space-3;
     }
 
-    &:hover ~ .c-header__background {
-        .c-header__number {
-            color: rgba($color-purple-000, .23);
-        }
-
-        .c-header__label {
-            color: rgba($color-purple-000, .3);
-        }
+    @media (min-width: 67em) {
+        padding-right: $space-4;
+        margin-bottom: $space-4;
     }
 }
 
 .c-header__title {
-    line-height: 1.5;
-    font-weight: 400;
-    margin: 0;
-    color: $color-purple-050;
-    font-family: "league-spartan";
-    font-size: 1.6em;
-
-    @media (min-width: 32em) {
-        font-size: 1.8em;
-    }
-
-    @media (min-width: 42em) {
-        font-size: 2.6em;
-    }
+    font-size: 1.4em;
+    margin-top: 0;
 }
 
-.c-header__subhead {
-    margin-top: .5em;
-    font-size: 1.2em;
-    font-family: "cooper-hewitt-light";
-    color: $color-purple-000;
-}
-
-.c-header__background {
-    font-family: "cooper-hewitt-light";
-    position: absolute;
-    z-index: 1;
-    user-select: none;
-    pointer-events: none;
-    top: 10em;
-    left: 1em;
-
-    @media (min-width: 42em) {
-        top: 1.2em;
-        left: 0;
-    }
-}
-
-.c-header__number, .c-header__label {
-    position: absolute;
-    transition: color 150ms ease-in;
-
-}
-
-.c-header__number {
-    font-size: 12em;
-    line-height: 1;
-    color: rgba($color-purple-000, .15);
-    left: 10vw;
-
-    @media (min-width: 42em) {
-        font-size: 100vh;
-        left: 8vw;
-        top: 4vh;
-    }
-}
-
-.c-header__label {
-    font-size: 1.2em;
-    color: rgba($color-purple-000, .2);
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    text-align: right;
-    white-space: nowrap;
-
-    @media (min-width: 42em) {
-        font-size: 1.4em;
-    }
+.c-header__description {
+    color: $color-gray-2;
 }

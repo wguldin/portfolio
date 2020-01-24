@@ -1,0 +1,20 @@
+---
+layout: page
+title: Blog Posts
+permalink: /blog/
+---
+{% for post in site.categories.blog %}
+    {% if forloop.index %} 
+        {% if forloop.index != 1%}
+            <hr class="mt4">
+        {% endif %}
+
+        <h2>{{ post.title }}</h2>
+
+        <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+
+        <div>
+            <a class="c-post__readmore" href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+        </div>
+    {% endif %}
+{% endfor %}

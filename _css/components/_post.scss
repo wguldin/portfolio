@@ -1,139 +1,115 @@
 .c-post {
-    padding-bottom: 3em;
+    font-family: "prospectus-small";
 
-    @media (min-width: 42em) {
-        padding-top: 5.5%;
-        display: flex;
-        align-items: flex-start;
-        margin-left: 5%;
+    @media (min-width: 48em) {
+        padding: 0 $space-3 0 0;
     }
 
-    h2 {
-        font-size: 1.4em;
+    @media (min-width: 72em) {
+        padding: 0 $space-3;
     }
 
-    h3 {
-        font-size: .9em;
-        font-family: "league-spartan";
-        opacity: .95;
-        margin-top: 1.8em;
-        margin-bottom: .7em;
+    @media (min-width: 80em) {
+        padding: 0 $space-4;
     }
 
     ul {
         list-style: none;
         padding-left: 0;
-        margin-left: 0;
+        margin-left: 0; 
     }
 
     li {
         padding-left: .9em;
         position: relative;
+        margin-bottom: .5em;
     }
 
     li:before {
-        content: "";
-        width: .4em;
-        height: .4em;
-        border-radius: 50%;
-        background-color: rgba($color-purple-050, .6);
+        content: "\2022";
+        font-family: sans-serif;
+        font-size: 1.8em;
+        color: $color-primary-1;
         position: absolute;
         left: 0;
-        top: .5em;
-    }
-}
-
-.c-post__header {
-    @media (min-width: 42em) {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        text-align: right;
-    }
-}
-
-.c-post__title {
-    font-size: 2.2em;
-    line-height: 1.2;
-    margin: 0 0 1.5rem 0;
-    color: rgba($color-purple-000, .4);
-    font-family: "cooper-hewitt-light";
-
-    @media (min-width: 36em) {
-        font-size: 1.6em;
-        line-height: 1.6;
+        top: -.35em;
     }
 
-    @media (min-width: 42em) {
-        height: 12em;
-        margin-bottom: 0;
-        width: 3.2em;
-    }
-}
-
-.c-post__meta {
-    font-size: .7em;
-    line-height: 1.1;
-}
-
-.c-post__content {
-    max-width: 37em;
-
-    @media (min-width: 42em) {
-        padding-left: 2em;
-    }
-}
-
-.c-post__dropcap {
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
-    display: flex;
-    height: 5.4rem;
-    justify-content: center;
-    position: relative;
-    width: 5.4rem;
-    font-size: 3.6em;
-    margin: .1rem 1rem 0 0;
-    float: left;
-    padding-top: .2em;
-    background-color: rgba($color-purple-000, .2);
-    color: $color-purple-050;
-}
-
-.c-post__image {
-    width: 130%;
-
-    img {
-        max-width: 100%;
+    h2 {
+        font-size: 1.52em;
+        color: $color-gray-2;
     }
 
-    @media (min-width: 42em) {
-        position: relative;
-        overflow-x: visible;
-        padding-top: 1.5em;
-        padding-bottom: 1em;
-        margin-bottom: 1.5em;
-        margin-left: -8.5%; // Centers in Element
+    h3 {
+        font-size: 1.2em;
+        color: $color-gray-1;
+    }
 
-        // I wanted to 'break out' the background from the parent container,
-        // but without centering the post content, this is difficult with css.
-        // So, I use a pseudo element to break out the background.
-        // Might revisit this with JS.
-        &::after {
-            content: "";
-            background-color: rgba(236, 231, 255, .1);
-            border: 4px solid rgba($color-purple-050, .3);
-            left: -100vw;
-            bottom: 0;
-            position: absolute;
-            width: 200vw;
-            height: 100%;
-            z-index: -1;
+    a {
+        background-position: 0 1.1em;
+
+        &:hover {
+            background-position: 0 1em;
         }
     }
 }
 
+.c-post__title {
+    font-size: 1.75em;
+    font-family: "cooper-hewitt-book";
+    margin-top: 0;
+}
+
+.c-post__back { 
+    background: none;
+    font-size: 2.5em;
+    position: absolute;
+    left: -1em;
+    top: -4px;
+    opacity: .3;
+    transition: opacity 80ms ease-in;
+
+    &:before {
+        border-width: 0.075em 0.075em 0 0 !important; // Override utility class default
+    }
+
+    &:hover {
+        opacity: .7;
+    }
+
+    @media (min-width: 72em) {
+            left: 1rem;
+    }
+
+    @media (min-width: 80em) {
+        left: 4rem;
+    }
+}
+
+// Double up on specificty to avoid !important
+a.c-post__readmore, a.c-post__caption-link {
+    font-family: 'cooper-hewitt-book';
+    background-position: 0 .95em;
+
+    &:hover {
+        background-position: 0 .95em;
+        background-position: 0 .8em;
+    }
+}
+
+.c-post__image {
+    width: 100%;
+    background: $color-white;
+    padding: 1em 1em 0.4em 1em;
+    margin: 1em 0;
+
+    img {
+        max-width: 100%;
+    }
+}
+
 .c-post__caption {
-    font-size: .7em;
-    color: $color-purple-000;
+    font-family: 'cooper-hewitt-book';
+    font-size: .9em;
+    color: $color-gray-2;
 }
