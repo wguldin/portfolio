@@ -34,7 +34,7 @@ folio.ajax = (function() {
             link.addEventListener('click', function(e) {
                 var target = e.target;
 
-                if (target.hasClass('js-download')) {
+                if (folio.utils.hasClass(target, 'js-download')) {
                     return;
                 }
 
