@@ -1,4 +1,4 @@
-.c-aside {
+.c-intro {
     font-family: "cooper-hewitt-book";
     background: rgba(34,36,104,0.9);
     color: white;
@@ -7,20 +7,21 @@
     width: 18rem;
     height: 100%;
     flex-shrink: 0;
+    margin-bottom: $space-2;
 }
 
-.c-aside__header {
+.c-intro__header {
     font-family: 'prospectus-medium';
     font-size: 1.8em;
     font-weight: normal;
     margin-top: 0;
 }
 
-.c-aside__description {
+.c-intro__description {
     margin-bottom: 0;
 }
 
-.c-aside__initials {
+.c-intro__initials {
     position: absolute;
     top: -$space-3;
     width: $space-4*2;

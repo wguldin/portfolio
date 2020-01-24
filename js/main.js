@@ -51,6 +51,14 @@ folio.ajax = (function() {
                     // Only update contents and routing if going to a new page.
                     self.pushState(linkURL);
                     self.loadPartial(linkURL);
+
+                    var intro = document.getElementById('intro');
+
+                    if(linkURL == '/') {
+                        folio.utils.addClass(intro, 'c-intro--home');
+                    } else {
+                        folio.utils.removeClass(intro, 'c-intro--home');
+                    }
                 }
             });
         }

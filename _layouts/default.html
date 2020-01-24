@@ -23,12 +23,18 @@
                 {{ content }}
             </div> 
 
-            <aside class="c-aside">
-                <img class="c-aside__initials" src="{{ site.baseurl }}/assets/images/initials.svg" alt="WG Initials">
+            <aside id="intro"
+                {% if pageurl == '/' %}
+                   class="c-intro c-intro--home"
+                {% else %}
+                    class="c-intro"
+                {% endif %}
+            >
+                <img class="c-intro__initials" src="{{ site.baseurl }}/assets/images/initials.svg" alt="WG Initials">
 
-                <h2 class="c-aside__header">Hi, I'm Will Guldin</h2>
+                <h2 class="c-intro__header">Hi, I'm Will Guldin</h2>
 
-                <p class="c-aside__description">
+                <p class="c-intro__description">
                     As a product design leader, I’m passionate about growing effective teams, and designing complex, enterprise applications.
                 </p>
             </aside>
