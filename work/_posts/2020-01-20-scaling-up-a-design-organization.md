@@ -7,7 +7,11 @@ date: "2020-01-20 11:05:37 -0500"
 
 <p class="u-text--lg">BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. This meant features were routinely shipped without any kind of validation or feedback from customers using our insurance software, and that basic practices in product design, such as information architecture mapping and wireframing weren’t in place.</p>
 
-{% include image.html name="ideation.png" caption="Ideation session our team ran for dozens of BriteCore employees during a in-person summit. Later, the results were translated into a digital whiteboard, and a summary of the session shared out over slack." %}
+<figure class="c-post__image">
+    {% include image.html name="ideation.png" %}
+    <figcaption class="c-post__caption">Ideation session our team ran for dozens of BriteCore employees during a in-person product summit. We used the sessions to raise design literacy on our teams, and created a <a class="c-post__caption-link js-download" download href="/pd-summit-design-session.pdf" target="_blank">summary of the session</a> we shared out over slack. We now routinely conduct these activites remotely, using Miro.</figcaption>
+</figure>
+
 
 ## Laying the Foundation
 It would be another two years before BriteCore was able to scale its design team. This allowed me to create and grow a true design process within the organization:

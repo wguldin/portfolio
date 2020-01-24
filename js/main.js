@@ -32,9 +32,14 @@ folio.ajax = (function() {
             var link = links[i];
 
             link.addEventListener('click', function(e) {
+                var target = e.target;
+
+                if (target.hasClass('js-download')) {
+                    return;
+                }
+
                 e.preventDefault();
                 
-                var target = e.target;
                 var linkURL;
                 var currentURL = window.location.pathname.replace(/\/$/, "");
 

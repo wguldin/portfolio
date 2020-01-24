@@ -87,7 +87,7 @@
 }
 
 // Double up on specificty to avoid !important
-a.c-post__readmore {
+a.c-post__readmore, a.c-post__caption-link {
     font-family: 'cooper-hewitt-book';
     background-position: 0 .95em;
 
