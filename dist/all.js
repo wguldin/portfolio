@@ -52,8 +52,12 @@ folio.ajax = (function() {
                     self.pushState(linkURL);
                     self.loadPartial(linkURL);
 
+                    var intro = document.getElementById('intro');
+
                     if(linkURL == '/') {
-                        folio.utils.addClass(document.getElementById('intro'), 'c-intro--home');
+                        folio.utils.addClass(intro, 'c-intro--home');
+                    } else {
+                        folio.utils.removeClass(intro, 'c-intro--home');
                     }
                 }
             });
