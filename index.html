@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
     <ul class="c-post-list">
-    {% for post in site.categories.work %}
+    {% for post in site.categories.work reversed %}
         {% if forloop.index %} 
             <li class="c-post-list__item">
                 <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
