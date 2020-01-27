@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lessons Learned While Leading Remote Teams"
-subheader: "Et magnis dis parturient montes nascetur ridiculus. Id diam maecenas ultricies mi eget mauris pharetra et. Facilisis volutpat est velit egestas dui. Volutpat odio facilisis mauris sit. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam."
+subheader: "After working at a fully distributed company for nearly five years, I’ve learned that working remotely is at its best when it feels like a paradox. On a surface level, many people assume a remote workplace would be less connected or collaborative than a traditional office. While it can have certain challenges, I’ve found that with some thoughtful practices in place, good collaboration isn’t one of them. In fact, it can become a key part of leading remote teams."
 date: "2020-01-25 10:00:00 -0500"
 sidebar: /summary/remote-case-study.markdown
 ---

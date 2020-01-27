@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scaling Up a Remote Design Organization"
-subheader: "BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. This meant features were routinely shipped without any kind of validation or feedback from customers using our insurance software, and that basic practices in product design, such as information architecture mapping and wireframing weren’t in place."
+subheader: "BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. Starting out as the only designer on staff, I built up a design culture within the company, and scaled up our design team as we grew. Along the way we started a UX research program, design system and a new frontend engineering team."
 date: "2020-01-20 11:05:37 -0500"
 sidebar: /summary/scaling-case-study.markdown
 ---
