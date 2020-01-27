@@ -28,8 +28,10 @@ body {
     text-rendering: optimizeLegibility;
 
     color: $color-black;
+    background-color: $color-background-1;
     background-image: linear-gradient(to bottom, $color-background-1, $color-background-2);
     background-repeat: no-repeat;
+    background-size: 100% 100%;
 
     @media (min-width: 48em) {
         margin: $space-3*1.5;

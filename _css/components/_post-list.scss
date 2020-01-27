@@ -17,8 +17,7 @@
 }
 
 .c-post-list__item {
-    border: solid rgba($color-gray-1, .4);
-    border-width: 1px 0;
+    border-top: 1px solid rgba($color-gray-1, .4);
 
     &:first-child {
         border-top: 0;
@@ -30,7 +29,7 @@
     display: flex;
     background-image: none;
     position: relative;
-    padding: $space-2 $space-2 $space-2 0;
+    padding: $space-2*1.5 $space-2 $space-2*1.5 0;
     color: $color-gray-2;
 
     &:hover {
