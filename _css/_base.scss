@@ -28,8 +28,10 @@ body {
     text-rendering: optimizeLegibility;
 
     color: $color-black;
+    background-color: $color-background-1;
     background-image: linear-gradient(to bottom, $color-background-1, $color-background-2);
     background-repeat: no-repeat;
+    background-size: 100% 100%;
 
     @media (min-width: 48em) {
         margin: $space-3*1.5;
@@ -138,24 +140,28 @@ p {
 
 pre,
 code {
-    font-size: .8em;
+    font-size: .9em;
     border-radius: 3px;
 }
 
 code {
     padding: 2px 4px;
-    background-color: hsl(238, 31%, 28%);
+    background-color: $color-primary-1;
     color: $color-white;
 }
 
 pre {
     padding: .75em 1em;
     overflow-x: auto;
+    margin-bottom: 1em;
+    border-radius: 0;
 
     > code {
         border: 0;
         padding-right: 0;
         padding-left: 0;
+        background: none;
+        color: $color-gray-1;
     }
 }
 
@@ -186,6 +192,6 @@ iframe, img {
 
 .about-img {
     float: left;
-    margin: 0 1.5em 1.5em 0;
+    margin: .3em 1.5em 1.5em 0;
     width: 200px;
 }

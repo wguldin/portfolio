@@ -9,6 +9,12 @@
     <img src="{{ url | prepend: site.baseurl }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
     <figcaption class="c-post__caption">{{ include.caption }}</figcaption>
   </figure>
-{% else %}
+{% else if include.remove-class %}
+  <div>
     <img src="{{ url | prepend: site.baseurl }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+  </div>
+{% else %}
+  <div class="c-post__image">
+    <img src="{{ url | prepend: site.baseurl }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+  </div>
 {% endif %}

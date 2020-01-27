@@ -6,7 +6,7 @@
     // @extend %vertical-rhythm;
 
     .highlighter-rouge & {
-      background: #eef;
+      background: $color-white;
     }
 
     .c     { color: #998; font-style: italic } // Comment
@@ -21,13 +21,13 @@
     .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific
     .ge    { font-style: italic } // Generic.Emph
     .gr    { color: #a00 } // Generic.Error
-    .gh    { color: #999 } // Generic.Heading
+    .gh    { color: #333; font-size: 1.2em; } // Generic.Heading
     .gi    { color: #000; background-color: #dfd } // Generic.Inserted
     .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific
     .go    { color: #888 } // Generic.Output
     .gp    { color: #555 } // Generic.Prompt
     .gs    { font-weight: bold } // Generic.Strong
-    .gu    { color: #aaa } // Generic.Subheading
+    .gu    { color: #333; font-size: 1.05em; } // Generic.Subheading
     .gt    { color: #a00 } // Generic.Traceback
     .kc    { font-weight: bold } // Keyword.Constant
     .kd    { font-weight: bold } // Keyword.Declaration

@@ -76,6 +76,9 @@ folio.ajax = (function() {
     };
 
     self.loadPartial = function(url) {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.innerHTML = '';
+
         self.showLoader(function() {
             self.loadPartialAjaxRequest(url);
         });
@@ -96,6 +99,7 @@ folio.ajax = (function() {
 
                 // Get the inner contents
                 var innerPageDom = pageDom.querySelectorAll('#main-content')[0].innerHTML;
+                var sidebarDom = pageDom.querySelectorAll('#sidebar')[0].innerHTML;
 
                 // Update Title
                 var pageTitle = pageDom.getElementsByTagName('title')[0].textContent;
@@ -103,7 +107,10 @@ folio.ajax = (function() {
 
                 // Update Contents
                 var pageContent = document.getElementById('main-content');
+                var sidebarContent = document.getElementById('sidebar');
+
                 pageContent.innerHTML = innerPageDom;
+                sidebarContent.innerHTML = sidebarDom;
 
                 // Rebind links
                 self.bindClickListener(url, pageContent);

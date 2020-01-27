@@ -1,15 +1,16 @@
 ---
 layout: post
-title: "Scaling Up a Design Organization"
+title: "Scaling Up a Remote Design Organization"
 subheader: "BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. This meant features were routinely shipped without any kind of validation or feedback from customers using our insurance software, and that basic practices in product design, such as information architecture mapping and wireframing weren’t in place."
 date: "2020-01-20 11:05:37 -0500"
+sidebar: /summary/scaling-case-study.markdown
 ---
 
 <p class="u-text--lg">BriteCore, a fully remote and distributed company, had been without a designer for three years when I joined the team. This meant features were routinely shipped without any kind of validation or feedback from customers using our insurance software, and that basic practices in product design, such as information architecture mapping and wireframing weren’t in place.</p>
 
 <figure class="c-post__image">
-    {% include image.html name="ideation.png" %}
-    <figcaption class="c-post__caption">Ideation session our team ran for dozens of BriteCore employees during a in-person product summit. We used the sessions to raise design literacy on our teams, and created a <a class="c-post__caption-link js-download" download href="/pd-summit-design-session.pdf" target="_blank">summary of the session</a> we shared out over slack. We now routinely conduct these activites remotely, using Miro.</figcaption>
+    {% include image.html name="ideation.png" remove-class="true" %}
+    <figcaption class="c-post__caption">Ideation session our team ran for dozens of BriteCore employees during an in-person product summit. We used the sessions to raise design literacy on our teams, and created a <a class="c-post__caption-link js-download" download href="/pd-summit-design-session.pdf" target="_blank">summary of the session</a> we shared out over slack. We now routinely conduct these activities remotely, using Miro.</figcaption>
 </figure>
 
 
@@ -19,7 +20,7 @@ It would be another two years before BriteCore was able to scale its design team
 * Routinely conducted usability tests and interviews with our users, sharing these results with our team.
 * Worked closely with development teams on several projects, including a rewritten quoting experience.
 * Instituted design reviews of all other new functionality, explaining design best practices in the process, and encouraging early design involvement.
-* Gave talks on our design and product at BriteCon, our annual users  conference.
+* Gave annual [presentations](/talks/) on our design and product at BriteCon, our users  conference.
 
 Over several months, I noticed that these efforts bore fruit. Instead of hearing about in-progress work as it neared completion, I was able to insert design much earlier in the process, leading to consistently better experiences for our users.
 
@@ -31,10 +32,12 @@ I brought these skills to BriteCore and was able to implement many changes to th
 * Added search ‘hotkeys’ to enable quicker task completion for people working in the system.
 * Unified navigation across the application, both increasing consistency and reducing technical debt.
 
-Although I no longer code directly much anymore, this technical background has been invaluable to help me understand how our product is built, and it helps me closely collaborate with developers. Building those relationships, and understanding developers’ work is key to getting a design vision implemented, and being able to iterate on a product quickly. (I’ve also had the chance to give a tech talk on CSS architecture, which was pretty cool!)
+{% include image.html name="gh-contributions.png" caption="Code contributions are far from a perfect measurement of impact, but they do illustrate how early on it fell to me to implement many general improvements to the platform myself." %}
+
+Although I no longer code directly much anymore, this technical background has been invaluable to help me understand how our product is built, and it helps me closely collaborate with developers. Building those relationships, and understanding developers’ work is key to getting a design vision implemented, and being able to iterate on a product quickly. (I’ve also had the chance to give a [tech talk on CSS architecture](/talks/), which was pretty cool!)
 
 ## Creating a Design Organization
-{% include image.html name="structure-1.png" caption="The initial structure of BriteCore's design team, once we began scaling up. Product designers were embedded on aigle teams, which gave them a better understanding of their problem space." %}
+{% include image.html name="structure-1.png" caption="The initial structure of BriteCore's design team, once we began scaling up. Product designers were embedded on agile teams, which gave them a better understanding of their problem space." %}
 
 Into my second year at BriteCore, we began a large effort to rewrite key pieces of the application. Our product vision was to create a more flexible platform that could support more types of insurance using better configuration tools and less custom code. Given the complexity of our product suite, and based on industry guidance (Org Design for Design Orgs was particularly helpful), I set out to create an ‘embedded’ model for design at BriteCore. 
 
@@ -46,14 +49,20 @@ In this approach, designers become an integrated part of each product team, atte
 This shows how we structured the design department at BriteCore initially, with myself in the Product Design Director role. We have 8 designers now embedded on teams across our product organization.
 
 ## Making UX Research a Priority
-As our new product teams began to form, this model worked well, although we had a hard time coordinating and organizing user research as the team grew. Everyone wanted to make research a consistent priority, but it was failing to happen. Most of our research was also limited to primarily usability testing, and other similar evaluative techniques. Over time, leading teams, I’ve found that if a responsibility is shared among many individudals, it is easy for it to slip given competing priorities. It felt like this is what was happening with UX research, and I also thought we might benefit from more specialized expertise in this area. 
+As our new product teams began to form, this model worked well, although we had a hard time coordinating and organizing user research as the team grew. Everyone wanted to make research a consistent priority, but it was failing to happen. Most of our research was also limited to primarily usability testing, and other similar evaluative techniques. Over time, leading teams, I’ve found that if a responsibility is shared among many individuals, it is easy for it to slip given competing priorities. It felt like this is what was happening with UX research, and I also thought we might benefit from more specialized expertise in this area. 
 
-With that in mind, I proposed and we hired a dedicated UX Researcher, which greatly increased the amount of customer interactions our team had:
+With that in mind, I proposed bringing on a dedicated UX Researcher, and we ultimately hired <a href="https://www.mayacarroll.com/" target="_blank">Maya Carroll</a>, who has been a great fit for our team. Working with her, and the rest of the designers, we were able to greatly increase the amount of customer interactions our team had:
 
 * We conducted more than 180 research sessions in our first year.
 * Went onsite to multiple clients, observing not only how they use BriteCore, but how it fit into their overall work processes.
-* Developed personas based on these interactions.
-* Kept designers involved in the research process, through collaborative note taking, observation and analysis of key results.
+* Developed personas based on these interactions used by the entire organization.
+* Kept designers and product managers involved in the research process, through collaborative note taking, observation and analysis of key results.
+* These research efforts helped us insert design earlier into our product process, resulting in better 
+
+{% include image.html name="underwriter-persona.png" caption="Our proto personas were created to help guide our research process, and improve design literacy across the organization." %}
+
+{% include image.html name="persona-journey-map.png" caption="We also created a journey map to show how these different personas interacted while using our platform." %}
+
 
 ## Implementing a Design System
 While building out our design team, it was also clear to me that we need help to close the gap in how our work made it into the live application, and to realize our vision of a shared design system for BriteCore. I’ll go into detail about this project in another case study, but in terms of scaling our team, this meant proposing that Design includes a place for UI Engineering, a concept inspired by Optimizely.
@@ -71,5 +80,5 @@ This team was also able to:
 
 While designers remained embedded on agile teams, our dedicated UX Researcher and our frontend team worked with all of our teams across the organization.
 
-## Learnings
+## What I Learned
 Building BriteCore’s design team from just myself to a department of 14 people has been an incredibly rewarding and challenging experience. Along the way, I’ve learned how to lead remote teams and learned a lot about being a better designer from the people I’ve been lucky enough to work alongside.
