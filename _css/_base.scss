@@ -13,6 +13,7 @@ dl, dd, ol, ul, figure {
 // Basic Styling
 body {
     font-family: "cooper-hewitt-book", sans-serif;
+    font-weight: normal;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     font-size: 1rem;
@@ -93,6 +94,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     margin: 1.414em 0 .5em;
     font-family: "cooper-hewitt-book", sans-serif;
+    font-weight: normal;
 }
 
 $h1: 2.441em;

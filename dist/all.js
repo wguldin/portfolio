@@ -76,6 +76,9 @@ folio.ajax = (function() {
     };
 
     self.loadPartial = function(url) {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.innerHTML = '';
+
         self.showLoader(function() {
             self.loadPartialAjaxRequest(url);
         });
@@ -104,7 +107,7 @@ folio.ajax = (function() {
 
                 // Update Contents
                 var pageContent = document.getElementById('main-content');
-                var sidebarContent = document.querySelectorAll('#sidebar')[0].innerHTML;
+                var sidebarContent = document.getElementById('sidebar');
 
                 pageContent.innerHTML = innerPageDom;
                 sidebarContent.innerHTML = sidebarDom;
