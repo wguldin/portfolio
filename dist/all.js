@@ -57,12 +57,20 @@ folio.ajax = (function() {
                     self.pushState(linkURL);
                     self.loadPartial(linkURL);
 
-                    var intro = document.getElementById('intro');
+                    var introBox = document.getElementById('intro-box');
 
                     if(linkURL == '/') {
-                        folio.utils.addClass(intro, 'c-intro--home');
+                        folio.utils.addClass(introBox, 'c-intro__box--home');
                     } else {
-                        folio.utils.removeClass(intro, 'c-intro--home');
+                        folio.utils.removeClass(introBox, 'c-intro__box--home');
+                    }
+
+                    var intro = document.getElementById('intro');
+
+                    if(linkURL == '/about/') {
+                        folio.utils.addClass(intro, 'c-intro--about');
+                    } else {
+                        folio.utils.removeClass(intro, 'c-intro--about');
                     }
                 }
             });

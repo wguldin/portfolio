@@ -85,8 +85,17 @@ a {
     cursor: pointer;
 
     &:hover {
-        color: $color-primary-1;
+        color: darken($color-primary-1, 10%);
         background-position: 0 .8em;
+    }
+
+    > h2 {
+        text-decoration: underline;
+        transition: color 120ms ease-in;
+
+        &:hover {
+            color: $color-black;
+        }
     }
 }
 
@@ -169,7 +178,7 @@ pre {
 
 main {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     @media (min-width: 48em) {
         flex-direction: row;
@@ -186,6 +195,7 @@ hr {
 
 .l-content {
     width: 100%;
+    order: 1;
 }
 
 iframe, img {

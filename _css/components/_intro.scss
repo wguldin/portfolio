@@ -4,12 +4,16 @@
     height: 100%;
     flex-shrink: 0;
     margin-bottom: $space-2;
-    display: none;
     margin-bottom: 2em;
+    order: 0;
+
+    @media (min-width: 48em) {
+        width: 12em;
+        order: 1;
+    }
 
     @media (min-width: 60em) {
         width: 15em;
-        display: block;
     }
 
     @media (min-width: 67em) {
@@ -17,9 +21,11 @@
     }
 }
 
-.c-intro--home {
+.c-intro--about {
+    order: 2;
+
     @media (max-width: 60em) {
-        display: block;
+        margin-top: -1em;
     }
 }
 
@@ -29,9 +35,17 @@
     padding: 1em;
     font-family: "cooper-hewitt-book";
     font-size: .8em;
+    display: none;
 
     @media (min-width: 60em) {
         font-size: .9em;    
+        display: block; // Show on other pages aside from home.
+    }
+}
+
+.c-intro__box--home {
+    @media (max-width: 60em) {
+        display: block;
     }
 }
 
