@@ -15,6 +15,10 @@ $border-radius: 3px;
 
 $base-font-size: 18px;
 
+@media (min-width(768px)) and (max-width(960px)) {
+    $base-font-size: 14px;
+}
+
 $space-1: .8em;
 $space-2: 1.6em;
 $space-3: 3.2em;

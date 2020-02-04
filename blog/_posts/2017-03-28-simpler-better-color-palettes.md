@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Simpler, better color palettes"
-subheader: "A technique using the HSL color model gives more consistent, branded results"
+title: "Simpler, better color palettes using HSL"
 date: "2017-03-28 17:00:00 -0500"
 ---
 

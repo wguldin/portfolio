@@ -8,7 +8,7 @@
     }
 
     @media (min-width: 67em) {
-        padding-right: $space-4;
+        padding-right: $space-4; 
         margin-bottom: $space-4;
     }
 }
@@ -16,6 +16,10 @@
 .c-header__title {
     font-size: 1.4em;
     margin-top: 0;
+
+    a {
+        background-size: 1px 2px;
+    }
 }
 
 .c-header__description {

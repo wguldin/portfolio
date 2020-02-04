@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "What makes for a good upload UX?"
-subheader: "Two approaches reveal that the context of your design matters."
+title: "Creating the ideal photo upload UX"
 date: "2016-09-17 11:05:37 -0500"
 ---
 
