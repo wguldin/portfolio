@@ -16,7 +16,7 @@ Like most folks, my path to working on digital products was winding. I went to t
     <figcaption class="c-post__caption">Our flock of sheep on the farm in rural Missouri.</figcaption>
 </figure>
 
-While in school, I started to teach myself HTML & CSS, and used these skills to build out small micro sites for several journalism projecs. That served as my first introduction to digital design, and the principles of user experience.
+While in school, I started to teach myself HTML & CSS, and used these skills to build out small micro sites for several journalism projects. That served as my first introduction to digital design, and the principles of user experience.
 
 From there, I worked as a web designer for a large online retailer, and then was lucky enough to find the position at BriteCore. For full details about my experience, you can check out my [LinkedIn profile](https://www.linkedin.com/in/will-guldin/){:target="_blank"}, or read my case studies. 
 

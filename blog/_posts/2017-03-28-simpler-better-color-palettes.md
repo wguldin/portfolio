@@ -16,7 +16,7 @@ Be sure to check out the article. It advocated using the Hue, Saturation and Lig
 
 Using that approach, I was able to tone down the saturation of my main color a bit, and then adjust the brightness to get a range of gray tones.
 
-{% include image.html name="colors.png" caption="Our new gray tones are derived from the primary action's hue" %}
+{% include image.html alt="New colors" name="colors.png" caption="Our new gray tones are derived from the primary action's hue" %}
 
 ## In the wild
 

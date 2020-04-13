@@ -4,6 +4,7 @@ title: "Lessons Learned While Leading Remote Teams"
 subheader: "After working at a fully distributed company for nearly five years, I’ve learned that working remotely is at its best when it feels like a paradox. On a surface level, many people assume a remote workplace would be less connected or collaborative than a traditional office. While it can have certain challenges, I’ve found that with some thoughtful practices in place, good collaboration isn’t one of them. In fact, it can become a key part of leading remote teams."
 date: "2020-01-25 10:00:00 -0500"
 sidebar: /summary/remote-case-study.markdown
+order: 5
 ---
 
 <p class="u-text--lg">
@@ -28,7 +29,7 @@ Even with the right values, people need opportunities to grow and learn together
 ### Design Critiques
 Our weekly critique sessions are informal video chats where we give and receive feedback on in-progress design work. We used a Miro board, and short briefs the designers fill out beforehand to facilitate the discussion. As our team grew, we split this meeting into two separate sessions, so that the discussion still felt personal (and not like a formal presentation).
 
-{% include image.html name="design-critique.png" caption="Our recurring Miro board allows for just enough organization to make for productive meetings, but the format doesn't feel as official as a google doc or presentation. The 'Day After Tomorrow' reference on the right was posted because one of our designers is based in Florida and was talking about how cold 50°F was!" %}
+{% include image.html alt="design critique in Miro" name="design-critique.png" caption="Our recurring Miro board allows for just enough organization to make for productive meetings, but the format doesn't feel as official as a google doc or presentation. The 'Day After Tomorrow' reference on the right was posted because one of our designers is based in Florida and was talking about how cold 50°F was!" %}
 
 ### Great Tooling
 Working remotely would be much harder, if there weren't so many great tools these days. Here are some of the ones we've used the most:
