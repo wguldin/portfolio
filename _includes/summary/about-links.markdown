@@ -10,6 +10,7 @@ I'm old school in many ways, and love to read paper copies of books. Here are on
 * High Output Management, *Andy Grove*
 * Lean UX, *Jeff Gothelf & Josh Seiden*
 * Crossing the Chasm, *Geoffrey Moore*
+* The Design of Everyday Things, *Don Norman*
 * Work Rules!, *Laszlo Bock*
 * Measure What Matters, *John Doerr*
 * Writing Tools, *Roy Peter Clark*
