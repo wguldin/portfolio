@@ -13,7 +13,7 @@ order: 2
 
 We knew it was critical to make our product more flexible if BriteCore was going to be widely adopted throughout the insurance industry. To accomplish this, we began work on a new rating engine.
 
-{% include image.html alt="tractor factory" name="factory.png" caption="When explaining our rating engine tool to other designers, I often compare it to a vehicle factory. We aren't designing the individual vehicles (specific client configurations), we are instead designing the car factory (the tool that creates the configurations). It's a subtle shift in thinking about what we are doing that has large ramifications for how I approached this work." title="Photo by Amin Khorsand on Unsplash." %}
+{% include image.html alt="design sketches" name="sketch-composite.png" caption="Early sketching centered around the challenge of showing 'hierarchy' in a rating configuration. These levels of rating information can be dynamic and vary from carrier to carrier, which made designing this page tricky." %}
 
 ## How Rating Engines Work
 Lines, the rating engine in BriteCore, is a configuration tool for different insurance products (often called Lines of Business). To better understand this, a stripped-down configuration for a homeowners policy is below. **"Data"** describes information collected from the customer. **"Calculations"** describe how that information affects coverages and the premium.
