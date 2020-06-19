@@ -186,6 +186,28 @@ hr {
     margin-top: 1em;
 }
 
+footer {
+    border-top: 1px solid rgba($color-gray-2, .3);
+    margin-top: $space-3;
+    padding-top: $space-2;
+}
+
+.button {
+    background-color: lighten($color-primary-1, 5%);
+    color: white;
+    padding: .6em .8em .4em .8em;
+    font-family: 'cooper-hewitt', sans-serif;
+    border-radius: 6px;
+    font-size: .9em;
+    display: inline-block;
+
+    &:hover {
+        color: white;
+        background-color: darken($color-primary-1, 5%);
+        transition: background-color 120ms ease-in;
+    }
+}
+
 .l-content {
     width: 100%;
     order: 1;
@@ -199,4 +221,22 @@ iframe, img {
     float: left;
     margin: .3em 1.5em 1.5em 0;
     width: 200px;
+}
+
+.footer-icon {
+    background: none;
+    float: right;
+    margin-left: 1em;
+
+    img {
+        width: 1.5em;
+        opacity: .7;
+        transition: opacity 120ms ease-in;
+    }
+    
+    &:hover {
+        img {
+            opacity: 1;
+        }
+    }
 }

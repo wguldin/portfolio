@@ -3,27 +3,55 @@ layout: default
 ---
 
 <div class="home">
-    <ul class="c-post-list">
-    {% assign posts = site.categories.work | sort: 'order' %}
-    {% for post in posts  %}        
-        {% if forloop.index %} 
-            <li class="c-post-list__item">
-                <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
-                    <div class="c-post-list__meta">
-                        {{ forloop.index }}
-                    </div>
-                    <div class="c-post-list__content">
-                        <h2 class="c-post-list__title">
-                            {{ post.title }}
-                        </h2>
+    <div class="c-post-list__container">
+        <h2 class="c-post-list__heading">Case Studies &ndash; Design Contributions</h2>
+        <ul class="c-post-list">
+        {% assign posts = site.categories.work | sort: 'order' %}
+        {% for post in posts  %}        
+            {% if forloop.index and post.type == "design" %} 
+                <li class="c-post-list__item">
+                    <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
+                        <div class="c-post-list__meta">
+                            {{ forloop.index }}
+                        </div>
+                        <div class="c-post-list__content">
+                            <h3 class="c-post-list__title">
+                                {{ post.title }}
+                            </h3>
+                            <!-- 
+                            <p class="c-post-list__subhead">
+                                {{ post.subheader }}
+                            </p> -->
+                        </div>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
 
-                        <p class="c-post-list__subhead">
-                            {{ post.subheader }}
-                        </p>
-                    </div>
-                </a>
-            </li>
-        {% endif %}
-    {% endfor %}
-    </ul>
+        <h2 class="c-post-list__heading">Case Studies &ndash; Team Leadership</h2>
+
+        <ul class="c-post-list">
+        {% for post in posts  %}        
+            {% if forloop.index and post.type == "lead" %} 
+                <li class="c-post-list__item">
+                    <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
+                        <div class="c-post-list__meta">
+                            {{ forloop.index }}
+                        </div>
+                        <div class="c-post-list__content">
+                            <h3 class="c-post-list__title">
+                                {{ post.title }}
+                            </h3>
+                            <!-- 
+                            <p class="c-post-list__subhead">
+                                {{ post.subheader }}
+                            </p> -->
+                        </div>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
 </div>

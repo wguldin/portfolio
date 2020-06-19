@@ -1,14 +1,11 @@
 ### Summary
 With the right tools and procceses in place, remote work can be some of the most rewarding.
 
-**Key Metric**
-<br>
+<h5>Key Metric</h5>
 The design department at BriteCore had the highest rating for employee satisfaction of any team in the company, something I was incredibly proud of.
 
-**Role**
-<br>
+<h5>Role</h5>
 Design Leadership
 
-**Methods & Techniques**
-<br>
+<h5>Methods & Techniques</h5>
 Remote Collaboration, Team Building, Mentorship

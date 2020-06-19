@@ -4,7 +4,8 @@ title: "Lessons Learned While Leading Remote Teams"
 subheader: "After working at a fully distributed company for nearly five years, I’ve learned that working remotely is at its best when it feels like a paradox. On a surface level, many people assume a remote workplace would be less connected or collaborative than a traditional office. While it can have certain challenges, I’ve found that with some thoughtful practices in place, good collaboration isn’t one of them. In fact, it can become a key part of leading remote teams."
 date: "2020-01-25 10:00:00 -0500"
 sidebar: /summary/remote-case-study.markdown
-order: 5
+type: "lead"
+order: 6
 ---
 
 <p class="u-text--lg">
