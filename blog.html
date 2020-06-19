@@ -1,22 +1,20 @@
 ---
-layout: page
+layout: blog
 title: Blog Posts
 permalink: /blog/
 ---
-{% for post in site.categories.blog %}
-    {% if forloop.index %} 
-        {% if forloop.index != 1%}
-            <hr class="mt4">
+<div class="blog">
+        {% for post in site.categories.blog %}
+        {% if forloop.index %} 
+            <div class="blog__post">
+                <a class="blog__title" href={{post.url}}>
+                    <h2>{{ post.title }}</h2>
+                </a>
+        
+                <h5 class="blog__date">Posted on {{ post.date | date: "%b %-d, %Y"}}</h5>
+        
+                <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+            </div>    
         {% endif %}
-
-        <a href={{post.url}}><h2>{{ post.title }}</h2></a>
-
-        <strong class="u-text--sm">Posted on {{ post.date | date: "%b %-d, %Y"}}</strong>
-
-        <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-
-        <div>
-            <a class="c-post__readmore" href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-        </div>
-    {% endif %}
-{% endfor %}
+    {% endfor %}
+</div>

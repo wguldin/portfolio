@@ -1,0 +1,24 @@
+.blog {
+    margin-top: $space-3;
+}
+
+.blog__title {
+    display: inline-block;
+    font-size: 1.5em;
+    background-image: linear-gradient(to bottom, rgba($color-gray-1, .2), rgba($color-gray-1, .2));
+
+    h2 {
+        font-size: 1em;
+        margin: 0;
+    }
+}
+
+.blog__post {
+    margin-bottom: $space-3;
+}
+
+.blog__date {
+    margin-top: $space-1;
+    margin-bottom: $space-2;
+    font-weight: bold;
+}
