@@ -22,3 +22,20 @@
 .c-nav__list-item {
     margin-left: 2em;
 }
+
+.c-nav__link {
+    background-position: 0 1em;
+
+    &:hover {
+        background-position: 0 .9em;
+    }
+}
+
+.c-nav__link--active {
+    border-radius: 2px;
+    padding: .35em .4em .2em;
+    margin: -.35em -.4em -.2em;
+    background: none;
+    background-color: rgba($color-primary-1, .1);
+    background-position: 0 1em;
+}
