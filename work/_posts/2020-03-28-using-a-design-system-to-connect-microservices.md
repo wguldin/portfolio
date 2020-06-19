@@ -6,6 +6,7 @@ date: "2020-03-28 11:00:00 -0500"
 sidebar: /summary/design-system-case-study.markdown
 type: "lead"
 order: 5
+hideFromSearchResults: true
 ---
 
 <p class="u-text--lg">

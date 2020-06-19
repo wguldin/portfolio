@@ -6,6 +6,7 @@ date: "2020-01-25 09:00:00 -0500"
 sidebar: /summary/lines-case-study.markdown
 type: "design"
 order: 2
+hideFromSearchResults: true
 ---
 
 <p class="u-text--lg">
