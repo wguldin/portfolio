@@ -35,14 +35,32 @@
         top: -.35em;
     }
 
+    ol {
+        padding-left: 1.1em;
+    }
+
+    ol li {
+        padding-left: 0;
+    }
+
     h2 {
-        font-size: 1.52em;
+        font-size: 1.7em;
+        margin-top: 4rem;
         color: $color-gray-2;
     }
 
     h3 {
-        font-size: 1.2em;
+        font-size: 1.05em;
         color: $color-gray-1;
+        font-weight: bold;
+        margin-top: 3rem;
+    }
+
+    h4 {
+        font-size: 1em;
+        color: $color-gray-2;
+        font-weight: bold;
+        margin-top: 2.5rem;
     }
 
     a {
@@ -55,9 +73,10 @@
 }
 
 .c-post__title {
-    font-size: 1.75em;
-    font-family: "cooper-hewitt-book";
+    font-size: 1.8em;
+    font-family: "cooper-hewitt";
     margin-top: 0;
+    margin-bottom: 1em;
 }
 
 .c-post__back { 
@@ -87,8 +106,8 @@
 }
 
 // Double up on specificty to avoid !important
-a.c-post__readmore, a.c-post__caption-link {
-    font-family: 'cooper-hewitt-book';
+a.c-post__caption-link {
+    font-family: 'cooper-hewitt', sans-serif;
     background-position: 0 .95em;
 
     &:hover {
@@ -111,7 +130,7 @@ a.c-post__readmore, a.c-post__caption-link {
 }
 
 .c-post__caption {
-    font-family: 'cooper-hewitt-book';
+    font-family: 'cooper-hewitt', sans-serif;
     font-size: .9em;
-    color: $color-gray-2;
+    color: $color-gray-2; 
 }

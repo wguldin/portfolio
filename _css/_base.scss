@@ -12,7 +12,7 @@ dl, dd, ol, ul, figure {
 
 // Basic Styling
 body {
-    font-family: "cooper-hewitt-book", sans-serif;
+    font-family: "cooper-hewitt", sans-serif;
     font-weight: normal;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
@@ -27,6 +27,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-variant-ligatures: no-contextual; // Parenthesis were appearing backwards with this in body copy.
 
     color: $color-black;
     background-color: $color-background-1;
@@ -88,21 +89,12 @@ a {
         color: darken($color-primary-1, 10%);
         background-position: 0 .8em;
     }
-
-    > h2 {
-        text-decoration: underline;
-        transition: color 120ms ease-in;
-
-        &:hover {
-            color: $color-black;
-        }
-    }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+    line-height: 1.4;
     margin: 1.414em 0 .5em;
-    font-family: "cooper-hewitt-book", sans-serif;
+    font-family: "cooper-hewitt", sans-serif;
     font-weight: normal;
 }
 
@@ -126,9 +118,10 @@ h4, .h4 {
     font-size: $h3;
 }
 
-$h5: 1em;
+$h5: .85em;
 h5, .h5 {
     font-size: $h5;
+    font-weight: bold;
 }
 
 $h6: .8em;
