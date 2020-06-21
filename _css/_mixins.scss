@@ -23,10 +23,18 @@
 }
  
 @font-face {
-   font-family: "cooper-hewitt-book";
+   font-family: "cooper-hewitt";
    src: url("/assets/fonts/cooper-hewitt-book.woff2") format("woff2"),
         url("/assets/fonts/cooper-hewitt-book.woff") format("woff");
    font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "cooper-hewitt";
+   src: url("/assets/fonts/cooper-hewitt-semibold.woff2") format("woff2"),
+        url("/assets/fonts/cooper-hewitt-semibold.woff") format("woff");
+   font-weight: bold;
    font-style: normal;
 }
 

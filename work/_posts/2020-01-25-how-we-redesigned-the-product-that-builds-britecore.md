@@ -4,7 +4,9 @@ title: "How We Redesigned the Product that Builds BriteCore"
 subheader: "BriteCore's rating engine forms the backbone of our application, and defines what information is collected on a quote, and how the system calculates an insurance premium. By recreating this tool to be more flexible, we've greatly expanded the number of companies that can use BriteCore's software."
 date: "2020-01-25 09:00:00 -0500"
 sidebar: /summary/lines-case-study.markdown
+type: "design"
 order: 2
+hideFromSearchResults: true
 ---
 
 <p class="u-text--lg">

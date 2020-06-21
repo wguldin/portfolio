@@ -19,13 +19,13 @@
         margin-left: 0; 
     }
 
-    li {
+    ul li {
         padding-left: .9em;
         position: relative;
         margin-bottom: .5em;
     }
 
-    li:before {
+    ul li:before {
         content: "\2022";
         font-family: sans-serif;
         font-size: 1.8em;
@@ -35,14 +35,32 @@
         top: -.35em;
     }
 
+    ol {
+        padding-left: 1.1em;
+    }
+
+    ol li {
+        padding-left: 0;
+    }
+
     h2 {
-        font-size: 1.52em;
+        font-size: 1.7em;
+        margin-top: 4rem;
         color: $color-gray-2;
     }
 
     h3 {
-        font-size: 1.2em;
+        font-size: 1.05em;
         color: $color-gray-1;
+        font-weight: bold;
+        margin-top: 3rem;
+    }
+
+    h4 {
+        font-size: 1em;
+        color: $color-gray-2;
+        font-weight: bold;
+        margin-top: 2.5rem;
     }
 
     a {
@@ -55,9 +73,10 @@
 }
 
 .c-post__title {
-    font-size: 1.75em;
-    font-family: "cooper-hewitt-book";
+    font-size: 1.8em;
+    font-family: "cooper-hewitt";
     margin-top: 0;
+    margin-bottom: 1em;
 }
 
 .c-post__back { 
@@ -87,8 +106,8 @@
 }
 
 // Double up on specificty to avoid !important
-a.c-post__readmore, a.c-post__caption-link {
-    font-family: 'cooper-hewitt-book';
+a.c-post__caption-link {
+    font-family: 'cooper-hewitt', sans-serif;
     background-position: 0 .95em;
 
     &:hover {
@@ -101,7 +120,7 @@ a.c-post__readmore, a.c-post__caption-link {
     width: 100%;
     background: $color-white;
     padding: 1em 1em 0.4em 1em;
-    margin: 1em 0;
+    margin: 1em 0 1.5em;
 
     img {
         max-width: 100%;
@@ -110,8 +129,40 @@ a.c-post__readmore, a.c-post__caption-link {
     }
 }
 
+.c-post__quote {
+    width: 100%;
+    background: $color-white;
+    padding: 1em 2em 0.8em 4em;
+    margin: 3em 0;
+    font-family: 'cooper-hewitt', sans-serif;
+    position: relative;
+
+    blockquote {
+        font-size: 1.4em;
+        color: $color-gray-2;
+
+        &:before {
+            content: '“';
+            position: absolute;
+            top: 1.5rem;
+            left: .75rem;
+            font-size: 6rem;
+            line-height: 1;
+            color: $color-primary-1;
+            font-weight: bold;
+        }
+    }
+
+    figcaption {
+        font-style: italic;
+        color: $color-gray-3;
+        font-size: 1em;
+        margin-top: .25em;
+    }
+}
+
 .c-post__caption {
-    font-family: 'cooper-hewitt-book';
+    font-family: 'cooper-hewitt', sans-serif;
     font-size: .9em;
-    color: $color-gray-2;
+    color: $color-gray-2; 
 }

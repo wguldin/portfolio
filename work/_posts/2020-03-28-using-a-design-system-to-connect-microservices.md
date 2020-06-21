@@ -4,14 +4,16 @@ title: "Using a Design System to Connect Microservices"
 subheader: "Microservices are a popular engineering concept for breaking up a large application into many smaller and more manageable pieces. BriteCore was looking to use this technique to rewrite its product. As design director, I understood the technical merits of this approach, but thought it could lead a product that felt disjointed to use and inconsistent."
 date: "2020-03-28 11:00:00 -0500"
 sidebar: /summary/design-system-case-study.markdown
-order: 3
+type: "lead"
+order: 5
+hideFromSearchResults: true
 ---
 
 <p class="u-text--lg">
     Microservices are a popular engineering concept for breaking up a large application into many smaller and more managable pieces. BriteCore was looking to use this technique to rewrite its product. As design director, I understood the technical merits of this approach, but thought it could lead a product that felt disjointed to use and inconsistent.
 </p>
 
-Early on, I proposed we adopt a design system to prevent these issues and to improve our product's design consistency. At the time, though, we had only one UI Engineer. So, it was important for any design we created to be implemented easily. I also had several other goals for project:
+Early on, I proposed we adopt a design system to prevent these issues and to improve our product's design consistency. At the time, though, we had only one UI Engineer. So, it was important for any design system we created to be implemented easily. I also had several other goals for project:
 
 * We should ship the initial version quickly, and iterate often.
 * Our system should provide consistency and have UX best practices built in.

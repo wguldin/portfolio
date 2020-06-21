@@ -23,9 +23,9 @@ folio.ajax = (function() {
 
     self.bindClickListener = function(siteUrl, context) {
         if(context) {
-            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]', context);
+            var links = folio.utils.find('a[href^="/"], a[href^="'+siteUrl+'"]', context);
         } else {
-            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]');
+            var links = folio.utils.find('a[href^="/"], a[href^="'+siteUrl+'"]');
         }
  
         for (var i = 0; i < links.length; i++) {
@@ -56,6 +56,7 @@ folio.ajax = (function() {
                     // Only update contents and routing if going to a new page.
                     self.pushState(linkURL);
                     self.loadPartial(linkURL);
+                    self.updateNavClass(linkURL);
 
                     var introBox = document.getElementById('intro-box');
 
@@ -67,7 +68,7 @@ folio.ajax = (function() {
 
                     var intro = document.getElementById('intro');
 
-                    if(linkURL == '/about/') {
+                    if(linkURL == '/about') {
                         folio.utils.addClass(intro, 'c-intro--about');
                     } else {
                         folio.utils.removeClass(intro, 'c-intro--about');
@@ -160,6 +161,37 @@ folio.ajax = (function() {
         folio.utils.removeClass(main, 'u-fade--out');
     };
 
+    self.updateNavClass = function(linkURL) {
+        var nav = document.getElementById('nav');
+
+        activeLink = folio.utils.find('.c-nav__link--active', nav);
+
+        folio.utils.removeClass(activeLink[0], 'c-nav__link--active');
+
+        if(linkURL == '/') {
+            var homeLink = document.getElementById('home-link');
+
+            folio.utils.addClass(homeLink, 'c-nav__link--active');
+
+        } else if(linkURL == '/blog') {
+            var blogLink = document.getElementById('blog-link');
+
+            folio.utils.addClass(blogLink, 'c-nav__link--active');
+       
+        } else if(linkURL == '/talks') {
+            var talksLink = document.getElementById('talks-link');
+            
+            folio.utils.addClass(talksLink, 'c-nav__link--active');
+
+        } else if(linkURL == '/about') {
+            var aboutLink = document.getElementById('about-link');
+        
+            folio.utils.addClass(aboutLink, 'c-nav__link--active');
+        } else {
+            return;
+        }
+    };
+
     return self;
 })();
 
@@ -167,7 +199,7 @@ folio.utils.randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 };
 
-folio.find = function (selector, parent) {
+folio.utils.find = function (selector, parent) {
     return Array.prototype.slice.call((parent ? parent : document).querySelectorAll(selector));
 };
 

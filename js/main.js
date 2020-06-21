@@ -14,6 +14,7 @@ folio.ajax = (function() {
 
         self.pushState(siteUrl); // Init history tracking.
         self.bindClickListener(siteUrl);
+        self.updateNavClass(siteUrl); // Ensure consistent active nav tracking
         self.bindHistoryListener();
     };
 
@@ -23,9 +24,9 @@ folio.ajax = (function() {
 
     self.bindClickListener = function(siteUrl, context) {
         if(context) {
-            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]', context);
+            var links = folio.utils.find('a[href^="/"], a[href^="'+siteUrl+'"]', context);
         } else {
-            var links = folio.find('a[href^="/"], a[href^="'+siteUrl+'"]');
+            var links = folio.utils.find('a[href^="/"], a[href^="'+siteUrl+'"]');
         }
  
         for (var i = 0; i < links.length; i++) {
@@ -56,6 +57,7 @@ folio.ajax = (function() {
                     // Only update contents and routing if going to a new page.
                     self.pushState(linkURL);
                     self.loadPartial(linkURL);
+                    self.updateNavClass(linkURL);
 
                     var introBox = document.getElementById('intro-box');
 
@@ -113,6 +115,9 @@ folio.ajax = (function() {
                 var pageTitle = pageDom.getElementsByTagName('title')[0].textContent;
                 document.title = pageTitle;
 
+                // Update Meta Tags
+                self.updateMetaTags(pageDom);
+
                 // Update Contents
                 var pageContent = document.getElementById('main-content');
                 var sidebarContent = document.getElementById('sidebar');
@@ -160,6 +165,57 @@ folio.ajax = (function() {
         folio.utils.removeClass(main, 'u-fade--out');
     };
 
+    self.updateMetaTags = function(pageDom) {
+        var hideSearch = pageDom.querySelectorAll('#hide-search');
+
+        if(hideSearch && hideSearch.length > 0) {
+            var meta = document.createElement('meta');
+            meta.name = "robots";
+            meta.content = "noindex";
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        } else {
+            // Reset if on another page.
+            var existingMeta = document.querySelectorAll("meta[name='robots']");
+
+            if(existingMeta && existingMeta.length > 0){
+                existingMeta[0].remove();
+            }
+        }
+    }
+
+    self.updateNavClass = function(linkURL) {
+        var nav = document.getElementById('nav');
+
+        activeLink = folio.utils.find('.c-nav__link--active', nav);
+
+        if(activeLink.length > 0) {
+            folio.utils.removeClass(activeLink[0], 'c-nav__link--active');
+        }
+
+        if(linkURL == '/' || linkURL.includes('/work/')) {
+            var homeLink = document.getElementById('home-link');
+
+            folio.utils.addClass(homeLink, 'c-nav__link--active');
+
+        } else if(linkURL == '/blog' || linkURL.includes('/blog/')) {
+            var blogLink = document.getElementById('blog-link');
+
+            folio.utils.addClass(blogLink, 'c-nav__link--active');
+       
+        } else if(linkURL == '/talks') {
+            var talksLink = document.getElementById('talks-link');
+            
+            folio.utils.addClass(talksLink, 'c-nav__link--active');
+
+        } else if(linkURL == '/about') {
+            var aboutLink = document.getElementById('about-link');
+        
+            folio.utils.addClass(aboutLink, 'c-nav__link--active');
+        } else {
+            return;
+        }
+    };
+
     return self;
 })();
 
@@ -167,7 +223,7 @@ folio.utils.randomIntFromInterval = function(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 };
 
-folio.find = function (selector, parent) {
+folio.utils.find = function (selector, parent) {
     return Array.prototype.slice.call((parent ? parent : document).querySelectorAll(selector));
 };
 
