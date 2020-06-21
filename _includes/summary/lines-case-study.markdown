@@ -8,7 +8,7 @@ Improve the product's flexibility so that BriteCore could be adopted by a much l
 2017 to Present
 
 <h5>Role</h5>
-Product Design, User Research, Design Management
+Product Designer, User Researcher, Design Lead
 
 <h5>Methods & Techniques</h5>
-User Research, Information Architecture, Wireframing, High Fidelity Mockups
+Interviews, Information Architecture, Usability Testing, Wireframing, High Fidelity Mockups
