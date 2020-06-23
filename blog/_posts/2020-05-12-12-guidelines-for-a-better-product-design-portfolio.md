@@ -101,7 +101,7 @@ The best portfolio designs that I see are able to leverage trends in UI design t
 
 That's a tough balance to strike, but there are some things I feel like you should definately avoid:
 * **Stock Illustrations** &ndash; If you have illustration skills, they are a great thing to include on your portfolio. If you don't, you should avoid using stock ones like Undraw.
-* **Accessible color combinations** &ndash; When working with color, make sure all your combinations of text colors and backgrounds are accessible, and pass WCAG color contrast checks.
+* **Inaccessible color combinations** &ndash; When working with color, make sure all your combinations of text colors and backgrounds are accessible, and pass WCAG color contrast checks.
 * **Branding Inconsistency** &ndash; If you are creating a resume to go with your portfolio make sure the branding is consistent between the two.
 
 ## Guidelines, not rules
