@@ -106,7 +106,7 @@
 }
 
 // Double up on specificty to avoid !important
-a.c-post__caption-link {
+.c-post__image .c-post__caption a {
     font-family: 'cooper-hewitt', sans-serif;
     background-position: 0 .95em;
 
