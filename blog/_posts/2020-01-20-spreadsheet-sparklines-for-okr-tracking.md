@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spreadsheet Sparklines for OKR Tracking"
+title: "Spreadsheet sparklines for OKR tracking"
 date: "2020-01-20 17:00:00 -0500"
 ---
 
@@ -16,7 +16,7 @@ To visually show the progress here, I used a charting technique called sparkline
 
 <figure class="c-post__image">
     {% include image.html alt="sparklines example from Edward Tufte" name="tufte-sparklines.png" remove-class="true" %}
-    <figcaption class="c-post__caption">Sparklines allow for much easier visual comparisons than text-based listings alone. <a class="c-post__caption-link" href="https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR" target="_Blank">Source</a></figcaption>
+    <figcaption class="c-post__caption">Sparklines allow for much easier visual comparisons than text-based listings alone. <a href="https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR" target="_Blank">Source</a></figcaption>
 </figure>
 
 When working on this OKR Tracker, I thought it'd be cool to use small bar charts as a kind of simple sparkline, to show progress. It turns out this is an available feature in Google Sheets!

@@ -12,7 +12,7 @@ order: 3
 
 <figure class="c-post__image">
     {% include image.html alt="sticky notes used in ideation session" name="ideation.png" remove-class="true" %}
-    <figcaption class="c-post__caption">Ideation session our team ran for dozens of BriteCore employees during an in-person product summit. We used the sessions to raise design literacy on our teams, and created a <a class="c-post__caption-link js-download" download href="/pd-summit-design-session.pdf" target="_blank">summary of the session</a> we shared out over slack. We now routinely conduct these activities remotely, using Miro.</figcaption>
+    <figcaption class="c-post__caption">Ideation session our team ran for dozens of BriteCore employees during an in-person product summit. We used the sessions to raise design literacy on our teams, and created a <a class="js-download" download href="/pd-summit-design-session.pdf" target="_blank">summary of the session</a> we shared out over slack. We now routinely conduct these activities remotely, using Miro.</figcaption>
 </figure>
 
 

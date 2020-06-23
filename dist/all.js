@@ -14,6 +14,7 @@ folio.ajax = (function() {
 
         self.pushState(siteUrl); // Init history tracking.
         self.bindClickListener(siteUrl);
+        self.updateNavClass(siteUrl); // Ensure consistent active nav tracking
         self.bindHistoryListener();
     };
 
@@ -114,6 +115,9 @@ folio.ajax = (function() {
                 var pageTitle = pageDom.getElementsByTagName('title')[0].textContent;
                 document.title = pageTitle;
 
+                // Update Meta Tags
+                self.updateMetaTags(pageDom);
+
                 // Update Contents
                 var pageContent = document.getElementById('main-content');
                 var sidebarContent = document.getElementById('sidebar');
@@ -161,19 +165,39 @@ folio.ajax = (function() {
         folio.utils.removeClass(main, 'u-fade--out');
     };
 
+    self.updateMetaTags = function(pageDom) {
+        var hideSearch = pageDom.querySelectorAll('#hide-search');
+
+        if(hideSearch && hideSearch.length > 0) {
+            var meta = document.createElement('meta');
+            meta.name = "robots";
+            meta.content = "noindex";
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        } else {
+            // Reset if on another page.
+            var existingMeta = document.querySelectorAll("meta[name='robots']");
+
+            if(existingMeta && existingMeta.length > 0){
+                existingMeta[0].remove();
+            }
+        }
+    }
+
     self.updateNavClass = function(linkURL) {
         var nav = document.getElementById('nav');
 
         activeLink = folio.utils.find('.c-nav__link--active', nav);
 
-        folio.utils.removeClass(activeLink[0], 'c-nav__link--active');
+        if(activeLink.length > 0) {
+            folio.utils.removeClass(activeLink[0], 'c-nav__link--active');
+        }
 
-        if(linkURL == '/') {
+        if(linkURL == '/' || linkURL.includes('/work/')) {
             var homeLink = document.getElementById('home-link');
 
             folio.utils.addClass(homeLink, 'c-nav__link--active');
 
-        } else if(linkURL == '/blog') {
+        } else if(linkURL == '/blog' || linkURL.includes('/blog/')) {
             var blogLink = document.getElementById('blog-link');
 
             folio.utils.addClass(blogLink, 'c-nav__link--active');
