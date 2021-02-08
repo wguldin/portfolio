@@ -18,6 +18,6 @@ Like most folks, my path to working on digital products was winding. I went to t
 
 While in school, I started to teach myself HTML & CSS, and used these skills to build out small micro sites for several journalism projects. That served as my first introduction to digital design, and the principles of user experience.
 
-From there, I worked as a web designer for a large online-only retailer, and then was lucky enough to find a position as BriteCore's first product designer. For full details about my experience, you can check out my [LinkedIn profile](https://www.linkedin.com/in/will-guldin/){:target="_blank"}, or read my case studies. 
+From there, I worked as a web designer for a large online-only retailer, and then was lucky enough to find a position as BriteCore's first product designer. Currently, I'm a Senior Product Designer at Heap. For full details about my experience, you can check out my [LinkedIn profile](https://www.linkedin.com/in/will-guldin/){:target="_blank"}, or read my case studies. 
 
 As far as other interests go, the farm does keep Megan and I busy, but I also enjoy woodworking (I built a chicken coop!), reading (usually non-fiction), and video games (playing mostly *Breath of the Wild* now).

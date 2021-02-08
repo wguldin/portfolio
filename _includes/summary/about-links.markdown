@@ -1,7 +1,6 @@
 ### Profile Links
 #### [LinkedIn](https://www.linkedin.com/in/will-guldin/)
 #### [Github](https://github.com/wguldin)
-#### [BriteCore](https://www.britecore.com/our-leadership)
 
 ### Influential Books
 I'm old school in many ways, and love to read paper copies of books. Here are ones sitting on my desk that have really shaped my thinking over the past couple of years.
