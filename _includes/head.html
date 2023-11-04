@@ -16,10 +16,6 @@
   <meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
   <meta name="theme-color" content="#d4dded"> 
 
-  {% if page.hideFromSearchResults %}
-    <meta name="robots" content="noindex">
-  {% endif %}
-
   <script src="{{ site.baseurl }}/js/vendor/modernizr.min.js"></script>
 
   <link rel="stylesheet" href="{{ "/dist/css/main.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}">

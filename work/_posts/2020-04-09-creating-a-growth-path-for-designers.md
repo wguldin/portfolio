@@ -4,8 +4,8 @@ title: "Creating a Growth Path for Designers"
 subheader: "While leading BriteCore's design team, I wanted to create a new way to track and improve career development for our product designers. The process we developed involves level-setting with direct reports on their abilities, and then using that information as a jumping-off point for growth goals."
 date: "2020-04-09 09:00:00 -0500"
 sidebar: /summary/growth-plan-case-study.markdown
-type: "lead"
-order: 4
+type: "old"
+order: 2
 ---
 
 <p class="u-text--lg">

@@ -4,32 +4,10 @@ layout: default
 
 <div class="home">
     <div class="c-post-list__container">
-        <h2 class="c-post-list__heading">Case Studies &ndash; Design Contributions</h2>
-        <ul class="c-post-list">
-        {% assign posts = site.categories.work | sort: 'order' %}
-        {% for post in posts  %}        
-            {% if forloop.index and post.type == "design" %} 
-                <li class="c-post-list__item">
-                    <a class="c-post-list__link" href="{{ post.url | prepend: site.baseurl }}">
-                        <div class="c-post-list__meta">
-                            {{ forloop.index }}
-                        </div>
-                        <div class="c-post-list__content">
-                            <h3 class="c-post-list__title">
-                                {{ post.title }}
-                            </h3>
-                            <!-- 
-                            <p class="c-post-list__subhead">
-                                {{ post.subheader }}
-                            </p> -->
-                        </div>
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-        </ul>
+        <h2 class="c-post-list__heading">Recent Work</h2>
+        <p>To see my latest portfolio work, just <a mailto="wguldin@gmail.com">get in touch!</a></p>
 
-        <h2 class="c-post-list__heading">Case Studies &ndash; Team Leadership</h2>
+        <h2 class="c-post-list__heading">Older writings and case studies</h2>
 
         <ul class="c-post-list">
         {% for post in posts  %}        

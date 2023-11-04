@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "12 Guidelines for a better product design portfolio"
+title: "Guidelines for a better product design portfolio"
 date: "2020-05-12 17:00:00 -0500"
+type: "old"
+order: 4
 ---
 
 A couple of weeks ago, our design team was able to attend [Remote Design Week](https://remotedesignweek.com/). The talks were great, and the fact it was remote worked really well for our fully distributed team. 
