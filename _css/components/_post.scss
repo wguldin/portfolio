@@ -6,11 +6,11 @@
     }
 
     @media (min-width: 72em) {
-        padding: 0 $space-3;
+        padding: 0 $space-3 0 0;
     }
 
     @media (min-width: 80em) {
-        padding: 0 $space-4;
+        padding: 0 $space-4 0 0;
     }
 
     ul {
@@ -73,18 +73,22 @@
 }
 
 .c-post__title {
-    font-size: 1.8em;
+    font-size: 1.6rem;
     font-family: "cooper-hewitt";
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 0;
+}
+
+.c-post__header {
+    position: relative;
 }
 
 .c-post__back { 
     background: none;
-    font-size: 2.5em;
+    font-size: 2em;
     position: absolute;
     left: -1em;
-    top: -4px;
+    top: 4px;
     opacity: .3;
     transition: opacity 80ms ease-in;
 
@@ -94,14 +98,6 @@
 
     &:hover {
         opacity: .7;
-    }
-
-    @media (min-width: 72em) {
-            left: 1rem;
-    }
-
-    @media (min-width: 80em) {
-        left: 4rem;
     }
 }
 
@@ -121,6 +117,8 @@
     background: $color-white;
     padding: 1em 1em 0.4em 1em;
     margin: 1em 0 1.5em;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, .1);
 
     img, iframe {
         max-width: 100%;

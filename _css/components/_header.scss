@@ -1,6 +1,5 @@
 .c-header {
     padding-right: 0;
-    font-size: 1.25em;
     margin-bottom: $space-3;
 
     @media (min-width: 32em) {
@@ -14,8 +13,9 @@
 }
 
 .c-header__title {
-    font-size: 1.4em;
+    font-size: 1.6rem;
     margin-top: 0;
+    margin-bottom: 1.5rem;
 
     a {
         background-size: 1px 2px;
@@ -23,5 +23,6 @@
 }
 
 .c-header__description {
+    font-size: 1.2rem;
     color: $color-gray-2;
 }

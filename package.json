@@ -1,6 +1,6 @@
 {
   "name": "will-guldin-portfolio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Portfolio and Blog for Will Guldin, UI/UX Designer",
   "main": "gulpfile.js",
   "dependencies": {},

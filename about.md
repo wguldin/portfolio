@@ -5,7 +5,7 @@ permalink: /about/
 sidebar: /summary/about-links.markdown
 ---
 
-<img class="about-img" src="/will_guldin_mug_square.jpg" alt="Will Guldin Portrait">
+<img class="about-img" src="/will_portrait.jpeg" alt="Will Guldin Portrait">
 
 Although I work for a product analytics company founded near San Francisco, I love living in the country with my wonderful wife, Megan. We have a farm with cattle, sheep, and a couple dogs and cats. When we aren't doing something outside, we love to cook together. Working for a virtual-first company has given me a great opportunity to work with brilliant people across the world, and its let us have the kind of life we want for our daughter. 
 
@@ -20,4 +20,4 @@ While in school, I started to teach myself HTML & CSS, and used these skills to 
 
 From there, I worked as a web designer for a large e-commerce retailer, and then was lucky enough to find a position as BriteCore's first product designer. Currently, I'm a Senior Product Designer at Heap. For full details about my experience, you can check out my [LinkedIn profile](https://www.linkedin.com/in/will-guldin/){:target="_blank"}, or read my case studies. 
 
-As far as other interests go, the farm does keep Megan and I busy, but I also enjoy woodworking (I built a greenhouse!), reading (usually non-fiction), and video games (playing mostly *Breath of the Wild* now).
+As far as other interests go, the farm does keep Megan and I busy, but I also enjoy woodworking (I built a 9-ft tall bookshelf!), reading (usually non-fiction), and video games (playing mostly *Starfield* now).

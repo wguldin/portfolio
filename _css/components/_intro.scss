@@ -6,6 +6,7 @@
     margin-bottom: $space-2;
     margin-bottom: 2em;
     order: 0;
+    top: -1em;
 
     @media (min-width: 48em) {
         width: 12em;
@@ -37,16 +38,31 @@
     font-size: .8em;
     display: none;
     border-radius: 12px;
+    top: -1em;
 
     @media (min-width: 60em) {
         font-size: .9em;    
         display: block; // Show on other pages aside from home.
     }
+
+    .l-home ~ & {
+      background: transparent;  
+    }
 }
 
-.c-intro__box--home {
+.c-intro__box--home, .c-intro--about {
+    background: none;
+
     @media (max-width: 60em) {
         display: block;
+    }
+
+    .c-intro__box {
+        background: none;
+    }
+
+    .c-intro__header, .c-intro__description {
+        display: none;
     }
 }
 
