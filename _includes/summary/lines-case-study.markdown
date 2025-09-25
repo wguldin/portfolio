@@ -5,7 +5,7 @@ BriteCore's rating engine had several limitations and pain points that made it h
 Improve the product's flexibility so that BriteCore could be adopted by a much larger portion of the insurance industry.
 
 <h5>Date</h5>
-2017 to Present
+2017 to 2018
 
 <h5>Role</h5>
 Product Designer, User Researcher, Design Lead
