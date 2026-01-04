@@ -20,4 +20,4 @@ While in school, I started to teach myself HTML & CSS, and used these skills to 
 
 From there, I worked as a web designer for a large e-commerce retailer, and then was lucky enough to find a position as BriteCore's first product designer. Currently, I'm a Staff Product Designer at Mutiny. For full details about my experience, you can check out my [LinkedIn profile](https://www.linkedin.com/in/will-guldin/){:target="_blank"}, or read my case studies. 
 
-As far as other interests go, the farm does keep Megan and I busy, but I also enjoy woodworking (I built a 9-ft tall bookshelf!), reading (usually non-fiction), and video games (playing mostly *Hollow Knight: Silksong* now).
+As far as other interests go, the farm does keep Megan and me busy, but I also enjoy woodworking (I built a 9-ft tall bookshelf!), reading (usually non-fiction), and video games (playing mostly *Hollow Knight: Silksong* now).
